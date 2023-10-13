@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: rgb(255, 222, 220);
+}
+
+.logo > img {
+    width: 40%;
+    height: 40%;
+}
+
+.main_menu {
+    background-color: #f6eee9;
+}
+
+.menu {
+    display: flex;
+
+}
+.menu_item{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+.item{
+    margin: 5px;
+    color: #7c3d25;
+    cursor: pointer;
+}
+.item:hover{
+    color: #b98c71;
+}
+
