@@ -30,29 +30,33 @@ body {
     border-radius: 10px;
     border: 1px solid lightgray;
 
+
+}
+.logo{
+    width: 100px;
+    font-weight: bold;
 }
 
-.formSignIn {
+.formSignIn, .formSignUp {
     width: 100%;
     display: flex;
     flex-direction: column;
     row-gap: 30px;
 }
 
-.titleSignIn,  titleSignUp{
+.titleSignIn,
+.titleSignUp {
     text-align: center;
     font-size: 40px;
     background: linear-gradient(315deg, rgb(255, 177, 161), rgba(255, 153, 153));
     color: transparent;
     background-clip: text;
-    margin-bottom: 20px;
     font-weight: bold;
-    margin-top: 10%;
     text-transform: uppercase;
 
 }
 
-.NameAcc {
+.NameAcc, .NameUser {
     width: 100%;
     display: flex;
     gap: 10px;
@@ -69,7 +73,7 @@ body {
 }
 
 #inputNumPhone,
-#inputPass {
+#inputPass, #inputName {
     border: 0;
     box-shadow: 0 0 3px black;
     font-size: 20px;
@@ -116,7 +120,7 @@ body {
 }
 
 .buttonSubmit {
-    margin-top: 10%;
+    margin-top: 5%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -160,4 +164,9 @@ body {
     padding: 20px;
     border-radius: 10px;
     border: 1px solid lightgray;
+}
+
+.titleSignUp {
+    text-align: left;
+    font-size: 30px;
 }
