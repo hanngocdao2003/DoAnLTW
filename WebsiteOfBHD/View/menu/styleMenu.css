@@ -9,9 +9,17 @@ body {
     background-color: rgb(255, 222, 220);
 }
 
+li {
+    text-transform: uppercase;
+}
+
+li > a {
+    text-decoration: none;
+}
+
 .logo > img {
-    width: 40%;
-    height: 40%;
+    width: 80px;
+    height: 80px;
 }
 
 .main_menu {
@@ -20,19 +28,38 @@ body {
 
 .menu {
     display: flex;
-
+    justify-content: space-around;
 }
-.menu_item{
+
+.list_item {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.menu_item {
     display: flex;
     flex-direction: row;
     list-style: none;
+    align-items: center;
 }
-.item{
-    margin: 5px;
+
+.item > a {
+    margin: 20px;
     color: #7c3d25;
+    height: fit-content;
     cursor: pointer;
 }
-.item:hover{
+
+.item > a:hover {
     color: #b98c71;
+}
+
+.task_item {
+    display: flex;
+    flex-direction: row;
+}
+
+.task_item > li {
+    list-style: none;
 }
 
