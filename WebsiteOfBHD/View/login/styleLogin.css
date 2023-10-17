@@ -21,12 +21,18 @@ body {
     margin-bottom: auto;
     margin-left: auto;
     margin-right: auto;
+<<<<<<< HEAD
     position: relative;
     border-radius: 10px;
 }
 
 .SignIn_Area,
 .SignUp_Area {
+=======
+}
+
+.SignIn_Area {
+>>>>>>> 9d23a759a7819f9bd844f44fc580f679e3ddb0e0
     background-color: white;
     width: 50%;
     padding: 20px;
@@ -35,14 +41,22 @@ body {
 
 
 }
+<<<<<<< HEAD
 
 .logo {
+=======
+.logo{
+>>>>>>> 9d23a759a7819f9bd844f44fc580f679e3ddb0e0
     width: 100px;
     font-weight: bold;
 }
 
+<<<<<<< HEAD
 .formSignIn,
 .formSignUp {
+=======
+.formSignIn, .formSignUp {
+>>>>>>> 9d23a759a7819f9bd844f44fc580f679e3ddb0e0
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -53,6 +67,7 @@ body {
 .titleSignUp {
     text-align: center;
     font-size: 40px;
+<<<<<<< HEAD
     color: coral;
 
 }
@@ -60,6 +75,17 @@ body {
 .NameAcc,
 .NameUser,
 .EmailUser {
+=======
+    background: linear-gradient(315deg, rgb(255, 177, 161), rgba(255, 153, 153));
+    color: transparent;
+    background-clip: text;
+    font-weight: bold;
+    text-transform: uppercase;
+
+}
+
+.NameAcc, .NameUser {
+>>>>>>> 9d23a759a7819f9bd844f44fc580f679e3ddb0e0
     width: 100%;
     display: flex;
     gap: 10px;
@@ -69,17 +95,27 @@ body {
 
 .label {
     font-size: 15px;
+<<<<<<< HEAD
     color: coral;
+=======
+    background: linear-gradient(315deg, rgb(255, 177, 161), rgba(255, 153, 153));
+    color: transparent;
+    background-clip: text;
+>>>>>>> 9d23a759a7819f9bd844f44fc580f679e3ddb0e0
     font-weight: bold;
 }
 
 #inputNumPhone,
+<<<<<<< HEAD
 #inputNumPhoneRect,
 #inputEmail,
 #inputPass,
 #inputPassRect,
 #inputName,
 #ReinputPass {
+=======
+#inputPass, #inputName {
+>>>>>>> 9d23a759a7819f9bd844f44fc580f679e3ddb0e0
     border: 0;
     box-shadow: 0 0 3px black;
     font-size: 20px;
@@ -89,6 +125,7 @@ body {
 
 }
 
+<<<<<<< HEAD
 .password_Area {
     display: flex;
     justify-content: center;
@@ -96,6 +133,8 @@ body {
     gap: 10px;
 }
 
+=======
+>>>>>>> 9d23a759a7819f9bd844f44fc580f679e3ddb0e0
 .passAcc {
     width: 100%;
     display: flex;
@@ -114,11 +153,17 @@ body {
 
 }
 
+<<<<<<< HEAD
 #inputPass,
 #inputPassRect,
 #ReinputPass {
     box-shadow: none;
     width: 80%;
+=======
+#inputPass {
+    box-shadow: none;
+    width: 90%;
+>>>>>>> 9d23a759a7819f9bd844f44fc580f679e3ddb0e0
 }
 
 
@@ -127,7 +172,13 @@ body {
     padding: 0px 5px;
     position: absolute;
     right: 0;
+<<<<<<< HEAD
     color: coral;
+=======
+    background: linear-gradient(315deg, rgb(255, 177, 161), rgba(255, 153, 153));
+    color: transparent;
+    background-clip: text;
+>>>>>>> 9d23a759a7819f9bd844f44fc580f679e3ddb0e0
 
 
 }
@@ -171,11 +222,22 @@ body {
     font-size: 15px;
 }
 
+<<<<<<< HEAD
 
+=======
+.SignUp_Area {
+    background-color: white;
+    width: 50%;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+}
+>>>>>>> 9d23a759a7819f9bd844f44fc580f679e3ddb0e0
 
 .titleSignUp {
     text-align: left;
     font-size: 30px;
+<<<<<<< HEAD
 }
 
 .Register {
@@ -238,4 +300,6 @@ body {
     display: flex;
     align-items: center;
     position: relative;
+=======
+>>>>>>> 9d23a759a7819f9bd844f44fc580f679e3ddb0e0
 }
