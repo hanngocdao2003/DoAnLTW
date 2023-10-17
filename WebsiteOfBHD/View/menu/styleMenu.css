@@ -43,7 +43,7 @@ li > a {
     align-items: center;
 }
 
-.item > a {
+.item{
     margin: 20px;
     color: #7c3d25;
     height: fit-content;
@@ -52,6 +52,7 @@ li > a {
 
 .item > a:hover {
     color: #b98c71;
+    cursor: pointer;
 }
 
 .task_item {
@@ -61,5 +62,44 @@ li > a {
 
 .task_item > li {
     list-style: none;
+}
+
+.task {
+    display: flex;
+    justify-content: center;
+}
+
+.task_item {
+    display: flex;
+    align-items: center;
+}
+
+.logo_item {
+    margin: 10px;
+}
+
+.item {
+    position: relative;
+}
+
+.dropdown {
+    position: absolute;
+    list-style: none;
+    top: calc(100%);
+    left: 0;
+    display: none;
+}
+.item:hover .dropdown{
+    display: block;
+}
+.sub_item{
+    border-bottom: 2px solid #c5c5c5;
+    background-color: #eeeeee;
+    color: black;
+    text-wrap: nowrap;
+    margin: 0;
+}
+.item.sub_item{
+    margin: 10px;
 }
 
