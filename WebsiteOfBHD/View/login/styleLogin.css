@@ -21,9 +21,12 @@ body {
     margin-bottom: auto;
     margin-left: auto;
     margin-right: auto;
+    position: relative;
+    border-radius: 10px;
 }
 
-.SignIn_Area {
+.SignIn_Area,
+.SignUp_Area {
     background-color: white;
     width: 50%;
     padding: 20px;
@@ -32,12 +35,14 @@ body {
 
 
 }
-.logo{
+
+.logo {
     width: 100px;
     font-weight: bold;
 }
 
-.formSignIn, .formSignUp {
+.formSignIn,
+.formSignUp {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -48,15 +53,13 @@ body {
 .titleSignUp {
     text-align: center;
     font-size: 40px;
-    background: linear-gradient(315deg, rgb(255, 177, 161), rgba(255, 153, 153));
-    color: transparent;
-    background-clip: text;
-    font-weight: bold;
-    text-transform: uppercase;
+    color: coral;
 
 }
 
-.NameAcc, .NameUser {
+.NameAcc,
+.NameUser,
+.EmailUser {
     width: 100%;
     display: flex;
     gap: 10px;
@@ -66,14 +69,17 @@ body {
 
 .label {
     font-size: 15px;
-    background: linear-gradient(315deg, rgb(255, 177, 161), rgba(255, 153, 153));
-    color: transparent;
-    background-clip: text;
+    color: coral;
     font-weight: bold;
 }
 
 #inputNumPhone,
-#inputPass, #inputName {
+#inputNumPhoneRect,
+#inputEmail,
+#inputPass,
+#inputPassRect,
+#inputName,
+#ReinputPass {
     border: 0;
     box-shadow: 0 0 3px black;
     font-size: 20px;
@@ -81,6 +87,13 @@ body {
     border-radius: 10px;
 
 
+}
+
+.password_Area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
 .passAcc {
@@ -101,9 +114,11 @@ body {
 
 }
 
-#inputPass {
+#inputPass,
+#inputPassRect,
+#ReinputPass {
     box-shadow: none;
-    width: 90%;
+    width: 80%;
 }
 
 
@@ -112,9 +127,7 @@ body {
     padding: 0px 5px;
     position: absolute;
     right: 0;
-    background: linear-gradient(315deg, rgb(255, 177, 161), rgba(255, 153, 153));
-    color: transparent;
-    background-clip: text;
+    color: coral;
 
 
 }
@@ -158,15 +171,71 @@ body {
     font-size: 15px;
 }
 
-.SignUp_Area {
-    background-color: white;
-    width: 50%;
-    padding: 20px;
-    border-radius: 10px;
-    border: 1px solid lightgray;
-}
+
 
 .titleSignUp {
     text-align: left;
     font-size: 30px;
+}
+
+.Register {
+    margin-top: 0;
+}
+
+.intro {
+    position: absolute;
+    left: auto;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(255, 177, 161, 0.7), rgba(255, 153, 153, 1)), url(/WebsiteOfBHD/View/Image/pic1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+    border-radius: 10px;
+    transition: right 0.6s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.hello {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.welcome {
+    color: white;
+    font-size: 50px;
+}
+
+.letterWelcome {
+    color: white;
+    font-size: 20px;
+}
+
+.undo {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    justify-content: center;
+    gap: 5px;
+
+}
+
+.fa-share {
+    transform: rotate(180deg);
+}
+
+.first {
+    display: flex;
+    align-items: center;
+    position: relative;
 }
