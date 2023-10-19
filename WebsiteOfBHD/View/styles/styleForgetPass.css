@@ -10,6 +10,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 p {
@@ -25,6 +26,7 @@ p {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    margin-bottom: 20%;
 }
 
 .header {
