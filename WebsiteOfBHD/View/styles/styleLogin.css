@@ -122,14 +122,18 @@ body {
 }
 
 
-.fa-eye {
+.fa-eye-slash, .fa-eye {
     font-size: 20px;
     padding: 0px 5px;
     position: absolute;
     right: 0;
     color: coral;
+    visibility: visible;
 
 
+}
+.fa-eye-slash{
+    visibility: hidden;
 }
 
 .buttonSubmit {
@@ -155,6 +159,8 @@ body {
     position: absolute;
     bottom: -1px;
     right: 5px;
+    text-decoration: none;
+    font-style: italic;
 }
 
 .remember {
@@ -188,7 +194,7 @@ body {
     right: 0;
     top: 0;
     bottom: 0;
-    background: linear-gradient(180deg, rgba(255, 177, 161, 0.7), rgba(255, 153, 153, 1)), url(/WebsiteOfBHD/View/login/Image/pic.png);
+    background: linear-gradient(180deg, rgba(255, 177, 161, 0.7), rgba(255, 153, 153, 1)), url(/WebsiteOfBHD/Image/pic1.png);
     background-repeat: no-repeat;
     background-size: cover;
     width: 50%;
@@ -238,4 +244,15 @@ body {
     display: flex;
     align-items: center;
     position: relative;
+}
+
+.back{
+    color: white;
+    display: flex;
+    text-decoration: none;
+    justify-content: baseline;
+}
+.back > .fa-solid.fa-house{
+   margin-right: 10px;
+
 }
