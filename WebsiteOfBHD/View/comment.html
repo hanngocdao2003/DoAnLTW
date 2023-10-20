@@ -4,39 +4,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <title>Footer</title>
+  <link rel="stylesheet" href="styles/styleComment.css">
+  <link rel="stylesheet" href="styles/styleFooter.css">
+  <title>Đóng góp ý kiến</title>
 </head>
 
 <body>
-<<<<<<< HEAD
+  <div class="image">
+    <a href="index.html" class="home"><img src="/WebsiteOfBHD/Image/BHD-nền trong suốt.svg" alt=""></a>
+  </div>
+  <div class="wrapper">
+    <h2>Bạn có gì muốn nhắn gửi cho BHD Store ạ ? *</h2>
+    <textarea placeholder="Bạn nhập nội dung ở đây..." required></textarea>
+    <button><a href="">Ok, Xong rồi!</a></button>
+  </div>
   <footer>
     <div class="contain">
       <div class="content">
         <div class="store">
-          <img src="img/BHD.svg" alt="">
+          <img src="/WebsiteOfBHD/Image/BHD-nền trong suốt.svg" alt="">
           <h1>BHD BOUTIQUE</h1>
         </div>
         <p class="text">Chúng tôi luôn trân trọng và mong đợi
           nhận được mọi ý kiến đóng góp từ khách
           hàng để có thể nâng cấp trải nghiệm dịch
           vụ và sản phẩm tốt hơn nữa. </p>
-        <a href=""><button class="idea-btn">Đóng góp ý kiến</button></a>
+        <a href="comment.html"><button class="idea-btn">Đóng góp ý kiến</button></a>
       </div>
       <div class="list-policy">
         <p class="policy-lb">Chính sách</p>
         <ul>
-          <li><a href="">Chính sách đổi trả 7 ngày</a></li>
+          <li><a href="policy-7days.html">Chính sách đổi trả 7 ngày</a></li>
           <li><a href="">Chính sách khuyến mãi</a></li>
           <li><a href="">Chính sách bảo mật</a></li>
           <li><a href="">Chính sách giao hàng</a></li>
         </ul>
         <div class="media">
-          <a href="https://www.facebook.com/Binh.PHHT/" target="_blank"><img src="img/fb.png" alt="fb-icon"></a>
-          <a href="https://www.instagram.com/peace_bi.ht/" target="_blank"><img src="img/instagram.png" alt="instagram-icon"></a>
-          <!-- <a href=""><img src="image/telegram.png" alt="telegram-icon"></a> -->
+          <a href="https://www.facebook.com/Binh.PHHT/" target="_blank"><img src="/WebsiteOfBHD/Image/fb.png" alt="fb-icon"></a>
+          <a href="https://www.instagram.com/peace_bi.ht/" target="_blank"><img src="/WebsiteOfBHD/Image/instagram.png" alt="instagram-icon"></a>
         </div>
       </div>
       <div class="support">
@@ -65,9 +70,14 @@
       </div>
     </div>
   </footer>
-=======
-  
->>>>>>> 356de6839734d4f8bd102cf55d532de0550625a0
+  <script>
+    const textarea = document.querySelector("textarea");
+    textarea.addEventListener("input", (e) => {
+      textarea.style.height = "63px";
+      let scHeight = e.target.scrollHeight;
+      textarea.style.height = scHeight + "px";
+    });
+  </script>  
 </body>
 
 </html>
