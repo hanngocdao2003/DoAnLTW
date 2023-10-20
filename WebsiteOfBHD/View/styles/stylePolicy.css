@@ -9,6 +9,7 @@ header {
   width: 100%;
   height: 180px;
   text-align: center;
+  align-items: center;
   background: linear-gradient(90deg, rgba(255, 177, 161, 0.5), rgba(255, 153, 153, 0.5));
 }
 
@@ -23,19 +24,18 @@ header .content img {
   margin-right: 110px;
 }
 
+header .title {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
 header .content h2  {
-  /* font-family: myFirstFont; */
-  src: url(sansation_bold.woff);
-  font-weight: bold;
-  font-family: Andale Mono, monospace;
-  font-size: 5rem;
-  font-weight: 600;
-  line-height: 1em;
+ 
 }
 
 header .content .text2 {
-  font-size: 40px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  /* font-size: 40px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
 }
 
 .container {
@@ -65,7 +65,7 @@ header .content .text2 {
 }
 
 .container .image {
-padding: 30px;
+padding: 20px;
 }
 
 .container .image img {
@@ -104,7 +104,7 @@ padding: 30px;
 
 .container2 .image {
   width: 50%;
-  padding: 20px;
+  padding: 10px;
 }
 
 .container2 .image img {
@@ -140,7 +140,3 @@ padding: 30px;
 .container2 .text li {
   list-style: none;
 }
-
-
-
-
