@@ -6,15 +6,28 @@
 }
 
 body {
-    background-color: rgb(255, 222, 220);
+    background: linear-gradient(90deg, rgba(198, 225, 246, 0.8), rgba(251, 214, 227, 0.8));
 }
 
+<<<<<<< HEAD
 #main-container li {
+=======
+.list_item>.menu_item> li {
+>>>>>>> 2e54f984d785ca0e2703065498f5d5fccbfaa96c
     text-transform: uppercase;
+    line-height: 2.8;
 }
 
 li>a {
     text-decoration: none;
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nameShop{
+    color: #b98c71;
 }
 
 .logo>img {
@@ -23,7 +36,7 @@ li>a {
 }
 
 .main_menu {
-    background-color: #f6eee9;
+    background: linear-gradient(90deg, rgba(198, 225, 246, 0.8), rgba(251, 214, 227, 0.8));
 }
 
 .menu {
@@ -47,7 +60,7 @@ li>a {
 }
 
 .item {
-    padding: 20px;
+    
 }
 
 .item>a:hover {
@@ -81,7 +94,8 @@ li>a {
 .item {
     position: relative;
 }
-.item::before{
+
+.item::before {
     content: "";
     display: block;
     width: 100%;
@@ -98,6 +112,7 @@ li>a {
     list-style: none;
     top: calc(100% + 10px);
     box-shadow: 0 0 3px gray;
+    border-radius: 20px;
 
 }
 
@@ -105,9 +120,10 @@ li>a {
 .item:hover .dropdown {
     display: block;
 }
-a{
+
+a {
     text-wrap: nowrap;
-    padding: 5px;
+    padding: 10px;
 }
 
 .sub_item {
