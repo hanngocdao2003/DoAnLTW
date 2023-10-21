@@ -11,6 +11,25 @@ header {
   text-align: center;
   align-items: center;
   background: linear-gradient(90deg, rgba(255, 177, 161, 0.5), rgba(255, 153, 153, 0.5));
+  display: flex;
+  position: relative;
+
+}
+.menuPolicy{
+  list-style: none;
+  display: flex;
+  position: absolute;
+  right: 100px;
+  top: 40%;
+}
+.link{
+  padding: 38px 30px;
+  cursor: pointer;
+}
+.link:hover{
+  background-color: coral;
+  color: white;
+  box-shadow: 0 0 5px gray;
 }
 
 header .content {
