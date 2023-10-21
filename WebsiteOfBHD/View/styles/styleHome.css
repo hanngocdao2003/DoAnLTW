@@ -9,7 +9,7 @@ body {
     background-color: rgb(255, 222, 220);
 }
 
-li {
+#main-container li {
     text-transform: uppercase;
 }
 
