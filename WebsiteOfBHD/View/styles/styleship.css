@@ -16,6 +16,16 @@ header{
     position: relative;
   
   }
+  .undoHome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+  }
+  h1{
+    color: brown;
+    font-family: 'Brush Script MT', cursive;
+  }
 .menuPolicy{
     list-style: none;
     display: flex;
