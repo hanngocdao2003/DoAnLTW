@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Bahnschrift, sans-serif;
 }
 
 header {
@@ -15,18 +15,21 @@ header {
   position: relative;
 
 }
-.menuPolicy{
+
+.menuPolicy {
   list-style: none;
   display: flex;
   position: absolute;
   right: 100px;
   top: 40%;
 }
-.link{
+
+.link {
   padding: 38px 30px;
   cursor: pointer;
 }
-.link:hover{
+
+.link:hover {
   background-color: coral;
   color: white;
   box-shadow: 0 0 5px gray;
@@ -75,6 +78,7 @@ header .content .text2 {
 .container .note {
   margin-left: 30px;
 }
+
 .container .note li {
   margin-bottom: 15px;
   text-decoration: none;
@@ -108,11 +112,11 @@ padding: 20px;
   font-size: 17px;
   font-weight: bold;
   background: linear-gradient(90deg, rgba(255, 177, 161, 0.5), rgba(255, 153, 153, 0.5));
-  
+
 }
 
 .container .btn button:hover {
-  background:  rgb(219, 137, 121);
+  background: rgb(219, 137, 121);
   color: white;
 }
 
@@ -142,11 +146,13 @@ padding: 20px;
   padding: 10px;
   border-radius: 10px;
 }
+
 .container2 .text .text2 {
   background: linear-gradient(90deg, rgba(255, 177, 161, 0.5), rgba(255, 153, 153, 0.5));
   padding: 10px;
   border-radius: 10px;
 }
+
 .container2 .text .text3 {
   background: linear-gradient(90deg, rgba(255, 177, 161, 0.5), rgba(255, 153, 153, 0.5));
   padding: 10px;
