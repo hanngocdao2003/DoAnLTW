@@ -52,20 +52,21 @@ h1 {
 .list-policy {
   display: flex;
   flex-direction: column;
-  margin: 0px 30px;
-  width: 15%;
+  width: 20%;
 }
 
 .policy-lb {
   font-size: 17px;
   font-weight: bold;
   margin: 10px 0px 5px 0px;
+  padding-left: 5px;
 }
 
 footer .list-policy ul li {
   list-style: none;
   line-height: 2;
   font-size: 15px;
+  padding: 0;
 }
 
 a {
