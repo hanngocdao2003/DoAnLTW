@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a872aad-6be9-4b2d-b987-597dd34dee3a" name="Changes" comment="" />
+    <list default="true" id="3a872aad-6be9-4b2d-b987-597dd34dee3a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebsiteOfBHD/View/cart/indexCart.html" beforeDir="false" afterPath="$PROJECT_DIR$/WebsiteOfBHD/View/cart/indexCart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebsiteOfBHD/View/cart/styleCart.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebsiteOfBHD/View/cart/styleCart.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -67,7 +71,9 @@
       <workItem from="1697342684019" duration="3609000" />
       <workItem from="1697555446630" duration="13045000" />
       <workItem from="1697614306565" duration="1114000" />
-      <workItem from="1697692760982" duration="5996000" />
+      <workItem from="1697692760982" duration="6118000" />
+      <workItem from="1697813755194" duration="1931000" />
+      <workItem from="1697897100927" duration="8164000" />
     </task>
     <servers />
   </component>
