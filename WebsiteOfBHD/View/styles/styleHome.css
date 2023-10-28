@@ -15,7 +15,7 @@ body {
     margin-top: 5%;
     margin-bottom: 20%;
 }
-.newProductArea {
+.newProductArea, .ProductAreaOfShop {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -37,4 +37,19 @@ body {
     margin-top: 3%;
     position: relative;
     overflow: hidden;
+}
+.ProductAreaOfShop{
+    margin-top: 10%;
+    position: relative;
+}
+.ProductAreaOfShop > .titleProduct{
+    position: absolute;
+    left: 35px;
+    top: -30px;
+    
+}
+.seenAll {
+    position: absolute;
+    right: 35px;
+    top: -30px;
 }
