@@ -109,7 +109,7 @@ h5 {
 margin: 25px;
 position: absolute;
 width: 40px;
-z-index: ;
+z-index: -1;
 }
 
 .image img {

@@ -5,6 +5,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    z-index: -1;
 }
 
 .slideImage {
@@ -12,6 +13,22 @@
     overflow: hidden;
     display: flex;
     list-style: none;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+.slide1 {
+    animation: slide1 15s infinite;
+}
+
+.slide2 {
+    animation: slide2 15s infinite;
+}
+
+.slide3 {
+    animation: slide3 15s infinite;
+}
+.slide4 {
+    animation: slide3 15s infinite;
 }
 
 .ImageSlide {
@@ -78,5 +95,79 @@
 
 .nextArea {
     right: 0;
+}
+@keyframes slide1 {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    33.33% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    66.66% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide2 {
+    0% {
+        transform: translateX(0);
+        opacity: 0;
+    }
+    33.33% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    66.66% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+@keyframes slide3 {
+    0% {
+        transform: translateX(0);
+        opacity: 0;
+    }
+    33.33% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    66.66% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+@keyframes slide4 {
+    0% {
+        transform: translateX(0);
+        opacity: 0;
+    }
+    33.33% {
+        transform: translateX(0);
+        opacity: 0;
+    }
+    66.66% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
 }
 
