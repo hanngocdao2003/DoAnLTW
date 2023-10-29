@@ -12,7 +12,7 @@ body {
   justify-content: center;
   /* min-height: 100vh; */
   /* background: linear-gradient(#4671EA, #AC34E7); */
-  background: linear-gradient(90deg, rgba(255, 177, 161, 0.5), rgba(255, 153, 153, 0.5));
+  background: linear-gradient(90deg, rgba(198, 225, 246, 0.5), rgba(251, 214, 227, 0.5));
 }
 .image {
   margin: 0;
@@ -25,7 +25,7 @@ body {
 
 .wrapper {
   width: 700px;
-  background: #fff;
+  background: rgba(92, 170, 230, 0.8);
   border-radius: 10px;
   padding: 25px 25px 30px;
   margin-bottom: 25%;
@@ -51,7 +51,7 @@ body {
 textarea:is(:focus, :valid) {
   border-width: 2px;
   padding: 14px;
-  border-color: rgb(212, 122, 104);
+  background: rgba(19, 86, 138, 0.8);
 }
 
 textarea::-webkit-scrollbar{
@@ -63,7 +63,7 @@ button {
   height: 30px;
   border-radius: 20px;
   border: none;
-  background: rgba(255, 153, 153);
+  background: rgba(19, 86, 138, 0.8);
   margin-top: 20px;
 }
 a {
