@@ -1,3 +1,7 @@
+@media screen and (min-width: 1025px) {
+    /* CSS rules for screens larger than 1024px */
+
+
 * {
     margin: 0;
     padding: 0;
@@ -92,3 +96,4 @@ body {
     from {opacity: .4} 
     to {opacity: 1}
   }
+}
