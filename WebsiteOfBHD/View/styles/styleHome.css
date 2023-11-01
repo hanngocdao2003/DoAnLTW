@@ -1,3 +1,7 @@
+@media screen and (min-width: 1025px) {
+    /* CSS rules for screens larger than 1024px */
+
+
 * {
     margin: 0;
     padding: 0;
@@ -21,6 +25,10 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    
+}
+.newProductArea{
+    position: relative;
 }
 .titleProduct {
     font-size: 40px;
@@ -52,4 +60,10 @@ body {
     position: absolute;
     right: 35px;
     top: -30px;
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
 }
