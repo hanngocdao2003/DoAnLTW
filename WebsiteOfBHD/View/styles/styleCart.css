@@ -1,92 +1,89 @@
-@media screen and (min-width: 1025px) {
-    /* CSS rules for screens larger than 1024px */
     * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
         font-family: Bahnschrift, sans-serif;
     }
-    
+
     body {
-        background: linear-gradient(90deg, rgba(198, 225, 246, 0.8), rgba(251, 214, 227, 0.8));
+        background: linear-gradient(90deg, rgba(198, 225, 246, 0.5), rgba(251, 214, 227, 0.5));
     }
-    
+
     .logo {
-        margin-top: 2%;
-    
+        background: linear-gradient(90deg, rgba(198, 225, 246, 0.8), rgba(251, 214, 227, 0.8));
+        height: 90px;
     }
-    
-    .logo > a {
+
+    .logo>a {
         display: flex;
         align-items: center;
         justify-content: center;
         text-decoration: none;
         color: brown;
     }
-    
-    .logo > a > img {
+
+    .logo>a>img {
         width: 80px;
     }
-    
-    .logo > a > h1 {
+
+    .logo>a>h1 {
         font-family: 'Brush Script MT', cursive;
     }
-    
+
     #container_title {
         display: flex;
         flex-direction: column;
-        margin-top: 2%;
-        background-color: #a5efe5;
+        background: linear-gradient(90deg, rgba(198, 225, 246, 0.5), rgba(251, 214, 227, 0.5));
     }
-    
+
     .title {
         display: flex;
         flex-direction: column;
         align-items: center;
         margin: 20px;
     }
-    
-    .title > h2 {
+
+    .title>h2 {
         text-transform: uppercase;
         margin-bottom: 10px;
     }
-    
-    .title > .temp {
+
+    .title>.temp {
         height: 3px;
         width: 80px;
-        background-color: #FF8080FF;
+        background-color: rgb(83, 185, 248);
         border-radius: 5px;
         margin: 20px;
     }
-    
+
     .cart_empty {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
         margin: 2%;
     }
-    
+
     .form_thanhtoan {
-        border: 2px solid #FF8080FF;
+        background: rgba(19, 86, 138, 0.8);
         border-radius: 10px;
     }
-    
+
     #form {
         margin: 20px;
         display: flex;
         flex-direction: column;
     }
-    
+
     .title_thongtin {
         border-bottom: 1px solid #908e8e;
         padding-bottom: 5px;
     }
-    
-    .title_thongtin > h3 {
+
+    .title_thongtin>h3 {
         text-transform: uppercase;
-        color: #FF8080FF;
+        color: white;
     }
-    
+
     .title_tongtien {
         border-bottom: 1px solid #908e8e;
         padding-bottom: 5px;
@@ -95,22 +92,22 @@
         flex-direction: row;
         justify-content: space-between;
     }
-    
+
     .ghichu {
         margin-top: 10px;
         margin-bottom: 10px;
     }
-    
+
     .button_thanhtoan {
         display: flex;
         justify-content: center;
         margin-top: 10px;
         margin-bottom: 10px;
     }
-    
-    .button_thanhtoan > input {
-        background-color: #FF8080FF;
-        border: 1px solid #FF8080FF;
+
+    .button_thanhtoan>input {
+        background: rgba(19, 86, 138, 0.8);
+        border: 1px solid rgb(4, 78, 139);
         border-radius: 5px;
         width: 100%;
         padding-top: 10px;
@@ -119,40 +116,41 @@
         font-size: 18px;
         cursor: pointer;
     }
-    
+
+
     .ttmuahang {
         display: flex;
         justify-content: center;
         margin-top: 10px;
     }
-    
-    .ttmuahang > a {
+
+    .ttmuahang>a {
         text-decoration: none;
-        color: #FF8080FF;
+        color: white;
     }
-    
-    .ttmuahang > a > i {
+
+    .ttmuahang>a>i {
         margin-right: 5px;
     }
-    
+
     .hotro {
-        background-color: #c6e1f6;
+        background: linear-gradient(90deg, rgba(198, 225, 246, 0.8), rgba(251, 214, 227, 0.8));
         display: flex;
         flex-direction: row;
         justify-content: center;
+        height: 50px;
     }
-    
-    .hotro > i {
-        padding: 10px;
-    }
-    
-    .hotro > p {
-        padding: 10px;
-    }
-    
-    .button_thanhtoan > input:hover {
-        color: white;
-        background-color: #a5efe5;
-    }
-}
 
+    .hotro>i {
+        padding: 10px;
+    }
+
+    .hotro>p {
+        padding: 10px;
+    }
+
+    .button_thanhtoan>input:hover {
+        color: white;
+        background: rgba(19, 86, 138, 0.8);
+
+    }
