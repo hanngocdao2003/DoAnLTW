@@ -1,0 +1,72 @@
+@media screen and (min-width: 1025px) {
+
+  /* CSS rules for screens larger than 1024px */
+  .add {
+    display: flex;
+  }
+
+  form {
+    color: white;
+    font-size: 16px;
+  }
+
+  .value-button {
+    display: inline-block;
+    border: 1px solid #ddd;
+    margin: 0px;
+    width: 40px;
+    height: 20px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 10px 0;
+    background: rgba(19, 86, 138, 0.8);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .value-button:hover {
+    cursor: pointer;
+  }
+
+  form #decrease {
+    margin-right: -4px;
+    border-radius: 20px 0 0 20px;
+    background: rgba(19, 86, 138, 0.8);
+  }
+
+  form #increase {
+    margin-left: -4px;
+    border-radius: 0 20px 20px 0;
+    background: rgba(19, 86, 138, 0.8);
+
+  }
+
+  form #input-wrap {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  input#number {
+    text-align: center;
+    border: none;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    margin: 0px;
+    width: 40px;
+    height: 40px;
+    background: rgba(19, 86, 138, 0.8);
+    color: white;
+
+  }
+
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+}
