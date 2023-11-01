@@ -49,9 +49,8 @@
 .prevArea,
 .nextArea {
     position: absolute;
-    top: auto;
-    bottom: auto;
-    height: 99%;
+    top: 15%;
+    bottom: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -80,4 +79,12 @@
 .nextArea {
     right: 0;
 }
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
 
