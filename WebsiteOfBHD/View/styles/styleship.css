@@ -6,12 +6,11 @@
 }
 
 body {
-    background: linear-gradient(90deg, rgba(255, 177, 161, 0.5), rgba(255, 153, 153, 0.5));
-
+    background: linear-gradient(90deg, rgba(198, 225, 246, 0.5), rgba(251, 214, 227, 0.5));
 }
 
 header {
-    background: linear-gradient(90deg, rgba(255, 177, 161, 0.5), rgba(255, 153, 153, 0.5));
+    background: linear-gradient(90deg, rgba(198, 225, 246, 0.8), rgba(251, 214, 227, 0.8));
     display: flex;
     position: relative;
 
@@ -34,7 +33,7 @@ header {
 }
 
 .link:hover {
-    background-color: coral;
+    background-color: rgb(46, 93, 155);
     color: white;
     box-shadow: 0 0 5px gray;
 }
@@ -89,14 +88,12 @@ header {
 .titleOutArea {
     border-radius: 60px;
     padding: 20px 40px;
-    background-color: rgb(227, 82, 77);
+    background: rgba(19, 86, 138, 0.8);
     font-size: 30px;
     color: white;
     font-weight: bold;
 
 }
-
-.title {}
 
 .commit {
     margin-top: 2%;
@@ -106,12 +103,6 @@ header {
     text-align: center;
     margin-bottom: 2%;
     font-weight: 300;
-}
-
-.commitPlus {
-    display: flex;
-    border: 2px solid chocolate;
-    width: 45%;
 }
 
 .pic {
@@ -140,7 +131,7 @@ header {
     width: 40%;
     display: flex;
     flex-direction: column;
-    border: 2px solid brown;
+    border: 2px solid rgba(19, 86, 138, 0.8);
 }
 
 .time1 {
@@ -153,7 +144,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: rgb(239, 72, 72);
+    background: rgba(19, 86, 138, 0.8);
 }
 
 .timeConfirm>p {
@@ -194,7 +185,7 @@ header {
 
 .typeship .border .haveCOD,
 .noCOD {
-    background: rgba(239, 72, 72, 0.8);
+    background: rgba(19, 86, 138, 0.8);
     width: 100%;
     padding: 20px;
     font-size: 25px;
@@ -206,7 +197,7 @@ header {
 
 .typeship .border .haveCOD:hover,
 .noCOD:hover {
-    background: rgb(239, 72, 72);
+    background: rgba(19, 86, 138, 0.8);
 }
 
 .fa-box,
@@ -217,7 +208,7 @@ header {
     color: white;
     font-size: 30px;
     padding: 20px;
-    background-color: red;
+    background: rgba(19, 86, 138, 0.8);
 }
 
 
@@ -227,7 +218,7 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background: rgb(239, 72, 72);
+    background: rgba(19, 86, 138, 0.8);
     color: #fff;
 }
 
@@ -249,7 +240,7 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background: rgb(239, 72, 72);
+    background: rgba(19, 86, 138, 0.8);
     margin-top: 10px;
     color: #fff;
 }
