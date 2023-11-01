@@ -1,23 +1,4 @@
-let slideIndex = 1;
-showSlides(slideIndex);
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("ImageSlide");
-  if (n > slides.length) { slideIndex = 1 }
-  if (n < 1) { slideIndex = slides.length }
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-
-  }
-  slides[slideIndex - 1].style.display = "block";
-
-}
 
 const productsNew = [
   { id: 1, image: "../Image/Product/ÁO LEN AIMEE.jpg", nameProduct: "ÁO LEN AIMEE", priceProduct: "290,000đ" },
@@ -214,3 +195,12 @@ function renderSkirtItem() {
   document.querySelector('#listSkirtProduct').innerHTML = content.join("");
 }
 renderSkirtItem()
+
+document.querySelector('.fa-circle-right').addEventListener("click", function(){
+  document.getElementById("listNewItemProduct").style.left = "-100%"
+  document.getElementById("listNewItemProduct").style.right = ""
+})
+document.querySelector('.fa-circle-left').addEventListener("click", function(){
+  document.getElementById("listNewItemProduct").style.right = ""
+  document.getElementById("listNewItemProduct").style.left = ""
+})
