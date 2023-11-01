@@ -25,7 +25,6 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    
 }
 .newProductArea{
     position: relative;
@@ -34,6 +33,12 @@ body {
     font-size: 40px;
     font-weight: bold;
     color: brown;
+}
+.frame{
+    width: 100%;
+    overflow: hidden;
+    
+
 }
 .listItemProduct {
     list-style: none;
@@ -44,7 +49,7 @@ body {
     column-gap: 2%;
     margin-top: 3%;
     position: relative;
-    overflow: hidden;
+   
 }
 .ProductAreaOfShop{
     margin-top: 10%;
@@ -60,6 +65,31 @@ body {
     position: absolute;
     right: 35px;
     top: -30px;
+}
+.prevArea, .nextArea{
+    position: absolute;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 5%;
+    bottom: 0;
+}
+.prevArea{
+    left: 0;
+}
+.nextArea{
+    right: 0;
+
+}
+.fa-circle-left, .fa-circle-right{
+    font-size: 50px;
+    /* color: rgba(240, 255, 255, 0.2); */
+    color: rgba(240, 255, 255, 0.2);
+}
+.prevArea .fa-circle-left:hover, .nextArea .fa-circle-right:hover{
+    cursor: pointer;
+    color: rgba(240, 255, 255, 0.8);
 }
 
 @keyframes fade {
