@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="styles/styleCart.css">
+    <link rel="stylesheet" href="../View/styles/styleCart.css">
     <title>Giỏ hàng</title>
+
 </head>
 
 <body>
@@ -31,11 +32,11 @@
                         <h3>Thông tin đơn hàng</h3>
                     </div>
                     <div class="title_tongtien">
-                        <h4>Tổng tiền:</h4>
+                        <h4 style="color: white;">Tổng tiền:</h4>
                         <h3>0đ</h3>
                     </div>
                     <div class="ghichu">
-                        <p>Phí vận chuyển sẽ được tính ở trang thanh toán.
+                        <p style="color:white;">Phí vận chuyển sẽ được tính ở trang thanh toán.
                             <br> Bạn cũng có thể nhập mã giảm giá ở trang thanh toán.
                         </p>
                     </div>
@@ -55,6 +56,20 @@
         <i class="fa-solid fa-phone" style="color: #ff8080;"></i>
         <p>Hỗ trợ / Mua hàng: 0901323070</p>
     </div>
+    <script>
+        $('.order').click(function (e) {
+
+            let button = $(this);
+
+            if (!button.hasClass('animate')) {
+                button.addClass('animate');
+                setTimeout(() => {
+                    button.removeClass('animate');
+                }, 10000);
+            }
+
+        });
+    </script>
 </body>
 
 </html>
