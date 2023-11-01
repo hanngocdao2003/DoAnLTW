@@ -1,258 +1,264 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: Bahnschrift, sans-serif;
-}
+@media screen and (min-width: 1025px) {
+    /* CSS rules for screens larger than 1024px */
 
-body {
-    background: linear-gradient(90deg, rgba(198, 225, 246, 0.5), rgba(251, 214, 227, 0.5));
-}
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: Bahnschrift, sans-serif;
+    }
 
-header {
-    background: linear-gradient(90deg, rgba(198, 225, 246, 0.8), rgba(251, 214, 227, 0.8));
-    display: flex;
-    position: relative;
+    body {
+        background: linear-gradient(90deg, rgba(198, 225, 246, 0.5), rgba(251, 214, 227, 0.5));
+    }
 
-}
+    header {
+        background: linear-gradient(90deg, rgba(198, 225, 246, 0.8), rgba(251, 214, 227, 0.8));
+        display: flex;
+        position: relative;
 
-.menuPolicy {
-    list-style: none;
-    display: flex;
-    position: absolute;
-    right: 100px;
-    top: 40%;
-}
+    }
 
-.link {
-    padding: 38px 30px;
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 18px;
-    color: brown;
-}
+    .menuPolicy {
+        list-style: none;
+        display: flex;
+        position: absolute;
+        right: 100px;
+        top: 40%;
+    }
 
-.link:hover {
-    background-color: rgb(46, 93, 155);
-    color: white;
-    box-shadow: 0 0 5px gray;
-}
+    .link {
+        padding: 38px 30px;
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 18px;
+        color: brown;
+    }
 
-.logo {
-    width: 80px;
-    margin: 5px;
-}
-.undoHome{
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: brown;
-    
-}
-.undoHome > h1{
-    font-family: 'Brush Script MT', cursive;
-    font-weight: bold;
-}
+    .link:hover {
+        background-color: rgb(46, 93, 155);
+        color: white;
+        box-shadow: 0 0 5px gray;
+    }
 
-.container {
-    display: flex;
-    flex-direction: row;
-}
+    .logo {
+        width: 80px;
+        margin: 5px;
+    }
 
-.slider {
-    width: 100%;
-    background: rgb(209, 244, 255);
-    display: flex;
-    place-content: center;
-    box-shadow: 0 0 2px gray;
-}
+    .undoHome {
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: brown;
 
-.sticker {
-    width: 400px;
-}
+    }
 
-.InArea,
-.OutArea {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5%;
-    padding-bottom: 3%;
-    border-bottom: 2px solid brown;
-}
+    .undoHome>h1 {
+        font-family: 'Brush Script MT', cursive;
+        font-weight: bold;
+    }
 
-.titleInArea,
-.titleOutArea {
-    border-radius: 60px;
-    padding: 20px 40px;
-    background: rgba(19, 86, 138, 0.8);
-    font-size: 30px;
-    color: white;
-    font-weight: bold;
+    .container {
+        display: flex;
+        flex-direction: row;
+    }
 
-}
+    .slider {
+        width: 100%;
+        background: rgb(209, 244, 255);
+        display: flex;
+        place-content: center;
+        box-shadow: 0 0 2px gray;
+    }
 
-.commit {
-    margin-top: 2%;
-    font-weight: bold;
-    font-size: 23px;
-    width: 45%;
-    text-align: center;
-    margin-bottom: 2%;
-    font-weight: 300;
-}
+    .sticker {
+        width: 400px;
+    }
 
-.pic {
-    width: 300px;
-}
+    .InArea,
+    .OutArea {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5%;
+        padding-bottom: 3%;
+        border-bottom: 2px solid brown;
+    }
 
-.intro {
-    background-color: rgb(238, 238, 238);
-    padding: 5px;
-}
+    .titleInArea,
+    .titleOutArea {
+        border-radius: 60px;
+        padding: 20px 40px;
+        background: rgba(19, 86, 138, 0.8);
+        font-size: 30px;
+        color: white;
+        font-weight: bold;
 
-.t1 {
-    font-weight: 300;
-    font-size: 25px;
-    color: grey;
-}
+    }
 
-.ship {
-    margin-top: 5px;
-    color: grey;
-    font-size: 20px;
-}
+    .commit {
+        margin-top: 2%;
+        font-weight: bold;
+        font-size: 23px;
+        width: 45%;
+        text-align: center;
+        margin-bottom: 2%;
+        font-weight: 300;
+    }
 
-.timeArea {
-    margin-top: 2%;
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    border: 2px solid rgba(19, 86, 138, 0.8);
-}
+    .pic {
+        width: 300px;
+    }
 
-.time1 {
-    margin: 4px;
+    .intro {
+        background-color: rgb(238, 238, 238);
+        padding: 5px;
+    }
 
-}
+    .t1 {
+        font-weight: 300;
+        font-size: 25px;
+        color: grey;
+    }
 
-.timeConfirm {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: rgba(19, 86, 138, 0.8);
-}
+    .ship {
+        margin-top: 5px;
+        color: grey;
+        font-size: 20px;
+    }
 
-.timeConfirm>p {
-    color: whitesmoke;
-    font-size: 20px;
-}
+    .timeArea {
+        margin-top: 2%;
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        border: 2px solid rgba(19, 86, 138, 0.8);
+    }
 
-.timeConfirm>h1 {
-    color: whitesmoke;
-    font-size: 50px;
-}
+    .time1 {
+        margin: 4px;
 
-.comment {
-    color: gray;
-    text-align: center;
-    font-size: 20px;
-    padding-top: 5px;
-    padding-bottom: 30px;
-}
+    }
 
+    .timeConfirm {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: rgba(19, 86, 138, 0.8);
+    }
 
-.typeship {
-    width: 60%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 50px;
-}
+    .timeConfirm>p {
+        color: whitesmoke;
+        font-size: 20px;
+    }
 
-.border {
-    border-radius: 20px;
-    padding: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    .timeConfirm>h1 {
+        color: whitesmoke;
+        font-size: 50px;
+    }
 
-}
-
-.typeship .border .haveCOD,
-.noCOD {
-    background: rgba(19, 86, 138, 0.8);
-    width: 100%;
-    padding: 20px;
-    font-size: 25px;
-    font-weight: bold;
-    color: white;
-    margin: 5px;
-    border-radius: 20px;
-}
-
-.typeship .border .haveCOD:hover,
-.noCOD:hover {
-    background: rgba(19, 86, 138, 0.8);
-}
-
-.fa-box,
-.fa-credit-card {
-    position: absolute;
-    left: -20px;
-    top: -30px;
-    color: white;
-    font-size: 30px;
-    padding: 20px;
-    background: rgba(19, 86, 138, 0.8);
-}
+    .comment {
+        color: gray;
+        text-align: center;
+        font-size: 20px;
+        padding-top: 5px;
+        padding-bottom: 30px;
+    }
 
 
+    .typeship {
+        width: 60%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 50px;
+    }
 
-.typePay .cod {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    background: rgba(19, 86, 138, 0.8);
-    color: #fff;
-}
+    .border {
+        border-radius: 20px;
+        padding: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-.typePay .cod .namePay {
-    width: 25%;
-    border: 2px solid white;
-    padding: 30px;
-    
-}
+    }
 
-.typePay .cod .formPay {
-    width: 75%;
-    border: 2px solid white;
-    padding: 30px;
-}
+    .typeship .border .haveCOD,
+    .noCOD {
+        background: rgba(19, 86, 138, 0.8);
+        width: 100%;
+        padding: 20px;
+        font-size: 25px;
+        font-weight: bold;
+        color: white;
+        margin: 5px;
+        border-radius: 20px;
+    }
 
-.typePay .noCod {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    background: rgba(19, 86, 138, 0.8);
-    margin-top: 10px;
-    color: #fff;
-}
+    .typeship .border .haveCOD:hover,
+    .noCOD:hover {
+        background: rgba(19, 86, 138, 0.8);
+    }
 
-.typePay .noCod .namePay {
-    width: 25%;
-    border: 2px solid white;
-    padding: 30px;
-}
+    .fa-box,
+    .fa-credit-card {
+        position: absolute;
+        left: -20px;
+        top: -30px;
+        color: white;
+        font-size: 30px;
+        padding: 20px;
+        background: rgba(19, 86, 138, 0.8);
+    }
 
-.typePay .noCod .formPay {
-    width: 75%;
-    border: 2px solid white;
-    padding: 30px;
+
+
+    .typePay .cod {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        background: rgba(19, 86, 138, 0.8);
+        color: #fff;
+    }
+
+    .typePay .cod .namePay {
+        width: 25%;
+        border: 2px solid white;
+        padding: 30px;
+
+    }
+
+    .typePay .cod .formPay {
+        width: 75%;
+        border: 2px solid white;
+        padding: 30px;
+    }
+
+    .typePay .noCod {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        background: rgba(19, 86, 138, 0.8);
+        margin-top: 10px;
+        color: #fff;
+    }
+
+    .typePay .noCod .namePay {
+        width: 25%;
+        border: 2px solid white;
+        padding: 30px;
+    }
+
+    .typePay .noCod .formPay {
+        width: 75%;
+        border: 2px solid white;
+        padding: 30px;
+    }
 }
