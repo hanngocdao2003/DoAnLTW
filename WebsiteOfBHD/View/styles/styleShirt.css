@@ -37,12 +37,14 @@ body{
     width: 90%;
 }
 .listItemProduct{
+    position: relative;
     margin-top: 3%;
     display: flex;
     column-gap: 30px;
     row-gap: 30px;
     flex-wrap: wrap;
     margin-left: 2%;
+    
 }
 .dotpage{
     margin-top: 5%;
