@@ -11,11 +11,17 @@ li>a {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+   
+}
+a{
+    text-decoration: none;
+    color: brown;
 }
 h1{
     color: brown;
     font-family: 'Brush Script MT', cursive;
     cursor: pointer;
+    
 }
 
 .logo>img {

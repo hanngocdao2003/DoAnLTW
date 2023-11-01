@@ -21,6 +21,10 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    
+}
+.newProductArea{
+    position: relative;
 }
 .titleProduct {
     font-size: 40px;
@@ -53,3 +57,8 @@ body {
     right: 35px;
     top: -30px;
 }
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
