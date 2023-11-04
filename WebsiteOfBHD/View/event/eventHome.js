@@ -446,9 +446,6 @@ function renderSkirtItem() {
 
 renderSkirtItem()
 
-<<<<<<< HEAD
-
-=======
 // document.querySelector('.fa-circle-right').addEventListener("click", function () {
 //     document.getElementById("listNewItemProduct").style.left = "-100%"
 //     document.getElementById("listNewItemProduct").style.right = ""
@@ -471,4 +468,3 @@ $(".listItemProduct").slick({
     prevArrow: $(".fa-circle-left"),
     nextArrow: $(".fa-circle-right")
 });
->>>>>>> c0651174aeb6aad90515a612e3a7a818216884e9
