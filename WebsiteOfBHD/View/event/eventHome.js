@@ -458,11 +458,11 @@ renderSkirtItem()
 $(".listItemProduct").slick({
     infinite: true,
     autoplay: true,
-    autoplaySpeed: 1000,
+    autoplaySpeed:2000,
     // this value should < total # of slides, otherwise the carousel won't slide at all
     slidesToShow: 5,
     slidesToScroll: 5,
-    speed: 1000,
+    speed: 2000,
     // dots: true,
     arrows: true,
     prevArrow: $(".fa-circle-left"),
