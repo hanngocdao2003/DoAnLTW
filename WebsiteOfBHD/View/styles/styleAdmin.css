@@ -69,9 +69,11 @@ button {
     margin: 10px 0px;
     cursor: pointer;
 }
-button:hover{
+
+button:hover {
     color: #ff8080;
 }
+
 .menu_nav {
     display: flex;
     flex-direction: column;
@@ -85,22 +87,30 @@ button:hover{
     list-style: none;
     margin: 15px 0px;
 }
+
 .item {
     color: #a62c2c;
     padding: 15px;
     border-top: 1px solid #ff8080;
     cursor: pointer;
 }
-.item:hover{
+
+.item > a {
+    color: #a62c2c;
+    text-decoration: none;
+}
+
+.item:hover {
     border: 2px solid #a62c2c;
     border-radius: 20px;
     color: white !important;
     background-color: #a62c2c;
 }
 
-.fa-circle{
+.fa-circle {
 
 }
+
 .button_logout {
     margin-bottom: 100%;
 }
