@@ -8,7 +8,19 @@ const allProductOfShirt = [
     { id: 17, image: "../Image/ProductAreaOfShop Shirt/strawberry.jpg", nameProduct: "áo strawberry", priceProduct: "170,000đ" },
     { id: 18, image: "../Image/ProductAreaOfShop Shirt/Sunset flow.jpg", nameProduct: "Áo Sunset flow", priceProduct: "180,000đ" },
     { id: 19, image: "../Image/ProductAreaOfShop Shirt/Take it flower.jpg", nameProduct: "Áo Take it flower", priceProduct: "120,000đ" },
-    { id: 20, image: "../Image/ProductAreaOfShop Shirt/tasty treat.jpg", nameProduct: "Áo tasty treat", priceProduct: "120,000đ" }
+    { id: 20, image: "../Image/ProductAreaOfShop Shirt/tasty treat.jpg", nameProduct: "Áo tasty treat", priceProduct: "120,000đ" },
+    {id: 20, image: "../Image/ProductAreaOfShop Shirt/tasty treat.jpg", nameProduct: "Áo tasty treat", priceProduct: "120,000đ" },
+    {id: 21, image: "../Image/ProductAreaOfShop Shirt/tasty treat.jpg", nameProduct: "Áo tasty treat", priceProduct: "120,000đ" },
+    {id: 22, image: "../Image/ProductAreaOfShop Shirt/tasty treat.jpg", nameProduct: "Áo tasty treat", priceProduct: "120,000đ" },
+    {id: 23, image: "../Image/ProductAreaOfShop Shirt/tasty treat.jpg", nameProduct: "Áo tasty treat", priceProduct: "120,000đ" },
+    {id: 24, image: "../Image/ProductAreaOfShop Shirt/tasty treat.jpg", nameProduct: "Áo tasty treat", priceProduct: "120,000đ" },
+    {id: 25, image: "../Image/ProductAreaOfShop Shirt/tasty treat.jpg", nameProduct: "Áo tasty treat", priceProduct: "120,000đ" },
+    {id: 26, image: "../Image/ProductAreaOfShop Shirt/tasty treat.jpg", nameProduct: "Áo tasty treat", priceProduct: "120,000đ" },
+    {id: 27, image: "../Image/ProductAreaOfShop Shirt/tasty treat.jpg", nameProduct: "Áo tasty treat", priceProduct: "120,000đ" },
+    {id: 28, image: "../Image/ProductAreaOfShop Shirt/tasty treat.jpg", nameProduct: "Áo tasty treat", priceProduct: "120,000đ" },
+    {id: 29, image: "../Image/ProductAreaOfShop Shirt/tasty treat.jpg", nameProduct: "Áo tasty treat", priceProduct: "120,000đ" },
+    {id: 30, image: "../Image/ProductAreaOfShop Shirt/tasty treat.jpg", nameProduct: "Áo tasty treat", priceProduct: "120,000đ" }
+
 ]
 function shirtProduct() {
     let content = allProductOfShirt.map((item, index) => {
@@ -26,7 +38,7 @@ function shirtProduct() {
   
   </li>`;
     })
-    document.querySelector('#allOfCategory').innerHTML = content.join("");
+    document.querySelector('.listItemProduct').innerHTML = content.join("");
 }
 shirtProduct()
 
@@ -42,5 +54,10 @@ const allProductOfJacket = [
     { id: 8, image: "../Image/ProductAreaOfShop Jacket/ÁO KHOÁC KASEY.jpg", nameProduct: "ÁO KHOÁC KASEY ", priceProduct: "380,000đ" },
     { id: 9, image: "../Image/ProductAreaOfShop Jacket/Áo KHOÁC TINA.jpg", nameProduct: "Áo KHOÁC TINA", priceProduct: "310,000đ" },
     { id: 10, image: "../Image/ProductAreaOfShop Jacket/ÁO KHOÁC ZIEL.jpg", nameProduct: "ÁO KHOÁC ZIEL", priceProduct: "370,000đ" },
-
 ]
+
+let products = [];
+let currentPage = 1;
+let perPage = 10;
+let totalPage = products.length / 10;
+let perProducts = 
