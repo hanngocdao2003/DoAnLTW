@@ -196,11 +196,4 @@ function renderSkirtItem() {
 }
 renderSkirtItem()
 
-document.querySelector('.fa-circle-right').addEventListener("click", function(){
-  document.getElementById("listNewItemProduct").style.left = "-100%"
-  document.getElementById("listNewItemProduct").style.right = ""
-})
-document.querySelector('.fa-circle-left').addEventListener("click", function(){
-  document.getElementById("listNewItemProduct").style.right = ""
-  document.getElementById("listNewItemProduct").style.left = ""
-})
+
