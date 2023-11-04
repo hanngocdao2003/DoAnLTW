@@ -56,8 +56,8 @@ const allProductOfJacket = [
     { id: 10, image: "../Image/ProductAreaOfShop Jacket/ÁO KHOÁC ZIEL.jpg", nameProduct: "ÁO KHOÁC ZIEL", priceProduct: "370,000đ" },
 ]
 
-let products = [];
-let currentPage = 1;
-let perPage = 10;
-let totalPage = products.length / 10;
-let perProducts = 
+// let products = [];
+// let currentPage = 1;
+// let perPage = 10;
+// let totalPage = products.length / 10;
+// let perProducts = 
