@@ -446,14 +446,6 @@ function renderSkirtItem() {
 
 renderSkirtItem()
 
-// document.querySelector('.fa-circle-right').addEventListener("click", function () {
-//     document.getElementById("listNewItemProduct").style.left = "-100%"
-//     document.getElementById("listNewItemProduct").style.right = ""
-// })
-// document.querySelector('.fa-circle-left').addEventListener("click", function () {
-//     document.getElementById("listNewItemProduct").style.right = ""
-//     document.getElementById("listNewItemProduct").style.left = ""
-// })
 
 $(".listItemProduct").slick({
     infinite: true,
@@ -468,3 +460,12 @@ $(".listItemProduct").slick({
     prevArrow: $(".fa-circle-left"),
     nextArrow: $(".fa-circle-right")
 });
+
+document.querySelector('.searchBtn').addEventListener("click", function(){
+   if( document.getElementById("searchArea").style.display === "none"){
+    document.getElementById("searchArea").style.display = "flex"
+   }else{
+    document.getElementById("searchArea").style.display = "none"
+   }
+})
+
