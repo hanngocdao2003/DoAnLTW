@@ -12,61 +12,108 @@
     <img src="../Image/BHD-nền%20trong%20suốt.svg" alt="">
     <h3 style="font-family: 'Brush Script MT', cursive">BHD Boutique</h3>
 </header>
-<nav class="menu_bar">
-    <div class="bar">
-        <div class="logo_admin">
-            <i class="fa-solid fa-lock" style="color: #ff8080;"></i>
-            <h2>Admin</h2>
+<div class="center">
+    <div class="left_panel">
+        <nav class="menu_bar">
+            <div class="bar">
+                <div class="logo_admin">
+                    <i class="fa-solid fa-lock" style="color: #ff8080;"></i>
+                    <h2>Admin</h2>
+                </div>
+                <div class="button_add_product">
+                    <a href="">
+                        <button><i class="fa-solid fa-plus" style="color: #ff8080;"></i>
+                            Thêm sản phẩm
+                        </button>
+                    </a>
+                </div>
+                <div class="menu_nav">
+                    <ul class="menu">
+                        <a href="../View/index.html" style="text-decoration: none">
+                            <li class="item">
+                                <i class="fa-solid fa-circle" style="color: #ff8080;"></i>
+                                Trang chủ
+                            </li>
+                        </a>
+                        <li class="item">
+                            <i class="fa-solid fa-circle" style="color: #ff8080;"></i>
+                            Thống kê số liệu
+                        </li>
+                        <li class="item">
+                            <i class="fa-solid fa-circle" style="color: #ff8080;"></i>
+                            Quản lý sản phẩm
+                        </li>
+                        <li class="item">
+                            <i class="fa-solid fa-circle" style="color: #ff8080;"></i>
+                            Quản lý đơn hàng
+                        </li>
+                        <li class="item">
+                            <i class="fa-solid fa-circle" style="color: #ff8080;"></i>
+                            Quản lý người dùng
+                        </li>
+                        <li class="item">
+                            <i class="fa-solid fa-circle" style="color: #ff8080;"></i>
+                            Phản hồi người dùng
+                        </li>
+                        <a href="../View/indexChangePass.html" style="text-decoration: none">
+                            <li class="item">
+                                <i class="fa-solid fa-circle" style="color: #ff8080;"></i>
+                                Đổi mật khẩu
+                            </li>
+                        </a>
+                    </ul>
+                </div>
+                <div class="button_logout">
+                    <a href="../View/indexLogin.html">
+                        <button><i class="fa-solid fa-right-from-bracket" style="color: #ff8080;"></i>
+                            Đăng xuất
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div id="info_panel" class="info_panel">
+        <div id="panel1" class="info_panel">
+            <h2 style="color: #a62c2c">Chào mừng bạn đã trở lại!</h2>
         </div>
-        <div class="button_add_product">
-            <a href="">
-                <button><i class="fa-solid fa-plus" style="color: #ff8080;"></i>
-                    Thêm sản phẩm
-                </button>
-            </a>
-        </div>
-        <div class="menu_nav">
-            <ul class="menu">
-                <a href="../View/index.html" style="text-decoration: none">
-                    <li class="item">
-                        <i class="fa-solid fa-circle" style="color: #ff8080;"></i>
-                        Trang chủ
-                    </li>
-                </a>
-                <li class="item">
-                    <i class="fa-solid fa-circle" style="color: #ff8080;"></i>
-                    Thống kê số liệu
-                </li>
-                <li class="item">
-                    <i class="fa-solid fa-circle" style="color: #ff8080;"></i>
-                    Quản lý sản phẩm
-                </li>
-                <li class="item">
-                    <i class="fa-solid fa-circle" style="color: #ff8080;"></i>
-                    Quản lý đơn hàng
-                </li>
-                <li class="item">
-                    <i class="fa-solid fa-circle" style="color: #ff8080;"></i>
-                    Quản lý người dùng
-                </li>
-                <li class="item">
-                    <i class="fa-solid fa-circle" style="color: #ff8080;"></i>
-                    Phản hồi người dùng
-                </li>
-                <li class="item">
-                    <i class="fa-solid fa-circle" style="color: #ff8080;"></i>
-                    Đổi mật khẩu
-                </li>
-            </ul>
-        </div>
-        <div class="button_logout">
-            <a href="../View/indexLogin.html">
-                <button><i class="fa-solid fa-right-from-bracket" style="color: #ff8080;"></i>
-                    Đăng xuất
-                </button>
-            </a>
+        <div id="panel2" class="thongke_panel" style="display: none;">
+            <div class="sanpham">
+                <h3 class="p1">Tổng số lượng sản phẩm tuần này bán: </h3>
+                <h3>0</h3>
+                <h3>sản phẩm</h3>
+            </div>
+            <div class="sanpham">
+                <h3 class="p1">Tổng số lượng sản phẩm tuần này tồn: </h3>
+                <h3>0</h3>
+                <h3>sản phẩm</h3>
+            </div>
+            <div class="sanpham">
+                <h3 class="p1">Tổng thu tuần này: </h3>
+                <h3>0</h3>
+                <h3>VND</h3>
+            </div>
         </div>
     </div>
-</nav>
+</div>
+
+<script>
+
+        var listPolicyBtn = document.querySelectorAll(".item");
+        var listPolicySection = document.querySelectorAll(".info_panel");
+        listPolicyBtn.forEach(function (btn, index) {
+        btn.onclick = function () {
+            listPolicySection.forEach(function (section) {
+                section.classList.remove("policy__section--show");
+            });
+            listPolicyBtn.forEach(function (btn) {
+                btn.classList.remove("policy__item--clicked");
+            });
+            listPolicySection[index].classList.add("policy__section--show");
+            btn.classList.add("policy__item--clicked");
+        }
+    });
+
+</script>
 </body>
 </html>
