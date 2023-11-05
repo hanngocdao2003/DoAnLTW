@@ -1,70 +1,4 @@
-@media screen and (min-width: 1025px) {
-    /* CSS rules for screens larger than 1024px */
 
-<<<<<<< HEAD
-}
-.sliderArea{
-    width: 100%;
-}
-.slider > img{
-    width: 100%;
-}
-.ProductShirtArea {
-    width: 100%;
-    margin-top: 15%;
-    position: relative;
-}
-.titleShirt {
-    position: absolute;
-    color: brown;
-    font-size: 40px;
-    left: 70px;
-    top: -70px;
-}
-.page1 {
-    
-    width: 100%;
-}
-.page {
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
-}
-.listItemProduct{
-    position: relative;
-    margin-top: 3%;
-    display: flex;
-    column-gap: 30px;
-    row-gap: 30px;
-    flex-wrap: wrap;
-    margin-left: 2%;
-    
-}
-.dotpage{
-    margin-top: 5%;
-    width: 100%;
-    margin-bottom: 10%;
-}
-.listDotpage{
-    width: 100%;
-    display: flex;
-    column-gap: 10px;
-    list-style: none;
-    justify-content: center;
-    align-items: center;
-}
-.listDotpage > li{
-    cursor: pointer;
-    font-size: 20px;
-    padding: 5px 10px;
-    border: 2px solid brown;
-    color: brown;
-    border-radius: 5px;
-}
-.listDotpage > li:hover{
-    background-color: brown;
-    color: white;
-=======
     * {
         margin: 0;
         padding: 0;
@@ -81,9 +15,13 @@
     .sliderArea {
         width: 100%;
     }
-
-    .slider>img {
+    .slideImage {
         width: 100%;
+    }
+
+    .ImageSlide>img {
+        width: 100%;
+
     }
 
     .ProductShirtArea {
@@ -148,5 +86,5 @@
         background-color: brown;
         color: white;
     }
->>>>>>> 0066ed00ea57d8c9ebbe80bb6632046a2a1be9de
+
 }
