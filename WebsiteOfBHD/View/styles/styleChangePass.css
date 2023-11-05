@@ -57,6 +57,7 @@
         display: flex;
         justify-content: center;
         margin: 10px;
+        cursor: pointer;
     }
 
     .button>input {
@@ -67,6 +68,7 @@
         background-color: #ff8080ff;
         color: white;
         text-transform: uppercase;
+        cursor: pointer;
     }
 
     .footer {
