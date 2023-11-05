@@ -32,7 +32,7 @@ body {
     display: flex;
     flex-direction: column;
     background: rgba(251, 192, 195, 0.8);
-    width: 18%;
+    width: 100%;
     padding: 20px;
     justify-content: center;
     align-items: center;
@@ -110,7 +110,30 @@ button:hover {
 .fa-circle {
 
 }
+nav{
 
+}
 .button_logout {
     margin-bottom: 100%;
+}
+.center{
+    display: flex;
+}
+.left_panel{
+   width: 18%;
+}
+.info_panel{
+    width: 72%;
+    display: flex;
+    margin-top: 50px;
+    margin-left: 20px;
+}
+#panel2{
+    display: flex;
+    flex-direction: column;
+}
+.sanpham{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
 }
