@@ -10,7 +10,7 @@
     }
 
     body {
-        background-color: #FFDEDCFF;
+        background: linear-gradient(90deg, rgba(198, 225, 246, 0.5), rgba(251, 214, 227, 0.5));
         display: flex;
         justify-content: center;
         align-items: center;
@@ -33,9 +33,13 @@
     .header {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: center;
         padding: 15px;
-        border-bottom: 1px solid #FF8080FF;
+        border: 1px solid rgb(4, 78, 139);
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        background: rgb(4, 78, 139);
+        color: white;
     }
 
     .center {
@@ -46,11 +50,17 @@
         margin: 15px 20px;
     }
 
+    #container .form {
+        border-right: 1px solid rgb(4, 78, 139);
+        border-bottom: 1px solid rgb(4, 78, 139);
+        border-left: 1px solid rgb(4, 78, 139);
+    }
+
     .center>input {
         width: 100%;
         padding: 10px;
         border-radius: 10px;
-        border: 1px solid #FF8080FF;
+        border: 1px solid rgb(4, 78, 139);
     }
 
     .button {
@@ -64,8 +74,8 @@
         width: 50%;
         padding: 7px;
         border-radius: 5px;
-        border: 1px solid #FF8080FF;
-        background-color: #ff8080ff;
+        border: 1px solid rgb(4, 78, 139);
+        background-color: rgb(4, 78, 139);
         color: white;
         text-transform: uppercase;
         cursor: pointer;
@@ -76,17 +86,18 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin: 10px;
+        padding: 10px;
         gap: 5px;
+        background: rgb(4, 78, 139);
     }
 
     .footer>p {
-        color: #ff8080;
+        color: white;
         text-transform: uppercase;
     }
 
     .footer>a {
         text-decoration: none;
-        color: #7c3d25;
+        color: white;
     }
 }
