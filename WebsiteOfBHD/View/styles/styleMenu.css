@@ -23,7 +23,7 @@
         color: brown;
     }
 
-    h1 {
+    .logo h1 {
         color: brown;
         font-family: 'Brush Script MT', cursive;
         cursor: pointer;
