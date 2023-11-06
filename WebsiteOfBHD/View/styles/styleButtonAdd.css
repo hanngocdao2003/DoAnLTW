@@ -8,6 +8,11 @@
   form {
     color: white;
     font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 5px;
+
   }
 
   .value-button {
