@@ -107,6 +107,8 @@ body {
 
 .cart .cart-details {
     margin: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .cart .cart-details .product {
@@ -146,9 +148,87 @@ body {
     color: white;
     border: none;
 }
+
 .cart .cart-details .product .details button i {
     margin-right: 10px;
 }
+
+.cart .cart-details .voucher {
+    margin: 20px;
+}
+
+.cart .cart-details .voucher .ten-percent  {
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px;
+    width: 300px;
+    height: 80px;
+    border-radius: 10px;
+    border: 1px solid white;
+    background: rgba(19, 86, 138, 0.8);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: ;
+    align-items: start;
+}
+
+.cart .cart-details .voucher .ten-percent button {
+    width: 70px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    order: 2;
+}
+
+.cart .cart-details .detail-cost p{
+    font-size: 18px;
+    line-height: 4;
+}
+
+.cart .cart-details .detail-cost .price, .sale-off, .delivery-cost {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart .cart-details .detail-cost .price p, .sale-off p, .delivery-cost p {
+    flex: 1;
+}
+
+.cart .cart-details .detail-cost .price .lable, .sale-off .label, .delivery-cost .lable {
+    text-align: left;
+}
+
+.cart .cart-details .detail-cost .price .cost, .sale-off .cost, .delivery-cost .cost {
+    text-align: right;
+}
+
+.cart .cart-details .total-cost {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.cart .cart-details .total-cost p {
+    flex: 1;
+}
+
+.cart .cart-details .total-cost .label {
+    text-align: left;
+}
+
+.cart .cart-details .total-cost .cost {
+    text-align: right;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+
+
 
 
 
