@@ -461,11 +461,5 @@ $(".listItemProduct").slick({
     nextArrow: $(".fa-circle-right")
 });
 
-document.querySelector('.searchBtn').addEventListener("click", function(){
-   if( document.getElementById("searchArea").style.display === "none"){
-    document.getElementById("searchArea").style.display = "flex"
-   }else{
-    document.getElementById("searchArea").style.display = "none"
-   }
-})
+
 
