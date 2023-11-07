@@ -83,6 +83,7 @@
     .task {
         display: flex;
         justify-content: center;
+        position: relative;
     }
 
     .task_item {
@@ -92,7 +93,7 @@
 
     .logo_item {
         margin: 10px;
-        /* position: relative; */
+        position: relative;
     }
 
     .item {
@@ -159,13 +160,17 @@
         font-size: 20px;
     }
 
-    .fa-user:hover,
-    .fa-cart-shopping:hover {
-        font-size: 20px;
+    .logo_item:hover .fa-user {
+        transform: scale(1.2);
 
     }
 
-    .searchArea{
+    .logo_item:hover .fa-cart-shopping {
+        transform: scale(1.2);
+
+    }
+
+    .searchArea {
         position: absolute;
         z-index: 5;
         right: 9%;
@@ -198,6 +203,44 @@
         font-size: 20px;
         padding: 5px;
 
+    }
+
+    .personalArea {
+        position: absolute;
+        z-index: 5;
+        top: 300%;
+        left: -200%;
+        list-style: none;
+        display: none;
+    }
+
+    .logo_item:hover .personalArea {
+        display: block;
+        top: 300%;
+    }
+
+    .personal-Item {
+        text-wrap: nowrap;
+        border: 1px solid pink;
+        background-color: rgb(228, 242, 252);
+        padding: 10px 5px;
+    }
+
+    .personal-Item:hover {
+        color: #fff;
+        background-color: #ff6a00;
+
+    }
+
+    .logo_item::before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 60px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1;
     }
 
 }
