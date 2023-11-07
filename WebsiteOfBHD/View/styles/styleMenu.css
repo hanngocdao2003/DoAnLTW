@@ -37,6 +37,7 @@
 
     .main_menu {
         background: linear-gradient(90deg, rgba(198, 225, 246, 0.8), rgba(251, 214, 227, 0.8));
+        position: relative;
     }
 
     .menu {
@@ -163,5 +164,40 @@
         font-size: 20px;
 
     }
-    
+
+    .searchArea{
+        position: absolute;
+        z-index: 5;
+        right: 9%;
+        border: 1px solid pink;
+        border-radius: 5px;
+        display: none;
+    }
+
+    .searchForm {
+        display: flex;
+        border-radius: 5px;
+        justify-content: center;
+    }
+
+    .search {
+        font-size: 20px;
+        padding: 5px;
+        border: none;
+        outline: none;
+        border-radius: 5px 0% 0% 5px / 5px 0% 0% 5px;
+    }
+
+    .btnsearch {
+        border: none;
+        border-radius: 0% 5px 5px 0% / 0% 5px 5px 0%;
+        background-color: rgb(228, 242, 252);
+    }
+
+    .fa-magnifying-glass {
+        font-size: 20px;
+        padding: 5px;
+
+    }
+
 }
