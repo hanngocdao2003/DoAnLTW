@@ -8,111 +8,111 @@ create table bills (
     statusBill text not null check (statusBill in ('Đã thanh toán','Chưa thanh toán'))
 );
 
-CrEATe tablE roles (
-    id VARCHar(10) not Null primAry key,
-    roleName NVARChar(50) not Null
+create table roles (
+    id varchar(10) not null primary key,
+    roleName nvarchar(50) not null
 );
 
-CrEATe tablE users (
-    id VARCHar(10) not Null primAry key,
-    accountName VARCHar(50) not Null,
-    accountPass VARCHar(16) not Null,
-    userName NVARChar(50) not Null,
-    userPhone varchar(10) not Null,
-    userAddress NVARChar(100) not Null,
-    userEmail VARCHar(60) not Null,
-    dateCreate DATE not Null,
-    bill VARCHar(10) not Null,
-    role VARCHar(10) not Null,
-    FOREIgn key (role)
-        REFERences roles (id),
-    FOREIgn key (bill)
-        REFERences bills (id)
-);
-
-CrEATe tablE categories (
-    id VARCHar(10) not Null primAry key,
-    categoryName NVARChar(50) not Null check(categoryName in ('áo', 'Quần', 'Áo khoác', 'Đầm', 'váy'))
-);
-
-CREATE taBlE category_detail (
-    id VARCHaR(10) NOt null primAry Key,
-    category  VARCHAR(10) NOt null,
-    type nvarCHAR(50) Not null,
-    forEign kEY (category)
-        REFErENCES categories (id)
-);
-
-CREATe TaBlE sizes (
-    id VARCHaR(10) NOt null primAry Key,
-    size varcHAR(5) NOT null check (size in ('s','M','L'))
-);
-
-CREaTE taBlE colors (
-    id VARCHaR(10) NOt null primAry Key,
-    color nvaRCHAR(20) Not null
-);
-
-CreaTe taBlE suppliers (
-    id VARCHaR(10) NOt null primAry Key,
-    nameSupplier NVARCHAR(50) Not null,
-    addresssupplier nvarchar(255) not null,
-    phonesupplier varchar(10) not null
-);
-
-CreaTe taBlE products (
-    id VARCHaR(10) NOt null primAry Key,
-    nameProduct NVARCHAR(50) Not null,
-    priceproduct INT NOT NULL  check(priceproduct >0),
-    categoryproduct VARCHAR(10) NOt null,
-    status smallint not null check(status = 0 or status =1),
-    FOREIgn kEY (categoryProduct)
-        REFErENCES category_detail (id)
-);
-
-CREATe TaBlE product_details (
-    id VARCHaR(10) NOt null primAry Key,
-    product vARCHAR(10) NOt null,
-    details tEXT NOT NULL,
-    color varCHAR(10) NOt null,
-    size varcHAR(10) NOt null,
-    suppliers VARCHAR(10) NOt null,
-    quantity INT NOT NULL check(quantity >=0),
-    importdate DATE NOT NULL,
-    forEign kEY (product)
-        REFErENCES products (id),
-    FOREiGN kEY (color)
-        REFErENCES colors (id),
-    FOREiGN kEY (size)
-        REFErENCES sizes (id),
-    FOREiGN kEY (suppliers)
-        REFErENCES suppliers (id)
-);
-
-CREATe TaBlE payment_methods (
-    id VARCHaR(10) NOt null primAry Key,
-    type nvarCHAR(50) Not null check (type = 'tiền mặt' or type = 'Chuyển khoản')
-);
-
-CREATE TABLE bill_details (
-    id VARCHAR(10) NoT NULL Primary key,
-    bill varchar(20) NOT NULL,
-    product varChar(20) NOT NULL,
-    quantity inT not NULL check (quantity >0),
-    price INT NOT nulL,
-    paymentMethod varCHAR(10) NOT NULL,
+create table users (
+    id varchar(10) not null primary key,
+    accountName varchar(50) not null,
+    accountPass varchar(16) not null,
+    userName nvarchar(50) not null,
+    userPhone varchar(10) not null,
+    userAddress nvarchar(100) not null,
+    userEmail varchar(60) not null,
+    dateCreate date not null,
+    bill varchar(10) not null,
+    role varchar(10) not null,
+    foreign key (role)
+        references roles (id),
     foreign key (bill)
-        reFereNcES bills (id),
-    foreiGN KEY (product)
-        refErENCES products (id),
-    foREIGN KEY (paymentMethod)
-        REFERENCES payment_methods (id)
+        references bills (id)
+);
+
+create table categories (
+    id varchar(10) not null primary key,
+    categoryName nvarchar(50) not null check(categoryName in ('áo', 'Quần', 'Áo khoác', 'Đầm', 'váy'))
+);
+
+create table category_detail (
+    id varchar(10) not null primary key,
+    category  varchar(10) not null,
+    type nvarchar(50) not null,
+    foreign key (category)
+        references categories (id)
+);
+
+create table sizes (
+    id varchar(10) not null primary key,
+    size varchar(5) not null check (size in ('S','M','L'))
+);
+
+create table colors (
+    id varchar(10) not null primary key,
+    color nvarchar(20) not null
+);
+
+create table suppliers (
+    id varchar(10) not null primary key,
+    nameSupplier nvarchar(50) not null,
+    addressSupplier nvarchar(255) not null,
+    phoneSupplier varchar(10) not null
+);
+
+create table products (
+    id varchar(10) not null primary key,
+    nameProduct nvarchar(50) not null,
+    priceProduct int not null  check(priceProduct >0),
+    categoryProduct varchar(10) not null,
+    status smallint not null check(status = 0 or status =1),
+    foreign key (categoryProduct)
+        references category_detail (id)
+);
+
+create table product_details (
+    id varchar(10) not null primary key,
+    product varchar(10) not null,
+    details text not null,
+    color varchar(10) not null,
+    size varchar(10) not null,
+    suppliers varchar(10) not null,
+    quantity int not null check (quantity >= 0),
+    importdate date not null,
+    foreign key (product)
+        references products (id),
+    foreign key (color)
+        references colors (id),
+    foreign key (size)
+        references sizes (id),
+    foreign key (suppliers)
+        references suppliers (id)
+);
+
+create table payment_methods (
+    id varchar(10) not null primary key,
+    type nvarchar(50) not null check (type = 'tiền mặt' or type = 'Chuyển khoản')
+);
+
+create table bill_details (
+    id varchar(10) not null primary key,
+    bill varchar(20) not null,
+    product varchar(20) not null,
+    quantity int not null check (quantity >0),
+    price int not null,
+    paymentMethod varchar(10) not null,
+    foreign key (bill)
+        references bills (id),
+    foreign key (product)
+        references products (id),
+    foreign key (paymentMethod)
+        references payment_methods (id)
 );
 
 create table image(
-id varchAr(10) NOT NuLL Primary key,
-product Varchar(10) nOT NULL,
+id varchar(10) not null primary key,
+product varchar(10) not null,
 linkimage nvarchar(255) not null,
 foreign key (product)
-referenCes product_details (id)
+references product_details (id)
 );
