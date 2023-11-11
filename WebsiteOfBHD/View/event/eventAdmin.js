@@ -4,7 +4,7 @@ const data = {
     labels: labels,
     datasets: [
         {
-            label: 'Sản phẩm',
+            label: 'Sản phẩm đã bán',
             backgroundColor: '#af6e4e',
             borderColor: '#af6e4e',
             data: [0, 20, 40, 25, 58, 72],
