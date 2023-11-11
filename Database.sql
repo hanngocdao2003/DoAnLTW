@@ -5,7 +5,10 @@ create table bills (
     id varchar(10) not null primary key,
     dateCreated date not null,
     totalPrice int not null,
-    statusBill text not null check (statusBill in ('Đã thanh toán','Chưa thanh toán'))
+    user varchar(10) not null,
+    statusBill text not null check (statusBill in ('Đã thanh toán','Chưa thanh toán')),
+    foreign key (user)
+        references users (id)
 );
 
 create table roles (
@@ -22,6 +25,85 @@ create table users (
     userAddress nvarchar(100) not null,
     userEmail varchar(60) not null,
     dateCreate date not null,
+<<<<<<< HEAD
+    role varchar(10) not null,
+    foreign key (role)
+        references roles (id)
+);
+
+create table categories (
+    id varchar(10) not null primary key,
+    categoryName nvarchar(50) not null check(categoryName in ('Áo', 'Quần', 'Áo khoác', 'Đầm', 'Váy'))
+);
+
+create table category_detail (
+    id varchar(10) not null primary key,
+    category  varchar(10) not null,
+    type nvarchar(50) not null,
+    foreign key (category)
+        references categories (id)
+);
+
+create table sizes (
+    id varchar(10) not null primary key,
+    size varchar(5) not null check (size in ('S','M','L'))
+);
+
+create table colors (
+    id varchar(10) not null primary key,
+    color nvarchar(20) not null
+);
+
+create table suppliers (
+    id varchar(10) not null primary key,
+    nameSupplier nvarchar(50) not null,
+    addressSupplier nvarchar(255) not null,
+    phoneSupplier varchar(10) not null
+);
+
+create table products (
+    id varchar(10) not null primary key,
+    nameProduct nvarchar(50) not null,
+    priceProduct int not null  check(priceProduct >0),
+    categoryProduct varchar(10) not null,
+    status smallint not null check(status = 0 or status =1),
+    foreign key (categoryProduct)
+        references category_detail (id)
+);
+
+create table product_details (
+    id varchar(10) not null primary key,
+    product varchar(10) not null,
+    details text not null,
+    color varchar(10) not null,
+    size varchar(10) not null,
+    suppliers varchar(10) not null,
+    quantity int not null check(quantity >=0),
+    importDate date not null,
+    foreign key (product)
+        references products (id),
+    foreign key (color)
+        references colors (id),
+    foreign key (size)
+        references sizes (id),
+    foreign key (suppliers)
+        references suppliers (id)
+);
+
+create table payment_methods (
+    id varchar(10) not null primary key,
+    type nvarchar(50) not null check (type = 'Tiền mặt' or type = 'Chuyển khoản')
+);
+
+create table bill_details (
+    id varchar(10) not null primary key,
+    bill varchar(20) not null,
+    product varchar(20) not null,
+    quantity int not null check (quantity >0),
+    price int not null,
+    paymentMethod varchar(10) not null,
+    foreign key (bill)
+=======
     bill varchar(10) not null,
     role varchar(10) not null,
     foreign key (role)
@@ -102,6 +184,7 @@ create table bill_details (
     price int not null,
     paymentMethod varchar(10) not null,
     foreign key (bill)
+>>>>>>> 85a75c510df997d054f78f69698c5249f9d63621
         references bills (id),
     foreign key (product)
         references products (id),
@@ -109,10 +192,18 @@ create table bill_details (
         references payment_methods (id)
 );
 
+<<<<<<< HEAD
+create table images(
+id varchar(10) not null primary key,
+product varchar(10) not null,
+linkImage nvarchar(255) not null,
+=======
 create table image(
 id varchar(10) not null primary key,
 product varchar(10) not null,
 linkimage nvarchar(255) not null,
+>>>>>>> 85a75c510df997d054f78f69698c5249f9d63621
 foreign key (product)
 references product_details (id)
 );
+
