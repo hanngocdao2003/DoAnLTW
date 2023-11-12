@@ -35,11 +35,11 @@
         flex-direction: row;
         justify-content: center;
         padding: 15px;
-        border: 1px solid rgb(4, 78, 139);
+        border-bottom: 1px solid #FF8080FF;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
-        background: rgb(4, 78, 139);
-        color: white;
+        /*background: #FF8080FF;*/
+        color: black;
     }
 
     .center {
@@ -51,16 +51,16 @@
     }
 
     #container .form {
-        border-right: 1px solid rgb(4, 78, 139);
-        border-bottom: 1px solid rgb(4, 78, 139);
-        border-left: 1px solid rgb(4, 78, 139);
+        /*border-right: 1px solid #A62C2CFF;*/
+        /*border-bottom: 1px solid #A62C2CFF;*/
+        /*border-left: 1px solid #A62C2CFF;*/
     }
 
     .center>input {
         width: 100%;
         padding: 10px;
         border-radius: 10px;
-        border: 1px solid rgb(4, 78, 139);
+        border: 1px solid #FF8080FF;
     }
 
     .button {
@@ -74,8 +74,8 @@
         width: 50%;
         padding: 7px;
         border-radius: 5px;
-        border: 1px solid rgb(4, 78, 139);
-        background-color: rgb(4, 78, 139);
+        border: none;
+        background-color: #FF8080FF;
         color: white;
         text-transform: uppercase;
         cursor: pointer;
@@ -88,16 +88,21 @@
         align-items: center;
         padding: 10px;
         gap: 5px;
-        background: rgb(4, 78, 139);
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        /*border-left: 1px solid #A62C2CFF;*/
+        /*border-bottom: 1px solid #A62C2CFF;*/
+        /*border-right: 1px solid #A62C2CFF;*/
     }
 
     .footer>p {
-        color: white;
+        color: black;
         text-transform: uppercase;
     }
 
     .footer>a {
         text-decoration: none;
-        color: white;
+        color: #FF8080FF;
+    ;
     }
 }
