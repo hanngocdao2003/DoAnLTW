@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../View/styles/styleSlide.css">
     <link rel="stylesheet" href="../View/styles/styleFooter.css">
     <link rel="stylesheet" href="../View/styles/styleProduct.css">
+    <script src="../View/event/code.jquery.com_jquery-3.7.1.min.js"></script>
     <link rel="stylesheet" href="../Image/fontawesome-free-6.4.2-web/css/all.min.css">
     <link rel="icon" href="../Image/BHD-html.png" type="image/x-icon">
     <title>BHD</title>
@@ -28,83 +29,86 @@
                             <a href="index.html">Trang chủ</a>
                         </li>
                         <li class="item" id="fullProduct">
-                            <a class="linkallProduct">Bộ sưu tập</a>
+                            <a href="../View/allProductofCategory.html">Bộ sưu tập</a>
                         </li>
                         <li class="item" id="fullShirt">
-                            <a>Áo
+                            <a href="../View/fileHTMLProduct/ItemShirt/FullShirt.html">Áo
                                 <a href="">
                                     <i class="fa-solid fa-chevron-down"></i>
                                 </a>
                                 <ul class="dropdown ao_item">
                                     <li class="item sub_item">
-                                        <a href="">Áo thun</a>
+                                        <a href="../View/fileHTMLProduct/ItemShirt/T_Shirt.html">Áo thun</a>
                                     </li>
                                     <li class="item sub_item">
-                                        <a href="">Áo kiểu</a>
+                                        <a href="../View/fileHTMLProduct/ItemShirt/StyleShirt.html">Áo kiểu</a>
                                     </li>
                                     <li class="item sub_item">
-                                        <a href="">Áo sơ mi</a>
+                                        <a href="../View/fileHTMLProduct/ItemShirt/Shirt.html">Áo sơ mi</a>
                                     </li>
                                     <li class="item sub_item">
-                                        <a href="">Áo croptop</a>
+                                        <a href="../View/fileHTMLProduct/ItemShirt/CroptopShirt.html">Áo croptop</a>
                                     </li>
                                 </ul>
                         </li>
-                        <li class="item" id="fullJacket">
-                            <a>Áo khoác
+                        <li class="item">
+                            <a href="../View/fileHTMLProduct/ItemJacket/fullJacket.html">Áo khoác
                                 <i class="fa-solid fa-chevron-down"></i>
                             </a>
                             <ul class="dropdown aokhoac_item">
                                 <li class="item sub_item">
-                                    <a href="">Áo khoác gió</a>
+                                    <a href="../View/fileHTMLProduct/ItemJacket/jacketWind.html">Áo khoác gió</a>
                                 </li>
                                 <li class="item sub_item">
-                                    <a href="">Áo khoác len</a>
+                                    <a href="../View/fileHTMLProduct/ItemJacket/sweater.html">Áo khoác len</a>
                                 </li>
                                 <li class="item sub_item">
-                                    <a href="">Blazer</a>
+                                    <a href="../View/fileHTMLProduct/ItemJacket/jacketBlazer.html">Blazer</a>
                                 </li>
                                 <li class="item sub_item">
-                                    <a href="">Áo khoác Jean/Kaki</a>
+                                    <a href="../View/fileHTMLProduct/ItemJacket/jacketJean.html">Áo khoác Jean/Kaki</a>
                                 </li>
                             </ul>
                         </li>
                         <li class="item">
-                            <a href="">Quần
+                            <a href="../View/fileHTMLProduct/ItemTrouser/fullTrouser.html">Quần
                                 <i class="fa-solid fa-chevron-down"></i>
                             </a>
                             <ul class="dropdown quan_item">
                                 <li class="item sub_item">
-                                    <a href="">Quần dài</a>
+                                    <a href="../View/fileHTMLProduct/ItemTrouser/TrouserLong.html">Quần dài</a>
                                 </li>
                                 <li class="item sub_item">
-                                    <a href="">Quần ngắn</a>
+                                    <a href="../View/fileHTMLProduct/ItemTrouser/TrouserShort.html">Quần ngắn</a>
                                 </li>
                             </ul>
                         </li>
                         <li class="item">
-                            <a href="">Đầm
+                            <a href="../View/fileHTMLProduct/ItemDress/fullDress.html">Đầm
                                 <i class="fa-solid fa-chevron-down"></i>
                             </a>
                             <ul class="dropdown dam_item">
                                 <li class="item sub_item">
-                                    <a href="">Đầm kiểu</a>
+                                    <a href="../View/fileHTMLProduct/ItemDress/DressStyle.html">Đầm kiểu</a>
                                 </li>
                                 <li class="item sub_item">
-                                    <a href="">Yếm đầm</a>
+                                    <a href="../View/fileHTMLProduct/ItemDress/CamisoleDress.html">Yếm đầm</a>
+                                </li>
+                                <li class="item sub_item">
+                                    <a href="../View/fileHTMLProduct/ItemDress/DressFullSet.html">Nguyên bộ</a>
                                 </li>
                             </ul>
                         </li>
                         <li class="item">
-                            <a href="">Váy
+                            <a href="../View/fileHTMLProduct/ItemSkirt/fullSkirt.html">Váy
                                 <i class="fa-solid fa-chevron-down"></i>
                             </a>
                             <ul class="dropdown vay_item">
                                 <li class="item sub_item">
-                                    <a href="">Váy dài</a>
+                                    <a href="../View/fileHTMLProduct/ItemSkirt/LongSkirt.html">Váy dài</a>
                                 </li>
                                 <li class="item sub_item">
-                                    <a href="">Váy ngắn</a>
+                                    <a href="../View/fileHTMLProduct/ItemSkirt/ShortSkirt.html">Váy ngắn</a>
                                 </li>
                             </ul>
                         </li>
@@ -150,24 +154,10 @@
         </ul>
     </div>
     <div class="ProductShirtArea">
-        <h2 class="titleShirt">Áo</h2>
+        <h2 class="titleShirt">Tất cả sản phẩm</h2>
         <div class="page1 page">
             <ul class="listItemProduct" id="allOfCategory">
 
-            </ul>
-        </div>
-        <div class="dotpage">
-            <ul class="listDotpage">
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-                <li>5</li>
-                <li>6</li>
-                <li>7</li>
-                <li>8</li>
-                <li>9</li>
-                <li>10</li>
             </ul>
         </div>
     </div>
@@ -228,6 +218,7 @@
         </div>
     </footer>
     <script src="../View/event/eventAllofCategory.js"></script>
+    <script src="../View/event/eventMenu.js"></script>
 </body>
 
 </html>

@@ -124,4 +124,8 @@
     border-radius: 10px;
     margin: 15px 0px;
   }
+  .contain .content .store > h1{
+    font-family: 'Brush Script MT', cursive;
+    color: brown;
+  }
 }
