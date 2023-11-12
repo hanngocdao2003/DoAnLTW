@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="../View/styles/styleAdmin.css">
     <link rel="stylesheet" href="../Image/fontawesome-free-6.4.2-web/css/all.min.css">
     <link rel="icon" href="../Image/BHD-html.png" type="image/x-icon">
-    <title>BHD-Admin</title>
+    <title> Admin</title>
 </head>
 <body>
 <header class="logo">
@@ -35,23 +35,23 @@
                                 Trang chủ
                             </li>
                         </a>
-                        <li class="item">
+                        <li class="item" onclick="handleClick(this, 'panel2')">
                             <i class="fa-solid fa-circle" style="color: #ff8080;"></i>
                             Thống kê số liệu
                         </li>
-                        <li class="item">
+                        <li class="item" onclick="handleClick(this)">
                             <i class="fa-solid fa-circle" style="color: #ff8080;"></i>
                             Quản lý sản phẩm
                         </li>
-                        <li class="item">
+                        <li class="item" onclick="handleClick(this)">
                             <i class="fa-solid fa-circle" style="color: #ff8080;"></i>
                             Quản lý đơn hàng
                         </li>
-                        <li class="item">
+                        <li class="item" onclick="handleClick(this, 'panel3')">
                             <i class="fa-solid fa-circle" style="color: #ff8080;"></i>
                             Quản lý người dùng
                         </li>
-                        <li class="item">
+                        <li class="item" onclick="handleClick(this)">
                             <i class="fa-solid fa-circle" style="color: #ff8080;"></i>
                             Phản hồi người dùng
                         </li>
@@ -73,7 +73,7 @@
             </div>
         </nav>
     </div>
-    <div id="info_panel" class="info_panel">
+    <div id="info_panel" class="info_panel" onclick="handleClick(this,'panel1')">
         <div id="panel1" class="intro_panel">
             <h2 style="color: #a62c2c">Chào mừng bạn đã trở lại!</h2>
         </div>
@@ -107,6 +107,56 @@
             <div id="chart">
                 <canvas id="canvas">
                 </canvas>
+            </div>
+        </div>
+        <div class="add-product" id="id-add-product">
+            <div class="label">
+                <p>Thêm sản phẩm</p>
+            </div>
+            <div class="add-picture">
+                <!--                <div class="add-picture-sub">-->
+                <!--                    <input type="file" id="file" name="file" accept="image/*">-->
+                <!--                    <i class="fa-solid fa-plus fa-2xl" style="color: #a62c2c;"></i>-->
+                <!--                </div>-->
+                <!--                <div class="add-picture-sub">-->
+                <!--                    <input type="file" id="file" name="file" accept="image/*">-->
+                <!--                    <i class="fa-solid fa-plus fa-2xl" style="color: #a62c2c;"></i>-->
+                <!--                </div>-->
+                <!--                <div class="add-picture-sub">-->
+                <!--                    <input type="file" id="file" name="file" accept="image/*">-->
+                <!--                    <i class="fa-solid fa-plus fa-2xl" style="color: #a62c2c;"></i>-->
+                <!--                </div>-->
+                <!--                <div class="add-picture-sub">-->
+                <!--                    <input type="file" id="file" name="file" accept="image/*">-->
+                <!--                    <i class="fa-solid fa-plus fa-2xl" style="color: #a62c2c;"></i>-->
+                <!--                </div>-->
+
+                <div class="wrapper">
+                    <form action="#">
+                        <input class="file-input" type="file" name="file" hidden>
+                        <i class="fa-solid fa-cloud-arrow-up" style="color: #a62c2c;"></i>
+                        <p style="color: #a62c2c">Thêm hình ảnh</p>
+                    </form>
+                    <section class="progress-area"></section>
+                    <section class="uploaded-area"></section>
+                </div>
+            </div>
+            <div class="add-name">
+                <div class="name-phone">
+                    <input type="text" placeholder="Thêm tên sản phẩm">
+                </div>
+                <div class="name-phone">
+                    <input type="text" placeholder="Giá sản phẩm">
+                </div>
+                <div id="colorPalette"></div>
+            </div>
+            <div class="describe">
+                <form class="wrapper-describe" id="wrapper-describe">
+                    <textarea placeholder="Môt tả sản phẩm..." required></textarea>
+                </form>
+            </div>
+            <div class="footer">
+                <button>Thêm sản phẩm</button>
             </div>
         </div>
     </div>

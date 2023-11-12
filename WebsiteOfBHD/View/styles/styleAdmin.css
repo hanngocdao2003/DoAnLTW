@@ -37,6 +37,7 @@ body {
     justify-content: center;
     align-items: center;
     border-right: 2px solid #ff8080;
+    border-bottom: 2px solid #ff8080;
 }
 
 .logo_admin {
@@ -60,7 +61,7 @@ body {
 
 }
 
-button {
+a > button {
     padding: 10px;
     border-radius: 20px;
     background-color: #a62c2c;
@@ -107,6 +108,13 @@ button:hover {
     background-color: #a62c2c;
 }
 
+.item.active {
+    border: 2px solid #a62c2c;
+    border-radius: 20px;
+    color: white !important;
+    background-color: #a62c2c;
+}
+
 .button_logout {
     margin-bottom: 100%;
 }
@@ -120,10 +128,13 @@ button:hover {
 }
 
 .info_panel {
-    width: 72%;
+    width: 82%;
     display: flex;
     margin-top: 50px;
     margin-left: 40px;
+    justify-content: center;
+    /*align-items: center;*/
+    height: 100%;
 }
 
 #panel2 {
@@ -142,7 +153,7 @@ button:hover {
 }
 
 #panel2 {
-/ / display: none;
+    display: none;
 }
 
 .thongke_panel {
@@ -201,3 +212,212 @@ h3 {
 #canvas {
     width: 80%;
 }
+
+.info_panel .add-product {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #a62c2c;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.info_panel .add-product .label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 25px;
+    background: rgba(251, 192, 195, 0.8);
+    padding: 20px 50px;
+    border-radius: 20px;
+}
+
+.info_panel .add-product .add-picture {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 1000px;
+    margin: 20px 0;
+}
+
+/*.info_panel .add-product .add-picture .add-picture-sub{*/
+/*    width: 200px;*/
+/*    height: 300px;*/
+/*    border-radius: 10px;*/
+/*    border:1px solid #a62c2c;*/
+/*    !*margin: 0px 20px;*!*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*}*/
+
+::selection{
+    color: #fff;
+    background: rgba(251, 192, 195, 0.8);
+}
+.wrapper{
+    width: 100%;
+    background: #fff;
+    border-radius: 5px;
+    padding: 30px;
+    box-shadow: 7px 7px 12px rgba(0,0,0,0.05);
+}
+
+.wrapper form{
+    height: 167px;
+    display: flex;
+    cursor: pointer;
+    margin: 30px 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 5px;
+    border: 2px dashed #a62c2c;
+}
+form :where(i, p){
+    color: #6990F2;
+}
+form i{
+    font-size: 50px;
+}
+form p{
+    margin-top: 15px;
+    font-size: 16px;
+}
+section .row{
+    margin-bottom: 10px;
+    background: rgba(255, 128, 128, 0.5);
+    list-style: none;
+    padding: 15px 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+section .row i{
+    color: #6990F2;
+    font-size: 30px;
+}
+section .details span{
+    font-size: 14px;
+}
+.progress-area .row .content{
+    width: 100%;
+    margin-left: 15px;
+}
+.progress-area .details{
+    display: flex;
+    align-items: center;
+    margin-bottom: 7px;
+    justify-content: space-between;
+}
+.progress-area .content .progress-bar{
+    height: 6px;
+    width: 100%;
+    margin-bottom: 4px;
+    background: #fff;
+    border-radius: 30px;
+}
+.content .progress-bar .progress{
+    height: 100%;
+    width: 0%;
+    background: #6990F2;
+    border-radius: inherit;
+}
+.uploaded-area{
+    max-height: 232px;
+    overflow-y: scroll;
+}
+.uploaded-area.onprogress{
+    max-height: 150px;
+}
+.uploaded-area::-webkit-scrollbar{
+    width: 0px;
+}
+.uploaded-area .row .content{
+    display: flex;
+    align-items: center;
+}
+.uploaded-area .row .details{
+    display: flex;
+    margin-left: 15px;
+    flex-direction: column;
+}
+.uploaded-area .row .details .size{
+    color: #404040;
+    font-size: 11px;
+}
+.uploaded-area i.fa-check{
+    font-size: 16px;
+}
+
+.info_panel .add-product .add-name {
+    display: flex;
+    flex-direction: row;
+}
+
+.info_panel .add-product .add-name .name-phone input{
+    padding: 20px;
+    border-radius: 10px;
+    border:1px solid #a62c2c;
+    width: 300px;
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+/* styles.css */
+
+#colorPalette {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.colorBox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.wrapper-describe {
+    margin-top: 20px;
+    width: 100%;
+    background: rgba(251, 192, 195, 0.8);
+    border-radius: 10px;
+    padding: 25px 25px 30px;
+}
+
+.wrapper-describe textarea {
+    width: 100%;
+    height: 59px;
+    padding: 15px;
+    border-radius: 5px;
+    outline: none;
+    resize: none;
+    font-size: 16px;
+    border-color: #bfbfbf;
+    margin-top: 20px;
+}
+
+textarea:is(:focus, :valid) {
+    border-width: 2px;
+    padding: 14px;
+    background: white;
+}
+
+textarea::-webkit-scrollbar{
+    width: 0px;
+}
+
+.add-product .footer {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.add-product .footer button {
+    width: 200px;
+    height: 50px;
+}
+
