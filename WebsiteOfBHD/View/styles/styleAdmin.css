@@ -37,6 +37,7 @@ body {
     justify-content: center;
     align-items: center;
     border-right: 2px solid #ff8080;
+    border-bottom: 2px solid #ff8080;
 }
 
 .logo_admin {
@@ -60,7 +61,7 @@ body {
 
 }
 
-button {
+a > button {
     padding: 10px;
     border-radius: 20px;
     background-color: #a62c2c;
@@ -107,6 +108,13 @@ button:hover {
     background-color: #a62c2c;
 }
 
+.item.active {
+    border: 2px solid #a62c2c;
+    border-radius: 20px;
+    color: white !important;
+    background-color: #a62c2c;
+}
+
 .button_logout {
     margin-bottom: 100%;
 }
@@ -120,10 +128,10 @@ button:hover {
 }
 
 .info_panel {
-    width: 72%;
+    width: 82%;
     display: flex;
-    margin-top: 50px;
-    margin-left: 40px;
+    padding: 30px;
+    justify-content: center;
 }
 
 #panel2 {
@@ -135,14 +143,6 @@ button:hover {
     display: flex;
     flex-direction: row;
     gap: 10px;
-}
-
-#panel1 {
-    display: none;
-}
-
-#panel2 {
-/ / display: none;
 }
 
 .thongke_panel {
@@ -200,4 +200,86 @@ h3 {
 
 #canvas {
     width: 80%;
+}
+
+#panel1 {
+    display: block;
+}
+
+#panel2 {
+    display: none;
+}
+
+#panel3 {
+    display: none;
+}
+
+.btn_search {
+    display: flex;
+    justify-content: center;
+}
+
+#panel3 {
+    width: 100%;
+
+}
+
+#form_search > div {
+    display: flex;
+    flex-direction: row;
+    border: 2px solid #a62c2c;
+    border-radius: 10px;
+    width: 25%;
+}
+
+.input {
+    appearance: none;
+    border: none;
+    width: 85%;
+    padding: 15px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.btn_search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+    background-color: #a62c2c;
+    color: white;
+    border: none;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+
+}
+
+#info_customer {
+    margin: 50px 0px;
+}
+
+#table {
+    width: 100%;
+    border: 2px solid #a62c2c;
+    border-collapse: collapse;
+}
+
+th, td {
+    text-align: left;
+    padding: 10px;
+    border: 1px solid #a62c2c;
+}
+
+th.label {
+    text-align: left;
+    background: rgba(255, 128, 128, 0.8);
+}
+
+td {
+    background: rgba(251, 192, 195, 0.8);
+}
+
+/* Làm to ô chứa checkbox */
+td input[type="checkbox"] {
+    transform: scale(1.5); /* Thay đổi kích thước bằng cách áp dụng phép biến đổi */
 }
