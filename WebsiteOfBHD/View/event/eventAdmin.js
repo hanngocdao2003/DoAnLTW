@@ -32,3 +32,31 @@ const config = {
 }
 const canvas = document.getElementById('canvas');
 const chart = new Chart(canvas, config);
+
+function changeColor(clickedElement) {
+    var list = document.querySelectorAll('.menu .item');
+
+    list.forEach(function (item) {
+        item.classList.remove('active');
+    });
+    clickedElement.classList.add('active');
+}
+
+function changeDivContent(div) {
+    var divMain = document.getElementById('info_panel');
+    var panels = document.querySelectorAll('.info_panel > div');
+
+    panels.forEach(function (panel) {
+        panel.style.display = 'none';
+    });
+
+    var selectedPanel = document.getElementById(div);
+    if (selectedPanel) {
+        selectedPanel.style.display = 'block';
+    }
+}
+
+function handleClick(clickedElement, div) {
+    changeColor(clickedElement);
+    changeDivContent(div);
+}

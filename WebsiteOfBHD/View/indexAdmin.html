@@ -35,23 +35,23 @@
                                 Trang chủ
                             </li>
                         </a>
-                        <li class="item">
+                        <li class="item" onclick="handleClick(this, 'panel2')">
                             <i class="fa-solid fa-circle" style="color: #ff8080;"></i>
                             Thống kê số liệu
                         </li>
-                        <li class="item">
+                        <li class="item" onclick="handleClick(this)">
                             <i class="fa-solid fa-circle" style="color: #ff8080;"></i>
                             Quản lý sản phẩm
                         </li>
-                        <li class="item">
+                        <li class="item" onclick="handleClick(this)">
                             <i class="fa-solid fa-circle" style="color: #ff8080;"></i>
                             Quản lý đơn hàng
                         </li>
-                        <li class="item">
+                        <li class="item" onclick="handleClick(this, 'panel3')">
                             <i class="fa-solid fa-circle" style="color: #ff8080;"></i>
                             Quản lý người dùng
                         </li>
-                        <li class="item">
+                        <li class="item" onclick="handleClick(this)">
                             <i class="fa-solid fa-circle" style="color: #ff8080;"></i>
                             Phản hồi người dùng
                         </li>
@@ -73,7 +73,7 @@
             </div>
         </nav>
     </div>
-    <div id="info_panel" class="info_panel">
+    <div id="info_panel" class="info_panel" onclick="handleClick(this,'panel1')">
         <div id="panel1" class="intro_panel">
             <h2 style="color: #a62c2c">Chào mừng bạn đã trở lại!</h2>
         </div>
@@ -107,6 +107,61 @@
             <div id="chart">
                 <canvas id="canvas">
                 </canvas>
+            </div>
+        </div>
+        <div id="panel3">
+            <div class="seach_customer">
+                <form action="" id="form_search">
+                    <div>
+                        <input type="text" class="input" placeholder="Tìm kiếm theo tên">
+                        <button class="btn_search">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+            <div id="info_customer">
+                <div class="main_label">
+                    <table id="table">
+                        <thead>
+                        <tr>
+                            <th class="label">Tên khách hàng</th>
+                            <th class="label">Số điện thoại</th>
+                            <th class="label">Email</th>
+                            <th class="label">Địa chỉ</th>
+                            <th class="label">Đã mua</th>
+                            <th class="label">Khóa tài khoản</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Đào Ngọc Hân</td>
+                            <td>0908586584</td>
+                            <td>21130345@st.hcmuaf.edu.vn</td>
+                            <td>Tổ 3, Ấp 6, Hóc Môn, TP.HCM</td>
+                            <td>5</td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>Nguyễn Hoàng Ánh Dương</td>
+                            <td>0896435451</td>
+                            <td>21130328@st.hcmuaf.edu.vn</td>
+                            <td>Khu phố 6, Linh Trung, Thủ Đức, TP.HCM</td>
+                            <td>10</td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>Nguyễn Thanh Bình</td>
+                            <td>0901323070</td>
+                            <td>21130291@st.hcmuaf.edu.vn</td>
+                            <td>Tân Lập, Dĩ An, Bình Dương</td>
+                            <td>3</td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
