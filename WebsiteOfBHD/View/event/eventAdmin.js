@@ -33,6 +33,34 @@ const config = {
 const canvas = document.getElementById('canvas');
 const chart = new Chart(canvas, config);
 
+<<<<<<< HEAD
+function changeColor(clickedElement) {
+    var list = document.querySelectorAll('.menu .item');
+
+    list.forEach(function (item) {
+        item.classList.remove('active');
+    });
+    clickedElement.classList.add('active');
+}
+
+function changeDivContent(div) {
+    var divMain = document.getElementById('info_panel');
+    var panels = document.querySelectorAll('.info_panel > div');
+
+    panels.forEach(function (panel) {
+        panel.style.display = 'none';
+    });
+
+    var selectedPanel = document.getElementById(div);
+    if (selectedPanel) {
+        selectedPanel.style.display = 'block';
+    }
+}
+
+function handleClick(clickedElement, div) {
+    changeColor(clickedElement);
+    changeDivContent(div);
+=======
 // script.js
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -135,4 +163,5 @@ for (let i = 0; i < all_X.length; i++) {
     all_X[i].onclick= function (){
         deleteFile(all_X[i]);
     }
+>>>>>>> c0894fc7fb14abd1e83aee71e1b8e522ba288fdd
 }

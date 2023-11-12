@@ -16,7 +16,7 @@
 <body>
     <div class="content">
         <div class="SignIn_Area">
-            <img src="../Image/BHD-nền trong suốt.svg" alt="" class="logo">
+            <a href="../View/index.html"><img src="../Image/BHD-nền trong suốt.svg" alt="" class="logo"></a>
             <form action="" class="formSignIn">
                 <h1 class="titleSignIn">Đăng nhập</h1>
                 <div class="NameAcc">
@@ -27,8 +27,9 @@
                     <label for="inputPass" class="label">Mật khẩu:</label>
                     <div class="passplace">
                         <input type="password" id="inputPass" placeholder="Nhập mật khẩu">
-                        <i class="fa-regular fa-eye" id="eye"></i>
-                        <i class="fa-regular fa-eye-slash" id="eyeslash"></i>
+                        <button type="button" class="hidden-appear" id="hidden-appear-SinIn-pass">
+                            <i class="fa-regular fa-eye" id="eye"></i>
+                        </button>
                     </div>
                     <div class="remember">
                         <input type="checkbox" id="check">
@@ -71,14 +72,18 @@
                         <label for="inputPassRect" class="label">Mật khẩu:</label>
                         <div class="passplace">
                             <input type="password" id="inputPassRect" placeholder="Nhập mật khẩu">
-                            <i class="fa-regular fa-eye"></i>
+                            <button type="button" class="hidden-appear" id="hidden-appear-SingUp-pass">
+                                <i class="fa-regular fa-eye" id="eye"></i>
+                            </button>
                         </div>
                     </div>
                     <div class="passAcc">
                         <label for="ReinputPass" class="label">Nhập lại mật khẩu:</label>
                         <div class="passplace">
                             <input type="password" id="ReinputPass" placeholder="Nhập mật khẩu">
-                            <i class="fa-regular fa-eye"></i>
+                            <button type="button" class="hidden-appear" id="hidden-appear-SingUp-Repass">
+                                <i class="fa-regular fa-eye" id="eye"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -101,7 +106,7 @@
             </div>
         </div>
     </div>
-    <script src="../View/event/eventLogin.js"></script>
+    <script src="../View/JSEvent/LoginEvent.JS"></script>
 </body>
 
 </html>
