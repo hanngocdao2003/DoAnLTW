@@ -37,6 +37,7 @@ body {
     justify-content: center;
     align-items: center;
     border-right: 2px solid #ff8080;
+    border-bottom: 2px solid #ff8080;
 }
 
 .logo_admin {
@@ -60,7 +61,7 @@ body {
 
 }
 
-button {
+a > button {
     padding: 10px;
     border-radius: 20px;
     background-color: #a62c2c;
@@ -101,6 +102,13 @@ button:hover {
 }
 
 .item:hover {
+    border: 2px solid #a62c2c;
+    border-radius: 20px;
+    color: white !important;
+    background-color: #a62c2c;
+}
+
+.item.active {
     border: 2px solid #a62c2c;
     border-radius: 20px;
     color: white !important;
