@@ -94,14 +94,14 @@ function allProduct(ArrayProduct) {
     document.querySelector('#allOfCategory').innerHTML = content.join("");
 }
 
-// Bo suu tap
-document.getElementById("fullProduct").addEventListener("click", function () {
-    if (document.getElementById("fullProduct").click) {
-        allProduct(allProductOfShop);
-    }
+// // Bo suu tap
+// document.getElementById("fullProduct").addEventListener("click", function () {
+//     if (document.getElementById("fullProduct").click) {
+//         allProduct(allProductOfShop);
+//     }
 
-})
-// allProduct(allProductOfShop)
+// })
+allProduct(allProductOfShop)
 
 // shirt
 document.querySelector('#fullShirt').addEventListener("click", function () {
