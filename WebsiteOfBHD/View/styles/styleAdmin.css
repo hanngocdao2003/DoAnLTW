@@ -222,6 +222,9 @@ h3 {
     display: none;
 }
 
+#panel5 {
+    display: none;
+}
 .btn_search {
     display: flex;
     justify-content: center;
