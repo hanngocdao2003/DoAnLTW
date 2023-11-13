@@ -169,6 +169,9 @@
         transform: scale(1.2);
 
     }
+    .SearchItem{
+        display: inline-block;
+    }
 
     .searchArea {
         position: absolute;
