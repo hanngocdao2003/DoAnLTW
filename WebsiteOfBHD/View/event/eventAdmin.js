@@ -33,7 +33,6 @@ const config = {
 const canvas = document.getElementById('canvas');
 const chart = new Chart(canvas, config);
 
-<<<<<<< HEAD
 
 function changeColor(clickedElement) {
     var list = document.querySelectorAll('.menu .item');
@@ -43,6 +42,7 @@ function changeColor(clickedElement) {
     });
     clickedElement.classList.add('active');
 }
+
 
 function changeDivContent(div) {
     var divMain = document.getElementById('info_panel');
@@ -75,9 +75,7 @@ function buttonClick(div) {
     }
 }
 
-// script.js
 
-=======
 // script.js
 
 // document.addEventListener("DOMContentLoaded", function () {
@@ -100,7 +98,7 @@ function buttonClick(div) {
 //         colorPalette.appendChild(colorBox);
 //     });
 // });
->>>>>>> 86296d3a482de8f1e4325055e42faa19c6a05a46
+/*
 
 const textarea = document.querySelector("textarea");
 textarea.addEventListener("input", (e) => {
@@ -109,7 +107,7 @@ textarea.addEventListener("input", (e) => {
     textarea.style.height = scHeight + "px";
 });
 
-const form = document.querySelector("form"),
+const form = document.querySelector("#add"),
     fileInput = document.querySelector(".file-input"),
     progressArea = document.querySelector(".progress-area"),
     uploadedArea = document.querySelector(".uploaded-area");
@@ -127,13 +125,10 @@ fileInput.onchange = ({target}) => {
         uploadFile(fileName);
     }
 }
-<<<<<<< HEAD
+*/
 
-function uploadFile(name) {
-=======
 // Chức năng upload sản phẩm
-function uploadFile(name){
->>>>>>> 86296d3a482de8f1e4325055e42faa19c6a05a46
+/*function uploadFile(name) {
     let xhr = new XMLHttpRequest();
     xhr.open("POST", "php/upload.php");
     xhr.upload.addEventListener("progress", ({loaded, total}) => {
@@ -175,8 +170,9 @@ function uploadFile(name){
 
     let data = new FormData(form);
     xhr.send(data);
-}
+}*/
 
+/*
 function deleteFile(close_icon) {
     let parent = close_icon.parentNode;
     parent.remove();
@@ -186,10 +182,6 @@ var all_X = document.querySelectorAll(".remove_img");
 for (let i = 0; i < all_X.length; i++) {
     all_X[i].onclick = function () {
         deleteFile(all_X[i]);
+
     }
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 86296d3a482de8f1e4325055e42faa19c6a05a46
-}
+}*/
