@@ -65,11 +65,13 @@
     height: 40px;
     background: rgba(19, 86, 138, 0.8);
     color: white;
-
+outline: none;
+user-select: none;
+pointer-events: none;
   }
 
-  input[type=number]::-webkit-inner-spin-button,
-  input[type=number]::-webkit-outer-spin-button {
+  input[type=text]::-webkit-inner-spin-button,
+  input[type=text]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
   }

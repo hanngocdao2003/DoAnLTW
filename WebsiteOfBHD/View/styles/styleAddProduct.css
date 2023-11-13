@@ -25,16 +25,6 @@
     margin: 20px 0;
 }
 
-/*.info_panel .add-product .add-picture .add-picture-sub{*/
-/*    width: 200px;*/
-/*    height: 300px;*/
-/*    border-radius: 10px;*/
-/*    border:1px solid #a62c2c;*/
-/*    !*margin: 0px 20px;*!*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-/*}*/
 
 ::selection{
     color: #fff;
@@ -59,13 +49,13 @@
     border-radius: 5px;
     border: 2px dashed #a62c2c;
 }
-form :where(i, p){
+#add :where(i, p){
     color: #6990F2;
 }
-form i{
+#add i{
     font-size: 50px;
 }
-form p{
+#add p{
     margin-top: 15px;
     font-size: 16px;
 }
