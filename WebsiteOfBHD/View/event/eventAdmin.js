@@ -33,6 +33,7 @@ const config = {
 const canvas = document.getElementById('canvas');
 const chart = new Chart(canvas, config);
 
+<<<<<<< HEAD
 
 function changeColor(clickedElement) {
     var list = document.querySelectorAll('.menu .item');
@@ -76,6 +77,30 @@ function buttonClick(div) {
 
 // script.js
 
+=======
+// script.js
+
+// document.addEventListener("DOMContentLoaded", function () {
+//     const colorPalette = document.getElementById("colorPalette");
+//
+//     // Mảng chứa các màu sắc bạn muốn thêm vào bảng
+//     const colors = ["#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#FF00FF", "#00FFFF", "#FFFFFF", "#000000"];
+//
+//     // Tạo các ô màu và thêm vào bảng
+//     colors.forEach(color => {
+//         const colorBox = document.createElement("div");
+//         colorBox.classList.add("colorBox");
+//         colorBox.style.backgroundColor = color;
+//
+//         // Thêm sự kiện khi click vào ô màu
+//         colorBox.addEventListener("click", function () {
+//             alert(`Selected color: ${color}`);
+//         });
+//
+//         colorPalette.appendChild(colorBox);
+//     });
+// });
+>>>>>>> 86296d3a482de8f1e4325055e42faa19c6a05a46
 
 const textarea = document.querySelector("textarea");
 textarea.addEventListener("input", (e) => {
@@ -102,8 +127,13 @@ fileInput.onchange = ({target}) => {
         uploadFile(fileName);
     }
 }
+<<<<<<< HEAD
 
 function uploadFile(name) {
+=======
+// Chức năng upload sản phẩm
+function uploadFile(name){
+>>>>>>> 86296d3a482de8f1e4325055e42faa19c6a05a46
     let xhr = new XMLHttpRequest();
     xhr.open("POST", "php/upload.php");
     xhr.upload.addEventListener("progress", ({loaded, total}) => {
@@ -157,6 +187,9 @@ for (let i = 0; i < all_X.length; i++) {
     all_X[i].onclick = function () {
         deleteFile(all_X[i]);
     }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 86296d3a482de8f1e4325055e42faa19c6a05a46
 }

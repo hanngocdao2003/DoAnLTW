@@ -126,8 +126,16 @@ a > button, .button_add_product {
 .info_panel {
     width: 82%;
     display: flex;
+<<<<<<< HEAD
     padding: 30px;
     justify-content: center;
+=======
+    margin-top: 50px;
+    margin-left: 40px;
+    justify-content: center;
+    /*align-items: center;*/
+    height: 100%;
+>>>>>>> 86296d3a482de8f1e4325055e42faa19c6a05a46
 }
 
 #panel2 {
@@ -141,6 +149,17 @@ a > button, .button_add_product {
     gap: 10px;
 }
 
+<<<<<<< HEAD
+=======
+#panel1 {
+    display: none;
+}
+
+#panel2 {
+    display: none;
+}
+
+>>>>>>> 86296d3a482de8f1e4325055e42faa19c6a05a46
 .thongke_panel {
     width: 100%;
 }
@@ -198,6 +217,7 @@ h3 {
     width: 80%;
 }
 
+<<<<<<< HEAD
 #panel1 {
     display: block;
 }
@@ -284,6 +304,8 @@ td input[type="checkbox"] {
     transform: scale(1.5); /* Thay đổi kích thước bằng cách áp dụng phép biến đổi */
 }
 
+=======
+>>>>>>> 86296d3a482de8f1e4325055e42faa19c6a05a46
 .info_panel .add-product {
     display: flex;
     flex-direction: column;
@@ -443,9 +465,14 @@ section .details span {
 .info_panel .add-product .add-name {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 
+<<<<<<< HEAD
 .info_panel .add-product .add-name .name-phone input {
+=======
+.info_panel .add-product .add-name .name-price input{
+>>>>>>> 86296d3a482de8f1e4325055e42faa19c6a05a46
     padding: 20px;
     border-radius: 10px;
     border: 1px solid #a62c2c;
@@ -456,18 +483,18 @@ section .details span {
 
 /* styles.css */
 
-#colorPalette {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
-}
+/*#colorPalette {*/
+/*    display: grid;*/
+/*    grid-template-columns: repeat(5, 1fr);*/
+/*    gap: 10px;*/
+/*}*/
 
-.colorBox {
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    border-radius: 5px;
-}
+/*.colorBox {*/
+/*    width: 20px;*/
+/*    height: 20px;*/
+/*    cursor: pointer;*/
+/*    border-radius: 5px;*/
+/*}*/
 
 .wrapper-describe {
     margin-top: 20px;
@@ -508,8 +535,21 @@ textarea::-webkit-scrollbar {
 .add-product .footer button {
     width: 200px;
     height: 50px;
+    background: #a62c2c;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    box-shadow: ;
 }
 
+<<<<<<< HEAD
 .add-product.on {
     display: block;
 }
+=======
+/* .add-product .footer button:hover {
+    color: ;
+} */
+
+>>>>>>> 86296d3a482de8f1e4325055e42faa19c6a05a46
