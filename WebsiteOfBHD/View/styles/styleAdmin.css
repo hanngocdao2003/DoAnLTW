@@ -126,16 +126,14 @@ a > button, .button_add_product {
 .info_panel {
     width: 82%;
     display: flex;
-<<<<<<< HEAD
     padding: 30px;
     justify-content: center;
-=======
     margin-top: 50px;
     margin-left: 40px;
     justify-content: center;
     /*align-items: center;*/
     height: 100%;
->>>>>>> 86296d3a482de8f1e4325055e42faa19c6a05a46
+
 }
 
 #panel2 {
@@ -149,8 +147,7 @@ a > button, .button_add_product {
     gap: 10px;
 }
 
-<<<<<<< HEAD
-=======
+
 #panel1 {
     display: none;
 }
@@ -159,7 +156,7 @@ a > button, .button_add_product {
     display: none;
 }
 
->>>>>>> 86296d3a482de8f1e4325055e42faa19c6a05a46
+
 .thongke_panel {
     width: 100%;
 }
@@ -217,7 +214,6 @@ h3 {
     width: 80%;
 }
 
-<<<<<<< HEAD
 #panel1 {
     display: block;
 }
@@ -300,12 +296,11 @@ td {
 }
 
 /* Làm to ô chứa checkbox */
+
 td input[type="checkbox"] {
     transform: scale(1.5); /* Thay đổi kích thước bằng cách áp dụng phép biến đổi */
 }
 
-=======
->>>>>>> 86296d3a482de8f1e4325055e42faa19c6a05a46
 .info_panel .add-product {
     display: flex;
     flex-direction: column;
@@ -369,11 +364,11 @@ td input[type="checkbox"] {
     border: 2px dashed #a62c2c;
 }
 
-form :where(i, p) {
+#add :where(i, p) {
     color: #6990F2;
 }
 
-form i {
+#add i {
     font-size: 50px;
 }
 
@@ -468,11 +463,7 @@ section .details span {
     justify-content: space-between;
 }
 
-<<<<<<< HEAD
-.info_panel .add-product .add-name .name-phone input {
-=======
-.info_panel .add-product .add-name .name-price input{
->>>>>>> 86296d3a482de8f1e4325055e42faa19c6a05a46
+.info_panel .add-product .add-name .name-price input {
     padding: 20px;
     border-radius: 10px;
     border: 1px solid #a62c2c;
@@ -540,16 +531,11 @@ textarea::-webkit-scrollbar {
     border-radius: 10px;
     border: none;
     cursor: pointer;
-    box-shadow: ;
 }
 
-<<<<<<< HEAD
-.add-product.on {
-    display: block;
-}
-=======
+
 /* .add-product .footer button:hover {
     color: ;
 } */
 
->>>>>>> 86296d3a482de8f1e4325055e42faa19c6a05a46
+
