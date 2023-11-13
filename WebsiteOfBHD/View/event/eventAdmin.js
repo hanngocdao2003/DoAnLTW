@@ -33,29 +33,6 @@ const config = {
 const canvas = document.getElementById('canvas');
 const chart = new Chart(canvas, config);
 
-// script.js
-
-// document.addEventListener("DOMContentLoaded", function () {
-//     const colorPalette = document.getElementById("colorPalette");
-//
-//     // Mảng chứa các màu sắc bạn muốn thêm vào bảng
-//     const colors = ["#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#FF00FF", "#00FFFF", "#FFFFFF", "#000000"];
-//
-//     // Tạo các ô màu và thêm vào bảng
-//     colors.forEach(color => {
-//         const colorBox = document.createElement("div");
-//         colorBox.classList.add("colorBox");
-//         colorBox.style.backgroundColor = color;
-//
-//         // Thêm sự kiện khi click vào ô màu
-//         colorBox.addEventListener("click", function () {
-//             alert(`Selected color: ${color}`);
-//         });
-//
-//         colorPalette.appendChild(colorBox);
-//     });
-// });
-
 const textarea = document.querySelector("textarea");
 textarea.addEventListener("input", (e) => {
     textarea.style.height = "63px";
