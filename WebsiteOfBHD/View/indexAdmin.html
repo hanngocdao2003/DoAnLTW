@@ -112,11 +112,20 @@
             <div id="panel3">
                 <div class="seach_customer">
                     <form action="" id="form_search">
-                        <div>
-                            <input type="text" class="input" placeholder="Tìm kiếm theo tên">
-                            <button class="btn_search">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </button>
+                        <div class="head">
+                            <div class="search">
+                                <input type="text" class="input" placeholder="Tìm kiếm theo tên">
+                                <button class="btn_search">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </button>
+                            </div>
+                            <div class="filter">
+                                <i class="fa-solid fa-filter"></i>
+                                <select name="filter-select" id="filter-select">
+                                    <option value="alphabet">Sắp xếp theo tên người dùng</option>
+                                    <option value="alphabet">Sắp xếp theo số lượng sản phẩm mua</option>
+                                </select>
+                            </div>
                         </div>
 
                     </form>
@@ -130,35 +139,11 @@
                                     <th class="label">Số điện thoại</th>
                                     <th class="label">Email</th>
                                     <th class="label">Địa chỉ</th>
-                                    <th class="label">Đã mua</th>
+                                    <th class="label">Số lượng sản phẩm đã mua</th>
                                     <th class="label">Khóa tài khoản</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Đào Ngọc Hân</td>
-                                    <td>0908586584</td>
-                                    <td>21130345@st.hcmuaf.edu.vn</td>
-                                    <td>Tổ 3, Ấp 6, Hóc Môn, TP.HCM</td>
-                                    <td>5</td>
-                                    <td><input type="checkbox"></td>
-                                </tr>
-                                <tr>
-                                    <td>Nguyễn Hoàng Ánh Dương</td>
-                                    <td>0896435451</td>
-                                    <td>21130328@st.hcmuaf.edu.vn</td>
-                                    <td>Khu phố 6, Linh Trung, Thủ Đức, TP.HCM</td>
-                                    <td>10</td>
-                                    <td><input type="checkbox"></td>
-                                </tr>
-                                <tr>
-                                    <td>Nguyễn Thanh Bình</td>
-                                    <td>0901323070</td>
-                                    <td>21130291@st.hcmuaf.edu.vn</td>
-                                    <td>Tân Lập, Dĩ An, Bình Dương</td>
-                                    <td>3</td>
-                                    <td><input type="checkbox"></td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -199,51 +184,10 @@
                     <button>Thêm sản phẩm</button>
                 </div>
             </div>
-            <div class="order-management" id="panel5">
-                <div class="main_label">
-                    <table id="table">
-                        <thead>
-                            <tr>
-                                <th class="label">Tên sản phẩm</th>
-                                <th class="label">Giá</th>
-                                <th class="label">Số lượng</th>
-                                <th class="label">Tổng tiền</th>
-                                <th class="label">Trạng thái</th>
-                                <th class="label">Duyệt đơn</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Áo thun</td>
-                                <td>200000</td>
-                                <td>3</td>
-                                <td>600000</td>
-                                <td>Chưa thanh toán</td>
-                                <td><input type="checkbox"></td>
-                            </tr>
-                            <tr>
-                                <td>Quần dài</td>
-                                <td>320000</td>
-                                <td>1</td>
-                                <td>320000</td>
-                                <td>Đã Thanh Toán</td>
-                                <td><input type="checkbox"></td>
-                            </tr>
-                            <tr>
-                                <td>Áo len</td>
-                                <td>200000</td>
-                                <td>2</td>
-                                <td>400000</td>
-                                <td>Chưa thanh toán</td>
-                                <td><input type="checkbox"></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../View/event/data.js"></script>
     <script src="../View/event/eventAdmin.js"></script>
     <script src="../View/event/eventAddProduct.js"></script>
     </div>
