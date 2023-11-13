@@ -57,11 +57,7 @@ body {
     font-size: 20px;
 }
 
-.button_add_product {
-
-}
-
-a > button {
+a > button, .button_add_product {
     padding: 10px;
     border-radius: 20px;
     background-color: #a62c2c;
@@ -71,7 +67,7 @@ a > button {
     cursor: pointer;
 }
 
-button:hover {
+.button_add_product:hover {
     color: #ff8080;
 }
 
@@ -130,11 +126,8 @@ button:hover {
 .info_panel {
     width: 82%;
     display: flex;
-    margin-top: 50px;
-    margin-left: 40px;
+    padding: 30px;
     justify-content: center;
-    /*align-items: center;*/
-    height: 100%;
 }
 
 #panel2 {
@@ -213,5 +206,89 @@ h3 {
     width: 80%;
 }
 
+#panel1 {
+    display: block;
+}
 
+#panel2 {
+    display: none;
+}
+
+#panel3 {
+    display: none;
+}
+
+#panel4 {
+    display: none;
+}
+
+.btn_search {
+    display: flex;
+    justify-content: center;
+}
+
+#panel3 {
+    width: 100%;
+
+}
+
+#form_search > div {
+    display: flex;
+    flex-direction: row;
+    border: 2px solid #a62c2c;
+    border-radius: 10px;
+    width: 25%;
+}
+
+.input {
+    appearance: none;
+    border: none;
+    width: 85%;
+    padding: 15px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.seach_customer > #form_search > div > .btn_search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+    background-color: #a62c2c;
+    color: white;
+    border: none;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+
+}
+
+#info_customer {
+    margin: 50px 0px;
+}
+
+#table {
+    width: 100%;
+    border: 2px solid #a62c2c;
+    border-collapse: collapse;
+}
+
+th, td {
+    text-align: left;
+    padding: 10px;
+    border: 1px solid #a62c2c;
+}
+
+th.label {
+    text-align: left;
+    background: rgba(255, 128, 128, 0.8);
+}
+
+td {
+    background: rgba(251, 192, 195, 0.8);
+}
+
+/* Làm to ô chứa checkbox */
+td input[type="checkbox"] {
+    transform: scale(1.5);
+}
 

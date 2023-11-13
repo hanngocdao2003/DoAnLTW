@@ -21,12 +21,10 @@
                     <i class="fa-solid fa-lock" style="color: #ff8080;"></i>
                     <h2>Admin</h2>
                 </div>
-                <div class="button_add_product">
-                    <a href="">
-                        <button><i class="fa-solid fa-plus" style="color: #ff8080;"></i>
-                            Thêm sản phẩm
-                        </button>
-                    </a>
+                <div class="button_add_product" onclick="buttonClick('add-product')">
+                    <i class="fa-solid fa-plus"
+                       style="color: #ff8080;"></i>
+                    Thêm sản phẩm
                 </div>
                 <div class="menu_nav">
                     <ul class="menu">
@@ -110,28 +108,66 @@
                 </canvas>
             </div>
         </div>
-        <div class="add-product" id="id-add-product">
+        <div id="panel3">
+            <div class="seach_customer">
+                <form action="" id="form_search">
+                    <div>
+                        <input type="text" class="input" placeholder="Tìm kiếm theo tên">
+                        <button class="btn_search">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+            <div id="info_customer">
+                <div class="main_label">
+                    <table id="table">
+                        <thead>
+                        <tr>
+                            <th class="label">Tên khách hàng</th>
+                            <th class="label">Số điện thoại</th>
+                            <th class="label">Email</th>
+                            <th class="label">Địa chỉ</th>
+                            <th class="label">Đã mua</th>
+                            <th class="label">Khóa tài khoản</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Đào Ngọc Hân</td>
+                            <td>0908586584</td>
+                            <td>21130345@st.hcmuaf.edu.vn</td>
+                            <td>Tổ 3, Ấp 6, Hóc Môn, TP.HCM</td>
+                            <td>5</td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>Nguyễn Hoàng Ánh Dương</td>
+                            <td>0896435451</td>
+                            <td>21130328@st.hcmuaf.edu.vn</td>
+                            <td>Khu phố 6, Linh Trung, Thủ Đức, TP.HCM</td>
+                            <td>10</td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>Nguyễn Thanh Bình</td>
+                            <td>0901323070</td>
+                            <td>21130291@st.hcmuaf.edu.vn</td>
+                            <td>Tân Lập, Dĩ An, Bình Dương</td>
+                            <td>3</td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="add-product" id="panel4">
             <div class="label">
                 <p>Thêm sản phẩm</p>
             </div>
             <div class="add-picture">
-                <!--                <div class="add-picture-sub">-->
-                <!--                    <input type="file" id="file" name="file" accept="image/*">-->
-                <!--                    <i class="fa-solid fa-plus fa-2xl" style="color: #a62c2c;"></i>-->
-                <!--                </div>-->
-                <!--                <div class="add-picture-sub">-->
-                <!--                    <input type="file" id="file" name="file" accept="image/*">-->
-                <!--                    <i class="fa-solid fa-plus fa-2xl" style="color: #a62c2c;"></i>-->
-                <!--                </div>-->
-                <!--                <div class="add-picture-sub">-->
-                <!--                    <input type="file" id="file" name="file" accept="image/*">-->
-                <!--                    <i class="fa-solid fa-plus fa-2xl" style="color: #a62c2c;"></i>-->
-                <!--                </div>-->
-                <!--                <div class="add-picture-sub">-->
-                <!--                    <input type="file" id="file" name="file" accept="image/*">-->
-                <!--                    <i class="fa-solid fa-plus fa-2xl" style="color: #a62c2c;"></i>-->
-                <!--                </div>-->
-
                 <div class="wrapper">
                     <form action="#">
                         <input class="file-input" type="file" name="file" hidden>
@@ -163,8 +199,9 @@
             </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../View/event/eventAdmin.js"></script>
+    <script src="../View/event/eventAddProduct.js"></script>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="../View/event/eventAdmin.js"></script>
 </body>
 </html>
