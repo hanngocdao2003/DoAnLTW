@@ -10,7 +10,7 @@
     }
 
     body {
-        background-color: #FFDEDCFF;
+        background: linear-gradient(90deg, rgba(198, 225, 246, 0.5), rgba(251, 214, 227, 0.5));
         display: flex;
         justify-content: center;
         align-items: center;
@@ -27,7 +27,7 @@
         display: flex;
         justify-content: center;
         flex-direction: column;
-        margin-bottom: 20%;
+        margin-bottom: 30%;
     }
 
     .header {
