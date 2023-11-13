@@ -57,11 +57,7 @@ body {
     font-size: 20px;
 }
 
-.button_add_product {
-
-}
-
-a > button {
+a > button, .button_add_product {
     padding: 10px;
     border-radius: 20px;
     background-color: #a62c2c;
@@ -71,7 +67,7 @@ a > button {
     cursor: pointer;
 }
 
-button:hover {
+.button_add_product:hover {
     color: #ff8080;
 }
 
@@ -130,16 +126,8 @@ button:hover {
 .info_panel {
     width: 82%;
     display: flex;
-<<<<<<< HEAD
     padding: 30px;
     justify-content: center;
-=======
-    margin-top: 50px;
-    margin-left: 40px;
-    justify-content: center;
-    /*align-items: center;*/
-    height: 100%;
->>>>>>> c0894fc7fb14abd1e83aee71e1b8e522ba288fdd
 }
 
 #panel2 {
@@ -153,17 +141,6 @@ button:hover {
     gap: 10px;
 }
 
-<<<<<<< HEAD
-=======
-#panel1 {
-    display: none;
-}
-
-#panel2 {
-    display: none;
-}
-
->>>>>>> c0894fc7fb14abd1e83aee71e1b8e522ba288fdd
 .thongke_panel {
     width: 100%;
 }
@@ -221,7 +198,6 @@ h3 {
     width: 80%;
 }
 
-<<<<<<< HEAD
 #panel1 {
     display: block;
 }
@@ -231,6 +207,10 @@ h3 {
 }
 
 #panel3 {
+    display: none;
+}
+
+#panel4 {
     display: none;
 }
 
@@ -261,7 +241,7 @@ h3 {
     border-top-left-radius: 10px;
 }
 
-.btn_search {
+.seach_customer > #form_search > div > .btn_search {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -303,7 +283,7 @@ td {
 td input[type="checkbox"] {
     transform: scale(1.5); /* Thay đổi kích thước bằng cách áp dụng phép biến đổi */
 }
-=======
+
 .info_panel .add-product {
     display: flex;
     flex-direction: column;
@@ -342,19 +322,20 @@ td input[type="checkbox"] {
 /*    align-items: center;*/
 /*}*/
 
-::selection{
+::selection {
     color: #fff;
     background: rgba(251, 192, 195, 0.8);
 }
-.wrapper{
+
+.wrapper {
     width: 100%;
     background: #fff;
     border-radius: 5px;
     padding: 30px;
-    box-shadow: 7px 7px 12px rgba(0,0,0,0.05);
+    box-shadow: 7px 7px 12px rgba(0, 0, 0, 0.05);
 }
 
-.wrapper form{
+.wrapper form {
     height: 167px;
     display: flex;
     cursor: pointer;
@@ -365,17 +346,21 @@ td input[type="checkbox"] {
     border-radius: 5px;
     border: 2px dashed #a62c2c;
 }
-form :where(i, p){
+
+form :where(i, p) {
     color: #6990F2;
 }
-form i{
+
+form i {
     font-size: 50px;
 }
-form p{
+
+form p {
     margin-top: 15px;
     font-size: 16px;
 }
-section .row{
+
+section .row {
     margin-bottom: 10px;
     background: rgba(255, 128, 128, 0.5);
     list-style: none;
@@ -385,60 +370,73 @@ section .row{
     align-items: center;
     justify-content: space-between;
 }
-section .row i{
+
+section .row i {
     color: #6990F2;
     font-size: 30px;
 }
-section .details span{
+
+section .details span {
     font-size: 14px;
 }
-.progress-area .row .content{
+
+.progress-area .row .content {
     width: 100%;
     margin-left: 15px;
 }
-.progress-area .details{
+
+.progress-area .details {
     display: flex;
     align-items: center;
     margin-bottom: 7px;
     justify-content: space-between;
 }
-.progress-area .content .progress-bar{
+
+.progress-area .content .progress-bar {
     height: 6px;
     width: 100%;
     margin-bottom: 4px;
     background: #fff;
     border-radius: 30px;
 }
-.content .progress-bar .progress{
+
+.content .progress-bar .progress {
     height: 100%;
     width: 0%;
     background: #6990F2;
     border-radius: inherit;
 }
-.uploaded-area{
+
+.uploaded-area {
     max-height: 232px;
     overflow-y: scroll;
 }
-.uploaded-area.onprogress{
+
+.uploaded-area.onprogress {
     max-height: 150px;
 }
-.uploaded-area::-webkit-scrollbar{
+
+.uploaded-area::-webkit-scrollbar {
     width: 0px;
 }
-.uploaded-area .row .content{
+
+.uploaded-area .row .content {
     display: flex;
     align-items: center;
 }
-.uploaded-area .row .details{
+
+.uploaded-area .row .details {
     display: flex;
     margin-left: 15px;
     flex-direction: column;
 }
-.uploaded-area .row .details .size{
+
+.uploaded-area .row .details .size {
     color: #404040;
     font-size: 11px;
 }
-.uploaded-area i.fa-check{
+
+.uploaded-area i.fa-check {
     font-size: 16px;
 }
 
@@ -447,10 +445,10 @@ section .details span{
     flex-direction: row;
 }
 
-.info_panel .add-product .add-name .name-phone input{
+.info_panel .add-product .add-name .name-phone input {
     padding: 20px;
     border-radius: 10px;
-    border:1px solid #a62c2c;
+    border: 1px solid #a62c2c;
     width: 300px;
     font-size: 20px;
     margin-right: 20px;
@@ -497,7 +495,7 @@ textarea:is(:focus, :valid) {
     background: white;
 }
 
-textarea::-webkit-scrollbar{
+textarea::-webkit-scrollbar {
     width: 0px;
 }
 
@@ -512,4 +510,6 @@ textarea::-webkit-scrollbar{
     height: 50px;
 }
 
->>>>>>> c0894fc7fb14abd1e83aee71e1b8e522ba288fdd
+.add-product.on {
+    display: block;
+}
