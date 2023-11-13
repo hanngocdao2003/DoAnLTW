@@ -40,6 +40,22 @@ const config = {
 const canvas = document.getElementById("canvas");
 const chart = new Chart(canvas, config);
 
+function loadData() {
+  var htmls = listUsers.map(function(user){
+    return `<tr>
+    <td>${user.name}</td>
+    <td>${user.phone}</td>
+    <td>${user.email}</td>
+    <td>${user.address}</td>
+    <td>${user.quantityProducts}</td>
+    <td><input type="checkbox"></td>
+</tr>`
+  });
+  let select = document.querySelector("#table tbody");
+  select.innerHTML = htmls.join("");
+}
+loadData();
+
 // const panel1 = document.querySelector('#panel1')
 // const panel2 = document.querySelector('#panel2')
 // const panel3 = document.querySelector('#panel3')

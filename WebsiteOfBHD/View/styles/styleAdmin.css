@@ -125,7 +125,7 @@ a > button, .button_add_product {
 
 .info_panel {
     width: 82%;
-    display: flex;
+    /* display: flex; */
     padding: 30px;
     justify-content: center;
     margin-top: 50px;
@@ -222,7 +222,7 @@ h3 {
     display: none;
 }
 
-#panel5 {
+#panel7 {
     display: block;
 }
 
@@ -293,4 +293,5 @@ td {
 td input[type="checkbox"] {
     transform: scale(1.5);
 }
+
 
