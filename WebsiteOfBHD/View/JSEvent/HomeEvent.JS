@@ -133,61 +133,61 @@ const productsJacket = [
 const productsLongSkirt = [
     {
         id: 1,
-        image: "../Image/ProductAreaOfShop%20LongSkirt/BRENDA.jpg",
+        image: "../Image/ProductAreaOfShop%20Dress/BRENDA.jpg",
         nameProduct: "đầm BRENDA",
         priceProduct: "290,000đ"
     },
     {
         id: 2,
-        image: "../Image/ProductAreaOfShop%20LongSkirt/BARBARRA.jpg",
+        image: "../Image/ProductAreaOfShop%20Dress/BARBARRA.jpg",
         nameProduct: "đầm BARBARRA",
         priceProduct: "320,000đ"
     },
     {
         id: 3,
-        image: "../Image/ProductAreaOfShop%20LongSkirt/ĐẦM%20ALINA.jpg",
+        image: "../Image/ProductAreaOfShop%20Dress/ĐẦM%20ALINA.jpg",
         nameProduct: "ĐẦM ALINA",
         priceProduct: "290,000đ"
     },
     {
         id: 4,
-        image: "../Image/ProductAreaOfShop%20LongSkirt/ĐẦM%20ASHLY.jpg",
+        image: "../Image/ProductAreaOfShop%20Dress/ĐẦM%20ASHLY.jpg",
         nameProduct: "ĐẦM ASHLY",
         priceProduct: "340,000đ"
     },
     {
         id: 5,
-        image: "../Image/ProductAreaOfShop%20LongSkirt/ĐẦM%20BETTY.jpg",
+        image: "../Image/ProductAreaOfShop%20Dress/ĐẦM%20BETTY.jpg",
         nameProduct: "ĐẦM BETTY",
         priceProduct: "390,000đ"
     },
     {
         id: 6,
-        image: "../Image/ProductAreaOfShop%20LongSkirt/ĐẦM%20BIANCA.jpg",
+        image: "../Image/ProductAreaOfShop%20Dress/ĐẦM%20BIANCA.jpg",
         nameProduct: "ĐẦM BIANCA",
         priceProduct: "360,000đ"
     },
     {
         id: 7,
-        image: "../Image/ProductAreaOfShop%20LongSkirt/ĐẦM%20BODY.jpg",
+        image: "../Image/ProductAreaOfShop%20Dress/ĐẦM%20BODY.jpg",
         nameProduct: "ĐẦM BODY",
         priceProduct: "380,000đ"
     },
     {
         id: 8,
-        image: "../Image/ProductAreaOfShop%20LongSkirt/ĐẦM%20CADE.jpg",
+        image: "../Image/ProductAreaOfShop%20Dress/ĐẦM%20CADE.jpg",
         nameProduct: "ĐẦM CADE",
         priceProduct: "320,000đ"
     },
     {
         id: 9,
-        image: "../Image/ProductAreaOfShop%20LongSkirt/ĐẦM%20CATIN.jpg",
+        image: "../Image/ProductAreaOfShop%20Dress/ĐẦM%20CATIN.jpg",
         nameProduct: "ĐẦM CATIN",
         priceProduct: "350,000đ"
     },
     {
         id: 10,
-        image: "../Image/ProductAreaOfShop%20LongSkirt/ĐẦM%20CELINE.jpg",
+        image: "../Image/ProductAreaOfShop%20Dress/ĐẦM%20CELINE.jpg",
         nameProduct: "ĐẦM CELINE",
         priceProduct: "400,000đ"
     }
