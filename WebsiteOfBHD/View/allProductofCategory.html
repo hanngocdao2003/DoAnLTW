@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../View/styles/styleSlide.css">
     <link rel="stylesheet" href="../View/styles/styleFooter.css">
     <link rel="stylesheet" href="../View/styles/styleProduct.css">
-    <script src="../View/event/code.jquery.com_jquery-3.7.1.min.js"></script>
+    <script src="../View/JSEvent/code.jquery.com_jquery-3.7.1.min.js"></script>
     <link rel="stylesheet" href="../Image/fontawesome-free-6.4.2-web/css/all.min.css">
     <link rel="icon" href="../Image/BHD-html.png" type="image/x-icon">
     <title>BHD</title>
@@ -153,7 +153,7 @@
             <li class="ImageSlide slide1"><img src="../Image/panelslide/slideofShirt.jpg" alt=""></li>
         </ul>
     </div>
-    <div class="ProductShirtArea">
+    <div class="ProductCategoryArea">
         <h2 class="titleShirt">Tất cả sản phẩm</h2>
         <div class="page1 page">
             <ul class="listItemProduct" id="allOfCategory">
@@ -161,7 +161,7 @@
             </ul>
         </div>
     </div>
-    <footer>
+    <footer id="footer">
         <div class="contain">
             <div class="content">
                 <div class="store">
@@ -172,15 +172,16 @@
                     nhận được mọi ý kiến đóng góp từ khách
                     hàng để có thể nâng cấp trải nghiệm dịch
                     vụ và sản phẩm tốt hơn nữa. </p>
-                <a href="comment.html"><button class="idea-btn">Đóng góp ý kiến</button></a>
+                <a href="comment.html">
+                    <button class="idea-btn">Đóng góp ý kiến</button>
+                </a>
             </div>
             <div class="list-policy">
                 <p class="policy-lb">Chính sách</p>
                 <ul>
                     <li><a href="policy-7days.html">Chính sách đổi trả 7 ngày</a></li>
-                    <li><a href="../View/policy-sale.html">Chính sách khuyến mãi</a></li>
-                    <li><a href="">Chính sách bảo mật</a></li>
-                    <li><a href="../View/policy-ship.html">Chính sách giao hàng</a></li>
+                    <li><a href="policy-sale.html">Chính sách khuyến mãi</a></li>
+                    <li><a href="policy-ship.html">Chính sách giao hàng</a></li>
                 </ul>
                 <div class="media">
                     <a href="https://www.facebook.com/Binh.PHHT/" target="_blank"><img src="../Image/fb.png"
@@ -217,8 +218,12 @@
             </div>
         </div>
     </footer>
-    <script src="../View/event/eventAllofCategory.js"></script>
-    <script src="../View/event/eventMenu.js"></script>
+    <script src="../View/JSEvent/MenuEvent.JS"></script>
+    <script src="../View/JSEvent/Category.JS"></script>
+    <script>
+        allProduct(allProductOfShop, '#allOfCategory');
+
+    </script>
 </body>
 
 </html>

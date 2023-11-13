@@ -24,9 +24,10 @@
 
     .linkProduct {
         text-align: center;
-        font-size: 25px;
+        font-size: 20px;
         text-transform: uppercase;
-        text-wrap: wrap;
+        text-wrap: nowrap;
+        overflow: hidden;
     }
 
     .evalute>span {
