@@ -125,13 +125,13 @@ a > button, .button_add_product {
 
 .info_panel {
     width: 82%;
-    /* display: flex; */
+    display: flex;
     padding: 30px;
     justify-content: center;
     margin-top: 50px;
     margin-left: 40px;
     justify-content: center;
-    /*align-items: center;*/
+    align-items: center;
     height: 100%;
 
 }
@@ -205,25 +205,7 @@ h3 {
     width: 80%;
 }
 
-#panel1 {
-    display: none;
-}
 
-#panel2 {
-    display: none;
-}
-
-#panel3 {
-    display: none;
-}
-
-#panel4 {
-    display: none;
-}
-
-#panel5 {
-    display: none;
-}
 
 .btn_search {
     display: flex;
@@ -233,6 +215,10 @@ h3 {
 #panel3 {
     width: 100%;
 
+}
+
+#panel6 {
+    display: none;
 }
 
 #form_search > div {
@@ -365,4 +351,24 @@ td input[type="checkbox"] {
 
 .danhmuc li:hover .submenu {
     display: block;
+}
+
+#panel1 {
+    display: none;
+}
+
+#panel2 {
+    display: none;
+}
+
+#panel3 {
+    display: none;
+}
+
+#panel4 {
+    display: block;
+}
+
+#panel5 {
+    display: none;
 }
