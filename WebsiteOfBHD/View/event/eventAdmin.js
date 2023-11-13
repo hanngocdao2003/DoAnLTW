@@ -33,56 +33,28 @@ const config = {
 const canvas = document.getElementById('canvas');
 const chart = new Chart(canvas, config);
 
-<<<<<<< HEAD
-function changeColor(clickedElement) {
-    var list = document.querySelectorAll('.menu .item');
-
-    list.forEach(function (item) {
-        item.classList.remove('active');
-    });
-    clickedElement.classList.add('active');
-}
-
-function changeDivContent(div) {
-    var divMain = document.getElementById('info_panel');
-    var panels = document.querySelectorAll('.info_panel > div');
-
-    panels.forEach(function (panel) {
-        panel.style.display = 'none';
-    });
-
-    var selectedPanel = document.getElementById(div);
-    if (selectedPanel) {
-        selectedPanel.style.display = 'block';
-    }
-}
-
-function handleClick(clickedElement, div) {
-    changeColor(clickedElement);
-    changeDivContent(div);
-=======
 // script.js
 
-document.addEventListener("DOMContentLoaded", function () {
-    const colorPalette = document.getElementById("colorPalette");
-
-    // Mảng chứa các màu sắc bạn muốn thêm vào bảng
-    const colors = ["#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#FF00FF", "#00FFFF", "#FFFFFF", "#000000"];
-
-    // Tạo các ô màu và thêm vào bảng
-    colors.forEach(color => {
-        const colorBox = document.createElement("div");
-        colorBox.classList.add("colorBox");
-        colorBox.style.backgroundColor = color;
-
-        // Thêm sự kiện khi click vào ô màu
-        colorBox.addEventListener("click", function () {
-            alert(`Selected color: ${color}`);
-        });
-
-        colorPalette.appendChild(colorBox);
-    });
-});
+// document.addEventListener("DOMContentLoaded", function () {
+//     const colorPalette = document.getElementById("colorPalette");
+//
+//     // Mảng chứa các màu sắc bạn muốn thêm vào bảng
+//     const colors = ["#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#FF00FF", "#00FFFF", "#FFFFFF", "#000000"];
+//
+//     // Tạo các ô màu và thêm vào bảng
+//     colors.forEach(color => {
+//         const colorBox = document.createElement("div");
+//         colorBox.classList.add("colorBox");
+//         colorBox.style.backgroundColor = color;
+//
+//         // Thêm sự kiện khi click vào ô màu
+//         colorBox.addEventListener("click", function () {
+//             alert(`Selected color: ${color}`);
+//         });
+//
+//         colorPalette.appendChild(colorBox);
+//     });
+// });
 
 const textarea = document.querySelector("textarea");
 textarea.addEventListener("input", (e) => {
@@ -109,6 +81,7 @@ fileInput.onchange = ({target})=>{
         uploadFile(fileName);
     }
 }
+// Chức năng upload sản phẩm
 function uploadFile(name){
     let xhr = new XMLHttpRequest();
     xhr.open("POST", "php/upload.php");
@@ -163,5 +136,4 @@ for (let i = 0; i < all_X.length; i++) {
     all_X[i].onclick= function (){
         deleteFile(all_X[i]);
     }
->>>>>>> c0894fc7fb14abd1e83aee71e1b8e522ba288fdd
 }
