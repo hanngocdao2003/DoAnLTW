@@ -145,7 +145,48 @@
                     </div>
                 </div>
             </div>
-        
+            <!-- Chức năng thêm sản phẩm -->
+            <div class="container-add-product" id="panel4">
+                <div class="label">
+                    <p>Thêm sản phẩm</p>
+                </div>
+                <div class="add-product-here">
+                    <div class="pictures">
+                        <input type="file" id="imageUpload1" name="image1" accept="image/*" onchange="previewImage(1)">
+                        <div id="imagePreview1"></div>
+                    </div>
+                    <div class="pictures">
+                        <input type="file" id="imageUpload2" name="image2" accept="image/*" onchange="previewImage(2)">
+                        <div id="imagePreview2"></div>
+                    </div>
+                    <div class="pictures">
+                        <input type="file" id="imageUpload3" name="image3" accept="image/*" onchange="previewImage(3)">
+                        <div id="imagePreview3"></div>
+                    </div>
+                    <div class="pictures">
+                        <input type="file" id="imageUpload4" name="image4" accept="image/*" onchange="previewImage(4)">
+                        <div id="imagePreview4"></div>
+                    </div>
+                </div>
+                <div class="info-of-product">
+                    <div class="name-product">
+                        <input type="text" name="name-pro" placeholder="Thêm tên sản phẩm">
+                    </div>
+                    <div class="price-product">
+                        <input type="text" name="price-pro" placeholder="Thêm giá sản phẩm">
+                    </div>
+                    <div class="type-product">
+                        <input type="text" name="name-pro" placeholder="Thêm loại sản phẩm">
+                    </div>
+                </div>
+                <div class="describe">
+                    <textarea placeholder="Mô tả sản phẩm..." required></textarea>
+                </div>
+                <div class="footer-container">
+                    <button>Thêm sản phẩm</button>
+                </div>
+            </div>
+            <!-- Trên là đoạn code mới nhất -->
             <div class="order-management" id="panel5">
                 <div class="main_label">
                     <table id="table2">
@@ -235,6 +276,7 @@
             <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
             <script src="../View/event/data.js"></script>
             <script src="../View/event/eventAdmin.js"></script>
+            <script src="../View/event/eventAddProduct.js"></script>
         </div>
 </body>
 
