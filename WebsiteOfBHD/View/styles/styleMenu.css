@@ -1,12 +1,11 @@
 @media screen and (min-width: 1025px) {
     /* CSS rules for screens larger than 1024px */
-
     #main-container li {
         text-transform: uppercase;
         line-height: 2.8;
     }
 
-    li>a {
+    li > a {
         text-decoration: none;
     }
 
@@ -30,7 +29,7 @@
 
     }
 
-    .logo>img {
+    .logo > img {
         width: 80px;
         height: 80px;
     }
@@ -60,14 +59,22 @@
         font-size: 21px;
     }
 
+    .dropdown > .item:hover {
+        border-radius: 5px;
+        border: 2px solid #ff8080;
+    }
 
+    .dropdown > .item {
+        border-radius: 5px;
+        border: 2px solid #ff8080;
+    }
 
-    .item>a:hover {
+    .item > a:hover {
         color: #b98c71;
         cursor: pointer;
     }
 
-    .item:hover>a>.fa-chevron-down {
+    .item:hover > a > .fa-chevron-down {
         transform: rotate(90deg);
     }
 
@@ -76,7 +83,7 @@
         flex-direction: row;
     }
 
-    .task_item>li {
+    .task_item > li {
         list-style: none;
     }
 
@@ -100,7 +107,7 @@
         position: relative;
     }
 
-    .menu_item>.item::before {
+    .menu_item > .item::before {
         content: "";
         display: block;
         width: 100%;
@@ -117,7 +124,6 @@
         position: absolute;
         list-style: none;
         top: calc(100% + 38px);
-        box-shadow: 0 0 3px gray;
         border-radius: 20px;
         z-index: 2;
 
@@ -140,20 +146,23 @@
         padding: 15px 10px 15px 0px;
     }
 
-    .sub_item:hover>a {
-        color: #b98c71;
-        background-color: #f6e9d9;
+    .sub_item:hover > a {
+        color: #a62c2c;
+        background: linear-gradient(90deg, rgba(198, 225, 246, 0.8), rgba(251, 214, 227, 0.8));
     }
 
-    .sub_item>a:hover,
+    .sub_item > a:hover,
     .sub_item:hover {
-        color: #b98c71;
-        background-color: #f6e9d9;
+        color: #a62c2c;
+        background: linear-gradient(90deg, rgba(198, 225, 246, 0.8), rgba(251, 214, 227, 0.8));
+
     }
 
-    .item.sub_item {}
+    .item.sub_item {
+    }
 
-    .fa-magnifying-glass {}
+    .fa-magnifying-glass {
+    }
 
     .fa-magnifying-glass:hover {
         transform: rotate(-10deg);
@@ -169,7 +178,8 @@
         transform: scale(1.2);
 
     }
-    .SearchItem{
+
+    .SearchItem {
         display: inline-block;
     }
 
