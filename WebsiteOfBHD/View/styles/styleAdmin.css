@@ -33,6 +33,7 @@ body {
     flex-direction: column;
     background: rgba(251, 192, 195, 0.8);
     width: 100%;
+    height: 100vh;
     padding: 20px;
     justify-content: center;
     align-items: center;
@@ -370,5 +371,9 @@ td input[type="checkbox"] {
 }
 
 #panel5 {
+    display: none;
+}
+
+#panel6 {
     display: none;
 }
