@@ -42,3 +42,16 @@ const listOrder = [
   { id: "DH021", name: "Nguyễn Văn Đức", quantity: 2, totalPrice: "480.000đ", status: "Chưa thanh toán" }
 ]
 
+const listComment = [
+  { NO: 1, name: "Nguyễn Văn Tuân", content: "Tôi cảm thấy quần áo ở đây rất đẹp" },
+  { NO: 2, name: "Trần Thị Ngọc", content: "Dịch vụ tốt, nhân viên nhiệt tình" },
+  { NO: 3, name: "Lê Minh Hải", content: "Giá cả hợp lý, chất lượng sản phẩm tốt" },
+  { NO: 4, name: "Phạm Thị Hường", content: "Giao hàng nhanh chóng và an toàn" },
+  { NO: 5, name: "Nguyễn Anh Dũng", content: "Thích thái độ phục vụ của nhân viên" },
+  { NO: 6, name: "Vũ Thị Mai", content: "Chất lượng sản phẩm không làm thất vọng" },
+  { NO: 7, name: "Đỗ Văn An", content: "Hài lòng với sự đa dạng của sản phẩm" },
+  { NO: 8, name: "Nguyễn Thị Hoa", content: "Quần áo thoải mái và phong cách" },
+  { NO: 9, name: "Lê Văn Tâm", content: "Đã mua hàng nhiều lần, không có vấn đề gì" },
+  { NO: 10, name: "Trần Văn Hùng", content: "Rất hài lòng với trải nghiệm mua sắm ở đây"}
+]
+

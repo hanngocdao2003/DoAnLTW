@@ -74,6 +74,20 @@ function loadDataOrder() {
   select.innerHTML = htmls.join("");
 }
 loadDataOrder();
+
+function loadDataComment() {
+  var htmls = listComment.map(function(cmt){
+    return `<tr>
+    <td>${cmt.NO}</td>
+    <td>${cmt.name}</td>
+    <td>${cmt.content}</td>
+    <td><input type="checkbox"></td>
+</tr>`
+  });
+  let select = document.querySelector("#table3 tbody");
+  select.innerHTML = htmls.join("");
+}
+loadDataComment();
 // const panel1 = document.querySelector('#panel1')
 // const panel2 = document.querySelector('#panel2')
 // const panel3 = document.querySelector('#panel3')

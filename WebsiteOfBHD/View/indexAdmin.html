@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../View/styles/styleAdmin/styleUserManagement.css">
     <link rel="stylesheet" href="../View/styles/styleAdmin/styleAddProduct.css">
     <link rel="stylesheet" href="../View/styles/styleAdmin/styleOrderManagement.css">
+    <link rel="stylesheet" href="../View/styles/styleAdmin/styleFeedback.css">
     <link rel="stylesheet" href="../Image/fontawesome-free-6.4.2-web/css/all.min.css">
     <link rel="icon" href="../Image/BHD-html.png" type="image/x-icon">
     <title> Admin</title>
@@ -202,21 +203,25 @@
                     <p>Thêm sản phẩm</p>
                 </div>
                 <div class="add-product-here">
-                    <div class="pictures">
-                        <input type="file" id="imageUpload1" name="image1" accept="image/*" onchange="previewImage(1)">
-                        <div id="imagePreview1"></div>
+                    <div class="pictures" id="picture">
+                        <label for="input-file">Tải ảnh lên
+                            <input type="file" id="input-file" name="image1" accept="image/*">
+                        </label>
                     </div>
                     <div class="pictures">
-                        <input type="file" id="imageUpload2" name="image2" accept="image/*" onchange="previewImage(2)">
-                        <div id="imagePreview2"></div>
+                        <label for="input-file">Tải ảnh lên
+                            <input type="file" id="input-file" name="image1" accept="image/*">
+                        </label>
                     </div>
                     <div class="pictures">
-                        <input type="file" id="imageUpload3" name="image3" accept="image/*" onchange="previewImage(3)">
-                        <div id="imagePreview3"></div>
+                        <label for="input-file">Tải ảnh lên
+                            <input type="file" id="input-file" name="image1" accept="image/*">
+                        </label>
                     </div>
                     <div class="pictures">
-                        <input type="file" id="imageUpload4" name="image4" accept="image/*" onchange="previewImage(4)">
-                        <div id="imagePreview4"></div>
+                        <label for="input-file">Tải ảnh lên
+                            <input type="file" id="input-file" name="image1" accept="image/*">
+                        </label>
                     </div>
                 </div>
                 <div class="info-of-product">
@@ -238,11 +243,12 @@
                 </div>
             </div>
             <!-- Trên là đoạn code mới nhất -->
-            <div class="order-management" id="panel5" style="display:none;">
-                <div class="seach-order">
-                    <form action="" id="form-search">
+            <!-- Chức năng quản lý đơn hàng -->
+            <div class="order-management" id="panel6">
+                <div class="search_order">
+                    <form action="" id="form_search">
                         <div class="search">
-                            <input type="text" class="input" placeholder="Tìm kiếm theo mã đơn hàng">
+                            <input type="text" class="input" placeholder="Tìm kiếm theo tên">
                             <button class="btn_search">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                             </button>
@@ -255,21 +261,59 @@
                         </div>
                     </form>
                 </div>
-                <div class="infor_customer">
-                    <table id="table2">
-                        <thead>
-                            <tr>
-                                <th class="label">Tên sản phẩm</th>
-                                <th class="label">Giá</th>
-                                <th class="label">Số lượng</th>
-                                <th class="label">Tổng tiền</th>
-                                <th class="label">Trạng thái</th>
-                                <th class="label">Duyệt đơn</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
+                <div id="info_order">
+                    <div class="main_label">
+                        <table id="table2">
+                            <thead>
+                                <tr>
+                                    <th class="label">Mã đơn hàng</th>
+                                    <th class="label">Tên khách hàng</th>
+                                    <th class="label">Số lượng sản phẩm</th>
+                                    <th class="label">Tổng tiền</th>
+                                    <th class="label">Trạng thái</th>
+                                    <!-- <th class="label">Mã phân quyền</th> -->
+                                    <th class="label">Duyệt đơn hàng</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- Chức năng phản hồi người dùng -->
+            <div class="reply" id="panel7">
+                <div class="search-reply">
+                    <form action="" id="form_search">
+                        <div class="search">
+                            <input type="text" class="input" placeholder="Tìm kiếm theo tên">
+                            <button class="btn_search">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                        </div>
+                        <div class="filter">
+                            <select name="filter-select" id="filter-select">
+                                <option value="alphabet">Sắp xếp theo tên người dùng</option>
+                                <option value="alphabet">Sắp xếp theo số sản phẩm mua</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div id="content">
+                    <div class="main_label">
+                        <table id="table3">
+                            <thead>
+                                <tr>
+                                    <th class="label">Số thứ tự</th>
+                                    <th class="label">Tên khách hàng</th>
+                                    <th class="label">Nội dung phản hồi</th>
+                                    <th class="label">Đánh dấu đã đọc</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
             <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

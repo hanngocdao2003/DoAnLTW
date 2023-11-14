@@ -27,11 +27,31 @@
   }
 
   .container-add-product .add-product-here .pictures {
+    display: flex;
+    flex-direction: column;
     width: 13vw;
     height: 40vh;
     margin: 10px;
     border-radius: 5px;
     border: 1px solid #a62c2c;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container-add-product .add-product-here .pictures label {
+    display: flex;
+    width: 150px;
+    background: #a62c2c;
+    color: white;
+    padding: 12px;
+    margin: 3px auto;
+    border-radius: 5px;
+    cursor: pointer;
+    justify-content: center;
+  }
+
+  .container-add-product .add-product-here .pictures input {
+    display: none;
   }
 
   .container-add-product .info-of-product {
@@ -98,3 +118,7 @@
     color: white;
   }
 }
+.center .info_panel #panel5 {
+  display: none;
+}
+/* Xong panel 5 */
