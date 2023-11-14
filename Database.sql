@@ -8,11 +8,21 @@ create table roles (
 
 create table users (
     id varchar(10) not null primary key,
+<<<<<<< HEAD
     fullName nvarchar(50) not null,
     phone varchar(10) not null,
     email varchar(50) not null,
     password varchar(10) not null,
     status smallint not null check(status in (0,1,2)), -- 0 là bị vô hiệu hóa , 1 là đã xác thực, 2 là chưa xác thực
+=======
+    accountName varchar(50) not null,
+    accountPass varchar(16) not null,
+    userName nvarchar(50) not null,
+    userPhone varchar(10) not null,
+    userAddress nvarchar(100) not null,
+    userEmail varchar(60) not null,
+    dateCreate date not null,
+>>>>>>> 948bc92707d3e4e23fff59d628a39e56c59c1686
     role varchar(10) not null,
     foreign key (role)
         references roles (id)
@@ -115,7 +125,11 @@ create table bill_details (
 create table images(
 id varchar(10) not null primary key,
 product varchar(10) not null,
+<<<<<<< HEAD
 link nvarchar(255) not null,
+=======
+linkImage nvarchar(255) not null,
+>>>>>>> 948bc92707d3e4e23fff59d628a39e56c59c1686
 foreign key (product)
 references product_details (id)
 );

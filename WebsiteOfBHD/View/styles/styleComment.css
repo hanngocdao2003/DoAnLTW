@@ -27,10 +27,10 @@
   
   .wrapper {
     width: 700px;
-    background: rgba(92, 170, 230, 0.8);
+    background: rgba(255, 128, 128, 0.8);
     border-radius: 10px;
     padding: 25px 25px 30px;
-    margin-bottom: 25%;
+    margin-bottom: 5%;
   }
   .wrapper h2 {
     color: rgb(212, 122, 104);
@@ -53,7 +53,6 @@
   textarea:is(:focus, :valid) {
     border-width: 2px;
     padding: 14px;
-    background: rgba(19, 86, 138, 0.8);
   }
   
   textarea::-webkit-scrollbar{
@@ -65,7 +64,7 @@
     height: 30px;
     border-radius: 20px;
     border: none;
-    background: rgba(19, 86, 138, 0.8);
+    background: #a62c2c;
     margin-top: 20px;
   }
   a {
