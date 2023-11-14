@@ -63,6 +63,17 @@ const allProductOfShop = [
     { id: "Item Jacket B2", image: "Áo Gile Mari.jpg", nameProduct: "Áo Gile Mari", priceProduct: "350,000đ" },
     { id: "Item Jacket B3", image: "Áo Gile Pia.jpg", nameProduct: "Áo Gile Pia", priceProduct: "350,000đ" },
     { id: "Item Jacket B4", image: "Áo Gile Len.jpg", nameProduct: "Áo Gile Len", priceProduct:"320,000đ"  },
+    { id: "Item Jacket J1", image: "Áo khoát kirby.jpg", nameProduct:"Áo khoát kirby" , priceProduct:"310,000đ"  },
+    { id: "Item Jacket J2", image: "ÁO LEN FARAH.jpg", nameProduct: "ÁO LEN FARAH", priceProduct: "400,000đ" },
+    { id: "Item Jacket J3", image: "Áo len Halie.jpg", nameProduct:"Áo len Halie" , priceProduct:"450,000đ"  },
+    { id: "Item Jacket J4", image: "Áo len lyzia.jpg", nameProduct: "Áo len lyzia", priceProduct: "350,000đ" },
+    { id: "Item Jacket J5", image: "ÁO LEN SOLINE.jpg", nameProduct:"ÁO LEN SOLINE" , priceProduct: "330,000đ" },
+    { id: "Item Jacket J6", image: "Áo Len Yasmin.jpg", nameProduct: "Áo Len Yasmin", priceProduct: "320,000đ" },
+    { id: "Item Jacket J7", image: "Áo (Khoát) len.jpg", nameProduct:"Áo Khoát Len" , priceProduct: "320,000đ" },
+    { id: "Item Jacket J8", image: "Áo Gile Alisa.jpg", nameProduct:"Áo Gile Alisa" , priceProduct: "330,000đ" },
+    { id: "Item Jacket J9", image: "Áo Gile Mari.jpg", nameProduct: "Áo Gile Mari", priceProduct: "350,000đ" },
+    { id: "Item Jacket J10", image: "Áo Gile Pia.jpg", nameProduct: "Áo Gile Pia", priceProduct: "350,000đ" },
+    { id: "Item Jacket B4", image: "Áo Gile Len.jpg", nameProduct: "Áo Gile Len", priceProduct:"320,000đ"  },
     { id: "Item Jacket B5", image: "Áo khoát kirby.jpg", nameProduct:"Áo khoát kirby" , priceProduct:"310,000đ"  },
     // { id: "Item Jacket B6", image: "", nameProduct: , priceProduct:  },
     // { id: "Item Jacket B7", image: "", nameProduct: , priceProduct:  },
@@ -80,68 +91,79 @@ const allProductOfShop = [
     // { id: "Item Jacket J9", image: "", nameProduct: , priceProduct:  },
     // { id: "Item Jacket J10", image: "", nameProduct: , priceProduct:  },
 
-    {id: "Item Dress 1", image: "BRENDA.jpg", nameProduct: "đầm BRENDA", priceProduct: "290,000đ"},
-    {id: "Item Dress 2", image: "BARBARRA.jpg", nameProduct: "đầm BARBARRA", priceProduct: "320,000đ"},
-    {id: "Item Dress 3", image: "ĐẦM%20ALINA.jpg", nameProduct: "ĐẦM ALINA", priceProduct: "290,000đ"},
-    {id: "Item Dress 4", image: "ĐẦM%20ASHLY.jpg", nameProduct: "ĐẦM ASHLY", priceProduct: "340,000đ"},
-    {id: "Item Dress 5", image: "ĐẦM%20BETTY.jpg", nameProduct: "ĐẦM BETTY", priceProduct: "390,000đ"},
-    {id: "Item Dress 6", image: "ĐẦM%20BIANCA.jpg", nameProduct: "ĐẦM BIANCA", priceProduct: "360,000đ"},
-    {id: "Item Dress 7", image: "ĐẦM%20BODY.jpg", nameProduct: "ĐẦM BODY", priceProduct: "380,000đ"},
-    {id: "Item Dress 8", image: "ĐẦM%20CADE.jpg", nameProduct: "ĐẦM CADE", priceProduct: "320,000đ"},
-    {id: "Item Dress 9", image: "ĐẦM%20CATIN.jpg", nameProduct: "ĐẦM CATIN", priceProduct: "350,000đ"},
-    {id: "Item Dress 10", image: "ĐẦM%20CELINE.jpg", nameProduct: "ĐẦM CELINE", priceProduct: "450,000đ"},
-    {id: "Item Dress 11", image: "Đầm CLOVER.jpg", nameProduct: "Đầm CLOVER", priceProduct: "350,000đ"},
-    {id: "Item Dress 12", image: "Đầm dây Jelly.jpg", nameProduct: "Đầm dây Jelly", priceProduct: "300,000đ"},
-    {id: "Item Dress 13", image: "Đầm hai dây Pamela.jpg", nameProduct: "Đầm hai dây Pamela", priceProduct: "340,000đ"},
-    {id: "Item Dress 14", image: "Đầm Julia.jpg", nameProduct: "Đầm Julia", priceProduct: "330,000đ"},
-    {id: "Item Dress 15", image: "Đầm Kaylina.jpg", nameProduct: "Đầm Kaylina.jpg", priceProduct: "430,000đ"},
-    {id: "Item Dress 16", image: "Đầm kimi.jpg", nameProduct: "Đầm kimi", priceProduct: "420,000đ"},
-    {id: "Item Dress 17", image: "Đầm Riley.jpg", nameProduct: "Đầm Riley", priceProduct: "410,000đ"},
-    {id: "Item Dress 18", image: "Đầm Soozy (1).jpg", nameProduct: "Đầm Soozy (1)", priceProduct: "500,000đ"},
-    {id: "Item Dress 19", image: "ĐẦM ZORI.png", nameProduct: "ĐẦM ZORI", priceProduct: "330,000đ"},
-    {id: "Item Dress 20", image: "Đầm Keyline.jpg", nameProduct: "Đầm Keyline", priceProduct: "350,000đ"},
+    {id: "Item Dress C1", image: "BRENDA.jpg", nameProduct: "đầm BRENDA", priceProduct: "290,000đ"},
+    {id: "Item Dress C2", image: "BARBARRA.jpg", nameProduct: "đầm BARBARRA", priceProduct: "320,000đ"},
+    {id: "Item Dress C3", image: "ĐẦM%20ALINA.jpg", nameProduct: "ĐẦM ALINA", priceProduct: "290,000đ"},
+    {id: "Item Dress C4", image: "ĐẦM%20ASHLY.jpg", nameProduct: "ĐẦM ASHLY", priceProduct: "340,000đ"},
+    {id: "Item Dress C5", image: "ĐẦM%20BETTY.jpg", nameProduct: "ĐẦM BETTY", priceProduct: "390,000đ"},
+    {id: "Item Dress C6", image: "ĐẦM%20BIANCA.jpg", nameProduct: "ĐẦM BIANCA", priceProduct: "360,000đ"},
+    {id: "Item Dress C7", image: "ĐẦM%20BODY.jpg", nameProduct: "ĐẦM BODY", priceProduct: "380,000đ"},
+    {id: "Item Dress C8", image: "ĐẦM%20CADE.jpg", nameProduct: "ĐẦM CADE", priceProduct: "320,000đ"},
+    {id: "Item Dress C9", image: "ĐẦM%20CATIN.jpg", nameProduct: "ĐẦM CATIN", priceProduct: "350,000đ"},
+    {id: "Item Dress C10", image: "ĐẦM%20CELINE.jpg", nameProduct: "ĐẦM CELINE", priceProduct: "450,000đ"},
+    {id: "Item Dress F1", image: "Đầm CLOVER.jpg", nameProduct: "Đầm CLOVER", priceProduct: "350,000đ"},
+    {id: "Item Dress F2", image: "Đầm dây Jelly.jpg", nameProduct: "Đầm dây Jelly", priceProduct: "300,000đ"},
+    {id: "Item Dress F3", image: "Đầm hai dây Pamela.jpg", nameProduct: "Đầm hai dây Pamela", priceProduct: "340,000đ"},
+    {id: "Item Dress F4", image: "Đầm Julia.jpg", nameProduct: "Đầm Julia", priceProduct: "330,000đ"},
+    {id: "Item Dress F5", image: "Đầm Kaylina.jpg", nameProduct: "Đầm Kaylina.jpg", priceProduct: "430,000đ"},
+    {id: "Item Dress F6", image: "Đầm kimi.jpg", nameProduct: "Đầm kimi", priceProduct: "420,000đ"},
+    {id: "Item Dress F7", image: "Đầm Riley.jpg", nameProduct: "Đầm Riley", priceProduct: "410,000đ"},
+    {id: "Item Dress F8", image: "Đầm Soozy (1).jpg", nameProduct: "Đầm Soozy (1)", priceProduct: "500,000đ"},
+    {id: "Item Dress F9", image: "ĐẦM ZORI.png", nameProduct: "ĐẦM ZORI", priceProduct: "330,000đ"},
+    {id: "Item Dress F10", image: "Đầm Keyline.jpg", nameProduct: "Đầm Keyline", priceProduct: "350,000đ"},
+    {id: "Item Dress M1", image: "Đầm CLOVER.jpg", nameProduct: "Đầm CLOVER", priceProduct: "350,000đ"},
+    {id: "Item Dress M2", image: "Đầm dây Jelly.jpg", nameProduct: "Đầm dây Jelly", priceProduct: "300,000đ"},
+    {id: "Item Dress M3", image: "Đầm hai dây Pamela.jpg", nameProduct: "Đầm hai dây Pamela", priceProduct: "340,000đ"},
+    {id: "Item Dress M4", image: "Đầm Julia.jpg", nameProduct: "Đầm Julia", priceProduct: "330,000đ"},
+    {id: "Item Dress M5", image: "Đầm Kaylina.jpg", nameProduct: "Đầm Kaylina.jpg", priceProduct: "430,000đ"},
+    {id: "Item Dress M6", image: "Đầm kimi.jpg", nameProduct: "Đầm kimi", priceProduct: "420,000đ"},
+    {id: "Item Dress M7", image: "Đầm Riley.jpg", nameProduct: "Đầm Riley", priceProduct: "410,000đ"},
+    {id: "Item Dress M8", image: "Đầm Soozy (1).jpg", nameProduct: "Đầm Soozy (1)", priceProduct: "500,000đ"},
+    {id: "Item Dress M9", image: "ĐẦM ZORI.png", nameProduct: "ĐẦM ZORI", priceProduct: "330,000đ"},
+    {id: "Item Dress M10", image: "Đầm Keyline.jpg", nameProduct: "Đầm Keyline", priceProduct: "350,000đ"},
+    
 
-    {id: "Item Trouser 1", image: "quần%20Clerk.jpg", nameProduct: "quần Clerk", priceProduct: "340,000đ"},
-    {id: "Item Trouser 2", image: "quần%20Erica.jpg", nameProduct: "quần Erica", priceProduct: "320,000đ"},
-    {id: "Item Trouser 3", image: "quần%20gwen.jpg", nameProduct: "quần gwen", priceProduct: "340,000đ"},
-    {id: "Item Trouser 4", image: "Quần%20helga.jpg", nameProduct: "Quần helga", priceProduct: "360,000đ"},
-    {id: "Item Trouser 5", image: "Quần%20hilary.jpg", nameProduct: "Quần hilary", priceProduct: "370,000đ"},
-    {id: "Item Trouser 6", image: "Quần%20jaycee.jpg", nameProduct: "Quần jaycee", priceProduct: "310,000đ"},
-    {id: "Item Trouser 7", image: "quần%20juno.jpg", nameProduct: "quần pino", priceProduct: "320,000đ"},
-    {id: "Item Trouser 8", image: "quần%20serena.jpg", nameProduct: "quần serena", priceProduct: "380,000đ"},
-    {id: "Item Trouser 9", image: "Quần%20Slykar.jpg", nameProduct: "Quần Slykar", priceProduct: "350,000đ"},
-    {id: "Item Trouser 10", image: "Quần%20xavia.jpg", nameProduct: "Quần xavia", priceProduct: "360,000đ"},
-    {id: "Item Trouser 11", image: "Quần Dài Anisa.jpg", nameProduct: "Quần Dài Anisa", priceProduct: "370,000đ"},
-    {id: "Item Trouser 12", image: "quần Dài Clerk.jpg", nameProduct: "quần Dài Clerk", priceProduct: "380,000đ"},
-    {id: "Item Trouser 13", image: "Quần Dài Cline.png", nameProduct: "Quần Dài Cline", priceProduct: "320,000đ"},
-    {id: "Item Trouser 14", image: "QUẦN Dài DAHLIA.jpg", nameProduct: "QUẦN Dài DAHLIA", priceProduct: "460,000đ"},
-    {id: "Item Trouser 15", image: "Quần Dài Doris (1).jpg", nameProduct: "Quần Dài Doris", priceProduct: "320,000đ"},
-    {id: "Item Trouser 16", image: "Quần dài ERICA.jpg", nameProduct: "Quần dài ERICA", priceProduct: "330,000đ"},
-    {id: "Item Trouser 17", image: "Quần Dài hilary.jpg", nameProduct: "Quần Dài hilary", priceProduct: "340,000đ"},
-    {id: "Item Trouser 18", image: "Quần Dài Isa.jpg", nameProduct: "Quần Dài Isa", priceProduct: "350,000đ"},
-    {id: "Item Trouser 19", image: "Quần dài Jeans Zoey.jpg", nameProduct: "Quần dài Jeans Zoey", priceProduct: "360,000đ"},
-    {id: "Item Trouser 20", image: "Quần dài Kobi.png", nameProduct: "Quần dài Kobi", priceProduct: "390,000đ"},
+    {id: "Item Trouser S1", image: "quần Dài Clerk.jpg", nameProduct: "quần Clerk", priceProduct: "340,000đ"},
+    {id: "Item Trouser S2", image: "quần dài Erica.jpg", nameProduct: "quần Erica", priceProduct: "320,000đ"},
+    {id: "Item Trouser S3", image: "quần%20gwen.jpg", nameProduct: "quần gwen", priceProduct: "340,000đ"},
+    {id: "Item Trouser S4", image: "Quần%20helga.jpg", nameProduct: "Quần helga", priceProduct: "360,000đ"},
+    {id: "Item Trouser S5", image: "Quần dài hilary.jpg", nameProduct: "Quần hilary", priceProduct: "370,000đ"},
+    {id: "Item Trouser S6", image: "Quần%20jaycee.jpg", nameProduct: "Quần jaycee", priceProduct: "310,000đ"},
+    {id: "Item Trouser S7", image: "quần%20juno.jpg", nameProduct: "quần pino", priceProduct: "320,000đ"},
+    {id: "Item Trouser S8", image: "quần%20serena.jpg", nameProduct: "quần serena", priceProduct: "380,000đ"},
+    {id: "Item Trouser S9", image: "Quần%20Slykar.jpg", nameProduct: "Quần Slykar", priceProduct: "350,000đ"},
+    {id: "Item Trouser S10", image: "Quần%20xavia.jpg", nameProduct: "Quần xavia", priceProduct: "360,000đ"},
+    {id: "Item Trouser L1", image: "Quần Dài Anisa.jpg", nameProduct: "Quần Dài Anisa", priceProduct: "370,000đ"},
+    {id: "Item Trouser L2", image: "quần Dài Clerk.jpg", nameProduct: "quần Dài Clerk", priceProduct: "380,000đ"},
+    {id: "Item Trouser L3", image: "Quần Dài Cline.png", nameProduct: "Quần Dài Cline", priceProduct: "320,000đ"},
+    {id: "Item Trouser L4", image: "QUẦN Dài DAHLIA.jpg", nameProduct: "QUẦN Dài DAHLIA", priceProduct: "460,000đ"},
+    {id: "Item Trouser L5", image: "Quần Dài Doris (1).jpg", nameProduct: "Quần Dài Doris", priceProduct: "320,000đ"},
+    {id: "Item Trouser L6", image: "Quần dài ERICA.jpg", nameProduct: "Quần dài ERICA", priceProduct: "330,000đ"},
+    {id: "Item Trouser L7", image: "Quần Dài hilary.jpg", nameProduct: "Quần Dài hilary", priceProduct: "340,000đ"},
+    {id: "Item Trouser L8", image: "Quần Dài Isa.jpg", nameProduct: "Quần Dài Isa", priceProduct: "350,000đ"},
+    {id: "Item Trouser L9", image: "Quần dài Jeans Zoey.jpg", nameProduct: "Quần dài Jeans Zoey", priceProduct: "360,000đ"},
+    {id: "Item Trouser L10", image: "Quần dài Kobi.png", nameProduct: "Quần dài Kobi", priceProduct: "390,000đ"},
 
-    {id: "Item Skirt 1", image: "CHÂN%20VÁY%20AMANDA.jpg", nameProduct: "CHÂN VÁY AMANDA", priceProduct: "310,000đ"},
-    {id: "Item Skirt 2", image: "CHÂN%20VÁY%20ARETHA.jpg", nameProduct: "CHÂN VÁY ARETHA", priceProduct: "340,000đ"},
-    {id: "Item Skirt 3", image: "CHÂN%20VÁY%20JOCELYN.jpg", nameProduct: "CHÂN VÁY JOCELYN", priceProduct: "310,000đ"},
-    {id: "Item Skirt 4", image: "CHÂN%20VÁY%20TAHA.jpg", nameProduct: "CHÂN VÁY TAHA", priceProduct: "320,000đ"},
-    {id: "Item Skirt 5", image: "VÁY%20DÀI%20DINA.jpg", nameProduct: "VÁY DÀI DINA", priceProduct: "310,000đ"},
-    {id: "Item Skirt 6", image: "VÁY%20DÀI%20NADA.jpg", nameProduct: "VÁY DÀI NAIDA", priceProduct: "295,000đ"},
-    {id: "Item Skirt 7", image: "VÁY%20DÀI%20URI.jpg", nameProduct: "VÁY DÀI URI", priceProduct: "340,000đ"},
-    {id: "Item Skirt 8", image: "VÁY%20NGẮN%20KYAN.jpg", nameProduct: "VÁY NGẮN KYAN", priceProduct: "240,000đ"},
-    {id: "Item Skirt 9", image: "VÁY%20NGẮN%20MORRIS.jpg", nameProduct: "VÁY NGẮN MORRIS", priceProduct: "280,000đ"},
-    {id: "Item Skirt 10", image: "VÁY%20NGẮN%20VALERIE.jpg", nameProduct: "VÁY NGẮN VALERIE", priceProduct: "260,000đ"},
-    {id: "Item Skirt 11", image: "VÁY DÀI ARISHA.jpg", nameProduct: "VÁY DÀI ARISHA", priceProduct: "290,000đ"},
-    {id: "Item Skirt 12", image: "Váy dài Belle.jpg", nameProduct: "Váy dài Belle", priceProduct: "230,000đ"},
-    {id: "Item Skirt 13", image: "VÁY DÀI DINA.jpg", nameProduct: "VÁY DÀI DINA", priceProduct: "260,000đ"},
-    {id: "Item Skirt 14", image: "Váy dài Elin.jpg", nameProduct: "Váy dài Elin", priceProduct: "270,000đ"},
-    {id: "Item Skirt 15", image: "VÁY DÀI NADA.jpg", nameProduct: "VÁY DÀI NADA", priceProduct: "240,000đ"},
-    {id: "Item Skirt 16", image: "Váy dài Naila.png", nameProduct: "Váy dài Naila.png", priceProduct: "250,000đ"},
-    {id: "Item Skirt 17", image: "Váy dài nona.jpg", nameProduct: "Váy dài nona", priceProduct: "230,000đ"},
-    {id: "Item Skirt 18", image: "Váy dài Piexi.png", nameProduct: "Váy dài Piexi", priceProduct: "220,000đ"},
-    {id: "Item Skirt 19", image: "VÁY DÀI PRIYA.png", nameProduct: "VÁY DÀI PRIYA", priceProduct: "270,000đ"},
-    {id: "Item Skirt 20", image: "Váy ngắn Isha.png", nameProduct: "Váy ngắn Isha", priceProduct: "280,000đ"}
+    {id: "Item Skirt S1", image: "CHÂN%20VÁY%20AMANDA.jpg", nameProduct: "CHÂN VÁY AMANDA", priceProduct: "310,000đ"},
+    {id: "Item Skirt S2", image: "CHÂN%20VÁY%20ARETHA.jpg", nameProduct: "CHÂN VÁY ARETHA", priceProduct: "340,000đ"},
+    {id: "Item Skirt S3", image: "CHÂN%20VÁY%20JOCELYN.jpg", nameProduct: "CHÂN VÁY JOCELYN", priceProduct: "310,000đ"},
+    {id: "Item Skirt S4", image: "CHÂN%20VÁY%20TAHA.jpg", nameProduct: "CHÂN VÁY TAHA", priceProduct: "320,000đ"},
+    {id: "Item Skirt S5", image: "VÁY%20DÀI%20DINA.jpg", nameProduct: "VÁY DÀI DINA", priceProduct: "310,000đ"},
+    {id: "Item Skirt S6", image: "VÁY%20DÀI%20NADA.jpg", nameProduct: "VÁY DÀI NAIDA", priceProduct: "295,000đ"},
+    {id: "Item Skirt S7", image: "VÁY%20DÀI%20URI.jpg", nameProduct: "VÁY DÀI URI", priceProduct: "340,000đ"},
+    {id: "Item Skirt S8", image: "VÁY%20NGẮN%20KYAN.jpg", nameProduct: "VÁY NGẮN KYAN", priceProduct: "240,000đ"},
+    {id: "Item Skirt S9", image: "VÁY%20NGẮN%20MORRIS.jpg", nameProduct: "VÁY NGẮN MORRIS", priceProduct: "280,000đ"},
+    {id: "Item Skirt S10", image: "VÁY%20NGẮN%20VALERIE.jpg", nameProduct: "VÁY NGẮN VALERIE", priceProduct: "260,000đ"},
+    {id: "Item Skirt L1", image: "VÁY DÀI ARISHA.jpg", nameProduct: "VÁY DÀI ARISHA", priceProduct: "290,000đ"},
+    {id: "Item Skirt L2", image: "Váy dài Belle.jpg", nameProduct: "Váy dài Belle", priceProduct: "230,000đ"},
+    {id: "Item Skirt L3", image: "VÁY DÀI DINA.jpg", nameProduct: "VÁY DÀI DINA", priceProduct: "260,000đ"},
+    {id: "Item Skirt L4", image: "Váy dài Elin.jpg", nameProduct: "Váy dài Elin", priceProduct: "270,000đ"},
+    {id: "Item Skirt L5", image: "VÁY DÀI NADA.jpg", nameProduct: "VÁY DÀI NADA", priceProduct: "240,000đ"},
+    {id: "Item Skirt L6", image: "Váy dài Naila.png", nameProduct: "Váy dài Naila.png", priceProduct: "250,000đ"},
+    {id: "Item Skirt L7", image: "Váy dài nona.jpg", nameProduct: "Váy dài nona", priceProduct: "230,000đ"},
+    {id: "Item Skirt L8", image: "Váy dài Piexi.png", nameProduct: "Váy dài Piexi", priceProduct: "220,000đ"},
+    {id: "Item Skirt L9", image: "VÁY DÀI PRIYA.png", nameProduct: "VÁY DÀI PRIYA", priceProduct: "270,000đ"},
+    {id: "Item Skirt L10", image: "Váy ngắn Isha.png", nameProduct: "Váy ngắn Isha", priceProduct: "280,000đ"}
 ]
 
 function allProduct(ArrayProduct, id) {
@@ -189,3 +211,63 @@ function allProductForMenuItem(ArrayProduct, id) {
 
 const fullShirt = []
 addProductForMenuItem(fullShirt, "Shirt")
+
+const allOfCroptopShirt = []
+addProductForMenuItem(allOfCroptopShirt, "Shirt C")
+
+const shirt = []
+addProductForMenuItem(shirt, "Shirt S")
+
+const StyleShirt = []
+addProductForMenuItem(StyleShirt, "Shirt M")
+
+const T_Shirt = []
+addProductForMenuItem(T_Shirt, "Shirt T")
+
+const fullJacket = []
+addProductForMenuItem(fullJacket, "Jacket")
+
+const JacketWind = []
+addProductForMenuItem(JacketWind, "Jacket W")
+
+const Sweater = []
+addProductForMenuItem(Sweater, "Jacket S")
+
+const Blazer = []
+addProductForMenuItem(Blazer, "Jacket B")
+
+const Jean = []
+addProductForMenuItem(Jean, "Jacket J")
+
+
+const fullTrouser = []
+addProductForMenuItem(fullTrouser, "Trouser")
+
+const LongTrouser = []
+addProductForMenuItem(LongTrouser, "Trouser L")
+
+const ShortTrouser = []
+addProductForMenuItem(ShortTrouser, "Trouser L")
+
+const fullDress = []
+addProductForMenuItem(fullDress, "Dress")
+
+const CamisoleDress = []
+addProductForMenuItem(CamisoleDress, "Dress C")
+
+const FullSetDress = []
+addProductForMenuItem(FullSetDress, "Dress F")
+
+const DressStyle = []
+addProductForMenuItem(DressStyle, "Dress M")
+
+const fullSkirt = []
+addProductForMenuItem(fullSkirt, "Skirt")
+
+const LongSkirt = []
+addProductForMenuItem(LongSkirt, "Skirt L")
+
+const ShortSkirt = []
+addProductForMenuItem(ShortSkirt, "Skirt S")
+
+
