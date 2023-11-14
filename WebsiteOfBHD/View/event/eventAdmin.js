@@ -40,6 +40,7 @@ const config = {
 const canvas = document.getElementById("canvas");
 const chart = new Chart(canvas, config);
 
+// Dữ liệu cho quản lý người dùng
 function loadData() {
   var htmls = listUsers.map(function(user){
     return `<tr>
@@ -48,6 +49,7 @@ function loadData() {
     <td>${user.email}</td>
     <td>${user.address}</td>
     <td>${user.quantityProducts}</td>
+    <td>${user.authorization}</td>
     <td><input type="checkbox"></td>
 </tr>`
   });
@@ -56,6 +58,22 @@ function loadData() {
 }
 loadData();
 
+// Dữ liệu cho quản lý đơn hàng
+function loadDataOrder() {
+  var htmls = listOrder.map(function(order){
+    return `<tr>
+    <td>${order.id}</td>
+    <td>${order.name}</td>
+    <td>${order.quantity}</td>
+    <td>${order.totalPrice}</td>
+    <td>${order.status}</td>
+    <td><input type="checkbox"></td>
+</tr>`
+  });
+  let select = document.querySelector("#table2 tbody");
+  select.innerHTML = htmls.join("");
+}
+loadDataOrder();
 // const panel1 = document.querySelector('#panel1')
 // const panel2 = document.querySelector('#panel2')
 // const panel3 = document.querySelector('#panel3')

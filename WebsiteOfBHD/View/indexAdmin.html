@@ -3,8 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../View/styles/styleAdmin.css">
-    <link rel="stylesheet" href="../View/styles/styleAddProduct.css">
+    <link rel="stylesheet" href="../View/styles/styleAdmin/styleAdmin.css">
+    <link rel="stylesheet" href="../View/styles/styleAdmin/styleStatistical.css">
+    <link rel="stylesheet" href="../View/styles/styleAdmin/styleProductManagement.css">
+    <link rel="stylesheet" href="../View/styles/styleAdmin/styleUserManagement.css">
+    <link rel="stylesheet" href="../View/styles/styleAdmin/styleAddProduct.css">
+    <link rel="stylesheet" href="../View/styles/styleAdmin/styleOrderManagement.css">
     <link rel="stylesheet" href="../Image/fontawesome-free-6.4.2-web/css/all.min.css">
     <link rel="icon" href="../Image/BHD-html.png" type="image/x-icon">
     <title> Admin</title>
@@ -15,13 +19,13 @@
         <img src="../Image/BHD-nền%20trong%20suốt.svg" alt="">
         <h3 style="font-family: 'Brush Script MT', cursive">BHD Boutique</h3>
     </header>
-    <div class="center">
-        <div class="left_panel">
+    <div class="center" style="display: flex;">
+        <div class="left_panel" style="width: 18%;">
             <nav class="menu_bar">
                 <div class="bar">
                     <div class="logo_admin">
-                        <i class="fa-solid fa-lock" style="color: #ff8080;"></i>
-                        <h2>Admin</h2>
+                        <i class="fa-solid fa-lock" style="color: #ff8080; font-size: 20px;"></i>
+                        <h2 style="color: #a62c2c;">Admin</h2>
                     </div>
                     <div class="button_add_product">
                         <i class="fa-solid fa-plus" style="color: #ff8080;"></i>
@@ -63,7 +67,7 @@
                             </a>
                         </ul>
                     </div>
-                    <div class="button_logout">
+                    <div class="button_logout" style="margin-bottom: 100%;">
                         <a href="../View/indexLogin.html">
                             <button><i class="fa-solid fa-right-from-bracket" style="color: #ff8080;"></i>
                                 Đăng xuất
@@ -74,56 +78,102 @@
             </nav>
         </div>
         <div id="info_panel" class="info_panel">
-            <div id="panel1" class="intro_panel">
+            <div id="panel1" class="intro_panel" style="display:none;">
                 <h2 style="color: #a62c2c">Chào mừng bạn đã trở lại!</h2>
             </div>
-            <div id="panel2" class="thongke_panel">
+            <!-- Chức năng thống kê dữ liệu -->
+            <div id="panel2" class="thongke_panel" style="width: 100%;">
                 <div class="thongke_main">
                     <div class="thongke doanhthu">
                         <i class="fa-solid fa-money-bills" style="color: #ff8080;"></i>
-                        <h2>0</h2>
+                        <h2 style="color: #a62c2c">0</h2>
                         <span class="temp"></span>
-                        <h3>VND</h3>
+                        <h3 style="color: #a62c2c">VND</h3>
                     </div>
                     <div class="thongke">
                         <i class="fa-solid fa-cart-shopping" style="color: #ff8080;"></i>
-                        <h2>0</h2>
+                        <h2 style="color: #a62c2c;">0</h2>
                         <span class="temp"></span>
-                        <h3>Sản phẩm đã bán</h3>
+                        <h3 style="color: #a62c2c;">Sản phẩm đã bán</h3>
                     </div>
                     <div class="thongke">
                         <i class="fa-solid fa-user" style="color: #ff8080;"></i>
-                        <h2>0</h2>
+                        <h2 style="color: #a62c2c;">0</h2>
                         <span class="temp"></span>
-                        <h3>Người đăng ký</h3>
+                        <h3 style="color: #a62c2c;">Người đăng ký</h3>
                     </div>
                     <div class="thongke">
                         <i class="fa-solid fa-eye" style="color: #ff8080;"></i>
-                        <h2>0</h2>
+                        <h2 style="color: #a62c2c;">0</h2>
                         <span class="temp"></span>
-                        <h3>Người truy cập</h3>
+                        <h3 style="color: #a62c2c;">Người truy cập</h3>
                     </div>
                 </div>
+                <div id="chart">
+                    <canvas id="canvas">
+                    </canvas>
+                </div>
             </div>
-            <div id="panel3">
+            <!-- Chức năng quản lý sản phẩm -->
+            <div id="panel3" class="product-management">
+                <div class="select_product">
+                    <div class="label_category">
+                        <h2 style="color: #a62c2c;">Danh mục</h2>
+                    </div>
+                    <ul class="category">
+                        <li>Áo
+                            <ul class="submenu">
+                                <li>Áo thun</li>
+                                <li>Áo kiểu</li>
+                                <li>Áo sơ mi</li>
+                                <li>Áo croptop</li>
+                            </ul>
+                        </li>
+                        <li>Áo khoác
+                            <ul class="submenu">
+                                <li>Áo khoác gió</li>
+                                <li>Áo khoác len</li>
+                                <li>Blazer</li>
+                                <li>Áo khoác Jean/Kaki</li>
+                            </ul>
+                        </li>
+                        <li>Quần
+                            <ul class="submenu">
+                                <li>Quần dài</li>
+                                <li>Quần ngắn</li>
+                            </ul>
+                        </li>
+                        <li>Đầm
+                            <ul class="submenu">
+                                <li>Đầm kiểu</li>
+                                <li>Yếm đầm</li>
+                            </ul>
+                        </li>
+                        <li>Váy
+                            <ul class="submenu">
+                                <li>Váy dài</li>
+                                <li>Váy ngắn</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Chức năng quản lý người dùng -->
+            <div class="customer-management" id="panel4">
                 <div class="seach_customer">
                     <form action="" id="form_search">
-                        <div class="head">
-                            <div class="search">
-                                <input type="text" class="input" placeholder="Tìm kiếm theo tên">
-                                <button class="btn_search">
-                                    <i class="fa-solid fa-magnifying-glass"></i>
-                                </button>
-                            </div>
-                            <div class="filter">
-                                <i class="fa-solid fa-filter"></i>
-                                <select name="filter-select" id="filter-select">
-                                    <option value="alphabet">Sắp xếp theo tên người dùng</option>
-                                    <option value="alphabet">Sắp xếp theo số lượng sản phẩm mua</option>
-                                </select>
-                            </div>
+                        <div class="search">
+                            <input type="text" class="input" placeholder="Tìm kiếm theo tên">
+                            <button class="btn_search">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
                         </div>
-
+                        <div class="filter">
+                            <select name="filter-select" id="filter-select">
+                                <option value="alphabet">Sắp xếp theo tên người dùng</option>
+                                <option value="alphabet">Sắp xếp theo số sản phẩm mua</option>
+                            </select>
+                        </div>
                     </form>
                 </div>
                 <div id="info_customer">
@@ -136,6 +186,7 @@
                                     <th class="label">Email</th>
                                     <th class="label">Địa chỉ</th>
                                     <th class="label">Số lượng sản phẩm đã mua</th>
+                                    <th class="label">Mã phân quyền</th>
                                     <th class="label">Khóa tài khoản</th>
                                 </tr>
                             </thead>
@@ -146,7 +197,7 @@
                 </div>
             </div>
             <!-- Chức năng thêm sản phẩm -->
-            <div class="container-add-product" id="panel4">
+            <div class="container-add-product" id="panel5">
                 <div class="label">
                     <p>Thêm sản phẩm</p>
                 </div>
@@ -187,8 +238,24 @@
                 </div>
             </div>
             <!-- Trên là đoạn code mới nhất -->
-            <div class="order-management" id="panel5">
-                <div class="main_label">
+            <div class="order-management" id="panel5" style="display:none;">
+                <div class="seach-order">
+                    <form action="" id="form-search">
+                        <div class="search">
+                            <input type="text" class="input" placeholder="Tìm kiếm theo mã đơn hàng">
+                            <button class="btn_search">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                        </div>
+                        <div class="filter">
+                            <select name="filter-select" id="filter-select">
+                                <option value="alphabet">Sắp xếp theo tên người dùng</option>
+                                <option value="alphabet">Sắp xếp theo số sản phẩm mua</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="infor_customer">
                     <table id="table2">
                         <thead>
                             <tr>
@@ -201,78 +268,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Áo thun</td>
-                                <td>200000</td>
-                                <td>3</td>
-                                <td>600000</td>
-                                <td>Chưa thanh toán</td>
-                                <td><input type="checkbox"></td>
-                            </tr>
-                            <tr>
-                                <td>Quần dài</td>
-                                <td>320000</td>
-                                <td>1</td>
-                                <td>320000</td>
-                                <td>Đã Thanh Toán</td>
-                                <td><input type="checkbox"></td>
-                            </tr>
-                            <tr>
-                                <td>Áo len</td>
-                                <td>200000</td>
-                                <td>2</td>
-                                <td>400000</td>
-                                <td>Chưa thanh toán</td>
-                                <td><input type="checkbox"></td>
-                            </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
-            <div id="panel6" class="product">
-                <div class="select_product">
-                    <div class="label_danhmuc">
-                        <h2>Danh mục</h2>
-                    </div>
-                    <ul class="danhmuc">
-                        <li>Áo
-                            <ul class="submenu">
-                                <li>Áo thun</li>
-                                <li>Áo kiểu</li>
-                                <li>Áo sơ mi</li>
-                                <li>Áo croptop</li>
-                            </ul>
-                        </li>
-                        <li>Áo khoác
-                            <ul class="submenu">
-                                <li>Áo khoác gió</li>
-                                <li>Áo khoác len</li>
-                                <li>Blazer</li>
-                                <li>Áo khoác Jean/Kaki</li>
-                            </ul>
-                        </li>
-                        <li>Quần
-                            <ul class="submenu">
-                                <li>Quần dài</li>
-                                <li>Quần ngắn</li>
-                            </ul>
-                        </li>
-                        <li>Đầm
-                            <ul class="submenu">
-                                <li>Đầm kiểu</li>
-                                <li>Yếm đầm</li>
-                            </ul>
-                        </li>
-                        <li>Váy
-                            <ul class="submenu">
-                                <li>Váy dài</li>
-                                <li>Váy ngắn</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
             <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
             <script src="../View/event/data.js"></script>
             <script src="../View/event/eventAdmin.js"></script>
