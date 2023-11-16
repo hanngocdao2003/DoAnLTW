@@ -91,30 +91,27 @@ function loadDataComment() {
 }
 
 loadDataComment();
-// const panel1 = document.querySelector('#panel1')
-// const panel2 = document.querySelector('#panel2')
-// const panel3 = document.querySelector('#panel3')
-// const panel4 = document.querySelector('#panel4')
-// const panel5 = document.querySelector('#panel5')
-// var arr_panel = [panel1, panel2, panel3, panel4, panel5]
 
-// function change_template() {
-//     arr_panel.forEach(function(panel, index) {
-//         if (index !== 0) {
-//             panel.style.display = "none";
-//         }
-//         panel.addEventListener('click', function() {
-//             // Ẩn tất cả các panel
-//             arr_panel.forEach(function(p, i) {
-//                 p.style.display = "none";
-//             });
+function loadDataProduct() {
+    var htmls = listProduct.map(function (cmt) {
+        return `<tr>
+                    <td>${cmt.id}</td>
+                    <td>${cmt.name}</td>
+                    <td>${cmt.p}</td>
+                    <td>${cmt.color}</td>
+                    <td>${cmt.ban}</td>
+                    <td>${cmt.ton}</td>
+                    <td>
+                    <input type="button" value="Sửa">
+                    <input type="button" value="Xóa">
+                    </td>
+                </tr>`
+    });
+    let select = document.querySelector("#table1 tbody");
+    select.innerHTML = htmls.join("");
+}
 
-//             panel.style.display = "block";
-//         });
-//     });
-// }
-
-// change_template();
+loadDataProduct();
 
 function changeColor(clickedElement) {
     var list = document.querySelectorAll('.menu .item');
