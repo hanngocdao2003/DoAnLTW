@@ -12,7 +12,6 @@
 .order-management .search_order #form_search > div {
     display: flex;
     flex-direction: row;
-    border: 2px solid #a62c2c;
     border-radius: 10px;
     width: 25%;
 }
@@ -73,28 +72,6 @@
     width: 100%;
 }
 
-.center .info_panel .order-management #info_order .main_label table {
-    width: 100%;
-    border: 2px solid #a62c2c;
-    border-collapse: collapse;
-}
-
-.center .info_panel .order-management #info_order .main_label table th,
-td {
-    text-align: left;
-    padding: 10px;
-    border: 1px solid #a62c2c;
-}
-
-.center .info_panel .order-management #info_order .main_label table th.label {
-    text-align: left;
-    background: rgba(255, 128, 128, 0.8);
-}
-
-.center .info_panel .order-management #info_order .main_label table td {
-    background: rgba(251, 192, 195, 0.8);
-}
-
 .order-management #info_order .main_label table td input {
     /* transform: scale(1.5); */
     width: 20px;
@@ -104,6 +81,17 @@ td {
 
 .center .info_panel #panel6 {
     display: none;
+}
+
+#info_order {
+    border-radius: 10px;
+    border: 2px solid #FBC0C3CC;
+    padding: 25px;
+}
+
+.label_category h2 {
+    font-size: 30px !important;
+    padding: 15px;
 }
 
 /* Xong panel 4 */
