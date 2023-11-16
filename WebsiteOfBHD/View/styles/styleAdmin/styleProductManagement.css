@@ -84,27 +84,6 @@
     width: 100%;
 }
 
-#table1 {
-    width: 100%;
-    border: 2px solid #a62c2c;
-    border-collapse: collapse;
-}
-
-.main_label #table1 > thead > tr > th, td {
-    text-align: left;
-    padding: 10px;
-    border: 1px solid #a62c2c;
-}
-
-th.label {
-    text-align: left;
-    background: rgba(255, 128, 128, 0.8);
-}
-
-td {
-    background: rgba(251, 192, 195, 0.8);
-}
-
 td input[type="button"] {
     background: rgba(255, 128, 128, 0.8);
     color: #a62c2c;
@@ -119,7 +98,7 @@ td input[type="button"] {
 }
 
 .select_product {
-    margin: 5% 0px;
+    margin-bottom: 5%;
 }
 
 #form_search {
@@ -179,7 +158,12 @@ form .filter #filter-select option {
 .filter {
     display: flex;
     flex-direction: row;
-    border: 2px solid #a62c2c;
     border-radius: 10px;
     width: 25%;
+}
+
+#panel3 .main_label {
+    border-radius: 10px;
+    border: 2px solid #FBC0C3CC;
+    padding: 25px;
 }
