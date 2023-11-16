@@ -42,8 +42,8 @@ const chart = new Chart(canvas, config);
 
 // Dữ liệu cho quản lý người dùng
 function loadData() {
-  var htmls = listUsers.map(function(user){
-    return `<tr>
+    var htmls = listUsers.map(function (user) {
+        return `<tr>
     <td>${user.name}</td>
     <td>${user.phone}</td>
     <td>${user.email}</td>
@@ -52,16 +52,17 @@ function loadData() {
     <td>${user.authorization}</td>
     <td><input type="checkbox"></td>
 </tr>`
-  });
-  let select = document.querySelector("#table tbody");
-  select.innerHTML = htmls.join("");
+    });
+    let select = document.querySelector("#table tbody");
+    select.innerHTML = htmls.join("");
 }
+
 loadData();
 
 // Dữ liệu cho quản lý đơn hàng
 function loadDataOrder() {
-  var htmls = listOrder.map(function(order){
-    return `<tr>
+    var htmls = listOrder.map(function (order) {
+        return `<tr>
     <td>${order.id}</td>
     <td>${order.name}</td>
     <td>${order.quantity}</td>
@@ -69,24 +70,26 @@ function loadDataOrder() {
     <td>${order.status}</td>
     <td><input type="checkbox"></td>
 </tr>`
-  });
-  let select = document.querySelector("#table2 tbody");
-  select.innerHTML = htmls.join("");
+    });
+    let select = document.querySelector("#table2 tbody");
+    select.innerHTML = htmls.join("");
 }
+
 loadDataOrder();
 
 function loadDataComment() {
-  var htmls = listComment.map(function(cmt){
-    return `<tr>
+    var htmls = listComment.map(function (cmt) {
+        return `<tr>
     <td>${cmt.NO}</td>
     <td>${cmt.name}</td>
     <td>${cmt.content}</td>
     <td><input type="checkbox"></td>
 </tr>`
-  });
-  let select = document.querySelector("#table3 tbody");
-  select.innerHTML = htmls.join("");
+    });
+    let select = document.querySelector("#table3 tbody");
+    select.innerHTML = htmls.join("");
 }
+
 loadDataComment();
 // const panel1 = document.querySelector('#panel1')
 // const panel2 = document.querySelector('#panel2')
@@ -141,14 +144,14 @@ function handleClick(clickedElement, div) {
     changeDivContent(div);
 }
 
-// function buttonClick(div) {
-//     let allDivs = document.getElementById('panel4');
-//     let panels = document.querySelectorAll('.info_panel > div');
+function buttonClick(div) {
+    let allDivs = document.getElementById('panel5');
+    let panels = document.querySelectorAll('.info_panel > div');
 
-//     panels.forEach(function (panel) {
-//         panel.style.display = 'none';
-//     });
-//     if (allDivs) {
-//         allDivs.style.display = 'block';
-//     }
-// }
+    panels.forEach(function (panel) {
+        panel.style.display = 'none';
+    });
+    if (allDivs) {
+        allDivs.style.display = 'block';
+    }
+}
