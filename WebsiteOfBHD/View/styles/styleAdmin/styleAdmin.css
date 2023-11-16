@@ -3,11 +3,13 @@
     padding: 0;
     font-family: Bahnschrift;
     box-sizing: border-box;
+    font-size: 20px;
 }
 
 body {
     background: linear-gradient(90deg, rgba(198, 225, 246, 0.5), rgba(251, 214, 227, 0.5));
     position: relative;
+
 }
 
 .logo {
@@ -138,5 +140,10 @@ body {
 /* Xong phần khung trang admin */
 #panel1 {
     display: block;
+}
+
+#panel1 > h2 {
+    font-size: 40px !important;
+    font-family: 'Pacifico';
 }
 

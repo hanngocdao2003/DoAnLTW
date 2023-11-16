@@ -59,6 +59,9 @@
     display: block;
     padding: 5px;
     color: #a62c2c;
+    border: 2px solid #a62c2c;
+    border-radius: 5px;
+    margin-top: 5px;
 }
 
 .info_panel .product-management .select_product .category .submenu > li:hover {
@@ -73,5 +76,110 @@
 }
 
 .center .info_panel #panel3 {
-  display: none;
+    display: none;
+}
+
+#panel3 .main_label {
+    margin: 50px 0px;
+    width: 100%;
+}
+
+#table1 {
+    width: 100%;
+    border: 2px solid #a62c2c;
+    border-collapse: collapse;
+}
+
+.main_label #table1 > thead > tr > th, td {
+    text-align: left;
+    padding: 10px;
+    border: 1px solid #a62c2c;
+}
+
+th.label {
+    text-align: left;
+    background: rgba(255, 128, 128, 0.8);
+}
+
+td {
+    background: rgba(251, 192, 195, 0.8);
+}
+
+td input[type="button"] {
+    background: rgba(255, 128, 128, 0.8);
+    color: #a62c2c;
+    border-radius: 5px;
+    border: 2px solid #a62c2c;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.main_label {
+    width: 82%;
+}
+
+.select_product {
+    margin: 5% 0px;
+}
+
+#form_search {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.search {
+    display: flex;
+    flex-direction: row;
+    border: 2px solid #a62c2c;
+    border-radius: 10px;
+    width: 25%;
+}
+
+form .filter #filter-select option {
+    width: 100%;
+
+}
+
+.search .input {
+    appearance: none;
+    border: none;
+    width: 85%;
+    padding: 15px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+#form_search > div > .btn_search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+    background-color: #a62c2c;
+    color: white;
+    border: none;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+form .filter #filter-select option {
+    width: 100%;
+
+}
+
+#filter-select {
+    display: flex;
+    flex-direction: row;
+    border: 2px solid #a62c2c;
+    border-radius: 10px;
+    width: 100%;
+
+}
+
+.filter {
+    display: flex;
+    flex-direction: row;
+    border: 2px solid #a62c2c;
+    border-radius: 10px;
+    width: 25%;
 }

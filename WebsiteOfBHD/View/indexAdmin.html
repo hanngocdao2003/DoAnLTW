@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../View/styles/styleAdmin/styleFeedback.css">
     <link rel="stylesheet" href="../Image/fontawesome-free-6.4.2-web/css/all.min.css">
     <link rel="icon" href="../Image/BHD-html.png" type="image/x-icon">
+    <link rel="stylesheet" href="../fonts/stylesheet.css">
     <title> Admin</title>
 </head>
 
@@ -159,6 +160,40 @@
                     </li>
                 </ul>
             </div>
+            <div class="search_product">
+                <form action="" id="form_search">
+                    <div class="search">
+                        <input type="text" class="input" placeholder="Tìm kiếm theo tên">
+                        <button class="btn_search">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                    <div class="filter">
+                        <select name="filter-select" id="filter-select">
+                            <option value="alphabet">Sắp xếp theo tên sản phẩm</option>
+                            <option value="alphabet">Sắp xếp theo số lượng đã bán</option>
+                            <option value="alphabet">Sắp xếp theo số lượng tồn</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="main_label">
+                <table id="table1">
+                    <thead>
+                    <tr>
+                        <th class="label">Mã sản phẩm</th>
+                        <th class="label">Tên sản phẩm</th>
+                        <th class="label">Giá</th>
+                        <th class="label">Màu</th>
+                        <th class="label">Số lượng đã bán</th>
+                        <th class="label">Số lượng tồn</th>
+                        <th class="label">Chức năng</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
         </div>
         <!-- Chức năng quản lý người dùng -->
         <div class="customer-management" id="panel4">
@@ -201,7 +236,7 @@
         <!-- Chức năng thêm sản phẩm -->
         <div class="container-add-product" id="panel5">
             <div class="label">
-                <p>Thêm sản phẩm</p>
+                <p style="color: #eeeeee">Thêm sản phẩm</p>
             </div>
             <div class="add-product-here">
                 <div class="pictures" id="picture">

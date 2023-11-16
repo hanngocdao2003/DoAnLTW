@@ -1,4 +1,4 @@
-create database shopquanao;
+﻿create database shopquanao;
 use shopquanao;
 
 create table roles (
@@ -140,10 +140,4 @@ foreign key (user)
         references users (id)
 );
 
-create table image_reviews(
-id varchar(10) not null primary key,
-review varchar(10) not null,
-link nvarchar(255) not null,
-foreign key (review)
-	references product_reviews(id)
-);
+
