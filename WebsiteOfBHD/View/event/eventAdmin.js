@@ -47,10 +47,12 @@ function loadData() {
     <td>${user.name}</td>
     <td>${user.phone}</td>
     <td>${user.email}</td>
-    <td>${user.address}</td>
-    <td>${user.quantityProducts}</td>
     <td>${user.authorization}</td>
     <td><input type="checkbox"></td>
+    <td>
+        <input type="button" value="Sửa">
+        <input type="button" value="Xóa">
+    </td>
 </tr>`
     });
     let select = document.querySelector("#table tbody");
@@ -84,6 +86,7 @@ function loadDataComment() {
     <td>${cmt.name}</td>
     <td>${cmt.content}</td>
     <td><input type="checkbox"></td>
+    <td>  <input type="button" value="Phản hồi"></td>
 </tr>`
     });
     let select = document.querySelector("#table3 tbody");
@@ -152,3 +155,6 @@ function buttonClick(div) {
         allDivs.style.display = 'block';
     }
 }
+
+
+

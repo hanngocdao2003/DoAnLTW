@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../Image/fontawesome-free-6.4.2-web/css/all.min.css">
     <link rel="icon" href="../Image/BHD-html.png" type="image/x-icon">
     <link rel="stylesheet" href="../fonts/stylesheet.css">
-    <title> Admin</title>
+    <title>Admin</title>
 </head>
 
 <body>
@@ -218,13 +218,12 @@
                     <table id="table">
                         <thead>
                         <tr>
-                            <th class="label">Tên khách hàng</th>
+                            <th class="label">Tên người dùng</th>
                             <th class="label">Số điện thoại</th>
                             <th class="label">Email</th>
-                            <th class="label">Địa chỉ</th>
-                            <th class="label">Số lượng sản phẩm đã mua</th>
-                            <th class="label">Mã phân quyền</th>
-                            <th class="label">Khóa tài khoản</th>
+                            <th class="label">Quyền</th>
+                            <th class="label">Khóa</th>
+                            <th class="label">Chức năng</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -289,13 +288,29 @@
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
                     </div>
-                    <div class="filter">
-                        <select name="filter-select" id="filter-select">
-                            <option value="alphabet">Sắp xếp theo tên người dùng</option>
-                            <option value="alphabet">Sắp xếp theo số sản phẩm mua</option>
-                        </select>
-                    </div>
                 </form>
+            </div>
+            <div class="filter">
+                <div class="status">
+                    <p>Trạng thái</p>
+                    <form action="">
+                        <div><input name="choose1" type="radio">
+                            <span>Đã thanh toán</span></div>
+                        <div><input name="choose1" type="radio">
+                            <span>Chưa thanh toán</span></div>
+                    </form>
+                </div>
+                <div class="status inspect">
+                    <p>Duyệt</p>
+                    <form action="">
+                        <div><input name="choose2" type="radio">
+                            <span>Đã duyệt</span>
+                        </div>
+                        <div><input name="choose2" type="radio">
+                            <span>Chưa duyệt</span>
+                        </div>
+                    </form>
+                </div>
             </div>
             <div id="info_order">
                 <div class="main_label">
@@ -329,8 +344,8 @@
                     </div>
                     <div class="filter">
                         <select name="filter-select" id="filter-select">
-                            <option value="alphabet">Sắp xếp theo tên người dùng</option>
-                            <option value="alphabet">Sắp xếp theo số sản phẩm mua</option>
+                            <option value="alphabet">Sắp xếp theo chưa đọc</option>
+                            <option value="alphabet">Sắp xếp theo chưa phản hồi</option>
                         </select>
                     </div>
                 </form>
@@ -344,6 +359,7 @@
                             <th class="label">Tên khách hàng</th>
                             <th class="label">Nội dung phản hồi</th>
                             <th class="label">Đánh dấu đã đọc</th>
+                            <th class="label">Chức năng</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -352,11 +368,13 @@
                 </div>
             </div>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <script src="../View/event/data.js"></script>
-        <script src="../View/event/eventAdmin.js"></script>
-        <script src="../View/event/eventAddProduct.js"></script>
     </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="../View/event/data.js"></script>
+<script src="../View/event/eventAdmin.js"></script>
+<script src="../View/event/eventAddProduct.js"></script>
 </body>
 
 </html>

@@ -72,13 +72,6 @@
     width: 100%;
 }
 
-.order-management #info_order .main_label table td input {
-    /* transform: scale(1.5); */
-    width: 20px;
-    height: 20px;
-
-}
-
 .center .info_panel #panel6 {
     display: none;
 }
@@ -95,3 +88,34 @@
 }
 
 /* Xong panel 4 */
+
+#panel6 .filter {
+    margin: 5% 0px;
+    padding: 20px;
+    gap: 10px;
+    display: flex;
+    flex-direction: row;
+    border: 2px solid #ff8080;
+    background: rgba(255, 128, 128, 0.3);
+}
+
+.status {
+    display: flex;
+    flex-direction: column;
+}
+
+.status > p {
+    color: #a62c2c;
+    font-size: 25px;
+    text-transform: uppercase;
+    padding: 10px 5px;
+}
+
+.status > p > form > div {
+    padding: 10px;
+}
+
+input[type="radio"] {
+    width: 20px;
+    height: 20px;
+}
