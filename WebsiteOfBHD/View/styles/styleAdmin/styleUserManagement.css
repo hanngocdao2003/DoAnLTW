@@ -1,91 +1,89 @@
 .customer-management .seach_customer form {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .customer-management .seach_customer form .search .btn_search {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
-.customer-management .seach_customer #form_search>div {
-  display: flex;
-  flex-direction: row;
-  border: 2px solid #a62c2c;
-  border-radius: 10px;
-  width: 25%;
+.customer-management .seach_customer #form_search > div {
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+    width: 25%;
 }
 
-.customer-management .seach_customer form .filter #filter-select{
-  display: flex;
-  flex-direction: row;
-  border: 2px solid #a62c2c;
-  border-radius: 10px;
-  width: 100%;
-  
+.customer-management .seach_customer form .filter #filter-select {
+    display: flex;
+    flex-direction: row;
+    border: 2px solid #a62c2c;
+    border-radius: 10px;
+    width: 100%;
+
 }
 
 .customer-management .seach_customer form .filter #filter-select option {
-  width: 100%;
+    width: 100%;
 
 }
 
 .customer-management .seach_customer .input {
-  appearance: none;
-  border: none;
-  width: 85%;
-  padding: 15px;
-  border-bottom-left-radius: 10px;
-  border-top-left-radius: 10px;
+    appearance: none;
+    border: none;
+    width: 85%;
+    padding: 15px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
 }
 
-.center .info_panel .customer-management .seach_customer>#form_search>div>.btn_search {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 15%;
-  background-color: #a62c2c;
-  color: white;
-  border: none;
-  border-bottom-right-radius: 8px;
-  border-top-right-radius: 8px;
+.center .info_panel .customer-management .seach_customer > #form_search > div > .btn_search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+    background-color: #a62c2c;
+    color: white;
+    border: none;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
 }
 
 .center .info_panel .customer-management #info_customer {
-  margin: 50px 0px;
+    margin: 50px 0px;
 }
 
-.center .info_panel .customer-management #info_customer .main_label table {
-  width: 100%;
-  border: 2px solid #a62c2c;
-  border-collapse: collapse;
+
+.center .info_panel #panel4 {
+    display: none;
 }
 
-.center .info_panel .customer-management #info_customer .main_label table th,
-td {
-  text-align: left;
-  padding: 10px;
-  border: 1px solid #a62c2c;
+#panel4 {
+    width: 100%;
 }
 
-.center .info_panel .customer-management #info_customer .main_label table th.label {
-  text-align: left;
-  background: rgba(255, 128, 128, 0.8);
+.main_label {
+    width: 100%;
 }
 
-.center .info_panel .customer-management #info_customer .main_label table td {
-  background: rgba(251, 192, 195, 0.8);
+#table {
+    width: 100%;
+
 }
 
 .customer-management #info_customer .main_label table td input {
-  /* transform: scale(1.5); */
-  width: 20px;
-  height: 20px;
+    /* transform: scale(1.5); */
+    width: 20px;
+    height: 20px;
 
 }
 
-.center .info_panel #panel4 {
-  display: none;
+#info_customer {
+    border-radius: 10px;
+    border: 2px solid #FBC0C3CC;
+    padding: 25px;
 }
+
 /* Xong panel 4 */
