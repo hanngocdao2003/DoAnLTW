@@ -205,3 +205,7 @@ option {
     font-size: 35px !important;
 }
 
+input[type = "checkbox"] {
+    width: 20px;
+    height: 20px;
+}

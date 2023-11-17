@@ -73,13 +73,6 @@
 
 }
 
-.customer-management #info_customer .main_label table td input {
-    /* transform: scale(1.5); */
-    width: 20px;
-    height: 20px;
-
-}
-
 #info_customer {
     border-radius: 10px;
     border: 2px solid #FBC0C3CC;
