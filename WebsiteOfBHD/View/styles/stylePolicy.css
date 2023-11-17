@@ -166,12 +166,12 @@
     border: none;
     font-size: 17px;
     font-weight: bold;
-    background: rgba(19, 86, 138, 0.8);
-    color: white;
+    background: rgba(255, 128, 128, 0.5);
+    color: #a62c2c;
   }
 
   .container .btn button:hover {
-    background: rgb(112, 198, 244);
+    background: #a62c2c;
     color: white;
   }
 
@@ -197,22 +197,22 @@
   }
 
   .container2 .text .text1 {
-    background: rgba(19, 86, 138, 0.8);
-    color: white;
+    background: rgba(255, 128, 128, 0.5);
+    color: #a62c2c;
     padding: 10px;
     border-radius: 10px;
   }
 
   .container2 .text .text2 {
-    background: rgba(19, 86, 138, 0.8);
-    color: white;
+    background: rgba(255, 128, 128, 0.5);
+    color: #a62c2c;
     padding: 10px;
     border-radius: 10px;
   }
 
   .container2 .text .text3 {
-    background: rgba(19, 86, 138, 0.8);
-    color: white;
+    background: rgba(255, 128, 128, 0.5);
+    color: #a62c2c;
     padding: 10px;
     border-radius: 10px;
   }

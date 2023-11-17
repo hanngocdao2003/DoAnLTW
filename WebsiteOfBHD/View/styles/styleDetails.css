@@ -54,19 +54,38 @@
     line-height: 1.5;
   }
 
-  .container .text .information .name {
+  .text .information .name {
     font-size: 40px;
     font-weight: 700;
-    margin-bottom: 8px;
   }
 
-  .container .text .information .price {
+  .text .information .quantity {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    width: 250px;
+  }
+
+  .information .quantity .sale {
+    margin-right: 20px;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: white;
+  }
+
+  .information .quantity .inventory {
+    padding: 5px;
+    border-radius: 10px;
+    background-color: white;
+    }
+
+  .text .information .price {
     font-size: 30px;
     font-weight: bold;
     margin-bottom: 10px;
   }
 
-  .container .text .information .color-btn button {
+   .information .color-btn button {
     width: 50px;
     height: 25px;
     margin-right: 3px;
@@ -74,12 +93,13 @@
     border: 1px solid black;
   }
 
-  .container .text .information .size-btn {
+.text .information .size-btn {
     width: 60px;
     height: 30px;
     margin-right: 3px;
     border-radius: 5px;
     border: 1px solid black;
+    background-color: white;
   }
 
   .container .text .information .add {
@@ -88,11 +108,10 @@
 
   .container .text .information .add .add-pd {
     width: 280px;
-    margin-left: 20px;
     height: 40px;
     border-radius: 30px;
     border: none;
-    background: rgba(19, 86, 138, 0.8);
+    background: #FF8080FF;;
     color: white;
   }
 
