@@ -1,15 +1,23 @@
-.reply .search-reply form {
+.reply 
+.search-reply 
+form {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.reply .search-reply form .search .btn_search {
+.reply 
+.search-reply 
+form 
+.search 
+.btn_search {
     display: flex;
     justify-content: center;
 }
 
-.reply .search-reply #form_search > div {
+.reply 
+.search-reply 
+#form_search > div {
     display: flex;
     flex-direction: row;
     border-radius: 10px;

@@ -36,8 +36,8 @@
     }
 
     .link:hover {
-        background-color: rgb(46, 93, 155);
-        color: white;
+        background-color: rgba(255, 128, 128, 0.5);
+        color: #a62c2c;
         box-shadow: 0 0 5px gray;
     }
 
@@ -93,9 +93,9 @@
     .titleOutArea {
         border-radius: 60px;
         padding: 20px 40px;
-        background: rgba(19, 86, 138, 0.8);
+        background: rgba(255, 128, 128, 0.5);
         font-size: 30px;
-        color: white;
+        color: #a62c2c;
         font-weight: bold;
 
     }
@@ -122,12 +122,12 @@
     .t1 {
         font-weight: 300;
         font-size: 25px;
-        color: grey;
+        color: #a62c2c;
     }
 
     .ship {
         margin-top: 5px;
-        color: grey;
+        color: #a62c2c;
         font-size: 20px;
     }
 
@@ -136,7 +136,7 @@
         width: 40%;
         display: flex;
         flex-direction: column;
-        border: 2px solid rgba(19, 86, 138, 0.8);
+        border: 2px solid #a62c2c;
     }
 
     .time1 {
@@ -149,16 +149,16 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background: rgba(19, 86, 138, 0.8);
+        background: rgba(255, 128, 128, 0.5);
     }
 
     .timeConfirm>p {
-        color: whitesmoke;
+        color: #a62c2c;
         font-size: 20px;
     }
 
     .timeConfirm>h1 {
-        color: whitesmoke;
+        color: #a62c2c;
         font-size: 50px;
     }
 
@@ -190,19 +190,19 @@
 
     .typeship .border .haveCOD,
     .noCOD {
-        background: rgba(19, 86, 138, 0.8);
+        background: rgba(255, 128, 128, 0.5);
         width: 100%;
         padding: 20px;
         font-size: 25px;
         font-weight: bold;
-        color: white;
+        color: #a62c2c;
         margin: 5px;
         border-radius: 20px;
     }
 
     .typeship .border .haveCOD:hover,
     .noCOD:hover {
-        background: rgba(19, 86, 138, 0.8);
+        background: rgba(255, 128, 128, 0.5);
     }
 
     .fa-box,
@@ -210,10 +210,10 @@
         position: absolute;
         left: -20px;
         top: -30px;
-        color: white;
+        color: #a62c2c;
         font-size: 30px;
         padding: 20px;
-        background: rgba(19, 86, 138, 0.8);
+        background: rgba(255, 128, 128, 0.5);
     }
 
 
@@ -223,8 +223,8 @@
         display: flex;
         flex-direction: row;
         justify-content: center;
-        background: rgba(19, 86, 138, 0.8);
-        color: #fff;
+        background: rgba(255, 128, 128, 0.5);
+        color: #a62c2c;
     }
 
     .typePay .cod .namePay {
@@ -245,9 +245,9 @@
         display: flex;
         flex-direction: row;
         justify-content: center;
-        background: rgba(19, 86, 138, 0.8);
+        background: rgba(255, 128, 128, 0.5);
         margin-top: 10px;
-        color: #fff;
+        color: #a62c2c;
     }
 
     .typePay .noCod .namePay {
