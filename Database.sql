@@ -7,7 +7,7 @@ create table roles (
 );
 
 create table users (
-    id varchar(10) not null primary key,
+    id int not null primary key,
     fullName nvarchar(50) not null,
     phone varchar(10) not null,
     email varchar(50) not null,
@@ -86,7 +86,7 @@ create table bills (
     userAddress nvarchar(255) not null,
     dateCreated date not null,
     note text,
-    user varchar(10) not null,
+    user int not null,
     status text not null check (status in ('Đã thanh toán','Chưa thanh toán')),
     foreign key (user)
         references users (id)
@@ -130,7 +130,7 @@ create table discount_codes(
 
 create table product_reviews(
 id varchar(10) not null primary key,
-user varchar(10) not null,
+user int not null,
 bill varchar(10) not null,
 comment text not null,
 stars float not null check (stars between 1 and 5),
