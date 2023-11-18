@@ -99,6 +99,7 @@
     .footer > p {
         color: black;
         text-transform: uppercase;
+        text-wrap: nowrap;
     }
 
     .footer > a {
