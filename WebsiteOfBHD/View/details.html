@@ -18,112 +18,133 @@
     <div id="menu_container">
         <nav class="main_menu">
             <div class="menu">
-                <div class="logo">
+                <a href="../View/index.html" class="logo">
                     <img src="../Image/BHD-nền trong suốt.svg" alt="404">
                     <h1>BHD Boutique</h1>
-                </div>
+                </a>
                 <div class="list_item">
                     <ul class="menu_item">
                         <li class="item">
                             <a href="index.html">Trang chủ</a>
                         </li>
                         <li class="item">
-                            <a href="">Áo
-                                <i class="fa-solid fa-chevron-down"></i>
-                            </a>
-                            <ul class="dropdown ao_item">
-                                <li class="item sub_item">
-                                    <a href="">Áo thun</a>
-                                </li>
-                                <li class="item sub_item">
-                                    <a href="">Áo kiểu</a>
-                                </li>
-                                <li class="item sub_item">
-                                    <a href="">Áo sơ mi</a>
-                                </li>
-                                <li class="item sub_item">
-                                    <a href="">Áo croptop</a>
-                                </li>
-                            </ul>
+                            <a href="allProductofCategory.html">Bộ sưu tập</a>
                         </li>
                         <li class="item">
-                            <a href="">Áo khoác
+                            <a href="../View/fileHTMLProduct/ItemShirt/FullShirt.html">Áo
+                                <a href="">
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </a>
+                                <ul class="dropdown ao_item">
+                                    <li class="item sub_item">
+                                        <a href="../View/fileHTMLProduct/ItemShirt/T_Shirt.html">Áo thun</a>
+                                    </li>
+                                    <li class="item sub_item">
+                                        <a href="../View/fileHTMLProduct/ItemShirt/StyleShirt.html">Áo kiểu</a>
+                                    </li>
+                                    <li class="item sub_item">
+                                        <a href="../View/fileHTMLProduct/ItemShirt/Shirt.html">Áo sơ mi</a>
+                                    </li>
+                                    <li class="item sub_item">
+                                        <a href="../View/fileHTMLProduct/ItemShirt/CroptopShirt.html">Áo croptop</a>
+                                    </li>
+                                </ul>
+                            </a>
+                        </li>
+                        <li class="item">
+                            <a href="fileHTMLProduct/ItemJacket/fullJacket.html">Áo khoác
                                 <i class="fa-solid fa-chevron-down"></i>
                             </a>
                             <ul class="dropdown aokhoac_item">
                                 <li class="item sub_item">
-                                    <a href="">Áo khoác gió</a>
+                                    <a href="fileHTMLProduct/ItemJacket/jacketWind.html">Áo khoác gió</a>
                                 </li>
                                 <li class="item sub_item">
-                                    <a href="">Áo khoác len</a>
+                                    <a href="fileHTMLProduct/ItemJacket/sweater.html">Áo khoác len</a>
                                 </li>
                                 <li class="item sub_item">
-                                    <a href="">Blazer</a>
+                                    <a href="fileHTMLProduct/ItemJacket/jacketBlazer.html">Blazer</a>
                                 </li>
                                 <li class="item sub_item">
-                                    <a href="">Áo khoác Jean/Kaki</a>
+                                    <a href="fileHTMLProduct/ItemJacket/jacketJean.html">Áo khoác Jean/Kaki</a>
                                 </li>
                             </ul>
                         </li>
                         <li class="item">
-                            <a href="">Quần
+                            <a href="fileHTMLProduct/ItemTrouser/fullTrouser.html">Quần
                                 <i class="fa-solid fa-chevron-down"></i>
                             </a>
                             <ul class="dropdown quan_item">
                                 <li class="item sub_item">
-                                    <a href="">Quần dài</a>
+                                    <a href="fileHTMLProduct/ItemTrouser/TrouserLong.html">Quần dài</a>
                                 </li>
                                 <li class="item sub_item">
-                                    <a href="">Quần ngắn</a>
+                                    <a href="fileHTMLProduct/ItemTrouser/TrouserShort.html">Quần ngắn</a>
                                 </li>
                             </ul>
                         </li>
                         <li class="item">
-                            <a href="">Đầm
+                            <a href="fileHTMLProduct/ItemDress/fullDress.html">Đầm
                                 <i class="fa-solid fa-chevron-down"></i>
                             </a>
                             <ul class="dropdown dam_item">
                                 <li class="item sub_item">
-                                    <a href="">Đầm kiểu</a>
+                                    <a href="fileHTMLProduct/ItemDress/DressStyle.html">Đầm kiểu</a>
                                 </li>
                                 <li class="item sub_item">
-                                    <a href="">Yếm đầm</a>
+                                    <a href="fileHTMLProduct/ItemDress/CamisoleDress.html">Yếm đầm</a>
+                                </li>
+                                <li class="item sub_item">
+                                    <a href="fileHTMLProduct/ItemDress/DressFullSet.html">Nguyên bộ</a>
                                 </li>
                             </ul>
                         </li>
                         <li class="item">
-                            <a href="">Váy
+                            <a href="fileHTMLProduct/ItemSkirt/fullSkirt.html">Váy
                                 <i class="fa-solid fa-chevron-down"></i>
                             </a>
                             <ul class="dropdown vay_item">
                                 <li class="item sub_item">
-                                    <a href="">Váy dài</a>
+                                    <a href="fileHTMLProduct/ItemSkirt/LongSkirt.html">Váy dài</a>
                                 </li>
                                 <li class="item sub_item">
-                                    <a href="">Váy ngắn</a>
+                                    <a href="fileHTMLProduct/ItemSkirt/ShortSkirt.html">Váy ngắn</a>
                                 </li>
                             </ul>
                         </li>
                         <li class="item">
-                            <a href="">Liên hệ</a>
+                            <a id="contact">Liên hệ</a>
                         </li>
                     </ul>
                 </div>
                 <div class="task">
                     <ul class="task_item">
                         <li class="logo_item">
-                            <a href=""> <i class="fa-solid fa-magnifying-glass" style="color: #ff8080;"></i>
+                            <a class="SearchItem"> <i class="fa-solid fa-magnifying-glass" style="color: #ff8080;"></i>
                             </a>
                         </li>
                         <li class="logo_item">
-                            <a href="/View/indexLogin.html"><i class="fa-solid fa-user" style="color: #ff8080;"></i></a>
-                        </li>
+                            <a href="../View/indexLogin.html"><i class="fa-solid fa-user"
+                                                                 style="color: #ff8080;"></i></a>
+                            <ul class="personalArea">
+                                <li class="personal-Item"><a href="indexPersonal.html">Thông tin cá nhân</a></li>
+                                <li class="personal-Item"><a href="index.html">Đăng xuất</a></li>
+                            </ul>
                         <li class="logo_item">
                             <a href="indexCart.html"><i class="fa-solid fa-cart-shopping" style="color: #ff8080;"></i>
                             </a>
                         </li>
                     </ul>
+    
+                    </li>
                 </div>
+            </div>
+            <div class="searchArea" id="searchArea">
+                <form class="searchForm">
+                    <input type="text" class="search" id="searchProduct">
+                    <button class="btnsearchProduct"><i class="fa-solid fa-magnifying-glass"
+                                                        style="color: #ff8080;"></i></button>
+                </form>
             </div>
         </nav>
     </div>
