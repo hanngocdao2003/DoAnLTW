@@ -1,4 +1,4 @@
-package WebsiteOfBHD.Model.bean;
+package Model.bean;
 /*Khuyến khích sử dụng lớp Wrapper thay vì kiểu dữ liệu nguyên thủy
  *Khai báo lớp Entity (bean), đặt private và getter setter.
 */
