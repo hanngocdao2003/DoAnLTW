@@ -158,3 +158,21 @@ function buttonClick(div) {
 
 
 
+//     panels.forEach(function (panel) {
+//         panel.style.display = 'none';
+//     });
+//     if (allDivs) {
+//         allDivs.style.display = 'block';
+//     }
+// }
+var panel1 = document.getElementById("panel1");
+var panel2 = document.getElementById("panel2");
+var panel3 = document.getElementById("panel3");
+var panel4 = document.getElementById("panel4");
+var panel5 = document.getElementById("panel5");
+var panel6 = document.getElementById("panel6");
+var panel7 = document.getElementById("panel7");
+
+var listPanel = [panel1]
+
+
