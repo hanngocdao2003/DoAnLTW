@@ -143,7 +143,7 @@
                 <p class="name">Áo Len Aimee</p>
                 <div class="quantity">
                     <div class="sale">
-                        <p class="sub-sale" ;">Đã bán: 65</p>
+                        <p class="sub-sale">Đã bán: 65</p>
                     </div>
                     <div class="inventory">
                         <p class="sub-inventory">Còn lại: 134</p>
