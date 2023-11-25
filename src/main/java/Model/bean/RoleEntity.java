@@ -1,4 +1,4 @@
-package WebsiteOfBHD.Model.bean;
+package Model.bean;
 
 public class RoleEntity {
   private String id;
