@@ -9,16 +9,6 @@ public class UserEntity {
     private Short status;
     private String roleId;
 
-    public UserEntity(String fullName, String phone, String email, String password) {
-        this.id = id;
-        this.fullName = fullName;
-        this.phone = phone;
-        this.email = email;
-        this.password = password;
-        this.status = status;
-        this.roleId = roleId;
-    }
-
     public Integer getId() {
         return id;
     }

@@ -25,7 +25,11 @@ public class RegisterServlet extends HttpServlet {
         String password = req.getParameter("password");
 
         // create object user
-        UserEntity newUser = new UserEntity(fullName, phone, email, password);
+        UserEntity newUser = new UserEntity();
+        newUser.setFullName(fullName);
+        newUser.setPhone(phone);
+        newUser.setEmail(email);
+        newUser.setPassword(password);
 
         // save information of user to db
         UserDao userDao = new UserDao();
