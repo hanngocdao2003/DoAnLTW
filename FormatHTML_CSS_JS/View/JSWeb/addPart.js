@@ -1,5 +1,5 @@
 function addFooter() {
-  return `<footer>
+  return `<footer id = "footer">
     <div class="contain">
       <div class="content">
         <div class="store">
@@ -76,18 +76,30 @@ document.addEventListener('DOMContentLoaded', function () {
     infinite: true,
     autoplay: true,
     autoplaySpeed: 2000,
-    // this value should < total # of slides, otherwise the carousel won't slide at all
     slidesToShow: 1,
     slidesToScroll: 1,
     speed: 2000,
     autoplay: true,
-    //dots: true,
     arrows: true,
     prevArrow: $(".carosel-nav-left"),
     nextArrow: $(".carosel-nav-right")
   });
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+  $(".SlideListProduct").slick({
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    speed: 2000,
+    autoplay: true,
+    arrows: true,
+    prevArrow: $(".carosel-nav-left"),
+    nextArrow: $(".carosel-nav-right")
+  });
+});
 
 
 

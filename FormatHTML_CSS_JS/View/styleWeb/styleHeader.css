@@ -1,7 +1,9 @@
-* {
-    margin: 0;
+* {    margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+body{
+    background-color: var(--back);
 }
 
 header {
@@ -190,11 +192,11 @@ a>.menu_Category_Item {
 }
 
 .linkpage:hover {
-    background-color: var(--border);
+    background-color: var(--font);
 }
 
 .Home {
-    background-color: var(--border);
+    background-color: var(--font);
 }
 
 .Item_menuPage {}
@@ -230,6 +232,8 @@ a>.menu_Category_Item {
 
 .CategoryCard>a {
     text-decoration: none;
+    color: var(--font);
+    
 }
 
 .CategoryItem {
@@ -240,6 +244,7 @@ a>.menu_Category_Item {
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 5px;
 
 }
 
@@ -250,7 +255,7 @@ a>.menu_Category_Item {
     text-transform: uppercase;
     font-weight: bold;
     padding: 10px 20px;
-    background-color: white;
+    background-color: var(--back);
     border-radius: 20px;
     display: flex;
     align-items: center;
@@ -278,12 +283,72 @@ a>.menu_Category_Item {
 .Skirt {
     background-image: url(../../Image/Category/Váy.png);
 }
-
-.Filter_Product {
+.Top10{
     margin-top: 5%;
-    width: 100%;
+    position: relative;
+}
+.Filter_ProductSilde{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
     
 }
-.Filter_Product > img{
-    margin-left: 20px;
+.Filter_ProductSilde > span{
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 3%;
+    color: var(--font);
+
 }
+.SliderShow_Product {
+    width: 65%;
+    
+    
+}
+
+.SlideListProduct {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+
+}
+.slick-track{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 20px;
+}
+.SlideListProduct>div {
+    width: 80%;
+}
+.OfCategory{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 5px solid var(--font-o);
+    border-radius: 2%;
+    padding: 3% 0px;
+}
+.OfCategory > span{
+    font-size: 40px;
+    font-weight: bold;
+    color: var(--font);
+    text-align: center;
+}
+.sticky{
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 30px;
+    height: 500px;
+
+}
+
+
