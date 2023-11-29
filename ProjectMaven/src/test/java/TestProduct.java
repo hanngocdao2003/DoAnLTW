@@ -1,5 +1,5 @@
 import model.bean.ProductEntity;
-import model.dao.ProductData;
+import model.dao.ProductDao;
 
 import java.util.HashMap;
 import java.util.List;
@@ -8,7 +8,7 @@ import java.util.Map;
 public class TestProduct {
     public static void main(String[] args) {
         // Tạo một đối tượng ProductData
-        ProductData productData = new ProductData();
+        ProductDao productData = new ProductDao();
 
         // Tạo một Map để chứa các thông tin tìm kiếm (nếu cần)
         Map<String, String> searchParams = new HashMap<>();
