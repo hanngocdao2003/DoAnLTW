@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styleWeb/styleComment.css">
+  <link rel="stylesheet" href="styleWeb/styleFooter.css">
+  <link rel="stylesheet" href="../Image/fontawesome/css/all.min.css">
+  <link rel="icon" href="../Image/logo/BHD-html.png" type="image/x-icon">
+  <link rel="stylesheet" href="../View/styleWeb/color.css">
+  <script src="JSWeb/addPart.js"></script>
+  <title>Đóng góp ý kiến</title>
+</head>
+
+<body>
+  <div class="image">
+    <a href="index.html" class="home"><img src="../Image/logo/BHD-nền trong suốt.svg" alt=""></a>
+  </div>
+  <div class="wrapper">
+    <h2>Bạn có gì muốn nhắn gửi cho BHD Store ạ ? *</h2>
+    <textarea placeholder="Bạn nhập nội dung ở đây..." required></textarea>
+    <button class="buttonComment"><a href="">Ok, Xong rồi!</a></button>
+  </div>
+  <script>
+    document.body.innerHTML += addFooter();
+    const textarea = document.querySelector("textarea");
+    textarea.addEventListener("input", (e) => {
+      textarea.style.height = "63px";
+      let scHeight = e.target.scrollHeight;
+      textarea.style.height = scHeight + "px";
+    });
+  </script>  
+</body>
+
+</html>
