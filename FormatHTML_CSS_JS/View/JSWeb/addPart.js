@@ -1,5 +1,9 @@
 function addFooter() {
+<<<<<<< HEAD
   return `<footer id = "footer">
+=======
+  return `<footer>
+>>>>>>> e1d7745b355aaa2540dadee596d055c674d927d1
     <div class="contain">
       <div class="content">
         <div class="store">
@@ -76,10 +80,15 @@ document.addEventListener('DOMContentLoaded', function () {
     infinite: true,
     autoplay: true,
     autoplaySpeed: 2000,
+<<<<<<< HEAD
+=======
+    // this value should < total # of slides, otherwise the carousel won't slide at all
+>>>>>>> e1d7745b355aaa2540dadee596d055c674d927d1
     slidesToShow: 1,
     slidesToScroll: 1,
     speed: 2000,
     autoplay: true,
+<<<<<<< HEAD
     arrows: true,
     prevArrow: $(".carosel-nav-left"),
     nextArrow: $(".carosel-nav-right")
@@ -95,6 +104,9 @@ document.addEventListener('DOMContentLoaded', function () {
     slidesToScroll: 1,
     speed: 2000,
     autoplay: true,
+=======
+    //dots: true,
+>>>>>>> e1d7745b355aaa2540dadee596d055c674d927d1
     arrows: true,
     prevArrow: $(".carosel-nav-left"),
     nextArrow: $(".carosel-nav-right")
@@ -107,3 +119,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> e1d7745b355aaa2540dadee596d055c674d927d1

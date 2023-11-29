@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * {    margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -5,6 +6,13 @@
 body{
     background-color: var(--back);
 }
+=======
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+>>>>>>> e1d7745b355aaa2540dadee596d055c674d927d1
 
 header {
     width: 100%;
@@ -192,11 +200,19 @@ a>.menu_Category_Item {
 }
 
 .linkpage:hover {
+<<<<<<< HEAD
     background-color: var(--font);
 }
 
 .Home {
     background-color: var(--font);
+=======
+    background-color: var(--border);
+}
+
+.Home {
+    background-color: var(--border);
+>>>>>>> e1d7745b355aaa2540dadee596d055c674d927d1
 }
 
 .Item_menuPage {}
@@ -232,8 +248,11 @@ a>.menu_Category_Item {
 
 .CategoryCard>a {
     text-decoration: none;
+<<<<<<< HEAD
     color: var(--font);
     
+=======
+>>>>>>> e1d7745b355aaa2540dadee596d055c674d927d1
 }
 
 .CategoryItem {
@@ -244,7 +263,10 @@ a>.menu_Category_Item {
     display: flex;
     justify-content: center;
     align-items: center;
+<<<<<<< HEAD
     border-radius: 5px;
+=======
+>>>>>>> e1d7745b355aaa2540dadee596d055c674d927d1
 
 }
 
@@ -255,7 +277,11 @@ a>.menu_Category_Item {
     text-transform: uppercase;
     font-weight: bold;
     padding: 10px 20px;
+<<<<<<< HEAD
     background-color: var(--back);
+=======
+    background-color: white;
+>>>>>>> e1d7745b355aaa2540dadee596d055c674d927d1
     border-radius: 20px;
     display: flex;
     align-items: center;
@@ -283,6 +309,7 @@ a>.menu_Category_Item {
 .Skirt {
     background-image: url(../../Image/Category/Váy.png);
 }
+<<<<<<< HEAD
 .Top10{
     margin-top: 5%;
     position: relative;
@@ -352,3 +379,14 @@ a>.menu_Category_Item {
 }
 
 
+=======
+
+.Filter_Product {
+    margin-top: 5%;
+    width: 100%;
+    
+}
+.Filter_Product > img{
+    margin-left: 20px;
+}
+>>>>>>> e1d7745b355aaa2540dadee596d055c674d927d1
