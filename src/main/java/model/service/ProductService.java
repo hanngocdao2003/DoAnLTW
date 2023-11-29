@@ -20,8 +20,10 @@ public class ProductService {
 
         // In ra thông tin sản phẩm
         for (ProductEntity product : productList) {
+        	System.out.println("Mã sản phẩm: " + product.getId());
             System.out.println("Tên sản phẩm: " + product.getName());
             System.out.println("Đơn giá: " + product.getPrice());
+            System.out.println("Chi tiết sản phẩm: " + product.getDetails());
             System.out.println("------------------------");
         }
     }
