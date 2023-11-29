@@ -10,7 +10,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
+//
 public class ProductData implements IProduct {
 	static final String url = "jdbc:mysql://localhost:3306/shopquanao";
 	static final String username = "root";
@@ -44,7 +44,7 @@ public class ProductData implements IProduct {
 	public List<ProductEntity> findAll(Map<String, String> search) {
 		List<ProductEntity> productEntities = new ArrayList<>();
 		StringBuilder sql = new StringBuilder();
-		sql.append("SELECT p.name , p.price FROM shopquanao.products p ");
+		sql.append("SELECT p.* FROM shopquanao.products p ");
 //        if (search.containsKey("category")) {
 		sql.append("INNER JOIN shopquanao.category_details cd ON p.categoryId = cd.id\n"
 				+ "INNER JOIN shopquanao.categories c ON cd.categoryId = c.id ");
@@ -61,8 +61,10 @@ public class ProductData implements IProduct {
 
 			while (rs.next()) {
 				ProductEntity productEntity = new ProductEntity();
+				productEntity.setId(rs.getString("id"));
 				productEntity.setName(rs.getString("name"));
 				productEntity.setPrice(rs.getInt("price"));
+				productEntity.setDetails(rs.getString("details"));
 				productEntities.add(productEntity);
 			}
 		} catch (Exception ex) {
