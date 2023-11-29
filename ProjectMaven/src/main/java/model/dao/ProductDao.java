@@ -5,14 +5,13 @@ import model.bean.ProductEntity;
 import model.utils.ConnectionUtils;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 //
-public class ProductData implements IProduct {
+public class ProductDao implements IProduct {
 
     public String searchWithoutJoin(Map<String, String> search) {
         StringBuilder sql = new StringBuilder();
