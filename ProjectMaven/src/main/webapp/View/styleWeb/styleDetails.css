@@ -198,7 +198,7 @@
   }
 
   .linkpage:hover {
-    background-color: var(--border);
+    background-color: var(--font);
   }
 
   .Home {
@@ -304,16 +304,20 @@
 
   .container .text .information .add {
     margin-top: 30px;
+    display: flex;
+    gap: 20px;
   }
 
-  .container .text .information .add .add-pd {
-    width: 280px;
-    height: 40px;
+  .container .text .information .add .add-pd,.buy-btn   {
+    padding: 10px 40px;
     border-radius: 30px;
     border: none;
     background: #FF8080FF;
-    ;
     color: white;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+  
   }
 
   ul.use,
@@ -325,7 +329,63 @@
     padding-right: 10px;
   }
 
-  button.add-pd .fa-cart-shopping:hover {
-    font-size: 13.333333px;
+  .fa-bag-shopping {
+    margin: 4px;
   }
+  .Shop{
+    background-color: var(--font);
+  }
+  .Home{
+    background-color: var(--but);
+  }
+  .wrapper {
+    width: 700px;
+    background: #E9BCB1;
+    border-radius: 10px;
+    padding: 25px 25px 30px;
+    margin-bottom: 5%;
+  }
+  .wrapper h2 {
+    color: #764F4C;
+    font-size: 28px;
+    text-align: center;
+  }
+  
+  .wrapper textarea {
+    width: 100%;
+    height: 59px;
+    padding: 15px 0px 15px 15px;
+    border-radius: 5px;
+    outline: none;
+    resize: none;
+    font-size: 16px;
+    border-color: #bfbfbf;
+    margin-top: 20px;
+  }
+  
+  textarea:is(:focus, :valid) {
+    border-width: 2px;
+    padding: 14px;
+  }
+  
+  textarea::-webkit-scrollbar{
+    width: 0px;
+  }
+  
+  .buttonComment {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    background: #CC8487;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  a {
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+  }
+
 }
