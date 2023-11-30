@@ -33,5 +33,16 @@
 
   <build>
     <finalName>ProjectMaven</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version> <!-- Thay thế bằng phiên bản mới nhất -->
+        <configuration>
+          <source>1.8</source> <!-- Thay thế bằng phiên bản Java mà bạn đang sử dụng -->
+          <target>1.8</target> <!-- Thay thế bằng phiên bản Java mà bạn đang sử dụng -->
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
 </project>

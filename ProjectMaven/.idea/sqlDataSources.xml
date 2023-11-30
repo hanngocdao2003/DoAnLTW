@@ -2,15 +2,29 @@
 <project version="4">
   <component name="DdlMappings">
     <mapping uuid="86d22a69-e69e-468c-8145-29200ddb7022" name="shopquanao@localhost Mapping">
-      <data-sources db="04df88b2-d7bc-4783-91b9-e126a05afdf1" ddl="e2d51223-a83b-424c-9727-f94998efdb65" />
+      <data-sources db="686b5610-4fc8-4595-ad4c-e610dc022f78" ddl="17076697-104b-47c1-865b-b17b2ece0e6c" />
+      <scope>
+        <node negative="1">
+          <node kind="schema" qname="shopquanao" />
+          <node kind="database" negative="1" />
+        </node>
+      </scope>
+    </mapping>
+    <mapping uuid="640509b5-cdc6-4a2f-9ea4-c0fe1ee4d347" name="@localhost Mapping">
+      <data-sources db="686b5610-4fc8-4595-ad4c-e610dc022f78" ddl="17076697-104b-47c1-865b-b17b2ece0e6c" />
+      <scope>
+        <node kind="database" negative="1">
+          <node kind="schema" negative="1" />
+        </node>
+      </scope>
     </mapping>
   </component>
   <component name="SqlDataSourceStorage">
     <option name="dataSources">
       <list>
         <State>
-          <option name="id" value="e2d51223-a83b-424c-9727-f94998efdb65" />
-          <option name="name" value="shopquanao@localhost (DDL)" />
+          <option name="id" value="17076697-104b-47c1-865b-b17b2ece0e6c" />
+          <option name="name" value="@localhost (DDL)" />
           <option name="dbmsName" value="MYSQL" />
           <option name="urls">
             <array>
