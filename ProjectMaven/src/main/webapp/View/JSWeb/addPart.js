@@ -3,7 +3,7 @@ function addFooter() {
     <div class="contain">
       <div class="content">
         <div class="store">
-          <img src="../../Image/logo/BHD-nền trong suốt.svg" alt="">
+          <img src="../Image/logo/BHD-nền trong suốt.svg" alt="">
           <h1>BHD BOUTIQUE</h1>
         </div>
         <p class="text">Chúng tôi luôn trân trọng và mong đợi
@@ -20,9 +20,9 @@ function addFooter() {
           <li><a href="policy-ship.html">Chính sách giao hàng</a></li>
         </ul>
         <div class="media">
-          <a href="https://www.facebook.com/Binh.PHHT/" target="_blank"><img src="../../Image/link_Image/fb.png"
+          <a href="https://www.facebook.com/Binh.PHHT/" target="_blank"><img src="../Image/link_Image/fb.png"
               alt="fb-icon"></a>
-          <a href="https://www.instagram.com/peace_bi.ht/" target="_blank"><img src="../../Image/link_Image/instagram.png"
+          <a href="https://www.instagram.com/peace_bi.ht/" target="_blank"><img src="../Image/link_Image/instagram.png"
               alt="instagram-icon"></a>
         </div>
       </div>
@@ -71,35 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
     })(i);
   }
 });
-document.addEventListener('DOMContentLoaded', function () {
-  $(".SlideList").slick({
-    infinite: true,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    speed: 2000,
-    autoplay: true,
-    arrows: true,
-    prevArrow: $(".carosel-nav-left"),
-    nextArrow: $(".carosel-nav-right")
-  });
-});
 
-document.addEventListener('DOMContentLoaded', function () {
-  $(".SlideListProduct").slick({
-    infinite: true,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    speed: 2000,
-    autoplay: true,
-    arrows: true,
-    prevArrow: $(".carosel-nav-left"),
-    nextArrow: $(".carosel-nav-right")
-  });
-});
 
 
 

@@ -190,17 +190,20 @@ a>.menu_Category_Item {
 }
 
 .linkpage:hover {
-  background-color: var(--border);
+  background-color: var(--font);
+  
 }
 
 .Home {
-  background-color: var(--border);
+  background-color: var(--font);
 }
 
-.Item_menuPage {}
+.Item_menuPage{
+  
+}
 
 .menu_Category>a>.menu_Category_Item:hover {
-  background-color: var(--but);
+  background-color: var(--font);
   color: white;
 }
 

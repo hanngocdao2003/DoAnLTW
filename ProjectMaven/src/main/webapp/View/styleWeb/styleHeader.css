@@ -1,8 +1,10 @@
-* {    margin: 0;
+* {
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     background-color: var(--back);
 }
 
@@ -233,7 +235,7 @@ a>.menu_Category_Item {
 .CategoryCard>a {
     text-decoration: none;
     color: var(--font);
-    
+
 }
 
 .CategoryItem {
@@ -283,29 +285,33 @@ a>.menu_Category_Item {
 .Skirt {
     background-image: url(../../Image/Category/Váy.png);
 }
-.Top10{
+
+.Top10 {
     margin-top: 5%;
     position: relative;
 }
-.Filter_ProductSilde{
+
+.Filter_ProductSilde {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 
-    
+
 }
-.Filter_ProductSilde > span{
+
+.Filter_ProductSilde>span {
     font-size: 40px;
     font-weight: bold;
     margin-bottom: 3%;
     color: var(--font);
 
 }
+
 .SliderShow_Product {
     width: 65%;
-    
-    
+
+
 }
 
 .SlideListProduct {
@@ -317,16 +323,19 @@ a>.menu_Category_Item {
 
 
 }
-.slick-track{
+
+.slick-track {
     display: flex;
     justify-content: center;
     align-items: center;
     column-gap: 20px;
 }
+
 .SlideListProduct>div {
     width: 80%;
 }
-.OfCategory{
+
+.OfCategory {
     display: flex;
     flex-direction: column;
     width: 90%;
@@ -336,13 +345,15 @@ a>.menu_Category_Item {
     border-radius: 2%;
     padding: 3% 0px;
 }
-.OfCategory > span{
+
+.OfCategory>span {
     font-size: 40px;
     font-weight: bold;
     color: var(--font);
     text-align: center;
 }
-.sticky{
+
+.sticky {
     position: fixed;
     z-index: 999;
     top: 0;
@@ -350,5 +361,3 @@ a>.menu_Category_Item {
     height: 500px;
 
 }
-
-
