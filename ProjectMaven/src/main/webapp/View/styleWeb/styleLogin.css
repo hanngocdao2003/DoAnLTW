@@ -203,7 +203,7 @@
         right: 0;
         top: 0;
         bottom: 0;
-        background: linear-gradient(180deg, rgba(255, 177, 161, 0.7), rgba(255, 153, 153, 1)), url(../../Image/Login_Image/pic1.png);
+        background: linear-gradient(180deg, rgba(255, 196, 185, 0.7), rgb(255, 183, 183)), url(../../Image/Login_Image/pic1.png);
         background-repeat: no-repeat;
         background-size: cover;
         width: 50%;

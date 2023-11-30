@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styleWeb/styleDetails.css">
-    <!-- <link rel="stylesheet" href="styles/styleMenu.css"> -->
     <link rel="stylesheet" href="styleWeb/styleFooter.css">
     <link rel="stylesheet" href="styleWeb/styleButtonAdd.css">
     <script src="JSWeb/eventButtonAdd.js"></script>
@@ -13,6 +12,7 @@
     <link rel="icon" href="../Image/logo/BHD-html.png" type="image/x-icon">
     <link rel="stylesheet" href="../View/styleWeb/color.css">
     <script src="../View/JSWeb/addPart.js"></script>
+    <script src="JSWeb/JSDetails.js"></script>
     <title>Chi tiết đơn hàng</title>
 </head>
 
@@ -63,7 +63,7 @@
                     </ul>
                 </button>
                 <ul class="Menupage">
-                    <a href="" class="linkpage Home">
+                    <a href="index.html" class="linkpage Home">
                         <li class="Item_menuPage">Trang chủ</li>
                     </a>
                     <a href="" class="linkpage Shop">
@@ -101,7 +101,7 @@
                 <p class="name">Áo Len Aimee</p>
                 <div class="quantity">
                     <div class="sale">
-                        <p class="sub-sale" ;">Đã bán: 65</p>
+                        <p class="sub-sale" ;>Đã bán: 65</p>
                     </div>
                     <div class="inventory">
                         <p class="sub-inventory">Còn lại: 134</p>
@@ -110,24 +110,20 @@
                 <p class="price">290.000</p>
                 <p class="color" style="font-weight: bold;">Màu sắc:</p>
                 <div class="color-btn" style="margin-bottom: 10px;">
-                    <button class="black" style="background-color: black;"></button>
-                    <button class="white" style="background: white;"></button>
-                    <button class="pink" style="background: pink;"></button>
+                    <button id="btn-black" class="btn black" style="background-color: black;"></button>
+                    <button id="btn-white" class="btn white" style="background: white;"></button>
+                    <button id="btn-pink" class="btn pink" style="background: pink;"></button>
                 </div>
                 <p class="size" style="margin-bottom: 5px; font-weight: bold;">Kích thước:</p>
-                <button class="size-btn">S</button>
-                <button class="size-btn">M</button>
-                <button class="size-btn">L</button>
+                <button class="size-btn s">S</button>
+                <button class="size-btn m">M</button>
+                <button class="size-btn l">L</button>
                 <div class="add" style="margin-bottom: 10px;">
-                    <!-- <form>
-                    <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
-                    <input readonly type="text" id="number" value="1"/>
-                    <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
-                </form> -->
                     <button class="add-pd"><i class="fa-solid fa-cart-shopping"
-                            style="color: #fff; margin-left: 5px;"></i></i>Thêm vào
+                            style="color: #fff; margin-left: 5px;"></i>Thêm vào
                         giỏ hàng
                     </button>
+                    <button class="buy-btn"><i class="fa-solid fa-bag-shopping"></i>Mua ngay</button>
                 </div>
             </div>
             <hr style="margin-bottom: 20px;">
@@ -152,6 +148,7 @@
             </ul>
         </div>
     </div>
+    
     <script>
         document.body.innerHTML += addFooter();
     </script>
