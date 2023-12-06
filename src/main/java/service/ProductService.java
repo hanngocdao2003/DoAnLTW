@@ -1,5 +1,4 @@
 package service;
-
 import bean.ColorEntity;
 import bean.ImageEntity;
 import bean.ProductEntity;

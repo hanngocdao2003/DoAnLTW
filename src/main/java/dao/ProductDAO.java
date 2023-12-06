@@ -3,6 +3,7 @@ package dao;
 import bean.ProductEntity;
 import database.ConnectionUtils;
 
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -16,6 +17,7 @@ public class ProductDAO {
         StringBuilder sql = new StringBuilder();
 		/*kiểm tra xem trên thanh param có từ năm hay không
 		* Nếu @Overridecó thì câu Query sẽ add câu query cho p.name*/
+
         if (search.containsKey("name")) {
             String name = search.get("name");
             if (name != null && !name.isEmpty()) {
@@ -24,7 +26,6 @@ public class ProductDAO {
         }
         return sql.toString();
     }
-
     public static String searchWithJoin(Map<String, String> search) {
         StringBuilder sql = new StringBuilder();
         if (search.containsKey("category")) {
@@ -65,5 +66,4 @@ public class ProductDAO {
 		}
 		return productEntities;
 	}
-
 }

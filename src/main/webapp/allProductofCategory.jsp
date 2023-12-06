@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 <%@ page import="java.util.List" %>
 <%@ page import="service.ProductResponse" %>
+=======
+>>>>>>> 1b34c9cf030ec73b4e598a7203f370c14ad056fc
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,6 +22,7 @@
 </head>
 
 <body>
+<<<<<<< HEAD
 <div id="menu_container">
     <nav class="main_menu">
         <div class="menu">
