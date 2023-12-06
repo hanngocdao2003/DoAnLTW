@@ -1,7 +1,7 @@
 package dao;
 
 import bean.ProductEntity;
-import utils.ConnectionUtils;
+import database.ConnectionUtils;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -10,10 +10,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 //
-public class ProductDAO implements IProduct {
+public class ProductDAO {
 	
-    public String searchWithoutJoin(Map<String, String> search) {
+    public static String searchWithoutJoin(Map<String, String> search) {
         StringBuilder sql = new StringBuilder();
+		/*kiểm tra xem trên thanh param có từ năm hay không
+		* Nếu @Overridecó thì câu Query sẽ add câu query cho p.name*/
         if (search.containsKey("name")) {
             String name = search.get("name");
             if (name != null && !name.isEmpty()) {
@@ -23,30 +25,27 @@ public class ProductDAO implements IProduct {
         return sql.toString();
     }
 
-    public String searchWithJoin(Map<String, String> search) {
+    public static String searchWithJoin(Map<String, String> search) {
         StringBuilder sql = new StringBuilder();
         if (search.containsKey("category")) {
-            String category = search.get("category");
-            if (category != null && !category.isEmpty()) {
-                sql.append("AND c.categoryName LIKE '%" + category + "%' ");
-            }
-        }
+			String category = search.get("category");
+			if (category != null && !category.isEmpty()) {
+				sql.append("AND c.categoryName LIKE '%" + category + "%' ");
+			}
+		}
         return sql.toString();
     }
 
-	@Override
-	public List<ProductEntity> findAll(Map<String, String> search) {
+
+	public static List<ProductEntity> findAll(Map<String, String> search) {
 		List<ProductEntity> productEntities = new ArrayList<>();
 		StringBuilder sql = new StringBuilder();
-		sql.append("SELECT p.* FROM shopquanao.products p ");
-        if (search.containsKey("category")) {
+		sql.append("SELECT p. id, p.name, p.price, p.details FROM shopquanao.products p ");
 		sql.append("INNER JOIN shopquanao.category_details cd ON p.categoryId = cd.id\n"
-				+ "INNER JOIN shopquanao.categories c ON cd.categoryId = c.id ");
-        }
-		 sql.append(searchWithoutJoin(search));
-       
+				+ "INNER JOIN shopquanao.categories c ON cd.categoryId = c.id\n");
 		sql.append("WHERE 1 = 1 "); // bắt buộc có WHERE 1 = 1
 		sql.append(searchWithJoin(search));
+		sql.append(searchWithoutJoin(search));
 		sql.append("GROUP BY p.name");
 
 		try (Connection conn = ConnectionUtils.getConnection();
@@ -66,4 +65,5 @@ public class ProductDAO implements IProduct {
 		}
 		return productEntities;
 	}
+
 }

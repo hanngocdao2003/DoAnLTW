@@ -2,7 +2,7 @@ package bean;
 
 public class ColorEntity {
   private Integer id;
-  private String name;
+  private String color;
   private String productId;
   
   public Integer getId() {
@@ -11,11 +11,11 @@ public class ColorEntity {
   public void setId(Integer id) {
     this.id = id;
   }
-  public String getName() {
-    return name;
+  public String getColor() {
+    return color;
   }
   public void setName(String name) {
-    this.name = name;
+    this.color = color;
   }
   public String getProductId() {
     return productId;

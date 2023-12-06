@@ -1,7 +1,7 @@
 package dao;
 
 import bean.UserEntity;
-import utils.ConnectionUtils;
+import database.ConnectionUtils;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

@@ -1,6 +1,6 @@
 package bean;
 
-public class ProductrEviewEntity {
+public class ProductrReviewEntity {
   private String billId;
   private String feedback;
   private Float stars;
