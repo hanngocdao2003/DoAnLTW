@@ -4,7 +4,6 @@ public class ImageEntity {
   private String id;
   private String link;
   private String productId;
-
   public String getId() {
     return id;
   }
