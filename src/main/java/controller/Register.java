@@ -35,9 +35,16 @@ public class Register extends HttpServlet {
         // save information of user to db
         UserDAO userDAO = new UserDAO();
         userDAO.addUser(newUser);
+<<<<<<<< HEAD:src/main/java/controller/Register.java
 
+========
+>>>>>>>> fb28bd08c089163e75bd0f3798cac47b3f28447b:src/main/java/controller/RegisterServlet.java
 
         // reply to user
         resp.getWriter().println("Register successfully for" + fullName);
     }
+<<<<<<<< HEAD:src/main/java/controller/Register.java
 }*/
+// ========
+// }
+// >>>>>>>> fb28bd08c089163e75bd0f3798cac47b3f28447b:src/main/java/controller/RegisterServlet.java
