@@ -2,9 +2,11 @@ package service;
 import bean.ColorEntity;
 import bean.ImageEntity;
 import bean.ProductEntity;
+import bean.SizeEntity;
 import dao.ColorDAO;
 import dao.ImageDAO;
 import dao.ProductDAO;
+import dao.SizeDAO;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +14,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class ProductService {
-    public List<ProductResponse> findAll(Map<String, String> search) {
+    public static List<ProductResponse> findAll(Map<String, String> search) {
         List<ProductEntity> productEntities = ProductDAO.findAll(search);
         List<ProductResponse> result = new ArrayList<>();
         for (ProductEntity item : productEntities) {
@@ -23,17 +25,24 @@ public class ProductService {
             if (imageEntities.isEmpty()) {
                 break;
             }
+            //Khởi tạo đối tượng ColorDAO
             ColorDAO colorDAO = new ColorDAO();
             List<ColorEntity> colorEntities = colorDAO.findColor(productId);
+            //Khởi tạo đối tượng SizeDAO
+            SizeDAO sizeDAO = new SizeDAO();
+            List<SizeEntity> sizeEntities = sizeDAO.findSize(productId);
+
             productResponse.setName(item.getName());
             productResponse.setPrice(item.getPrice());
             productResponse.setDetails(item.getDetails());
             System.out.println(imageEntities);
             productResponse.setImage(imageEntities.getFirst().getLink());
-            //dùng feature java 8 để lấy list màu
+            //dùng feature java 8 để lấy list màu, size
             String color = colorEntities.stream().map(colors -> colors.getColor()).collect(Collectors.joining(", "));
+            String size = sizeEntities.stream().map(sizes -> sizes.getSize()).collect(Collectors.joining(", "));
             productResponse.setColor(color);
-            result.add(productResponse);
+            productResponse.setSize(size);
+            result.add(productResponse); // Thêm các đối tượng productResponse vào list
         }
         return result;
     }

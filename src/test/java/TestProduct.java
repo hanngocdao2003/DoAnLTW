@@ -1,5 +1,7 @@
 import bean.ProductEntity;
 import dao.ProductDAO;
+import service.ProductResponse;
+import service.ProductService;
 
 import java.util.HashMap;
 import java.util.List;
@@ -7,20 +9,28 @@ import java.util.Map;
 
 public class TestProduct {
     public static void main(String[] args) {
-        // Tạo một đối tượng ProductData
-        ProductDAO productData = new ProductDAO();
+        // Create a search map with the product ID "PD1"
+        Map<String, String> search = Map.of("productId", "PD1");
 
-        // Tạo một Map để chứa các thông tin tìm kiếm (nếu cần)
-        Map<String, String> searchParams = new HashMap<>();
+        // Call the findAll method from ProductService
+        List<ProductResponse> products = ProductService.findAll(search);
 
-        // Gọi phương thức findAll để lấy danh sách sản phẩm
-        List<ProductEntity> productList = productData.findAll(searchParams);
-
-        // In ra thông tin sản phẩm
-        for (ProductEntity product : productList) {
-            System.out.println("Tên sản phẩm: " + product.getName());
-            System.out.println("Đơn giá: " + product.getPrice());
-            System.out.println("------------------------");
+        // Check if any products were found
+        if (!products.isEmpty()) {
+            // Print the details of the first product (assuming PD1 returns only one product)
+            ProductResponse product = products.get(0);
+            System.out.println("Product Name: " + product.getName());
+            System.out.println("Price: " + product.getPrice());
+            System.out.println("Details: " + product.getDetails());
+            System.out.println("Image: " + product.getImage());
+            System.out.println("Color(s): " + product.getColor());
+            // Print size(s) if available
+            if (!product.getSize().isEmpty()) {
+                System.out.println("Size(s): " + product.getSize());
+            }
+        } else {
+            System.out.println("No product found with ID PD1");
         }
     }
 }
+

@@ -28,4 +28,13 @@ public class SizeEntity {
     public void setProductId(String productId) {
         this.productId = productId;
     }
+
+    @Override
+    public String toString() {
+        return "SizeEntity{" +
+                "id=" + id +
+                ", size='" + size + '\'' +
+                ", productId='" + productId + '\'' +
+                '}';
+    }
 }

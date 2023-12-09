@@ -14,7 +14,7 @@ public class ColorEntity {
   public String getColor() {
     return color;
   }
-  public void setName(String name) {
+  public void setColor(String color) {
     this.color = color;
   }
   public String getProductId() {
@@ -22,5 +22,14 @@ public class ColorEntity {
   }
   public void setProductId(String productId) {
     this.productId = productId;
-  } 
+  }
+
+  @Override
+  public String toString() {
+    return "ColorEntity{" +
+            "id=" + id +
+            ", color='" + color + '\'' +
+            ", productId='" + productId + '\'' +
+            '}';
+  }
 }

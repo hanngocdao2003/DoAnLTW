@@ -18,11 +18,7 @@
 <body>
 <div class="content">
     <div class="SignIn_Area">
-<<<<<<<< HEAD:src/main/webapp/View/indexLogin.html
         <a href="index.jsp"><img src="Image/BHD-nền%20trong%20suốt.svg" alt="" class="logo"></a>
-========
-        <a href="index.html"><img src="Image/logo/BHD-nền%20trong%20suốt.svg" alt="" class="logo"></a>
->>>>>>>> 1ced273402162317fa44cb7cd4c8bbb7b005d64a:ProjectMaven/src/main/webapp/View/indexLogin.html
         <form action="" class="formSignIn">
             <h1 class="titleSignIn">Đăng nhập</h1>
             <div class="NameAcc">
