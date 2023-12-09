@@ -12,6 +12,7 @@
     background: linear-gradient(90deg, rgba(198, 225, 246, 0.5), rgba(251, 214, 227, 0.5));
   }
 
+<<<<<<< HEAD
   header {
     width: 100%;
   }
@@ -212,6 +213,8 @@
     color: white;
   }
 
+=======
+>>>>>>> fb28bd08c089163e75bd0f3798cac47b3f28447b
   .container {
     display: flex;
     flex-direction: row;
@@ -268,16 +271,26 @@
 
   .information .quantity .sale {
     margin-right: 20px;
+<<<<<<< HEAD
     padding: 5px;
     border-radius: 10px;
     background-color: white;
+=======
+  padding: 5px;
+  border-radius: 10px;
+  background-color: white;
+>>>>>>> fb28bd08c089163e75bd0f3798cac47b3f28447b
   }
 
   .information .quantity .inventory {
     padding: 5px;
     border-radius: 10px;
     background-color: white;
+<<<<<<< HEAD
   }
+=======
+    }
+>>>>>>> fb28bd08c089163e75bd0f3798cac47b3f28447b
 
   .text .information .price {
     font-size: 30px;
@@ -285,7 +298,11 @@
     margin-bottom: 10px;
   }
 
+<<<<<<< HEAD
   .information .color-btn button {
+=======
+   .information .color-btn button {
+>>>>>>> fb28bd08c089163e75bd0f3798cac47b3f28447b
     width: 50px;
     height: 25px;
     margin-right: 3px;
@@ -293,7 +310,11 @@
     border: 1px solid black;
   }
 
+<<<<<<< HEAD
   .text .information .size-btn {
+=======
+.text .information .size-btn {
+>>>>>>> fb28bd08c089163e75bd0f3798cac47b3f28447b
     width: 60px;
     height: 30px;
     margin-right: 3px;
@@ -304,6 +325,7 @@
 
   .container .text .information .add {
     margin-top: 30px;
+<<<<<<< HEAD
     display: flex;
     gap: 20px;
   }
@@ -318,6 +340,17 @@
     text-align: center;
     cursor: pointer;
   
+=======
+  }
+
+  .container .text .information .add .add-pd {
+    width: 280px;
+    height: 40px;
+    border-radius: 30px;
+    border: none;
+    background: #FF8080FF;;
+    color: white;
+>>>>>>> fb28bd08c089163e75bd0f3798cac47b3f28447b
   }
 
   ul.use,
@@ -329,6 +362,7 @@
     padding-right: 10px;
   }
 
+<<<<<<< HEAD
   .fa-bag-shopping {
     margin: 4px;
   }
@@ -388,4 +422,9 @@
     color: white;
   }
 
+=======
+  button.add-pd .fa-cart-shopping:hover {
+    font-size: 13.333333px;
+  }
+>>>>>>> fb28bd08c089163e75bd0f3798cac47b3f28447b
 }

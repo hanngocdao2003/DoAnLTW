@@ -16,14 +16,14 @@
 <div id="menu_container">
     <nav class="main_menu">
         <div class="menu">
-            <a href="jspindex.html" class="logo">
+            <a href="index.jsp" class="logo">
                 <img src="Image/BHD-nền%20trong%20suốt.svg" alt="404">
                 <h1>BHD Boutique</h1>
             </a>
             <div class="list_item">
                 <ul class="menu_item">
                     <li class="item">
-                        <a href="jspindex.html">Trang chủ</a>
+                        <a href="index.jsp">Trang chủ</a>
                     </li>
                     <li class="item">
                         <a href="allProductofCategory.jsp">Bộ sưu tập</a>
@@ -126,7 +126,7 @@
                                                     style="color: #ff8080;"></i></a>
                         <ul class="personalArea">
                             <li class="personal-Item"><a href="indexPersonal.html">Thông tin cá nhân</a></li>
-                            <li class="personal-Item"><a href="jspindex.html">Đăng xuất</a></li>
+                            <li class="personal-Item"><a href="index.jsp">Đăng xuất</a></li>
                         </ul>
                     <li class="logo_item">
                         <a href="indexCart.jsp"><i class="fa-solid fa-cart-shopping" style="color: #ff8080;"></i>

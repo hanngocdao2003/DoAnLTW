@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+<<<<<<< HEAD
 }
 
 header {
@@ -205,6 +206,9 @@ a>.menu_Category_Item {
 .menu_Category>a>.menu_Category_Item:hover {
   background-color: var(--font);
   color: white;
+=======
+  font-family: Bahnschrift, sans-serif;
+>>>>>>> fb28bd08c089163e75bd0f3798cac47b3f28447b
 }
 
 /* .details_cart {
@@ -360,7 +364,10 @@ img {
   background-color: #FF8080FF;
   border: 1px solid #a62c2c;
   color: white;
+<<<<<<< HEAD
 }
 .payment > a{
   text-decoration: none;
+=======
+>>>>>>> fb28bd08c089163e75bd0f3798cac47b3f28447b
 }

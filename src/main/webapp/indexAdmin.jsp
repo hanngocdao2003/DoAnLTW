@@ -4,6 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
+<<<<<<< HEAD
     <link rel="stylesheet" href="View/styleWeb/styleAdmin/styleAddProduct.css">
     <link rel="stylesheet" href="View/styleWeb/styleAdmin/styleAdmin.css">
     <link rel="stylesheet" href="View/styleWeb/styleAdmin/styleFeedback.css">
@@ -16,14 +17,27 @@
     <link rel="icon" href="Image/logo/BHD-html.png" type="image/x-icon">
     <link rel="stylesheet" href="../fonts/stylesheet.css">
     <link rel="stylesheet" href="../View/styleWeb/color.css">
+=======
+    <link rel="stylesheet" href="View/styles/styleAdmin/styleAdmin.css">
+    <link rel="stylesheet" href="View/styles/styleAdmin/styleStatistical.css">
+    <link rel="stylesheet" href="View/styles/styleAdmin/styleProductManagement.css">
+    <link rel="stylesheet" href="View/styles/styleAdmin/styleUserManagement.css">
+    <link rel="stylesheet" href="View/styles/styleAdmin/styleAddProduct.css">
+    <link rel="stylesheet" href="View/styles/styleAdmin/styleOrderManagement.css">
+    <link rel="stylesheet" href="View/styles/styleAdmin/styleFeedback.css">
+    <link rel="stylesheet" href="Image/fontawesome-free-6.4.2-web/css/all.min.css">
+    <link rel="icon" href="Image/BHD-html.png" type="image/x-icon">
+    <link rel="stylesheet" href="fonts/stylesheet.css">
+>>>>>>> fb28bd08c089163e75bd0f3798cac47b3f28447b
     <title>Admin</title>
 </head>
 
 <body>
 <header class="logo">
-    <img src="../Image/logo/BHD-nền trong suốt.svg" alt="">
+    <img src="Image/BHD-nền%20trong%20suốt.svg" alt="">
     <h3 style="font-family: 'Brush Script MT', cursive">BHD Boutique</h3>
 </header>
+
 <div class="center" style="display: flex;">
     <div class="left_panel" style="width: 18%;">
         <nav class="menu_bar">
@@ -38,7 +52,7 @@
                 </div>
                 <div class="menu_nav">
                     <ul class="menu">
-                        <a href="../View/index.html" style="text-decoration: none">
+                        <a href="index.jsp" style="text-decoration: none">
                             <li class="item">
                                 <i class="fa-solid fa-circle" style="color: #ff8080;"></i>
                                 Trang chủ
@@ -64,11 +78,15 @@
                             <i class="fa-solid fa-circle" style="color: #ff8080;"></i>
                             Phản hồi người dùng
                         </li>
+<<<<<<< HEAD
                         <li class="item" onclick="handleClick(this, 'panel_addSlide')">
                             <i class="fa-solid fa-circle" style="color: #ff8080;"></i>
                             Thêm trình chiếu
                         </li>
                         <a href="../View/indexChangePass.html" style="text-decoration: none">
+=======
+                        <a href="indexChangePass.jsp" style="text-decoration: none">
+>>>>>>> fb28bd08c089163e75bd0f3798cac47b3f28447b
                             <li class="item">
                                 <i class="fa-solid fa-circle" style="color: #ff8080;"></i>
                                 Đổi mật khẩu
@@ -143,7 +161,7 @@
                             <li>Áo khoác gió</li>
                             <li>Áo khoác len</li>
                             <li>Blazer</li>
-                            <li>Jean/Kaki</li>
+                            <li>Áo khoác Jean/Kaki</li>
                         </ul>
                     </li>
                     <li>Quần
@@ -413,9 +431,9 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="../View/JSWeb/data.js"></script>
-<script src="../View/JSWeb/eventAdmin.js"></script>
-<script src="../View/JSWeb/eventAddProduct.js"></script>
+<script src="View/event/data.js"></script>
+<script src="View/event/eventAdmin.js"></script>
+<script src="View/event/eventAddProduct.js"></script>
 </body>
 
 </html>

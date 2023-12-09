@@ -13,7 +13,7 @@
 
 <body>
     <header>
-        <a href="jspindex.html" class="undoHome">
+        <a href="index.jsp" class="undoHome">
             <img src="Image/BHD-nền%20trong%20suốt.svg" alt="" class="logo">
             <h1>BHD Boutique</h1>
         </a>

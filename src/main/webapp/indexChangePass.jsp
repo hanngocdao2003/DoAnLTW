@@ -30,7 +30,7 @@
     </form>
     <div class="footer">
         <p>Bạn không muốn đổi mật khẩu?</p>
-        <a href="jspindex.html">Trở về trang chủ</a>
+        <a href="index.jsp">Trở về trang chủ</a>
     </div>
 </div>
 <footer>

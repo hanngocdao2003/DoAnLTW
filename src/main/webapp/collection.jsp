@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="View/styles/styleHeader.css">
-    <link rel="stylesheet" href="View/styles/styleAdmin/color.css">
-    <link rel="stylesheet" href="View/styles/styleFooter.css">
+    <link rel="stylesheet" href="View/styleWeb/styleHeader.css">
+    <link rel="stylesheet" href="View/styleWeb/color.css">
+    <link rel="stylesheet" href="View/styleWeb/styleFooter.css">
     <link rel="stylesheet" href="Image/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="View/styles/styleCollection.css">
+    <link rel="stylesheet" href="View/styleWeb/styleCollection.css">
     <script src="View/JSWeb/addPart.js"></script>
     <script src="View/JSWeb/code.jquery.com_jquery-3.7.1.min.js"></script>
     <script src="View/JSWeb/slick.min.js"></script>
@@ -16,7 +16,7 @@
     <script src="View/JSWeb/JSHome.js"></script>
     <link rel="stylesheet" href="View/bootstrap-5.1.3-dist/css/bootstrap.min.css">
     <script src="View/bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="View/styles/styleAdmin/returnBootstrap.css">
+    <link rel="stylesheet" href="View/styleWeb/returnBootstrap.css">
     <title>Bộ sưu tập</title>
 </head>
 <body>
