@@ -1,3 +1,4 @@
+/*
 package controller;
 
 
@@ -12,8 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-@WebServlet("/RegisterServlet")
-public class RegisterServlet extends HttpServlet {
+@WebServlet("/Register")
+public class Register extends HttpServlet {
     private static final long SERIAL_VERSION_UID = 1L;
 
     @Override
@@ -35,7 +36,8 @@ public class RegisterServlet extends HttpServlet {
         UserDAO userDAO = new UserDAO();
         userDAO.addUser(newUser);
 
+
         // reply to user
         resp.getWriter().println("Register successfully for" + fullName);
     }
-}
+}*/
