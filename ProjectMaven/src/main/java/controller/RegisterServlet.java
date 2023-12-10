@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-@WebServlet("/RegisterServlet")
+@WebServlet("/register")
 public class RegisterServlet extends HttpServlet {
     private static final long SERIAL_VERSION_UID = 1L;
 
@@ -36,6 +36,6 @@ public class RegisterServlet extends HttpServlet {
         userDao.addUser(newUser);
 
         // reply to user
-        resp.getWriter().println("Register successfully for" + fullName);
+        resp.sendRedirect("indexLogin.jsp");
     }
 }

@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,13 +23,13 @@
             <h1 class="titleSignIn">Đăng nhập</h1>
             <div class="NameAcc">
                 <label for="inputNumPhone" class="label">Số điện thoại:</label>
-                <input type="text" id="inputNumPhone" placeholder="Nhập số điện thoại">
+                <input type="text" id="inputNumPhone" placeholder="Nhập số điện thoại" required>
             </div>
             <div class="passAcc">
                 <label for="inputPass" class="label">Mật khẩu:</label>
                 <div class="passplace">
-                    <input type="password" id="inputPass" placeholder="Nhập mật khẩu">
-                    <button type="button" class="hidden-appear" id="hidden-appear-SinIn-pass">
+                    <input type="password" id="inputPass" placeholder="Nhập mật khẩu" required>
+                    <button type="submit" class="hidden-appear" id="hidden-appear-SinIn-pass">
                         <i class="fa-regular fa-eye" id="eye"></i>
                     </button>
                 </div>

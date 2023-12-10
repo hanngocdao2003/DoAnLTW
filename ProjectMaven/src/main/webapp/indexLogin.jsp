@@ -1,0 +1,117 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="View/styleWeb/styleLogin.css">
+    <link rel="stylesheet" href="Image/fontawesome/css/all.min.css">
+    <link rel="icon" href="Image/logo/BHD-html.png" type="image/x-icon">
+    <link rel="stylesheet" href="View/styleWeb/color.css">
+    <script src="View/JSWeb/jquery-3.7.1.js"></script>
+    <script src="View/JSWeb/LoginEvent.JS"></script>
+    <title>Đăng Nhập</title>
+   
+</head>
+
+<body>
+<div class="content">
+    <div class="SignIn_Area">
+        <a href="View/index.html"><img src="Image/logo/BHD-nền trong suốt.svg" alt="" class="logo"></a>
+        <form action="" class="formSignIn">
+            <h1 class="titleSignIn">Đăng nhập</h1>
+            <div class="NameAcc">
+                <label for="inputNumPhone" class="label">Số điện thoại:</label>
+                <input type="text" id="inputNumPhone" placeholder="Nhập số điện thoại">
+            </div>
+            <div class="passAcc">
+                <label for="inputPass" class="label">Mật khẩu:</label>
+                <div class="passplace">
+                    <input type="password" id="inputPass" placeholder="Nhập mật khẩu">
+                    <button type="button" class="hidden-appear" id="hidden-appear-SinIn-pass">
+                        <i class="fa-regular fa-eye" id="eye"></i>
+                    </button>
+                </div>
+                <div class="remember">
+                    <input type="checkbox" id="check">
+                    <label for="check">Ghi nhớ mật khẩu</label>
+                </div>
+                <a href="View/indexForgetPass.html" class="forgotPass">Quên mật khẩu?</a>
+            </div>
+
+            <div class="buttonSubmit">
+                <input type="button" class="button" value="Đăng nhập">
+            </div>
+            <div class="create">
+                <a href="" class="createAcc" id="createAcc">Tạo tài khoản mới</a>
+            </div>
+        </form>
+    </div>
+    <div class="SignUp_Area">
+        <form action="register" method="post" class="formSignUp">
+            <div class="first">
+                <h1 class="titleSignUp">Đăng ký</h1>
+                <a href="" class="undo" id="undo">
+                    <i class="fa-solid fa-share"></i>
+                    Trở lại đăng nhập
+                </a>
+            </div>
+            <div class="NameUser">
+                <label for="inputName" class="label">Họ và tên:</label>
+                <input type="text" id="inputName" placeholder="Nhập họ và tên" required>
+            </div>
+            <div class="EmailUser">
+                <label for="inputEmail" class="label">Email</label>
+                <input type="text" id="inputEmail" placeholder="Nhập email của bạn" required>
+            </div>
+            <div class="NameAcc">
+                <label for="inputNumPhoneRect" class="label">Số điện thoại:</label>
+                <input type="text" id="inputNumPhoneRect" placeholder="Nhập số điện thoại" required>
+            </div>
+            <div class="password_Area">
+                <div class="passAcc">
+                    <label for="inputPassRect" class="label">Mật khẩu:</label>
+                    <div class="passplace">
+                        <input type="password" id="inputPassRect" placeholder="Nhập mật khẩu" required>
+                        <button type="button" class="hidden-appear" id="hidden-appear-SingUp-pass">
+                            <i class="fa-regular fa-eye" id="eye"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="passAcc">
+                    <label for="ReinputPass" class="label">Nhập lại mật khẩu:</label>
+                    <div class="passplace">
+                        <input type="password" id="ReinputPass" placeholder="Nhập mật khẩu" required>
+                        <button type="button" class="hidden-appear" id="hidden-appear-SingUp-Repass">
+                            <i class="fa-regular fa-eye" id="eye"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="buttonSubmit Register">
+                <input type="submit" class="button" value="Đăng ký">
+            </div>
+        </form>
+    </div>
+    <div class="intro" id="intro">
+        <div class="hello">
+            <h3 class="welcome">BHD Boutique
+                <br>
+                Xin Chào!
+            </h3>
+            <span class="letterWelcome">Chào mừng bạn đến với BHD Boutique. Hãy đăng nhập để đến với trang chủ của
+                    chúng tôi!</span>
+        </div>
+        <div class="back-Area">
+            <a href="View/index.html" class="back">
+                <i class="fa-solid fa-house"></i>
+                Về trang chủ
+            </a>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>
