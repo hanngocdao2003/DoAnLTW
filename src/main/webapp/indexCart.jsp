@@ -36,7 +36,7 @@
 >>>>>>> fb28bd08c089163e75bd0f3798cac47b3f28447b
             </li>
             <li class="item">
-              <a href="allProductofCategory.jsp">Bộ sưu tập</a>
+              <a href="allProductofCategory.html">Bộ sưu tập</a>
             </li>
             <li class="item">
               <a href="View/fileHTMLProduct/ItemShirt/FullShirt.html">Áo
