@@ -13,22 +13,10 @@
     <link rel="stylesheet" href="View/styleWeb/styleAdmin/styleStatistical.css">
     <link rel="stylesheet" href="View/styleWeb/styleAdmin/styleUserManagement.css">
     <link rel="stylesheet" href="Image/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="styleWeb/styleAdmin/styleAddSlide.css">
+    <link rel="stylesheet" href="View/styleWeb/styleAdmin/styleAddSlide.css">
     <link rel="icon" href="Image/logo/BHD-html.png" type="image/x-icon">
-    <link rel="stylesheet" href="../fonts/stylesheet.css">
-    <link rel="stylesheet" href="../View/styleWeb/color.css">
-=======
-    <link rel="stylesheet" href="View/styles/styleAdmin/styleAdmin.css">
-    <link rel="stylesheet" href="View/styles/styleAdmin/styleStatistical.css">
-    <link rel="stylesheet" href="View/styles/styleAdmin/styleProductManagement.css">
-    <link rel="stylesheet" href="View/styles/styleAdmin/styleUserManagement.css">
-    <link rel="stylesheet" href="View/styles/styleAdmin/styleAddProduct.css">
-    <link rel="stylesheet" href="View/styles/styleAdmin/styleOrderManagement.css">
-    <link rel="stylesheet" href="View/styles/styleAdmin/styleFeedback.css">
-    <link rel="stylesheet" href="Image/fontawesome-free-6.4.2-web/css/all.min.css">
-    <link rel="icon" href="Image/BHD-html.png" type="image/x-icon">
     <link rel="stylesheet" href="fonts/stylesheet.css">
->>>>>>> fb28bd08c089163e75bd0f3798cac47b3f28447b
+    <link rel="stylesheet" href="View/styleWeb/color.css">
     <title>Admin</title>
 </head>
 

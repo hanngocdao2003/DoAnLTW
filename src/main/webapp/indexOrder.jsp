@@ -29,7 +29,7 @@
                         <a href="index.jsp">Trang chủ</a>
                     </li>
                     <li class="item" id="fullProduct">
-                        <a href="allProductofCategory.jsp">Bộ sưu tập</a>
+                        <a href="allProductofCategory.html">Bộ sưu tập</a>
                     </li>
                     <li class="item" id="fullShirt">
                         <a href="View/fileHTMLProduct/ItemShirt/FullShirt.html">Áo

@@ -1,3 +1,4 @@
+<%--
 <!-- <%@ page import="java.util.List" %>
 <%@ page import="service.ProductResponse" %> -->
 
@@ -252,4 +253,4 @@
 </script>
 </body>
 
-</html>
+</html>--%>
