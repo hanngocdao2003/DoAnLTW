@@ -5,10 +5,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="View/styles/styleLogin.css">
+    <link rel="stylesheet" href="View/styleWeb/styleLogin.css">
     <link rel="stylesheet" href="Image/fontawesome/css/all.min.css">
     <link rel="icon" href="Image/logo/BHD-html.png" type="image/x-icon">
-    <link rel="stylesheet" href="View/styles/styleAdmin/color.css">
+    <link rel="stylesheet" href="View/styleWeb/color.css">
     <script src="View/JSWeb/jquery-3.7.1.js"></script>
     <script src="View/JSWeb/LoginEvent.JS"></script>
     <title>Đăng Nhập</title>
@@ -18,7 +18,7 @@
 <body>
 <div class="content">
     <div class="SignIn_Area">
-        <a href="jspindex.html"><img src="Image/BHD-nền%20trong%20suốt.svg" alt="" class="logo"></a>
+        <a href="index.jsp"><img src="Image/BHD-nền%20trong%20suốt.svg" alt="" class="logo"></a>
 
         <form action="LoginControl" class="formSignIn" method="post">
             <h1 class="titleSignIn">Đăng nhập</h1>
@@ -55,7 +55,7 @@
         </form>
     </div>
     <div class="SignUp_Area">
-        <form action="RegisterServlet" method="post" class="formSignUp">
+        <form action="SignUp" method="post" class="formSignUp">
             <div class="first">
                 <h1 class="titleSignUp">Đăng ký</h1>
                 <a href="" class="undo" id="undo">
