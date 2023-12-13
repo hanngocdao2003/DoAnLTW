@@ -31,12 +31,12 @@ public class ProductService {
             //Khởi tạo đối tượng SizeDAO
             SizeDAO sizeDAO = new SizeDAO();
             List<SizeEntity> sizeEntities = sizeDAO.findSize(productId);
-
             productResponse.setName(item.getName());
             productResponse.setPrice(item.getPrice());
             productResponse.setDetails(item.getDetails());
             System.out.println(imageEntities);
             productResponse.setImage(imageEntities.getFirst().getLink());
+
             //dùng feature java 8 để lấy list màu, size
             String color = colorEntities.stream().map(colors -> colors.getColor()).collect(Collectors.joining(", "));
             String size = sizeEntities.stream().map(sizes -> sizes.getSize()).collect(Collectors.joining(", "));

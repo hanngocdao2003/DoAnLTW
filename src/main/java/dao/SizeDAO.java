@@ -1,5 +1,4 @@
 package dao;
-
 import bean.ColorEntity;
 import bean.SizeEntity;
 import database.ConnectionUtils;

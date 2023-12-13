@@ -4,6 +4,20 @@
 
 <head>
     <meta charset="UTF-8">
+<<<<<<< HEAD
+    <link rel="stylesheet" href="View/styleWeb/styleAdmin/styleAddProduct.css">
+    <link rel="stylesheet" href="View/styleWeb/styleAdmin/styleAdmin.css">
+    <link rel="stylesheet" href="View/styleWeb/styleAdmin/styleFeedback.css">
+    <link rel="stylesheet" href="View/styleWeb/styleAdmin/styleOrderManagement.css">
+    <link rel="stylesheet" href="View/styleWeb/styleAdmin/styleProductManagement.css">
+    <link rel="stylesheet" href="View/styleWeb/styleAdmin/styleStatistical.css">
+    <link rel="stylesheet" href="View/styleWeb/styleAdmin/styleUserManagement.css">
+    <link rel="stylesheet" href="Image/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="styleWeb/styleAdmin/styleAddSlide.css">
+    <link rel="icon" href="Image/logo/BHD-html.png" type="image/x-icon">
+    <link rel="stylesheet" href="../fonts/stylesheet.css">
+    <link rel="stylesheet" href="../View/styleWeb/color.css">
+=======
     <link rel="stylesheet" href="View/styles/styleAdmin/styleAdmin.css">
     <link rel="stylesheet" href="View/styles/styleAdmin/styleStatistical.css">
     <link rel="stylesheet" href="View/styles/styleAdmin/styleProductManagement.css">
@@ -14,6 +28,7 @@
     <link rel="stylesheet" href="Image/fontawesome-free-6.4.2-web/css/all.min.css">
     <link rel="icon" href="Image/BHD-html.png" type="image/x-icon">
     <link rel="stylesheet" href="fonts/stylesheet.css">
+>>>>>>> fb28bd08c089163e75bd0f3798cac47b3f28447b
     <title>Admin</title>
 </head>
 
@@ -63,7 +78,15 @@
                             <i class="fa-solid fa-circle" style="color: #ff8080;"></i>
                             Phản hồi người dùng
                         </li>
+<<<<<<< HEAD
+                        <li class="item" onclick="handleClick(this, 'panel_addSlide')">
+                            <i class="fa-solid fa-circle" style="color: #ff8080;"></i>
+                            Thêm trình chiếu
+                        </li>
+                        <a href="../View/indexChangePass.html" style="text-decoration: none">
+=======
                         <a href="indexChangePass.jsp" style="text-decoration: none">
+>>>>>>> fb28bd08c089163e75bd0f3798cac47b3f28447b
                             <li class="item">
                                 <i class="fa-solid fa-circle" style="color: #ff8080;"></i>
                                 Đổi mật khẩu
@@ -242,22 +265,22 @@
             <div class="add-product-here">
                 <div class="pictures" id="picture">
                     <label for="input-file">Tải ảnh lên
-                        <input type="file" id="input-file" name="image1" accept="image/*">
+                        <input type="file" id="input-file" name="image1" accept="Image/*">
                     </label>
                 </div>
                 <div class="pictures">
                     <label for="input-file">Tải ảnh lên
-                        <input type="file" id="input-file" name="image1" accept="image/*">
+                        <input type="file" id="input-file" name="image1" accept="Image/*">
                     </label>
                 </div>
                 <div class="pictures">
                     <label for="input-file">Tải ảnh lên
-                        <input type="file" id="input-file" name="image1" accept="image/*">
+                        <input type="file" id="input-file" name="image1" accept="Image/*">
                     </label>
                 </div>
                 <div class="pictures">
                     <label for="input-file">Tải ảnh lên
-                        <input type="file" id="input-file" name="image1" accept="image/*">
+                        <input type="file" id="input-file" name="image1" accept="Image/*">
                     </label>
                 </div>
             </div>
@@ -297,9 +320,11 @@
                     <p>Trạng thái</p>
                     <form action="">
                         <div><input name="choose1" type="radio">
-                            <span>Đã thanh toán</span></div>
+                            <span>Đã thanh toán</span>
+                        </div>
                         <div><input name="choose1" type="radio">
-                            <span>Chưa thanh toán</span></div>
+                            <span>Chưa thanh toán</span>
+                        </div>
                     </form>
                 </div>
                 <div class="status inspect">
@@ -346,7 +371,7 @@
                     </div>
                     <div class="filter">
                         <select name="filter-select" id="filter-select">
-                            <option value="alphabet">Sắp xếp theo chưa đọc</option>
+                            <option value= "alphabet">Sắp xếp theo chưa đọc</option>
                             <option value="alphabet">Sắp xếp theo chưa phản hồi</option>
                         </select>
                     </div>
@@ -368,6 +393,38 @@
                         </tbody>
                     </table>
                 </div>
+            </div>
+        </div>
+        <!-- Chức năng thêm slide cho trang chủ -->
+        <div id="panel_addSlide">
+            <div class="label">
+                <p style="color: #eeeeee">Thêm chương trình</p>
+            </div>
+            <div class="add-product-here">
+                <div class="pictures" id="picture">
+                    <label for="input-file">Tải ảnh lên
+                        <input type="file" id="input-file" name="image1" accept="image/*">
+                    </label>
+                </div>
+                <div class="pictures">
+                    <label for="input-file">Tải ảnh lên
+                        <input type="file" id="input-file" name="image1" accept="image/*">
+                    </label>
+                </div>
+                <div class="pictures">
+                    <label for="input-file">Tải ảnh lên
+                        <input type="file" id="input-file" name="image1" accept="image/*">
+                    </label>
+                </div>
+                <div class="pictures">
+                    <label for="input-file">Tải ảnh lên
+                        <input type="file" id="input-file" name="image1" accept="image/*">
+                    </label>
+                </div>
+            </div>
+            <div class="footer-container">
+                <button>Xác nhận thêm</button>
+                <button>Xóa tất cả</button>
             </div>
         </div>
     </div>

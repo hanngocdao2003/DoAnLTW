@@ -20,10 +20,10 @@
 }
 
 .info_panel .product-management .select_product .category > li {
-    border: 2px solid var(--butMinus2);
+    border: 2px solid #FBC0C3CC;
     border-radius: 10px;
-    background-color: var(--butMinus2);
-    color: black;
+    background-color: #FBC0C3CC;
+    color: #a62c2c;
     margin: 0px 50px;
     padding: 10px 20px;
     width: 20%;
@@ -35,20 +35,20 @@
 }
 
 .info_panel .product-management .select_product .category > li:hover {
-    border: 2px solid var(--but);
-    background-color: var(--but);
+    border: 2px solid #a62c2c;
+    background-color: #a62c2c;
     color: white;
 }
 
 .info_panel .product-management .select_product .category .submenu {
-    width: 100%;
     display: none;
     position: absolute;
-    background-color: var(--butMinus2);
+    background-color: #FBC0C3CC;
+    padding: 10px;
     list-style: none;
     z-index: 1;
     top: calc(100% + 2px);
-    left: 0%;
+    left: 10%;
     right: 10%;
     text-align: left;
     border-bottom-left-radius: 10px;
@@ -58,13 +58,15 @@
 .info_panel .product-management .select_product .category .submenu > li {
     display: block;
     padding: 5px;
-    color: black;
+    color: #a62c2c;
+    border: 2px solid #a62c2c;
     border-radius: 5px;
+    margin-top: 5px;
 }
 
 .info_panel .product-management .select_product .category .submenu > li:hover {
-    border: 2px solid var(--but);
-    background-color: var(--but);
+    border: 2px solid #a62c2c;
+    background-color: #a62c2c;
     color: white;
     border-radius: 10px;
 }
@@ -147,6 +149,7 @@ form .filter #filter-select option {
 #filter-select {
     display: flex;
     flex-direction: row;
+    border: 2px solid #a62c2c;
     border-radius: 10px;
     width: 100%;
 
@@ -156,11 +159,11 @@ form .filter #filter-select option {
     display: flex;
     flex-direction: row;
     border-radius: 10px;
-    width: max-content;
+    width: 25%;
 }
 
 #panel3 .main_label {
     border-radius: 10px;
-    border: 2px solid var(--but);
+    border: 2px solid #FBC0C3CC;
     padding: 25px;
 }

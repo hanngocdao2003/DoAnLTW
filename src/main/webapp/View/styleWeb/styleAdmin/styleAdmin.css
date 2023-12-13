@@ -7,13 +7,13 @@
 }
 
 body {
-    /* background: linear-gradient(90deg, rgba(198, 225, 246, 0.5), rgba(251, 214, 227, 0.5)); */
+    background: linear-gradient(90deg, rgba(198, 225, 246, 0.5), rgba(251, 214, 227, 0.5));
     position: relative;
 
 }
 
 .logo {
-    background: var(--back-product);
+    background: rgb(251, 192, 195);
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -38,7 +38,7 @@ body {
 .center .left_panel .menu_bar .bar {
     display: flex;
     flex-direction: column;
-    background: var(--back-product);
+    background: rgba(251, 192, 195, 0.8);
     width: 20%;
     padding: 20px;
     justify-content: center;
@@ -162,27 +162,27 @@ th, td {
 }
 
 tr:nth-child(even) {
-    background: var(--butMinus);
+    background: rgba(255, 128, 128, 0.3);
 }
 
 tr:nth-child(odd) {
-    background: var(--butMinus2);
+    background: rgba(255, 128, 128, 0.1);
 }
 
 th {
-    background: var(--but);
-    color: white;
+    background: rgba(255, 128, 128, 0.8);
+    color: #a62c2c;
 }
 
 tr:hover {
-    background-color: var(--but);
+    background-color: #a62c2c;
     color: white;
     cursor: pointer;
 }
 
 select {
-    background-color: var(--butMinus);
-    color: black;
+    background-color: #a62c2c;
+    color: white;
 }
 
 select:hover {
@@ -192,8 +192,9 @@ select:hover {
 
 option {
     font-size: 25px;
-    background-color: var(--butMinus2);
-    color: black;
+    background-color: #ff8080;
+    color: #a62c2c;
+    border: 1px solid #a62c2c;
 }
 
 .logo_admin i {

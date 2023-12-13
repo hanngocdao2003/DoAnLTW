@@ -103,13 +103,6 @@
     display: flex;
     flex-direction: column;
 }
-.status > form > div{
-    display: flex;
-   
-}
-form > div > span{
-    margin-left: 5px;
-}
 
 .status > p {
     color: #a62c2c;

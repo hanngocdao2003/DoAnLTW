@@ -2,42 +2,56 @@ package dao;
 
 import bean.UserEntity;
 import database.ConnectionUtils;
-
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserDAO {
-    public void addUser(UserEntity user) {
-        if (!isUserExist(user.getPhone())) {
-            String queryInsert = "INSERT INTO shopquanao.users(fullName,phone,email,password) VALUES (?,?,?,?)";
-            try (Connection c = ConnectionUtils.getConnection();
-                 PreparedStatement preparedStatement = c.prepareStatement(queryInsert)) {
-                preparedStatement.setString(1, user.getFullName());
-                preparedStatement.setString(2, user.getPhone());
-                preparedStatement.setString(3, user.getEmail());
-                preparedStatement.setString(4, user.getPassword());
-                preparedStatement.executeUpdate();
-            } catch (SQLException e) {
-                e.printStackTrace();
+
+    /*public List<> checkLogin(String user, String pass)  throws SQLException, Exception{
+            connect = ConnectionUtils.getConnection();
+            if(connect != null){
+                String query = "select users.phone, users.password from users where users.phone = ? and users.password = ?;";
+                statement = connect.prepareStatement(query);
+                statement.setString(2, pass);
+                result = statement.executeQuery();
+                while (result.next()){
+                    login = new Login(result.getString(1), result.getString(2));
+                    return  login;
+                }
             }
-        } else {
-            System.err.println("User existed");
+
+
+        return login;
+    }*/
+    public List<UserEntity> getAccount(String numberPhone) {
+        List<UserEntity> userEntityList = new ArrayList<>();
+        StringBuilder sql = new StringBuilder();
+        sql.append("select users.phone, users.password from users where users.phone ='" + numberPhone + "'" +
+                "and users.status = 1");
+
+
+        try {
+            Connection conn = ConnectionUtils.getConnection();
+            PreparedStatement stmt = conn.prepareStatement(sql.toString());
+            ResultSet rs = stmt.executeQuery(sql.toString());
+            while (rs.next()) {
+                UserEntity userEntity = new UserEntity();
+                userEntity.setPhone(rs.getString("phone"));
+                userEntity.setPassword(rs.getString("password"));
+                userEntityList.add(userEntity);
+            }
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
         }
+        return  userEntityList;
     }
 
-    boolean isUserExist(String phone) {
-        String sqlQuery = "SELECT users.phone FROM shopquanao.users WHERE users.phone = ?";
-        try (Connection connection = ConnectionUtils.getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(sqlQuery)) {
-            preparedStatement.setString(1, phone);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            return resultSet.next(); // return true if user existed
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return false;
-        }
+    public static void main(String[] args) {
+       UserDAO userDAO = new UserDAO();
+       List<UserEntity> userEntityList =  userDAO.getAccount("0901323080");
+        System.out.println(userEntityList);
+
+
     }
 }

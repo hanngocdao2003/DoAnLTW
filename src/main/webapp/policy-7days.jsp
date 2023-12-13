@@ -5,15 +5,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="View/styles/styleFooter.css">
-  <link rel="stylesheet" href="View/styles/stylePolicy.css">
-  <link rel="stylesheet" href="Image/fontawesome-free-6.4.2-web/css/all.min.css">
-  <link rel="icon" href="Image/BHD-html.png" type="image/x-icon">
+  <link rel="stylesheet" href="../View/styleWeb/styleFooter.css">
+  <link rel="stylesheet" href="../View/Policy/policyStyle/stylePolicy_change.css">
+  <link rel="stylesheet" href="../Image/fontawesome/css/all.min.css">
+  <link rel="icon" href="../Image/logo/BHD-html.png" type="image/x-icon">
+  <script src="../View/JSWeb/addPart.js"></script>
   <title>Dịch vụ đổi trả 7 ngày</title>
 </head>
 
 <body>
   <header>
+    <a href="index.html" class="undoHome">
+      <img src="../Image/logo/BHD-nền%20trong%20suốt.svg" alt="" class="logo">
+      <h1>BHD Boutique</h1>
     <a href="index.jsp" class="undoHome">
         <img src="Image/BHD-nền%20trong%20suốt.svg" alt="" class="logo">
         <h1>BHD Boutique</h1>

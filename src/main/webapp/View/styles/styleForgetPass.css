@@ -21,13 +21,21 @@
 
     #container {
         background-color: rgb(255, 255, 255);
+<<<<<<< HEAD
+        width: 40%;
+=======
         width: 25%;
+>>>>>>> fb28bd08c089163e75bd0f3798cac47b3f28447b
         margin-top: 10%;
         border-radius: 10px;
         display: flex;
         justify-content: center;
         flex-direction: column;
+<<<<<<< HEAD
+        margin-bottom: 20%;
+=======
         margin-bottom: 30%;
+>>>>>>> fb28bd08c089163e75bd0f3798cac47b3f28447b
     }
 
     .header {
@@ -37,6 +45,12 @@
         padding: 15px;
         border-bottom: 1px solid #FF8080FF;
     }
+<<<<<<< HEAD
+    .header > p{
+        font-size: 25px;
+    }
+=======
+>>>>>>> fb28bd08c089163e75bd0f3798cac47b3f28447b
 
     .center {
         display: flex;
@@ -49,11 +63,38 @@
         padding: 10px;
         border-radius: 10px;
         border: 1px solid #FF8080FF;
+<<<<<<< HEAD
+        font-size: 20px;
+=======
+>>>>>>> fb28bd08c089163e75bd0f3798cac47b3f28447b
     }
 
     .button {
         display: flex;
         justify-content: center;
+<<<<<<< HEAD
+        align-items: center;
+        margin: 10px;
+        cursor: pointer;
+    }
+    .button> a{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .button> a >input {
+        width: 50%;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        background-color: #764F4C;
+        color: white;
+        text-transform: uppercase;
+        cursor: pointer;
+        font-size: 20px;
+=======
         margin: 10px;
         cursor: pointer;
     }
@@ -67,6 +108,7 @@
         color: white;
         text-transform: uppercase;
         cursor: pointer;
+>>>>>>> fb28bd08c089163e75bd0f3798cac47b3f28447b
     }
 
     .footer {
