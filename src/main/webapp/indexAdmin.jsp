@@ -66,15 +66,11 @@
                             <i class="fa-solid fa-circle" style="color: #ff8080;"></i>
                             Phản hồi người dùng
                         </li>
-<<<<<<< HEAD
                         <li class="item" onclick="handleClick(this, 'panel_addSlide')">
                             <i class="fa-solid fa-circle" style="color: #ff8080;"></i>
                             Thêm trình chiếu
                         </li>
                         <a href="../View/indexChangePass.html" style="text-decoration: none">
-=======
-                        <a href="indexChangePass.jsp" style="text-decoration: none">
->>>>>>> fb28bd08c089163e75bd0f3798cac47b3f28447b
                             <li class="item">
                                 <i class="fa-solid fa-circle" style="color: #ff8080;"></i>
                                 Đổi mật khẩu

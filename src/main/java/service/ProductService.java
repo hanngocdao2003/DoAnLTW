@@ -34,12 +34,14 @@ public class ProductService {
             productResponse.setName(item.getName());
             productResponse.setPrice(item.getPrice());
             productResponse.setDetails(item.getDetails());
-            System.out.println(imageEntities);
+
             productResponse.setImage(imageEntities.getFirst().getLink());
 
             //dùng feature java 8 để lấy list màu, size
             String color = colorEntities.stream().map(colors -> colors.getColor()).collect(Collectors.joining(", "));
             String size = sizeEntities.stream().map(sizes -> sizes.getSize()).collect(Collectors.joining(", "));
+            String image = imageEntities.stream().map(img -> img.getLink()).collect(Collectors.joining(", "));
+            productResponse.setImage(image);
             productResponse.setColor(color);
             productResponse.setSize(size);
             result.add(productResponse); // Thêm các đối tượng productResponse vào list

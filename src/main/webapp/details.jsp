@@ -1,3 +1,5 @@
+<%@ page import="service.ProductResponse" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,8 +28,8 @@
                 <h1>BHD Boutique</h1>
             </div>
             <div class="search_Category">
-                <form class="Search">
-                    <input type="text" class="input_search" placeholder="Nhập sản phẩm cần tìm">
+                <form class="Search" action="findProduct" method="get">
+                    <input name="keyword" type="text" class="input_search" placeholder="Nhập sản phẩm cần tìm">
                     <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
             </div>
@@ -87,16 +89,21 @@
     </div>
 </header>
 <div class="container">
+    <%
+        List<ProductResponse> productResponses = (List<ProductResponse>) request.getAttribute("products");
+        if (productResponses != null) {
+            for (ProductResponse p : productResponses
+            ) {
+    %>
     <div class="img-product">
         <div class="mini-img-product">
-            <img src="Image/Product/CHÂN%20VÁY%20TAHA.jpg" alt="">
-            <img src="Image/Product/Yếm%20dài%20Rayen.jpg" alt="">
-            <img src="Image/Product/áo%20khoác%20Isabel.jpg" alt="">
+            <img src="<%= p.getImage() %>" alt="">
         </div>
         <div class="zoom-image-product">
-            <img src="Image/Product/ÁO%20LEN%20AIMEE.jpg" alt="áo len aimee">
+            <img src="<%= p.getImage() %>" alt="">
         </div>
     </div>
+
     <div class="text">
         <div class="information">
             <p class="name">Áo Len Aimee</p>
@@ -148,6 +155,7 @@
             <li>Không là lên chi tiết trang trí</li>
         </ul>
     </div>
+    <%}%>
 </div>
 
 <script>
