@@ -51,7 +51,5 @@ public class UserDAO {
        UserDAO userDAO = new UserDAO();
        List<UserEntity> userEntityList =  userDAO.getAccount("0901323080");
         System.out.println(userEntityList);
-
-
     }
 }

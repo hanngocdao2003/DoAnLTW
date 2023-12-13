@@ -1,21 +1,19 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Image/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="View/styles/styleFooter.css">
-    <link rel="stylesheet" href="View/styles/styleHeader.css">
-    <link rel="stylesheet" href="View/styles/styleAdmin/color.css">
+    <link rel="stylesheet" href="View/styleWeb/styleFooter.css">
+    <link rel="stylesheet" href="View/styleWeb/styleHeader.css">
+    <link rel="stylesheet" href="View/styleWeb/color.css">
     <link rel="icon" href="Image/logo/BHD-html.png" type="image/x-icon">
     <script src="View/JSWeb/code.jquery.com_jquery-3.7.1.min.js"></script>
     <script src="View/JSWeb/slick.min.js"></script>
     <script src="View/JSWeb/addPart.js"></script>
     <script src="View/JSWeb/JSHome.js"></script>
     <script src="View/JSWeb/slideShow.js"></script>
-
     <title>Trang chủ</title>
 </head>
 
@@ -245,10 +243,8 @@
             </div>
         </div>
     </div>
-    
     <script>
         document.body.innerHTML += addFooter();
     </script>
 </body>
-
 </html>
