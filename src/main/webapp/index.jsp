@@ -1,3 +1,4 @@
+<%@ page import="bean.UserEntity" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +9,11 @@
     <link rel="stylesheet" href="Image/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="View/styleWeb/styleFooter.css">
     <link rel="stylesheet" href="View/styleWeb/styleHeader.css">
+<<<<<<< HEAD
     <link rel="stylesheet" href="View/styleWeb/styleAdmin/color.css">
+=======
+    <link rel="stylesheet" href="View/styleWeb/color.css">
+>>>>>>> Duong
     <link rel="icon" href="Image/logo/BHD-html.png" type="image/x-icon">
     <script src="View/JSWeb/code.jquery.com_jquery-3.7.1.min.js"></script>
     <script src="View/JSWeb/slick.min.js"></script>
@@ -32,8 +37,22 @@
                         <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
                     </form>
                 </div>
-                <a href="" class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
-                <a href="indexLogin.jsp" class="user"><i class="fa-solid fa-user"></i></a>
+                <div class="rightIcon">
+                    <a href="" class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
+
+                    <%
+                        String success = (String) session.getAttribute("Success");
+                        if (success != null) {
+                    %>
+                    <a href="indexPersonal.jsp" class="user"><i class="fa-solid fa-user" style="margin-right: 5px"></i> <%= success %> </a>
+                    <%
+                    } else {
+                    %>
+                    <a href="indexLogin.jsp" class="user"><i class="fa-solid fa-user"></i></a>
+                    <%
+                        }
+                    %>
+                </div>
             </div>
         </div>
         <div class="menu_container">
