@@ -25,14 +25,21 @@ public class LoginControl extends HttpServlet {
         String url = ERROR;
         String userName = request.getParameter("userName");
         String password = request.getParameter("password");
-        String btnLogin = request.getParameter("btnLogin");
         UserEntity userEntity =  UserService.checkLogin(userName, password);
         if (userEntity == null){
             request.setAttribute("Error", "Tên đăng nhập hoặc mật khẩu không đúng");
         }else {
             url = SUCCESS;
-            session.setAttribute("Sucess", userEntity);
+            session.setAttribute("Success", userEntity.getFullName());
+            //session.setAttribute("Sucess", nameUser);
         }
         request.getRequestDispatcher(url).forward(request, response);
     }
+
+
+
+
+
+
+
 }
