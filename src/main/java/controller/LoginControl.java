@@ -20,6 +20,7 @@ public class LoginControl extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         final String ERROR = "indexLogin.jsp";
         final String SUCCESS = "index.jsp";
+        final String ADSUCCESS = "indexAdmin.jsp";
         response.setContentType("text/html; charset=UTF-8");
         HttpSession session = request.getSession(true);
         String url = ERROR;
@@ -29,10 +30,15 @@ public class LoginControl extends HttpServlet {
         if (userEntity == null){
             request.setAttribute("Error", "Tên đăng nhập hoặc mật khẩu không đúng");
         }else {
-            url = SUCCESS;
-            session.setAttribute("Success", userEntity.getFullName());
-            //session.setAttribute("Sucess", nameUser);
+            if (userEntity.getRoleId().equals("R1")){
+                url = ADSUCCESS;
+                session.setAttribute("Success", userEntity.getFullName());
+            }else{
+                url = SUCCESS;
+                session.setAttribute("Success", userEntity.getFullName());
+            }
         }
+
         request.getRequestDispatcher(url).forward(request, response);
     }
 
