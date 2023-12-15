@@ -130,17 +130,27 @@ a>.menu_Category_Item {
 }
 
 .cart {
-    position: absolute;
-    right: 200px;
-    bottom: auto;
-    top: auto;
+    /*position: absolute;*/
+    /*right: 200px;*/
+    /*bottom: auto;*/
+    /*top: auto;*/
 }
-
-.user {
+.rightIcon{
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    top: 0;
+    bottom: 0;
     right: 150px;
-    bottom: auto;
-    top: auto;
+}
+.rightIcon > a{
+    text-decoration: none;
+    color: var(--but);
+}
+.user {
+
 }
 
 .fa-cart-shopping {
