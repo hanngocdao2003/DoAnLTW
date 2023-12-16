@@ -13,8 +13,13 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
+<<<<<<< HEAD:src/main/java/controller/Register.java
 @WebServlet("/Register")
 public class Register extends HttpServlet {
+=======
+@WebServlet("/register")
+public class RegisterServlet extends HttpServlet {
+>>>>>>> dac9ccfb011854c63815f60f5a287e6e929b5862:ProjectMaven/src/main/java/controller/RegisterServlet.java
     private static final long SERIAL_VERSION_UID = 1L;
 
     @Override
@@ -41,7 +46,7 @@ public class Register extends HttpServlet {
 >>>>>>>> fb28bd08c089163e75bd0f3798cac47b3f28447b:src/main/java/controller/RegisterServlet.java
 
         // reply to user
-        resp.getWriter().println("Register successfully for" + fullName);
+        resp.sendRedirect("indexLogin.jsp");
     }
 <<<<<<<< HEAD:src/main/java/controller/Register.java
 }*/
