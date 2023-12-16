@@ -14,7 +14,13 @@ public class SignUpDAO {
     public boolean checkAccount(String numberPhone, String email) {
         List<UserEntity>  userEntityList = new ArrayList<>();
         StringBuilder sql = new StringBuilder();
-        //sql.append();
+        sql.append("select users.id, users.fullName, users.phone, users.email, users.password, users.status, users.roleId FROM shopquanao.users\n" +
+                "where users.phone =" + numberPhone +  "and users.email =" + email);
+        try {
+
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
        return true;
     }
 
