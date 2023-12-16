@@ -1,4 +1,5 @@
 package service;
+
 import bean.ColorEntity;
 import bean.ImageEntity;
 import bean.ProductEntity;
@@ -30,7 +31,7 @@ public class ProductService {
             productResponse.setDetails(item.getDetails());
             System.out.println(imageEntities);
             productResponse.setImage(imageEntities.getFirst().getLink());
-            //dùng feature java 8 để lấy list màu
+            // dùng feature java 8 để lấy list màu
             String color = colorEntities.stream().map(colors -> colors.getColor()).collect(Collectors.joining(", "));
             productResponse.setColor(color);
             result.add(productResponse);

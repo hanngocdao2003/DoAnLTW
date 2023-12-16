@@ -17,14 +17,16 @@ import java.util.Map;
 @WebServlet(name = "findProduct", value = "/findProduct")
 public class FindProduct extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         doPost(request, response);
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         String name = request.getParameter("keyword");
-//        System.out.println(name);
+        // System.out.println(name);
         // Bước 2: Gọi Service Layer
         ProductService productService = new ProductService();
         Map<String, String> searchParams = new HashMap<>();
