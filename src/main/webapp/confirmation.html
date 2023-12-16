@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xác nhận tài khoản</title>
+
+    <style>
+        body {
+            font-family: Bahnschrift;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #007BFF;
+        }
+
+        p {
+            color: #555;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Xác Nhận Tài Khoản</h2>
+    <p>Cảm ơn bạn đã đăng ký! Để hoàn tất quá trình đăng ký, vui lòng xác nhận tài khoản của bạn bằng cách nhấn vào nút bên dưới:</p>
+    <button id="confirmationBtn">Xác Nhận Tài Khoản</button>
+</div>
+<script>
+    document.getElementById("confirmationBtn").addEventListener("click", function() {
+        // Simulate email verification by displaying an alert
+        alert("Email verification link sent. Check your email to confirm your account.");
+    });
+</script>
+</body>
+</html>

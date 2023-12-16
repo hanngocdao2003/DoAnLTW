@@ -1,9 +1,11 @@
-/*
+
 package controller;
 
 
 import bean.UserEntity;
 import dao.UserDAO;
+import service.UserService;
+import utils.EmailSender;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,37 +16,43 @@ import java.io.IOException;
 
 
 @WebServlet("/Register")
-public class Register extends HttpServlet {
+public class RegisterServlet extends HttpServlet {
     private static final long SERIAL_VERSION_UID = 1L;
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        final String ERROR = "indexLogin.jsp";
+        final String SUCCESS = "indexLogin.jsp";
+        resp.setContentType("text/html; charset=UTF-8");
+        String url = ERROR;
         // get information of user
         String fullName = req.getParameter("fullName");
         String phone = req.getParameter("phone");
         String email = req.getParameter("email");
         String password = req.getParameter("password");
+        String btnRegister = req.getParameter("btnRegister");
 
-        // create object user
-        UserEntity newUser = new UserEntity();
-        newUser.setFullName(fullName);
-        newUser.setPhone(phone);
-        newUser.setEmail(email);
-        newUser.setPassword(password);
+        //check user
+        if (UserService.checkRegister(phone, email)) {
+       /*     // create object user
+            UserEntity newUser = new UserEntity();
+            newUser.setFullName(fullName);
+            newUser.setPhone(phone);
+            newUser.setEmail(email);
+            newUser.setPassword(password);*/
 
-        // save information of user to db
-        UserDAO userDAO = new UserDAO();
-        userDAO.addUser(newUser);
-<<<<<<<< HEAD:src/main/java/controller/Register.java
+            // send mail
+            String recipientEmail = email;
+            String verificationLink = "http://localhost:8080/maven/confirmation.html";
+            EmailSender.sendVerificationEmail(recipientEmail, verificationLink);
 
-========
->>>>>>>> fb28bd08c089163e75bd0f3798cac47b3f28447b:src/main/java/controller/RegisterServlet.java
+            String successMessage = "Đăng ký thành công! Bạn có thể đăng nhập ngay bây giờ.";
+            req.setAttribute("successMessage", successMessage);
 
-        // reply to user
-        resp.getWriter().println("Register successfully for" + fullName);
+            url = SUCCESS;
+        } else {
+
+        }
+        req.getRequestDispatcher("indexLogin.jsp").forward(req, resp);
     }
-<<<<<<<< HEAD:src/main/java/controller/Register.java
-}*/
-// ========
-// }
-// >>>>>>>> fb28bd08c089163e75bd0f3798cac47b3f28447b:src/main/java/controller/RegisterServlet.java
+}

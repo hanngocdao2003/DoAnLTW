@@ -19,7 +19,7 @@
 <div class="content">
     <div class="SignIn_Area">
         <a href="index.jsp"><img src="Image/BHD-nền%20trong%20suốt.svg" alt="" class="logo"></a>
-        <form action="" class="formSignIn">
+        <form action="LoginControl" class="formSignIn" method="post">
             <h1 class="titleSignIn">Đăng nhập</h1>
             <%String error = (String) request.getAttribute("Error");
             if(error != null){
@@ -54,7 +54,7 @@
         </form>
     </div>
     <div class="SignUp_Area">
-        <form action="RegisterServlet" method="post" class="formSignUp">
+        <form action="/Register" method="post" class="formSignUp">
             <div class="first">
                 <h1 class="titleSignUp">Đăng ký</h1>
                 <a href="" class="undo" id="undo">
@@ -95,7 +95,7 @@
                 </div>
             </div>
             <div class="buttonSubmit Register">
-                <input type="submit" class="button" value="Đăng ký">
+                <input type="submit" class="button" value="Đăng ký" name = "btnRegister">
             </div>
         </form>
     </div>
@@ -116,7 +116,30 @@
         </div>
     </div>
 </div>
+<%-- Kiểm tra xem có thông báo thành công không --%>
+<% String successMessage = (String) request.getAttribute("successMessage"); %>
+<% if (successMessage != null && !successMessage.isEmpty()) { %>
+<div id="popup" class="popup">
+    <p style="color: green;">
+        <%= successMessage %>
+    </p>
+    <button onclick="closePopup()">Đóng</button>
+</div>
+<script>
+    // JavaScript để hiển thị popup
+    function showPopup() {
+        document.getElementById("popup").style.display = "block";
+    }
 
+    // JavaScript để đóng popup
+    function closePopup() {
+        document.getElementById("popup").style.display = "none";
+    }
+
+    // Hiển thị popup khi trang tải xong
+    window.onload = showPopup;
+</script>
+<% } %>
 </body>
 
 </html>

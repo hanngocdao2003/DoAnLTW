@@ -19,19 +19,26 @@ public class LoginControl extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         final String ERROR = "indexLogin.jsp";
-        final String SUCCESS = "index.jsp";
+        final String SUCCESS_HOME = "index.jsp";
+        final String SUCCESS_ADMIN = "indexAdmin.jsp";
         response.setContentType("text/html; charset=UTF-8");
         HttpSession session = request.getSession(true);
         String url = ERROR;
         String userName = request.getParameter("userName");
         String password = request.getParameter("password");
         String btnLogin = request.getParameter("btnLogin");
-        UserEntity userEntity =  UserService.checkLogin(userName, password);
-        if (userEntity == null){
+        UserEntity userEntity = UserService.checkLogin(userName, password);
+        if (userEntity == null) {
             request.setAttribute("Error", "Tên đăng nhập hoặc mật khẩu không đúng");
-        }else {
-            url = SUCCESS;
-            session.setAttribute("Sucess", userEntity);
+        } else {
+            if (userEntity.getRoleId().equals("R1")) {
+                url = SUCCESS_ADMIN;
+                session.setAttribute("Sucess", userEntity.getFullName());
+            }
+            else{
+                url = SUCCESS_HOME;
+                session.setAttribute("Sucess", userEntity.getFullName());
+            }
         }
         request.getRequestDispatcher(url).forward(request, response);
     }
