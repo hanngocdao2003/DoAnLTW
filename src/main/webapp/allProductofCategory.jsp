@@ -107,7 +107,7 @@
                     ) {
             %>
             <li class="itemProduct">
-                <img src="Image/Product/<%=p.getImage().%>" alt="" class="imageProduct">
+                <img src="Image/Product/<%=p.getImage()%>" alt="" class="imageProduct">
                 <a href="" class="linkProduct"><%=p.getName()%>
                 </a>
                 <div class="evalute"><span>Đánh giá: <ul class="fiveStar">
