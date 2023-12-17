@@ -35,7 +35,7 @@ public class FindProduct extends HttpServlet {
         // Bước 4: Đặt dữ liệu vào Request Attribute
         request.setAttribute("products", productList);
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("allProductofCategory.html");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("allProductofCategory.jsp");
         dispatcher.forward(request, response);
     }
 }

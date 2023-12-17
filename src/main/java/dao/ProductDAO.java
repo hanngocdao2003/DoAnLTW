@@ -10,32 +10,34 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
 //
 public class ProductDAO {
-	
-    public static String searchWithoutJoin(Map<String, String> search) {
-        StringBuilder sql = new StringBuilder();
-		/*kiểm tra xem trên thanh param có từ năm hay không
-		* Nếu @Overridecó thì câu Query sẽ add câu query cho p.name*/
 
-        if (search.containsKey("name")) {
-            String name = search.get("name");
-            if (name != null && !name.isEmpty()) {
-                sql.append("AND p.name LIKE '%" + name + "%' ");
-            }
-        }
-        return sql.toString();
-    }
-    public static String searchWithJoin(Map<String, String> search) {
-        StringBuilder sql = new StringBuilder();
-        if (search.containsKey("category")) {
+	public static String searchWithoutJoin(Map<String, String> search) {
+		StringBuilder sql = new StringBuilder();
+		/*kiểm tra xem trên thanh param có từ năm hay không
+		 * Nếu @Overridecó thì câu Query sẽ add câu query cho p.name*/
+
+		if (search.containsKey("name")) {
+			String name = search.get("name");
+			if (name != null && !name.isEmpty()) {
+				sql.append("AND p.name LIKE '%" + name + "%' ");
+			}
+		}
+		return sql.toString();
+	}
+
+	public static String searchWithJoin(Map<String, String> search) {
+		StringBuilder sql = new StringBuilder();
+		if (search.containsKey("category")) {
 			String category = search.get("category");
 			if (category != null && !category.isEmpty()) {
 				sql.append("AND c.categoryName LIKE '%" + category + "%' ");
 			}
 		}
-        return sql.toString();
-    }
+		return sql.toString();
+	}
 
 
 	public static List<ProductEntity> findAll(Map<String, String> search) {
@@ -50,8 +52,8 @@ public class ProductDAO {
 		sql.append("GROUP BY p.name");
 
 		try (Connection conn = ConnectionUtils.getConnection();
-				Statement stmt = conn.createStatement();
-				ResultSet rs = stmt.executeQuery(sql.toString())) {
+			 Statement stmt = conn.createStatement();
+			 ResultSet rs = stmt.executeQuery(sql.toString())) {
 
 			while (rs.next()) {
 				ProductEntity productEntity = new ProductEntity();
