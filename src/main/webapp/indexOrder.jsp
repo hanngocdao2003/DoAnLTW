@@ -5,11 +5,11 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="Image/fontawesome-free-6.4.2-web/css/all.min.css">
-    <link rel="stylesheet" href="View/styles/styleMenu.css">
-    <link rel="stylesheet" href="View/styles/styleOrder.css">
-    <link rel="stylesheet" href="View/styles/styleFooter.css">
-    <link rel="stylesheet" href="View/styles/styleButtonAdd.css">
-    <script src="View/event/eventButtonAdd.js"></script>
+    <link rel="stylesheet" href="View/styleWeb/styleMenu.css">
+    <link rel="stylesheet" href="View/styleWeb/styleOrder.css">
+    <link rel="stylesheet" href="View/styleWeb/styleFooter.css">
+    <link rel="stylesheet" href="View/styleWeb/styleButtonAdd.css">
+    <script src="View/JSWeb/eventButtonAdd.js"></script>
 
     <link rel="icon" href="Image/BHD-html.png" type="image/x-icon">
     <title>Đơn hàng</title>
@@ -316,7 +316,7 @@
         </div>
     </div>
 </footer>
-<script src="View/event/eventCart.js"></script>
+<script src="View/JSWeb/eventCart.js"></script>
 </body>
 
 </html>

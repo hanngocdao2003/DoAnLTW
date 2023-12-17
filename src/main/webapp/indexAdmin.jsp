@@ -4,7 +4,6 @@
 
 <head>
     <meta charset="UTF-8">
-<<<<<<< HEAD
     <link rel="stylesheet" href="View/styleWeb/styleAdmin/styleAddProduct.css">
     <link rel="stylesheet" href="View/styleWeb/styleAdmin/styleAdmin.css">
     <link rel="stylesheet" href="View/styleWeb/styleAdmin/styleFeedback.css">
@@ -66,15 +65,15 @@
                             <i class="fa-solid fa-circle" style="color: #ff8080;"></i>
                             Phản hồi người dùng
                         </li>
-<<<<<<< HEAD
+
                         <li class="item" onclick="handleClick(this, 'panel_addSlide')">
                             <i class="fa-solid fa-circle" style="color: #ff8080;"></i>
                             Thêm trình chiếu
                         </li>
-                        <a href="../View/indexChangePass.html" style="text-decoration: none">
-=======
+
+
                         <a href="indexChangePass.jsp" style="text-decoration: none">
->>>>>>> fb28bd08c089163e75bd0f3798cac47b3f28447b
+
                             <li class="item">
                                 <i class="fa-solid fa-circle" style="color: #ff8080;"></i>
                                 Đổi mật khẩu
@@ -359,7 +358,7 @@
                     </div>
                     <div class="filter">
                         <select name="filter-select" id="filter-select">
-                            <option value= "alphabet">Sắp xếp theo chưa đọc</option>
+                            <option value="alphabet">Sắp xếp theo chưa đọc</option>
                             <option value="alphabet">Sắp xếp theo chưa phản hồi</option>
                         </select>
                     </div>
@@ -419,9 +418,9 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="View/event/data.js"></script>
-<script src="View/event/eventAdmin.js"></script>
-<script src="View/event/eventAddProduct.js"></script>
+<script src="View/JSWeb/data.js"></script>
+<script src="View/JSWeb/eventAdmin.js"></script>
+<script src="View/JSWeb/eventAddProduct.js"></script>
 </body>
 
 </html>

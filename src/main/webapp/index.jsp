@@ -9,11 +9,7 @@
     <link rel="stylesheet" href="Image/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="View/styleWeb/styleFooter.css">
     <link rel="stylesheet" href="View/styleWeb/styleHeader.css">
-<<<<<<< HEAD
-    <link rel="stylesheet" href="View/styleWeb/styleAdmin/color.css">
-=======
     <link rel="stylesheet" href="View/styleWeb/color.css">
->>>>>>> Duong
     <link rel="icon" href="Image/logo/BHD-html.png" type="image/x-icon">
     <script src="View/JSWeb/code.jquery.com_jquery-3.7.1.min.js"></script>
     <script src="View/JSWeb/slick.min.js"></script>

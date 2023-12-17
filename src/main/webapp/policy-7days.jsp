@@ -5,25 +5,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../View/styleWeb/styleFooter.css">
-  <link rel="stylesheet" href="../View/Policy/policyStyle/stylePolicy_change.css">
-  <link rel="stylesheet" href="../Image/fontawesome/css/all.min.css">
-  <link rel="icon" href="../Image/logo/BHD-html.png" type="image/x-icon">
-  <script src="../View/JSWeb/addPart.js"></script>
+  <link rel="stylesheet" href="View/styleWeb/styleFooter.css">
+  <link rel="stylesheet" href="View/styleWeb/policyStyle/stylePolicy_change.css">
+  <link rel="stylesheet" href="Image/fontawesome/css/all.min.css">
+  <link rel="icon" href="Image/logo/BHD-html.png" type="image/x-icon">
+  <script src="View/JSWeb/addPart.js"></script>
   <title>Dịch vụ đổi trả 7 ngày</title>
 </head>
 
 <body>
   <header>
-    <a href="index.html" class="undoHome">
-      <img src="../Image/logo/BHD-nền%20trong%20suốt.svg" alt="" class="logo">
+    <a href="index.jsp" class="undoHome">
+      <img src="Image/logo/BHD-nền%20trong%20suốt.svg" alt="" class="logo">
       <h1>BHD Boutique</h1>
     <a href="index.jsp" class="undoHome">
         <img src="Image/BHD-nền%20trong%20suốt.svg" alt="" class="logo">
         <h1>BHD Boutique</h1>
     </a>
     <ul class="menuPolicy">
-        <li class="itemPolicy"><a href="policy-7days.html" class="link">Chính sách đổi trả</a></li>
+        <li class="itemPolicy"><a href="policy-7days.jsp" class="link">Chính sách đổi trả</a></li>
         <li class="itemPolicy"><a href="policy-sale.jsp" class="link">Chính sách khuyến mãi</a></li>
         <li class="itemPolicy"><a href="policy-ship.jsp" class="link">Chính sách giao hàng</a></li>
     </ul>
@@ -105,7 +105,7 @@
       <div class="list-policy">
         <p class="policy-lb">Chính sách</p>
         <ul>
-          <li><a href="policy-7days.html">Chính sách đổi trả 7 ngày</a></li>
+          <li><a href="policy-7days.jsp">Chính sách đổi trả 7 ngày</a></li>
           <li><a href="policy-sale.jsp">Chính sách khuyến mãi</a></li>
           <li><a href="policy-ship.jsp">Chính sách giao hàng</a></li>
         </ul>

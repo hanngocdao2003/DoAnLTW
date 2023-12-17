@@ -5,8 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Image/fontawesome-free-6.4.2-web/css/all.min.css">
-    <link rel="stylesheet" href="View/styles/styleship.css">
+    <link rel="stylesheet" href="Image/fontawesome-free-6.4.2-web/css/all.min.css">
+    <link rel="stylesheet" href="View/styleWeb/styleship.css">
     <link rel="icon" href="Image/BHD-html.png" type="image/x-icon">
     <title>Chính sách giao hàng</title>
 </head>
@@ -20,13 +20,13 @@
         <ul class="menuPolicy">
             <li class="itemPolicy"><a href="policy-7days.jsp" class="link">Chính sách đổi trả</a></li>
             <li class="itemPolicy"><a href="policy-sale.jsp" class="link">Chính sách khuyến mãi</a></li>
-            <li class="itemPolicy"><a href="policy-ship.html" class="link">Chính sách giao hàng</a></li>
+            <li class="itemPolicy"><a href="policy-ship.jsp" class="link">Chính sách giao hàng</a></li>
         </ul>
     </header>
     <div class="slider">
-        <img src="/Image/giaohang.jpg" alt="" class="sticker">
-        <img src="/Image/sticker3.svg" alt="" class="sticker">
-        <img src="/Image/giaohang2.png" alt="" class="sticker">
+        <img src="Image/giaohang.jpg" alt="" class="sticker">
+        <img src="Image/sticker3.svg" alt="" class="sticker">
+        <img src="Image/giaohang2.png" alt="" class="sticker">
     </div>
     <div class="InArea">
         <div class="titleInArea">
