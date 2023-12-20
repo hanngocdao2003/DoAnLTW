@@ -1,6 +1,16 @@
 @media screen and (min-width: 1025px) {
     /* CSS rules for screens larger than 1024px */
-
+.listItemProduct{
+    display: flex;
+    /*width: 100%;*/
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 2%;
+    column-gap: 2%;
+    align-items: center;
+    margin: 5% 0% 0% 1%;
+    overflow: hidden;
+}
 
     .itemProduct {
         flex-shrink: 0;
@@ -11,7 +21,8 @@
         background-color: rgba(255, 207, 253, 0.5);
         border-radius: 10px;
         cursor: pointer;
-
+        flex-basis: 18%;
+        margin-bottom: 3%;
     }
 
 

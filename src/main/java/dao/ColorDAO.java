@@ -21,6 +21,7 @@ public class ColorDAO {
                 ColorEntity colorEntity = new ColorEntity();
                 colorEntity.setId(rs.getInt("id"));
                 colorEntity.setColor(rs.getString("color"));
+                colorEntity.setCode(rs.getString("code"));
                 colorEntity.setProductId(rs.getString("productId"));
                 colorEntities.add(colorEntity);
             }

@@ -106,26 +106,34 @@
 
     <div class="text">
         <div class="information">
-            <p class="name">Áo Len Aimee</p>
+            <p class="name"><%=p.getName()%>
+            </p>
             <div class="quantity">
                 <div class="sale">
-                    <p class="sub-sale" ;>Đã bán: 65</p>
+                    <p class="sub-sale">Đã bán: 65</p>
                 </div>
                 <div class="inventory">
                     <p class="sub-inventory">Còn lại: 134</p>
                 </div>
             </div>
-            <p class="price">290.000</p>
+            <p class="price"><%=p.getName()%></p>
             <p class="color" style="font-weight: bold;">Màu sắc:</p>
             <div class="color-btn" style="margin-bottom: 10px;">
-                <button id="btn-black" class="btn black" style="background-color: black;"></button>
-                <button id="btn-white" class="btn white" style="background: white;"></button>
-                <button id="btn-pink" class="btn pink" style="background: pink;"></button>
+                <%String colors = p.getColor();
+                String[] arrColor = colors.split(",");
+                for (String c : arrColor) {%>
+                <button id="btn-black" class="btn black" style="background-color: <%=c.trim()%>;"></button>
+                <%}%>
             </div>
             <p class="size" style="margin-bottom: 5px; font-weight: bold;">Kích thước:</p>
-            <button class="size-btn s">S</button>
-            <button class="size-btn m">M</button>
-            <button class="size-btn l">L</button>
+            <%
+                String sizes = p.getSize();
+                String[] arr = sizes.split(",");
+                for (String size : arr) {
+            %>
+            <button class="size-btn s"><%=size.trim()%>
+            </button>
+            <%}%>
             <div class="add" style="margin-bottom: 10px;">
                 <button class="add-pd"><i class="fa-solid fa-cart-shopping"
                                           style="color: #fff; margin-left: 5px;"></i>Thêm vào
@@ -155,7 +163,7 @@
             <li>Không là lên chi tiết trang trí</li>
         </ul>
     </div>
-    <%}%>
+    <%}}%>
 </div>
 
 <script>

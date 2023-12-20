@@ -38,7 +38,7 @@ public class ProductService {
             productResponse.setImage(imageEntities.getFirst().getLink());
 
             //dùng feature java 8 để lấy list màu, size
-            String color = colorEntities.stream().map(colors -> colors.getColor()).collect(Collectors.joining(", "));
+            String color = colorEntities.stream().map(colors -> colors.getCode()).collect(Collectors.joining(", "));
             String size = sizeEntities.stream().map(sizes -> sizes.getSize()).collect(Collectors.joining(", "));
             String image = imageEntities.stream().map(img -> img.getLink()).collect(Collectors.joining(", "));
             productResponse.setImage(image);

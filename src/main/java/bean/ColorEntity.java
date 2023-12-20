@@ -3,8 +3,17 @@ package bean;
 public class ColorEntity {
   private Integer id;
   private String color;
+  private String code;
   private String productId;
-  
+
+  public String getCode() {
+    return code;
+  }
+
+  public void setCode(String code) {
+    this.code = code;
+  }
+
   public Integer getId() {
     return id;
   }
@@ -29,6 +38,7 @@ public class ColorEntity {
     return "ColorEntity{" +
             "id=" + id +
             ", color='" + color + '\'' +
+            ", code='" + code + '\'' +
             ", productId='" + productId + '\'' +
             '}';
   }
