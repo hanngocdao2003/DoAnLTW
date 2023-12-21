@@ -3,34 +3,38 @@ import dao.ProductDAO;
 import service.ProductResponse;
 import service.ProductService;
 
+import java.sql.SQLOutput;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class TestProduct {
     public static void main(String[] args) {
-        // Create a search map with the product ID "PD1"
-        Map<String, String> search = Map.of("productId", "PD1");
-
+        // Create a search map with parameters
+        Map<String, String> searchParams = new HashMap<>();
+        searchParams.put("name", "Áo");
+        //searchParams.put("category", "yourCategoryName");
+        ProductDAO productDAO = new ProductDAO();
+        ProductService productService = new ProductService();
         // Call the findAll method from ProductService
-        List<ProductResponse> products = ProductService.findAll(search);
+      //List<ProductEntity> products = productDAO.findAll(searchParams);
+        List<ProductResponse> products = productService.findAll(searchParams);
 
-        // Check if any products were found
+        // Display the results
         if (!products.isEmpty()) {
-            // Print the details of the first product (assuming PD1 returns only one product)
-            ProductResponse product = products.get(0);
-            System.out.println("Product Name: " + product.getName());
-            System.out.println("Price: " + product.getPrice());
-            System.out.println("Details: " + product.getDetails());
-            System.out.println("Image: " + product.getImage());
-            System.out.println("Color(s): " + product.getColor());
-            // Print size(s) if available
-            if (!product.getSize().isEmpty()) {
+            System.out.println("Products found:");
+            for (ProductResponse product : products) {
+                System.out.println("Name: " + product.getName());
+                System.out.println("Price: " + product.getPrice());
+                System.out.println("Details: " + product.getDetails());
+                System.out.println("Image: " + product.getImage());
+                System.out.println("Color(s): " + product.getColor());
                 System.out.println("Size(s): " + product.getSize());
+                System.out.println("-----------------------");
             }
         } else {
-            System.out.println("No product found with ID PD1");
+            System.out.println("No products found with the specified criteria.");
         }
     }
 }
-

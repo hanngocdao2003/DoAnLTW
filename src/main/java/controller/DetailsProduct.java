@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@WebServlet(name = "DetailsProduct", value = "/DetailsProduct")
+@WebServlet(name = "detailsProduct", value = "/detailsProduct")
 public class DetailsProduct extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

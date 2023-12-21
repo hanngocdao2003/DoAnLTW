@@ -23,7 +23,7 @@ public class FindProduct extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String name = request.getParameter("keyword");
+        String name = request.getParameter("nameproduct");
 //        System.out.println(name);
         // Bước 2: Gọi Service Layer
         ProductService productService = new ProductService();

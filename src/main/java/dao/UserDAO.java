@@ -13,6 +13,7 @@ public class UserDAO {
         StringBuilder sql = new StringBuilder();
         sql.append("SELECT users.id, users.fullName, users.phone, users.email, users.password, users.status, users.roleId from users where users.phone ='" + numberPhone + "'" +
                 "and users.status = 1");
+
         try {
             Connection conn = ConnectionUtils.getConnection();
             PreparedStatement stmt = conn.prepareStatement(sql.toString());
@@ -44,10 +45,8 @@ public class UserDAO {
     }
 
     public static void main(String[] args) {
-
        UserDAO userDAO = new UserDAO();
        List<UserEntity> userEntityList =  userDAO.getAccount("0901323080");
         System.out.println(userEntityList);
-
     }
 }

@@ -16,9 +16,6 @@ public class ProductDAO {
 
     public static String searchWithoutJoin(Map<String, String> search) {
         StringBuilder sql = new StringBuilder();
-        /*kiểm tra xem trên thanh param có từ năm hay không
-         * Nếu @Overridecó thì câu Query sẽ add câu query cho p.name*/
-
         if (search.containsKey("name")) {
             String name = search.get("name");
             if (name != null && !name.isEmpty()) {
@@ -43,7 +40,7 @@ public class ProductDAO {
     public static List<ProductEntity> findAll(Map<String, String> search) {
         List<ProductEntity> productEntities = new ArrayList<>();
         StringBuilder sql = new StringBuilder();
-        sql.append("SELECT p. id, p.name, p.price, p.details FROM shopquanao.products p ");
+        sql.append("SELECT p.id, p.name, p.price, p.details FROM shopquanao.products p ");
         sql.append("INNER JOIN shopquanao.category_details cd ON p.categoryId = cd.id\n"
                 + "INNER JOIN shopquanao.categories c ON cd.categoryId = c.id\n");
         sql.append("WHERE 1 = 1 "); // bắt buộc có WHERE 1 = 1

@@ -31,7 +31,7 @@
             </div>
             <div class="search_Category">
                 <form class="Search" action="findProduct" method="get">
-                    <input name="keyword" type="text" class="input_search" placeholder="Nhập sản phẩm cần tìm">
+                    <input name="nameproduct" type="text" class="input_search" placeholder="Nhập sản phẩm cần tìm">
                     <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
             </div>
@@ -126,7 +126,6 @@
             %>
         </ul>
     </div>
-
 <script>
     document.body.innerHTML += addFooter();
 </script>

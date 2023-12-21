@@ -10,11 +10,9 @@
     <link rel="stylesheet" href="View/styles/styleFooter.css">
     <link rel="stylesheet" href="View/styles/styleButtonAdd.css">
     <script src="View/event/eventButtonAdd.js"></script>
-
     <link rel="icon" href="Image/BHD-html.png" type="image/x-icon">
     <title>Đơn hàng</title>
 </head>
-
 <body>
 <div class="firstArea">
     <div class="logo_search_cart">
@@ -251,5 +249,4 @@
 </footer>
 <script src="View/event/eventCart.js"></script>
 </body>
-
 </html>

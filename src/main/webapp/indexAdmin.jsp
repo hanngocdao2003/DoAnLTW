@@ -4,7 +4,6 @@
 
 <head>
     <meta charset="UTF-8">
-<<<<<<< HEAD
     <link rel="stylesheet" href="View/styleWeb/styleAdmin/styleAddProduct.css">
     <link rel="stylesheet" href="View/styleWeb/styleAdmin/styleAdmin.css">
     <link rel="stylesheet" href="View/styleWeb/styleAdmin/styleFeedback.css">

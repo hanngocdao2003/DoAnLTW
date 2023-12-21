@@ -7,13 +7,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="View/styles/styleDetails.css">
-    <link rel="stylesheet" href="View/styles/styleFooter.css">
-    <link rel="stylesheet" href="View/styles/styleButtonAdd.css">
+    <link rel="stylesheet" href="View/styleWeb/styleDetails.css">
+    <link rel="stylesheet" href="View/styleWeb/styleFooter.css">
+    <link rel="stylesheet" href="View/styleWeb/styleButtonAdd.css">
     <script src="View/JSWeb/eventButtonAdd.js"></script>
     <link rel="stylesheet" href="Image/fontawesome/css/all.min.css">
     <link rel="icon" href="Image/logo/BHD-html.png" type="image/x-icon">
-    <link rel="stylesheet" href="View/styles/styleAdmin/color.css">
+    <link rel="stylesheet" href="View/styleWeb/color.css">
     <script src="View/JSWeb/addPart.js"></script>
     <script src="View/JSWeb/JSDetails.js"></script>
     <title>Chi tiết đơn hàng</title>
@@ -122,6 +122,7 @@
                 <%String colors = p.getColor();
                 String[] arrColor = colors.split(",");
                 for (String c : arrColor) {%>
+
                 <button id="btn-black" class="btn black" style="background-color: <%=c.trim()%>;"></button>
                 <%}%>
             </div>

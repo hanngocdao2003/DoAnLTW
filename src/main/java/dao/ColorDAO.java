@@ -12,7 +12,7 @@ import java.util.List;
 public class ColorDAO {
     public static List<ColorEntity> findColor(String productId) {
         List<ColorEntity> colorEntities = new ArrayList<>();
-        String sql = "SELECT id, color, productId FROM shopquanao.colors WHERE productId = '" + productId + "'";
+        String sql = "SELECT id, color, code, productId FROM shopquanao.colors WHERE productId = '" + productId + "'";
 
         try (Connection conn = ConnectionUtils.getConnection();
              Statement stmt = conn.createStatement();
@@ -31,3 +31,4 @@ public class ColorDAO {
         return colorEntities;
     }
 }
+

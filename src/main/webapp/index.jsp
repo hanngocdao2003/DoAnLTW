@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="View/styleWeb/styleHeader.css">
 
     <link rel="stylesheet" href="View/styleWeb/color.css">
-
     <link rel="icon" href="Image/logo/BHD-html.png" type="image/x-icon">
     <script src="View/JSWeb/code.jquery.com_jquery-3.7.1.min.js"></script>
     <script src="View/JSWeb/slick.min.js"></script>
@@ -31,7 +30,7 @@
             <div class="search_Category">
                 <form class="Search" action="findProduct" method="get">
                     <input name="keyword" type="text" class="input_search" placeholder="Nhập sản phẩm cần tìm">
-                    <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
             </div>
             <div class="rightIcon">
