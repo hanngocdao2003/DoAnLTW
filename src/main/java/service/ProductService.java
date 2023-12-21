@@ -20,8 +20,9 @@ public class ProductService {
         System.out.println(productEntities.size());
         List<ProductResponse> result = new ArrayList<>();
         for (ProductEntity item : productEntities) {
-            String productId = item.getId();
+            Integer productId = item.getId();
             ProductResponse productResponse = new ProductResponse();
+            productResponse.setId(productId);
             ImageDAO imageDAO = new ImageDAO();
             List<ImageEntity> imageEntities = imageDAO.findImage(productId);
             if (imageEntities.isEmpty()) {
@@ -45,7 +46,7 @@ public class ProductService {
             productResponse.setImage(image);
             productResponse.setColor(color);
             productResponse.setSize(size);
-            result.add(productResponse) ;// Thêm các đối tượng productResponse vào list
+            result.add(productResponse);// Thêm các đối tượng productResponse vào list
         }
         System.out.println(result.size());
         return result;

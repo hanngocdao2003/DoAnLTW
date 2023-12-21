@@ -11,11 +11,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ImageDAO {
-    public List<ImageEntity> findImage(String productId) {
+    public List<ImageEntity> findImage(int productId) {
         List<ImageEntity> imageEntities = new ArrayList<>();
         String sql = "SELECT i.id, i.link, i.productId FROM shopquanao.images i"
                 + " WHERE 1 = 1 ";
-        if (productId != null) {
+        if (productId != 0) {
             sql += " AND productId LIKE '%" + productId +"%' ";
         }
         try (Connection conn = ConnectionUtils.getConnection();
@@ -25,7 +25,7 @@ public class ImageDAO {
                 ImageEntity imageEntity = new ImageEntity();
                 imageEntity.setId(rs.getString("id"));
                 imageEntity.setLink(rs.getString("link"));
-                imageEntity.setProductId(rs.getString("productId"));
+                imageEntity.setProductId(rs.getInt("productId"));
                 imageEntities.add(imageEntity);
             }
         } catch (Exception ex) {

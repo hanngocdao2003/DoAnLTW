@@ -3,7 +3,7 @@ package bean;
 public class ImageEntity {
     private String id;
     private String link;
-    private String productId;
+    private Integer productId;
 
     public String getId() {
         return id;
@@ -21,11 +21,11 @@ public class ImageEntity {
         this.link = link;
     }
 
-    public String getProductId() {
+    public Integer getProductId() {
         return productId;
     }
 
-    public void setProductId(String productId) {
+    public void setProductId(Integer productId) {
         this.productId = productId;
     }
 }

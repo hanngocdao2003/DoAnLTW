@@ -107,7 +107,7 @@
                     ) {
             %>
             <li class="itemProduct">
-                <a href="details.jsp"><img src="Image/Product/<%=p.getImage()%>" alt="" class="imageProduct"></a>
+                <a href="details.jsp?productId=<%=p.getId()%>"><img src="Image/Product/<%=p.getImage()%>" alt="" class="imageProduct"></a>
                 <a href="" class="linkProduct"><%=p.getName()%>
                 </a>
                 <div class="evalute"><span>Đánh giá: <ul class="fiveStar">

@@ -90,10 +90,8 @@
 </header>
 <div class="container">
     <%
-        List<ProductResponse> productResponses = (List<ProductResponse>) request.getAttribute("products");
-        if (productResponses != null) {
-            for (ProductResponse p : productResponses
-            ) {
+        ProductResponse p = (ProductResponse) request.getAttribute("productDetail");
+        if (p != null) {
     %>
     <div class="img-product">
         <div class="mini-img-product">
@@ -116,7 +114,7 @@
                     <p class="sub-inventory">Còn lại: 134</p>
                 </div>
             </div>
-            <p class="price"><%=p.getName()%></p>
+            <p class="price"><%=p.getPrice()%></p>
             <p class="color" style="font-weight: bold;">Màu sắc:</p>
             <div class="color-btn" style="margin-bottom: 10px;">
                 <%String colors = p.getColor();
@@ -146,12 +144,16 @@
         <hr style="margin-bottom: 20px;">
         <div class="feature"></div>
         <p style="font-weight: bold; margin-bottom: 5px;">Mô tả sản phẩm:</p>
+        <%String dts = p.getDetails();
+        String[] lDetail = dts.split(",");
+        for (String s : lDetail) {%>
         <ul class="describe">
-            <li class="describe-p">Sản phẩm: Áo len gile sọc ngang có nút cài dễ phối đồ Aurelia Miều Est.2013</li>
-            <li class="describe-p">Màu sắc: Trắng/Đen/Hồng</li>
-            <li class="describe-p">Thiết kế và sản xuất: Miều Est.2013</li>
-            <li class="describe-p">Nơi sản xuất: Việt Nam</li>
+            <li class="describe-p"><%=s.trim()%></li>
+<%--            <li class="describe-p">Màu sắc: Trắng/Đen/Hồng</li>--%>
+<%--            <li class="describe-p">Thiết kế và sản xuất: Miều Est.2013</li>--%>
+<%--            <li class="describe-p">Nơi sản xuất: Việt Nam</li>--%>
         </ul>
+        <%}%>
         <hr style="margin-bottom: 20px;">
         <p style="font-weight: bold; margin-bottom: 5px;">Hướng dẫn sử dụng:</p>
         <ul class="use">
@@ -164,7 +166,7 @@
             <li>Không là lên chi tiết trang trí</li>
         </ul>
     </div>
-    <%}}%>
+    <%}%>
 </div>
 
 <script>

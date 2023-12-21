@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ColorDAO {
-    public static List<ColorEntity> findColor(String productId) {
+    public static List<ColorEntity> findColor(int productId) {
         List<ColorEntity> colorEntities = new ArrayList<>();
         String sql = "SELECT id, color, code, productId FROM shopquanao.colors WHERE productId = '" + productId + "'";
 
@@ -22,7 +22,7 @@ public class ColorDAO {
                 colorEntity.setId(rs.getInt("id"));
                 colorEntity.setColor(rs.getString("color"));
                 colorEntity.setCode(rs.getString("code"));
-                colorEntity.setProductId(rs.getString("productId"));
+                colorEntity.setProductId(rs.getInt("productId"));
                 colorEntities.add(colorEntity);
             }
         } catch (Exception ex) {

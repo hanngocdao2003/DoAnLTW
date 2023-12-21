@@ -15,15 +15,33 @@ import java.util.Map;
 public class DetailsProduct extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    String name = request.getParameter("product");
-        ProductService productService = new ProductService();
-        Map<String, String> searchParams = new HashMap<>();
-        searchParams.put("name", name);
-        List<ProductResponse> productList = productService.findAll(searchParams);
-        System.out.println(productList);
+        String productId = request.getParameter("productId");
+        if (productId != null && !productId.isEmpty()) {
+
+            ProductResponse productDetail = getProductDetail(productId);
+
+            request.setAttribute("productDetail", productDetail);
+
+            // Chuyển hướng đến trang chi tiết (Details.jsp)
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/details.jsp");
+            dispatcher.forward(request, response);
+        } else {
+            // Xử lý khi productId không hợp lệ
+            response.sendRedirect("error.jsp"); // Thay bằng trang lỗi mong muốn
+        }
     }
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     doGet(request, response);
+    }
+
+    private ProductResponse getProductDetail(String productId) {
+        // Gọi ProductService để lấy chi tiết sản phẩm
+        Map<String, String> search = new HashMap<>();
+        search.put("productId", productId);
+        List<ProductResponse> productDetails = ProductService.findAll(search);
+
+        // Kiểm tra và trả về sản phẩm chi tiết (có thể cần xử lý nếu danh sách không rỗng)
+        return productDetails.isEmpty() ? null : productDetails.get(0);
     }
 }

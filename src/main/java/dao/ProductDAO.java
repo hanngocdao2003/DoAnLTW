@@ -54,7 +54,7 @@ public class ProductDAO {
 
             while (rs.next()) {
                 ProductEntity productEntity = new ProductEntity();
-                productEntity.setId(rs.getString("id"));
+                productEntity.setId(rs.getInt("id"));
                 productEntity.setName(rs.getString("name"));
                 productEntity.setPrice(rs.getInt("price"));
                 productEntity.setDetails(rs.getString("details"));
