@@ -1,4 +1,4 @@
-package service;
+package bean;
 
 public class ProductResponse {
     private Integer id;

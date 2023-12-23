@@ -1,4 +1,4 @@
-<%@ page import="service.ProductResponse" %>
+<%@ page import="bean.ProductResponse" %>
 <%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
@@ -107,7 +107,7 @@
                     ) {
             %>
             <li class="itemProduct">
-                <a href="details.jsp?productId=<%=p.getId()%>"><img src="Image/Product/<%=p.getImage()%>" alt="" class="imageProduct"></a>
+                <a href="detailsProduct?productId=<%=p.getId()%>"><img src="Image/Product/<%=p.getImage()%>" alt="" class="imageProduct"></a>
                 <a href="" class="linkProduct"><%=p.getName()%>
                 </a>
                 <div class="evalute"><span>Đánh giá: <ul class="fiveStar">

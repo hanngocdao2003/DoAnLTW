@@ -1,10 +1,7 @@
-import bean.ProductEntity;
 import dao.ProductDAO;
-import service.ProductResponse;
+import bean.ProductResponse;
 import service.ProductService;
 
-import java.sql.SQLOutput;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -17,9 +14,9 @@ public class TestProduct {
         //searchParams.put("category", "yourCategoryName");
         ProductDAO productDAO = new ProductDAO();
         ProductService productService = new ProductService();
-        // Call the findAll method from ProductService
-      //List<ProductEntity> products = productDAO.findAll(searchParams);
-        List<ProductResponse> products = productService.findAll(searchParams);
+
+        //List<ProductEntity> products = productDAO.findAll(searchParams);
+        List<ProductResponse> products = productService.findProduct(searchParams);
 
         // Display the results
         if (!products.isEmpty()) {

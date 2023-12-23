@@ -1,4 +1,4 @@
-<%@ page import="service.ProductResponse" %>
+<%@ page import="bean.ProductResponse" %>
 <%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
@@ -91,15 +91,19 @@
 <div class="container">
     <%
         ProductResponse p = (ProductResponse) request.getAttribute("productDetail");
+        System.out.println(p);
         if (p != null) {
     %>
     <div class="img-product">
         <div class="mini-img-product">
-            <img src="<%= p.getImage() %>" alt="">
+            <img src="Image/Product/<%= p.getImage()%>" alt="">
+
         </div>
+        <%}%>
         <div class="zoom-image-product">
-            <img src="<%= p.getImage() %>" alt="">
+            <img src="Image/Product/<%= p.getImage() %>" alt="">`
         </div>
+
     </div>
 
     <div class="text">
@@ -114,14 +118,17 @@
                     <p class="sub-inventory">Còn lại: 134</p>
                 </div>
             </div>
-            <p class="price"><%=p.getPrice()%></p>
+            <p class="price"><%=p.getPrice()%>
+            </p>
             <p class="color" style="font-weight: bold;">Màu sắc:</p>
             <div class="color-btn" style="margin-bottom: 10px;">
-                <%String colors = p.getColor();
-                String[] arrColor = colors.split(",");
-                for (String c : arrColor) {%>
-
-                <button id="btn-black" class="btn black" style="background-color: <%=c.trim()%>;"></button>
+                <%
+                    String colors = p.getColor();
+                    String[] arrColor = colors.split(",");
+                    for (String c : arrColor) {
+                %>
+<%--                bị lỗi kệ nó, không sao hết nhé--%>
+                <button id="btn-black" class="btn black" style="background-color: #<%=c.trim()%>;"></button>
                 <%}%>
             </div>
             <p class="size" style="margin-bottom: 5px; font-weight: bold;">Kích thước:</p>
@@ -144,14 +151,17 @@
         <hr style="margin-bottom: 20px;">
         <div class="feature"></div>
         <p style="font-weight: bold; margin-bottom: 5px;">Mô tả sản phẩm:</p>
-        <%String dts = p.getDetails();
-        String[] lDetail = dts.split(",");
-        for (String s : lDetail) {%>
+        <%
+            String dts = p.getDetails();
+            String[] lDetail = dts.split(",");
+            for (String s : lDetail) {
+        %>
         <ul class="describe">
-            <li class="describe-p"><%=s.trim()%></li>
-<%--            <li class="describe-p">Màu sắc: Trắng/Đen/Hồng</li>--%>
-<%--            <li class="describe-p">Thiết kế và sản xuất: Miều Est.2013</li>--%>
-<%--            <li class="describe-p">Nơi sản xuất: Việt Nam</li>--%>
+            <li class="describe-p"><%=s.trim()%>
+            </li>
+            <%--            <li class="describe-p">Màu sắc: Trắng/Đen/Hồng</li>--%>
+            <%--            <li class="describe-p">Thiết kế và sản xuất: Miều Est.2013</li>--%>
+            <%--            <li class="describe-p">Nơi sản xuất: Việt Nam</li>--%>
         </ul>
         <%}%>
         <hr style="margin-bottom: 20px;">

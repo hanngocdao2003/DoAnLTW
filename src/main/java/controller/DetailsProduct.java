@@ -1,6 +1,6 @@
 package controller;
 
-import service.ProductResponse;
+import bean.ProductResponse;
 import service.ProductService;
 
 import javax.servlet.*;
@@ -16,9 +16,11 @@ public class DetailsProduct extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String productId = request.getParameter("productId");
+        ProductService productService = new ProductService();
+
         if (productId != null && !productId.isEmpty()) {
 
-            ProductResponse productDetail = getProductDetail(productId);
+            ProductResponse productDetail = ProductService.getDetails(Integer.parseInt(productId));
 
             request.setAttribute("productDetail", productDetail);
 
@@ -39,7 +41,7 @@ public class DetailsProduct extends HttpServlet {
         // Gọi ProductService để lấy chi tiết sản phẩm
         Map<String, String> search = new HashMap<>();
         search.put("productId", productId);
-        List<ProductResponse> productDetails = ProductService.findAll(search);
+        List<ProductResponse> productDetails = ProductService.findProduct(search);
 
         // Kiểm tra và trả về sản phẩm chi tiết (có thể cần xử lý nếu danh sách không rỗng)
         return productDetails.isEmpty() ? null : productDetails.get(0);

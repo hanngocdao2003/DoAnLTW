@@ -1,6 +1,6 @@
 package controller;
 
-import service.ProductResponse;
+import bean.ProductResponse;
 import service.ProductService;
 
 import javax.servlet.RequestDispatcher;
@@ -25,14 +25,14 @@ public class FindProduct extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String name = request.getParameter("nameproduct");
 //        System.out.println(name);
-        // Bước 2: Gọi Service Layer
+        // Gọi Service Layer
         ProductService productService = new ProductService();
         Map<String, String> searchParams = new HashMap<>();
         searchParams.put("name", name);
-        List<ProductResponse> productList = productService.findAll(searchParams);
+        List<ProductResponse> productList = productService.findProduct(searchParams);
         System.out.println(productList);
 
-        // Bước 4: Đặt dữ liệu vào Request Attribute
+        //Đặt dữ liệu vào Request Attribute
         request.setAttribute("products", productList);
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("allProductofCategory.jsp");

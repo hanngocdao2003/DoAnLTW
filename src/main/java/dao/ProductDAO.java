@@ -36,14 +36,39 @@ public class ProductDAO {
         return sql.toString();
     }
 
+    public static ProductEntity getDetails(Integer productId) {
+        List<ProductEntity> productEntities = new ArrayList<>();
+        StringBuilder sql = new StringBuilder();
+        sql.append("SELECT p.id, p.name, p.price, p.details FROM shopquanao.products p ");
+        sql.append("INNER JOIN shopquanao.category_details cd ON p.categoryId = cd.id\n"
+                + "INNER JOIN shopquanao.categories c ON cd.categoryId = c.id\n");
+        sql.append("WHERE 1 = 1 AND p.id = " + productId);
+        try (Connection conn = ConnectionUtils.getConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(sql.toString())) {
 
-    public static List<ProductEntity> findAll(Map<String, String> search) {
+            while (rs.next()) {
+                ProductEntity productEntity = new ProductEntity();
+                productEntity.setId(productId);
+                productEntity.setName(rs.getString("name"));
+                productEntity.setPrice(rs.getInt("price"));
+                productEntity.setDetails(rs.getString("details"));
+                productEntities.add(productEntity);
+            }
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        return productEntities.getFirst();
+    }
+
+    public static List<ProductEntity> findProduct(Map<String, String> search) {
         List<ProductEntity> productEntities = new ArrayList<>();
         StringBuilder sql = new StringBuilder();
         sql.append("SELECT p.id, p.name, p.price, p.details FROM shopquanao.products p ");
         sql.append("INNER JOIN shopquanao.category_details cd ON p.categoryId = cd.id\n"
                 + "INNER JOIN shopquanao.categories c ON cd.categoryId = c.id\n");
         sql.append("WHERE 1 = 1 "); // bắt buộc có WHERE 1 = 1
+
         sql.append(searchWithJoin(search));
         sql.append(searchWithoutJoin(search));
         sql.append("GROUP BY p.name");
