@@ -62,4 +62,64 @@
     flex-direction: column;
     line-height: 1.5;
 }
+.information-acc {
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+
+}
+.inf_acc {
+    display: grid;
+    grid-template-columns: 20% 40%;
+    row-gap: 10%;
+}
+.inf_acc > label{
+    font-size: 22px;
+}
+.inf_acc > input{
+    font-size: 22px;
+    padding: 5px;
+}
+#birthday{
+    padding: 19px;
+}
+.phone {
+}
+.dateOfBirth {
+}
+.address {
+    display: flex;
+    gap: 10px;
+
+}
+.address > input{
+    font-size: 20px;
+    padding: 5px;
+}
+.buttonOfpage {
+    margin-top: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+}
+.buttonOfpage > button{
+    font-size: 22px;
+    padding: 10px;
+    background-color: #0dcaf0;
+    color: white;
+
+}
+.buttonOfpage > a > button{
+    font-size: 22px;
+    padding: 10px;
+    background-color: #0dcaf0;
+    color: white;
+
+}
+.logOut {
+}
+.update {
+}
 
