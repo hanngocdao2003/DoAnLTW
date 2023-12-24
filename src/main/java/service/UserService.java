@@ -20,7 +20,8 @@ public class UserService {
       return null;
   }
     public static void main(String[] args) {
-        System.out.println(checkLogin("0901323080", "admin1").getFullName());
+
+      System.out.println(checkLogin("0901323070", "trantran").getFullName());
     }
 
 

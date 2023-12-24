@@ -1,3 +1,5 @@
+<%@ page import="bean.UserEntity" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -110,27 +112,44 @@
     </div>
     <hr>
     <div class="information-acc">
-        <div class="inf_acc">
-            <label for="fullName">Họ và tên :</label>
-            <input type="text" id="fullName" readonly value="Nguyễn Thanh Bình">
-            <label for="numberPhone">Số điện thoại :</label>
-            <input type="text" id="numberPhone" readonly>
-            <label for="email">Email :</label>
-            <input type="email" id="email" readonly>
-            <label for="birthday">Ngày sinh :</label>
-            <input type="date" id="birthday" readonly>
-            <label for="birthday">Địa chỉ :</label>
-            <div class="address label_information">
-                <input type="text" placeholder="Tỉnh-Thành phố" readonly>
-                <input type="text" placeholder="Quận-Huyện" readonly>
-                <input type="text" placeholder="Xã-Phường-Thị trấn" readonly>
-                <input type="text" placeholder="Số nhà-Đường" readonly>
-            </div>
+        <form class="inf_acc" action="Personal">
+            <%
+                String fullName = (String) request.getAttribute("fullName");
+                String numberPhone = (String) request.getAttribute("numberPhone");
+                String email = (String) request.getAttribute("email");
+                String birthday = (String) request.getAttribute("birthday");
+                String province = (String) request.getAttribute("province");
+                String district = (String) request.getAttribute("district");
+                String ward = (String) request.getAttribute("ward");
+                String numHouse = (String) request.getAttribute("numHouse");
+            %>
 
-        </div>
+            <label for="fullName">Họ và tên :</label>
+            <input type="text" id="fullName" readonly <% if (fullName != null) { %> value="<%= fullName %>" <% } %> name="fullName">
+
+            <label for="numberPhone">Số điện thoại :</label>
+            <input type="text" id="numberPhone" readonly <% if (numberPhone != null) { %> value="<%= numberPhone %>" <% } %> name="numberPhone">
+
+            <label for="email">Email :</label>
+            <input type="email" id="email" readonly <% if (email != null) { %> value="<%= email %>" <% } %> name="email">
+
+            <label for="birthday">Ngày sinh :</label>
+            <input type="date" id="birthday" readonly <% if (birthday != null) { %> value="<%= birthday %>" <% } %> name="birthday">
+
+            <label for="address">Địa chỉ :</label>
+            <div id="address" class="address label_information">
+                <input type="text" placeholder="Tỉnh-Thành phố" readonly <% if (province != null) { %> value="<%= province %>" <% } %> name="province">
+                <input type="text" placeholder="Quận-Huyện" readonly <% if (district != null) { %> value="<%= district %>" <% } %> name="district">
+                <input type="text" placeholder="Xã-Phường-Thị trấn" readonly <% if (ward != null) { %> value="<%= ward %>" <% } %> name="ward">
+                <input type="text" placeholder="Số nhà-Đường" readonly <% if (numHouse != null) { %> value="<%= numHouse %>" <% } %> name="numHouse">
+            </div>
+        </form>
+
     </div>
     <div class="buttonOfpage">
-        <a href="indexLogin.jsp"><button class="logOut">Đăng xuất</button></a>
+        <a href="indexLogin.jsp">
+            <button class="logOut">Đăng xuất</button>
+        </a>
         <button class="update">Cập nhập thông tin</button>
     </div>
 </div>
