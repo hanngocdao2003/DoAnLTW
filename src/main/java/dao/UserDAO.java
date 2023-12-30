@@ -51,6 +51,44 @@ public class UserDAO {
         return resutl;
     }
 
+
+    public boolean addUser(UserEntity user) {
+
+        String query = "insert into shopquanao.users (fullName, phone, email, password) values (?,?,?,?)";
+        try (Connection con = ConnectionUtils.getConnection()) {
+            PreparedStatement pst = con.prepareStatement(query);
+            pst.setString(1, user.getFullName());
+            pst.setString(2, user.getPhone());
+            pst.setString(3, user.getEmail());
+            pst.setString(4, user.getPassword());
+
+            int row = pst.executeUpdate();
+
+            return row > 0;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+        return false;
+    }
+
+    public static boolean verifyUser(String phone) {
+        String query = "update shopquanao.users set status = 1, roleId = 'R2' where phone = ?";
+        try (Connection con = ConnectionUtils.getConnection();
+             PreparedStatement pst = con.prepareStatement(query)) {
+
+            pst.setString(1, phone);
+
+            int row = pst.executeUpdate();
+
+            return row > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
     public static void main(String[] args) {
         UserDAO userDAO = new UserDAO();
         List<UserEntity> userEntityList = userDAO.getAccount("0901323070");
