@@ -64,6 +64,7 @@
             </div>
             <div class="NameUser">
                 <label for="inputName" class="label">Họ và tên:</label>
+
                 <input type="text" id="inputName" placeholder="Nhập họ và tên" required name="inputName">
             </div>
             <div class="EmailUser">
@@ -73,12 +74,15 @@
             <div class="NameAcc">
                 <label for="inputNumPhoneRect" class="label">Số điện thoại:</label>
                 <input type="text" id="inputNumPhoneRect" placeholder="Nhập số điện thoại" required name="inputNumPhoneRect">
+
             </div>
             <div class="password_Area">
                 <div class="passAcc">
                     <label for="inputPassRect" class="label">Mật khẩu:</label>
                     <div class="passplace">
+
                         <input type="password" id="inputPassRect" placeholder="Nhập mật khẩu" required name="inputPassRect">
+
                         <div  class="hidden-appear" id="hidden-appear-SingUp-pass">
                             <i class="fa-regular fa-eye" id="eye"></i>
                         </div>
@@ -88,6 +92,7 @@
                     <label for="ReinputPass" class="label">Nhập lại mật khẩu:</label>
                     <div class="passplace">
                         <input type="password" id="ReinputPass" placeholder="Nhập mật khẩu" required name="ReinputPass">
+
                         <button type="button" class="hidden-appear" id="hidden-appear-SingUp-Repass">
                             <i class="fa-regular fa-eye" id="eye"></i>
                         </button>

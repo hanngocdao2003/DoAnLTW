@@ -3,10 +3,10 @@ package service;
 import bean.UserEntity;
 import dao.UserDAO;
 import utils.EmailVerification;
-
 import java.util.List;
 
 public class UserService {
+
     public static UserEntity checkLogin(String numberPhone, String password) {
         UserDAO userDAO = new UserDAO();
         List<UserEntity> userEntityList = userDAO.getAccount(numberPhone);
@@ -49,7 +49,6 @@ public class UserService {
 //        userEntity.setPhone("0908555555");
 //        userEntity.setPassword("han123");
 //        System.out.println(registerUser(userEntity));
-    }
 
 
 }

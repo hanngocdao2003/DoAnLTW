@@ -46,6 +46,7 @@ public class UserDAO {
         return resutl;
     }
 
+
     public boolean addUser(UserEntity user) {
 
         String query = "insert into shopquanao.users (fullName, phone, email, password) values (?,?,?,?)";
