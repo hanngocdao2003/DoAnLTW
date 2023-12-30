@@ -4,7 +4,7 @@ package bean;
  *Khai báo lớp Entity (bean), đặt private và getter setter.
  */
 public class ProductEntity {
-    private String id;
+    private Integer id;
     private String name;
     private String discountCodeId;
     private Integer price;
@@ -15,11 +15,11 @@ public class ProductEntity {
     private Short status;
     private String importDate;
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

@@ -5,9 +5,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="View/styleWeb/policyStyle/styleSale.css">
-    <link rel="stylesheet" href="Image/fontawesome/css/all.min.css">
-    <link rel="icon" href="Image/logo/BHD-html.png" type="image/x-icon">
+    <link rel="stylesheet" href="../View/Policy/policyStyle/styleSale.css">
+    <link rel="stylesheet" href="../Image/fontawesome/css/all.min.css">
+    <link rel="icon" href="../Image/logo/BHD-html.png" type="image/x-icon">
     <title>Chính sách bán hàng</title>
 </head>
 

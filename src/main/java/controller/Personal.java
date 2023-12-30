@@ -19,41 +19,24 @@ public class Personal extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html; charset=UTF-8");
-        HttpSession session = request.getSession(true);
-
         String userName = request.getParameter("userName");
         String password = request.getParameter("password");
-        String fullName = request.getParameter("fullName");
-        String email = request.getParameter("email");
-        String birthday = request.getParameter("birthday");
-        String province = request.getParameter("province");
-        String district = request.getParameter("district");
-        String ward = request.getParameter("ward");
-        String numHouse = request.getParameter("numHouse");
-        UserEntity userEntity =  UserService.checkLogin(userName, password);
-        if (userEntity == null){
-            request.setAttribute("Error", "Đăng nhập");
+
+        // Gọi phương thức từ lớp service để kiểm tra đăng nhập và lấy thông tin người dùng
+        UserEntity userEntity = UserService.checkLogin(userName, password);
+        System.out.println(userEntity);
+        if (userEntity != null) {
+            // Lưu thông tin người dùng vào session
+            HttpSession session = request.getSession(true);
+            session.setAttribute("user", userEntity);
+            request.getRequestDispatcher("indexPersonal.jsp").forward(request, response);
+        } else {
+            // Xử lý trường hợp khi userEntity là null
+            request.setAttribute("Error", "Đăng nhập không thành công");
             request.getRequestDispatcher("indexLogin.jsp").forward(request, response);
-        }else {
-                request.setAttribute("fullName", userEntity.getFullName());
-                request.setAttribute("numberPhone", userEntity.getPhone());
-                request.setAttribute("email", userEntity.getEmail());
-                request.setAttribute("birthday", userEntity.getBirthday());
-                request.setAttribute("province", userEntity.getProvince());
-                request.setAttribute("district", userEntity.getDistrict());
-                request.setAttribute("ward", userEntity.getWard());
-                request.setAttribute("numHouse", userEntity.getNumHouse());
-                request.getRequestDispatcher("indexPersonal.jsp").forward(request, response);
-
         }
-
-
-    }
-
-    public static void main(String[] args) {
-        System.out.println(new Personal());
-    }
-
-
-
+        }
 }
+
+
+

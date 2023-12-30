@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SizeDAO {
-    public static List<SizeEntity> findSize(String productId) {
+    public static List<SizeEntity> findSize(int productId) {
         List<SizeEntity> sizeEntities = new ArrayList<>();
         String sql = "SELECT id, size, productId FROM shopquanao.sizes WHERE productId = '" + productId + "'";
         try (Connection conn = ConnectionUtils.getConnection();
@@ -20,7 +20,7 @@ public class SizeDAO {
                 SizeEntity sizeEntity = new SizeEntity();
                 sizeEntity.setId(rs.getInt("id"));
                 sizeEntity.setSize(rs.getString("size"));
-                sizeEntity.setProductId(rs.getString("productId"));
+                sizeEntity.setProductId(rs.getInt("productId"));
                 sizeEntities.add(sizeEntity);
             }
         } catch (Exception ex) {
@@ -29,3 +29,4 @@ public class SizeDAO {
         return sizeEntities;
     }
 }
+

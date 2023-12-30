@@ -3,7 +3,7 @@ package bean;
 public class SizeEntity {
     private Integer id;
     private String size;
-    private String productId;
+    private Integer productId;
 
     public Integer getId() {
         return id;
@@ -21,11 +21,19 @@ public class SizeEntity {
         this.size = size;
     }
 
-    public String getProductId() {
+    public Integer getProductId() {
         return productId;
     }
 
-    public void setProductId(String productId) {
+    public void setProductId(Integer productId) {
         this.productId = productId;
+    }
+    @Override
+    public String toString() {
+        return "SizeEntity{" +
+                "id=" + id +
+                ", size='" + size + '\'' +
+                ", productId='" + productId + '\'' +
+                '}';
     }
 }

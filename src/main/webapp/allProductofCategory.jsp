@@ -1,4 +1,4 @@
-<%@ page import="service.ProductResponse" %>
+<%@ page import="bean.ProductResponse" %>
 <%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
@@ -31,7 +31,7 @@
             </div>
             <div class="search_Category">
                 <form class="Search" action="findProduct" method="get">
-                    <input name="keyword" type="text" class="input_search" placeholder="Nhập sản phẩm cần tìm">
+                    <input name="nameproduct" type="text" class="input_search" placeholder="Nhập sản phẩm cần tìm">
                     <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
             </div>
@@ -98,35 +98,34 @@
         <img src="Image/SlideStore/slide1.png" alt="">
     </div>
 </div>
-<div class="page1 page">
-    <ul class="listItemProduct" id="allOfCategory">
-        <%
-            List<ProductResponse> productResponses = (List<ProductResponse>) request.getAttribute("products");
-            if (productResponses != null) {
-                for (ProductResponse p : productResponses
-                ) {
-        %>
-        <li class="itemProduct">
-            <a href="details.jsp"><img src="Image/Product/<%=p.getImage()%>" alt="" class="imageProduct"></a>
-            <a href="" class="linkProduct"><%=p.getName()%>
-            </a>
-            <div class="evalute"><span>Đánh giá: <ul class="fiveStar">
+    <div class="page1 page">
+        <ul class="listItemProduct" id="allOfCategory">
+            <%
+                List<ProductResponse> productResponses = (List<ProductResponse>) request.getAttribute("products");
+                if (productResponses != null) {
+                    for (ProductResponse p : productResponses
+                    ) {
+            %>
+            <li class="itemProduct">
+                <a href="detailsProduct?productId=<%=p.getId()%>"><img src="Image/Product/<%=p.getImage()%>" alt="" class="imageProduct"></a>
+                <a href="" class="linkProduct"><%=p.getName()%>
+                </a>
+                <div class="evalute"><span>Đánh giá: <ul class="fiveStar">
                 <li><i class="fa-solid fa-star"></i></li>
                 <li><i class="fa-solid fa-star"></i></li>
                 <li><i class="fa-solid fa-star"></i></li>
                 <li><i class="fa-solid fa-star"></i></li>
                 <li><i class="fa-solid fa-star"></i></li>
             </ul></span></div>
-            <p class="priceProduct"><%=p.getPrice()%>
-            </p>
-        </li>
-        <%
+                <p class="priceProduct"><%=p.getPrice()%>
+                </p>
+            </li>
+            <%
+                    }
                 }
-            }
-        %>
-    </ul>
-</div>
-
+            %>
+        </ul>
+    </div>
 <script>
     document.body.innerHTML += addFooter();
 </script>

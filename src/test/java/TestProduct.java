@@ -1,5 +1,6 @@
-import bean.ProductEntity;
 import dao.ProductDAO;
+import bean.ProductResponse;
+import service.ProductService;
 
 import java.util.HashMap;
 import java.util.List;
@@ -7,20 +8,30 @@ import java.util.Map;
 
 public class TestProduct {
     public static void main(String[] args) {
-        // Tạo một đối tượng ProductData
-        ProductDAO productData = new ProductDAO();
-
-        // Tạo một Map để chứa các thông tin tìm kiếm (nếu cần)
+        // Create a search map with parameters
         Map<String, String> searchParams = new HashMap<>();
+        searchParams.put("name", "Áo");
+        //searchParams.put("category", "yourCategoryName");
+        ProductDAO productDAO = new ProductDAO();
+        ProductService productService = new ProductService();
 
-        // Gọi phương thức findAll để lấy danh sách sản phẩm
-        List<ProductEntity> productList = productData.findAll(searchParams);
+        //List<ProductEntity> products = productDAO.findAll(searchParams);
+        List<ProductResponse> products = productService.findProduct(searchParams);
 
-        // In ra thông tin sản phẩm
-        for (ProductEntity product : productList) {
-            System.out.println("Tên sản phẩm: " + product.getName());
-            System.out.println("Đơn giá: " + product.getPrice());
-            System.out.println("------------------------");
+        // Display the results
+        if (!products.isEmpty()) {
+            System.out.println("Products found:");
+            for (ProductResponse product : products) {
+                System.out.println("Name: " + product.getName());
+                System.out.println("Price: " + product.getPrice());
+                System.out.println("Details: " + product.getDetails());
+                System.out.println("Image: " + product.getImage());
+                System.out.println("Color(s): " + product.getColor());
+                System.out.println("Size(s): " + product.getSize());
+                System.out.println("-----------------------");
+            }
+        } else {
+            System.out.println("No products found with the specified criteria.");
         }
     }
 }

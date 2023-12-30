@@ -1,7 +1,7 @@
 package dao;
 
 import bean.UserEntity;
-import controller.SignUp;
+
 import database.ConnectionUtils;
 
 import java.sql.Connection;

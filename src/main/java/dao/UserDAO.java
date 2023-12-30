@@ -2,7 +2,6 @@ package dao;
 
 import bean.UserEntity;
 import database.ConnectionUtils;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,15 +11,14 @@ public class UserDAO {
     public List<UserEntity> getAccount(String numberPhone) {
         List<UserEntity> userEntityList = new ArrayList<>();
         StringBuilder sql = new StringBuilder();
-        sql.append("SELECT id, fullName, phone, email, password, status, roleId, birthday, province, district, ward, numHouse " + "from users where users.phone ='").append(numberPhone).append("'").append("and users.status = 1");
-
+        sql.append("SELECT id, fullName, phone, email, password, status, roleId, birthday, province, district, ward, numHouse " + "from users where phone = '" + numberPhone + "' and status = 1");
 
         try {
             Connection conn = ConnectionUtils.getConnection();
-            PreparedStatement stmt = null;
+            PreparedStatement stmt;
             if (conn != null) {
                 stmt = conn.prepareStatement(sql.toString());
-                ResultSet rs = stmt.executeQuery(sql.toString());
+                ResultSet rs = stmt.executeQuery();
                 while (rs.next()) {
                     UserEntity userEntity = new UserEntity();
                     userEntity.setId(rs.getInt("id"));

@@ -1,4 +1,4 @@
-<%@ page import="service.ProductResponse" %>
+<%@ page import="bean.ProductResponse" %>
 <%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
@@ -7,13 +7,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="View/styles/styleDetails.css">
-    <link rel="stylesheet" href="View/styles/styleFooter.css">
-    <link rel="stylesheet" href="View/styles/styleButtonAdd.css">
+    <link rel="stylesheet" href="View/styleWeb/styleDetails.css">
+    <link rel="stylesheet" href="View/styleWeb/styleFooter.css">
+    <link rel="stylesheet" href="View/styleWeb/styleButtonAdd.css">
     <script src="View/JSWeb/eventButtonAdd.js"></script>
     <link rel="stylesheet" href="Image/fontawesome/css/all.min.css">
     <link rel="icon" href="Image/logo/BHD-html.png" type="image/x-icon">
-    <link rel="stylesheet" href="View/styles/styleAdmin/color.css">
+    <link rel="stylesheet" href="View/styleWeb/color.css">
     <script src="View/JSWeb/addPart.js"></script>
     <script src="View/JSWeb/JSDetails.js"></script>
     <title>Chi tiết đơn hàng</title>
@@ -90,18 +90,20 @@
 </header>
 <div class="container">
     <%
-        List<ProductResponse> productResponses = (List<ProductResponse>) request.getAttribute("products");
-        if (productResponses != null) {
-            for (ProductResponse p : productResponses
-            ) {
+        ProductResponse p = (ProductResponse) request.getAttribute("productDetail");
+        System.out.println(p);
+        if (p != null) {
     %>
     <div class="img-product">
         <div class="mini-img-product">
-            <img src="<%= p.getImage() %>" alt="">
+            <img src="Image/Product/<%= p.getImage()%>" alt="">
+
         </div>
+        <%}%>
         <div class="zoom-image-product">
-            <img src="<%= p.getImage() %>" alt="">
+            <img src="Image/Product/<%= p.getImage() %>" alt="">`
         </div>
+
     </div>
 
     <div class="text">
@@ -116,7 +118,7 @@
                     <p class="sub-inventory">Còn lại: 134</p>
                 </div>
             </div>
-            <p class="price"><%=p.getName()%>
+            <p class="price"><%=p.getPrice()%>
             </p>
             <p class="color" style="font-weight: bold;">Màu sắc:</p>
             <div class="color-btn" style="margin-bottom: 10px;">
@@ -125,7 +127,8 @@
                     String[] arrColor = colors.split(",");
                     for (String c : arrColor) {
                 %>
-                <button id="btn-black" class="btn black" style="background-color: <%=c.trim()%>;"></button>
+<%--                bị lỗi kệ nó, không sao hết nhé--%>
+                <button id="btn-black" class="btn black" style="background-color: #<%=c.trim()%>;"></button>
                 <%}%>
             </div>
             <p class="size" style="margin-bottom: 5px; font-weight: bold;">Kích thước:</p>
@@ -148,12 +151,19 @@
         <hr style="margin-bottom: 20px;">
         <div class="feature"></div>
         <p style="font-weight: bold; margin-bottom: 5px;">Mô tả sản phẩm:</p>
+        <%
+            String dts = p.getDetails();
+            String[] lDetail = dts.split(",");
+            for (String s : lDetail) {
+        %>
         <ul class="describe">
-            <li class="describe-p">Sản phẩm: Áo len gile sọc ngang có nút cài dễ phối đồ Aurelia Miều Est.2013</li>
-            <li class="describe-p">Màu sắc: Trắng/Đen/Hồng</li>
-            <li class="describe-p">Thiết kế và sản xuất: Miều Est.2013</li>
-            <li class="describe-p">Nơi sản xuất: Việt Nam</li>
+            <li class="describe-p"><%=s.trim()%>
+            </li>
+            <%--            <li class="describe-p">Màu sắc: Trắng/Đen/Hồng</li>--%>
+            <%--            <li class="describe-p">Thiết kế và sản xuất: Miều Est.2013</li>--%>
+            <%--            <li class="describe-p">Nơi sản xuất: Việt Nam</li>--%>
         </ul>
+        <%}%>
         <hr style="margin-bottom: 20px;">
         <p style="font-weight: bold; margin-bottom: 5px;">Hướng dẫn sử dụng:</p>
         <ul class="use">
@@ -166,7 +176,7 @@
             <li>Không là lên chi tiết trang trí</li>
         </ul>
     </div>
-    <%}}%>
+    <%}%>
 </div>
 
 <script>

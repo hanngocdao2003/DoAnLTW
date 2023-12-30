@@ -65,15 +65,11 @@
                             <i class="fa-solid fa-circle" style="color: #ff8080;"></i>
                             Phản hồi người dùng
                         </li>
-
                         <li class="item" onclick="handleClick(this, 'panel_addSlide')">
                             <i class="fa-solid fa-circle" style="color: #ff8080;"></i>
                             Thêm trình chiếu
                         </li>
-
-
-                        <a href="indexChangePass.jsp" style="text-decoration: none">
-
+                        <a href="../View/indexChangePass.html" style="text-decoration: none">
                             <li class="item">
                                 <i class="fa-solid fa-circle" style="color: #ff8080;"></i>
                                 Đổi mật khẩu
@@ -358,7 +354,7 @@
                     </div>
                     <div class="filter">
                         <select name="filter-select" id="filter-select">
-                            <option value="alphabet">Sắp xếp theo chưa đọc</option>
+                            <option value= "alphabet">Sắp xếp theo chưa đọc</option>
                             <option value="alphabet">Sắp xếp theo chưa phản hồi</option>
                         </select>
                     </div>
@@ -418,9 +414,9 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="View/JSWeb/data.js"></script>
-<script src="View/JSWeb/eventAdmin.js"></script>
-<script src="View/JSWeb/eventAddProduct.js"></script>
+<script src="View/event/data.js"></script>
+<script src="View/event/eventAdmin.js"></script>
+<script src="View/event/eventAddProduct.js"></script>
 </body>
 
 </html>

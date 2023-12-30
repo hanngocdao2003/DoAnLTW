@@ -21,7 +21,7 @@ public class UserService {
   }
     public static void main(String[] args) {
 
-      System.out.println(checkLogin("0901323070", "trantran").getFullName());
+      System.out.println(checkLogin("0901323070", "trantran"));
     }
 
 

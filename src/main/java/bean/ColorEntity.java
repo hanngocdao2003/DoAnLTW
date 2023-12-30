@@ -4,7 +4,7 @@ public class ColorEntity {
   private Integer id;
   private String color;
   private String code;
-  private String productId;
+  private Integer productId;
 
   public String getCode() {
     return code;
@@ -26,10 +26,10 @@ public class ColorEntity {
   public void setColor(String color) {
     this.color = color;
   }
-  public String getProductId() {
+  public Integer getProductId() {
     return productId;
   }
-  public void setProductId(String productId) {
+  public void setProductId(Integer productId) {
     this.productId = productId;
   }
 
@@ -43,3 +43,4 @@ public class ColorEntity {
             '}';
   }
 }
+
