@@ -27,7 +27,6 @@ form
 .reply .search-reply form .filter #filter-select {
     display: flex;
     flex-direction: row;
-    border: 2px solid #a62c2c;
     border-radius: 10px;
     width: 100%;
 
@@ -52,7 +51,6 @@ form
     justify-content: center;
     align-items: center;
     width: 15%;
-    background-color: #a62c2c;
     color: white;
     border: none;
     border-bottom-right-radius: 8px;
@@ -73,7 +71,7 @@ form
 
 #content {
     border-radius: 10px;
-    border: 2px solid #FBC0C3CC;
+    border: 2px solid var(--back-footer);
     padding: 25px;
 }
 

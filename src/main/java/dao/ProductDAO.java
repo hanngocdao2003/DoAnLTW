@@ -61,14 +61,17 @@ public class ProductDAO {
         return productEntities.getFirst();
     }
 
-    public static List<ProductEntity> findProduct(Map<String, String> search) {
-        List<ProductEntity> productEntities = new ArrayList<>();
-        StringBuilder sql = new StringBuilder();
-        sql.append("SELECT p.id, p.name, p.price, p.details FROM shopquanao.products p ");
-        sql.append("INNER JOIN shopquanao.category_details cd ON p.categoryId = cd.id\n"
-                + "INNER JOIN shopquanao.categories c ON cd.categoryId = c.id\n");
-        sql.append("WHERE 1 = 1 "); // bắt buộc có WHERE 1 = 1
 
+	public static List<ProductEntity> findAll(Map<String, String> search) {
+		List<ProductEntity> productEntities = new ArrayList<>();
+		StringBuilder sql = new StringBuilder();
+		sql.append("SELECT p.id, p.name, p.price, p.details FROM shopquanao.products p ");
+		sql.append("INNER JOIN shopquanao.category_details cd ON p.categoryId = cd.id\n"
+				+ "INNER JOIN shopquanao.categories c ON cd.categoryId = c.id\n");
+		sql.append("WHERE 1 = 1 "); // bắt buộc có WHERE 1 = 1
+		sql.append(searchWithJoin(search));
+		sql.append(searchWithoutJoin(search));
+		sql.append("GROUP BY p.name");
         sql.append(searchWithJoin(search));
         sql.append(searchWithoutJoin(search));
         sql.append("GROUP BY p.name");

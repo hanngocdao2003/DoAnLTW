@@ -19,7 +19,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 2px solid #ff8080;
+  border: 2px solid var(--but);
   border-radius: 5px;
   position: relative;
   padding: 20px 0px;
@@ -35,12 +35,12 @@
 .info_panel .thongke_panel .thongke_main .temp {
   width: 100px;
   height: 3px;
-  background: rgba(255, 128, 128, 0.5);
+  background: var(--back-footer);
   margin: 10px 0px;
 }
 
 #chart {
-  background: rgba(255, 128, 128, 0.5);
+  background: var(--back);
   border-radius: 10px;
 }
 
