@@ -1,6 +1,7 @@
 package controller;
 
 
+import bean.UserEntity;
 import dao.UserDAO;
 import service.UserService;
 import utils.EmailVerification;
@@ -64,4 +65,4 @@ public class SignUp extends HttpServlet {
 
 }
 
-}
+

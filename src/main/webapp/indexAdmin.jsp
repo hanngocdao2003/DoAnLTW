@@ -30,44 +30,44 @@
         <nav class="menu_bar">
             <div class="bar">
                 <div class="logo_admin">
-                    <i class="fa-solid fa-lock" style="color: #ff8080; font-size: 20px;"></i>
-                    <h2 style="color: #a62c2c;">Admin</h2>
+                    <i class="fa-solid fa-lock" style="color: var(--border); font-size: 20px;"></i>
+                    <h2 style="color: var(--font);">Admin</h2>
                 </div>
                 <div class="button_add_product" onclick="buttonClick('panel5')">
-                    <i class="fa-solid fa-plus" style="color: #ff8080;"></i>
+                    <i class="fa-solid fa-plus" style="color: var(--border);"></i>
                     Thêm sản phẩm
                 </div>
                 <div class="menu_nav">
                     <ul class="menu">
                         <a href="index.jsp" style="text-decoration: none">
                             <li class="item">
-                                <i class="fa-solid fa-circle" style="color: #ff8080;"></i>
+                                <i class="fa-solid fa-circle" style="color: var(--border);"></i>
                                 Trang chủ
                             </li>
                         </a>
                         <li class="item" onclick="handleClick(this, 'panel2')">
-                            <i class="fa-solid fa-circle" style="color: #ff8080;"></i>
+                            <i class="fa-solid fa-circle" style="color: var(--border);"></i>
                             Thống kê số liệu
                         </li>
                         <li class="item" onclick="handleClick(this, 'panel3')">
-                            <i class="fa-solid fa-circle" style="color: #ff8080;"></i>
+                            <i class="fa-solid fa-circle" style="color: var(--border);"></i>
                             Quản lý sản phẩm
                         </li>
                         <li class="item" onclick="handleClick(this, 'panel6')">
-                            <i class="fa-solid fa-circle" style="color: #ff8080;"></i>
+                            <i class="fa-solid fa-circle" style="color: var(--border);"></i>
                             Quản lý đơn hàng
                         </li>
                         <li class="item" onclick="handleClick(this, 'panel4')">
-                            <i class="fa-solid fa-circle" style="color: #ff8080;"></i>
+                            <i class="fa-solid fa-circle" style="color: var(--border);"></i>
                             Quản lý người dùng
                         </li>
                         <li class="item" onclick="handleClick(this, 'panel7')">
-                            <i class="fa-solid fa-circle" style="color: #ff8080;"></i>
+                            <i class="fa-solid fa-circle" style="color: var(--border);"></i>
                             Phản hồi người dùng
                         </li>
 
                         <li class="item" onclick="handleClick(this, 'panel_addSlide')">
-                            <i class="fa-solid fa-circle" style="color: #ff8080;"></i>
+                            <i class="fa-solid fa-circle" style="color: var(--border);"></i>
                             Thêm trình chiếu
                         </li>
 
@@ -75,7 +75,7 @@
                         <a href="indexChangePass.jsp" style="text-decoration: none">
 
                             <li class="item">
-                                <i class="fa-solid fa-circle" style="color: #ff8080;"></i>
+                                <i class="fa-solid fa-circle" style="color: var(--border);"></i>
                                 Đổi mật khẩu
                             </li>
                         </a>
@@ -83,7 +83,7 @@
                 </div>
                 <div class="button_logout" style="margin-bottom: 100%;">
                     <a href="indexLogin.jsp">
-                        <button><i class="fa-solid fa-right-from-bracket" style="color: #ff8080;"></i>
+                        <button><i class="fa-solid fa-right-from-bracket" style="color: var(--border);"></i>
                             Đăng xuất
                         </button>
                     </a>
@@ -93,34 +93,34 @@
     </div>
     <div id="info_panel" class="info_panel">
         <div id="panel1" class="intro_panel">
-            <h2 style="color: #a62c2c">Chào mừng bạn đã trở lại!</h2>
+            <h2 style="color: var(--font)">Chào mừng bạn đã trở lại!</h2>
         </div>
         <!-- Chức năng thống kê dữ liệu -->
         <div id="panel2" class="thongke_panel" style="width: 100%;">
             <div class="thongke_main">
                 <div class="thongke doanhthu">
-                    <i class="fa-solid fa-money-bills" style="color: #ff8080;"></i>
-                    <h2 style="color: #a62c2c">0</h2>
+                    <i class="fa-solid fa-money-bills" style="color: var(--border);"></i>
+                    <h2 style="color: var(--font)">0</h2>
                     <span class="temp"></span>
-                    <h3 style="color: #a62c2c">VND</h3>
+                    <h3 style="color: var(--font)">VND</h3>
                 </div>
                 <div class="thongke">
-                    <i class="fa-solid fa-cart-shopping" style="color: #ff8080;"></i>
-                    <h2 style="color: #a62c2c;">0</h2>
+                    <i class="fa-solid fa-cart-shopping" style="color: var(--border);"></i>
+                    <h2 style="color: var(--font);">0</h2>
                     <span class="temp"></span>
-                    <h3 style="color: #a62c2c;">Sản phẩm đã bán</h3>
+                    <h3 style="color: var(--font);">Sản phẩm đã bán</h3>
                 </div>
                 <div class="thongke">
-                    <i class="fa-solid fa-user" style="color: #ff8080;"></i>
-                    <h2 style="color: #a62c2c;">0</h2>
+                    <i class="fa-solid fa-user" style="color: var(--border);"></i>
+                    <h2 style="color: var(--font);">0</h2>
                     <span class="temp"></span>
-                    <h3 style="color: #a62c2c;">Người đăng ký</h3>
+                    <h3 style="color: var(--font);">Người đăng ký</h3>
                 </div>
                 <div class="thongke">
-                    <i class="fa-solid fa-eye" style="color: #ff8080;"></i>
-                    <h2 style="color: #a62c2c;">0</h2>
+                    <i class="fa-solid fa-eye" style="color: var(--border);"></i>
+                    <h2 style="color: var(--font);">0</h2>
                     <span class="temp"></span>
-                    <h3 style="color: #a62c2c;">Người truy cập</h3>
+                    <h3 style="color: var(--font);">Người truy cập</h3>
                 </div>
             </div>
             <div id="chart">
@@ -132,7 +132,7 @@
         <div id="panel3" class="product-management">
             <div class="select_product">
                 <div class="label_category">
-                    <h2 style="color: #a62c2c;">Danh mục</h2>
+                    <h2 style="color: var(--font);">Danh mục</h2>
                 </div>
                 <ul class="category">
                     <li>Áo

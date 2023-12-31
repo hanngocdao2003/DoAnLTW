@@ -3,6 +3,7 @@ package service;
 import bean.UserEntity;
 import dao.UserDAO;
 import utils.EmailVerification;
+
 import java.util.List;
 
 public class UserService {
@@ -51,4 +52,5 @@ public class UserService {
 //        System.out.println(registerUser(userEntity));
 
 
+    }
 }
