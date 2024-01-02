@@ -9,10 +9,11 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="Image/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="View/styleWeb/styleFooter.css">
     <link rel="stylesheet" href="View/styleWeb/styleHeader.css">
     <link rel="stylesheet" href="View/styleWeb/color.css">
     <link rel="stylesheet" href="View/styleWeb/styleProduct.css">
+    <link rel="stylesheet" href="View/styleWeb/stylePagination.css">
+    <link rel="stylesheet" href="View/styleWeb/styleFooter.css">
     <link rel="icon" href="Image/logo/BHD-html.png" type="image/x-icon">
     <script src="View/JSWeb/code.jquery.com_jquery-3.7.1.min.js"></script>
     <script src="View/JSWeb/slick.min.js"></script>
@@ -22,6 +23,15 @@
     <title>Bộ sưu tập</title>
 </head>
 <body>
+<% List<ProductResponse> productResponses = (List<ProductResponse>) request.getAttribute("products");
+
+    // Pagination settings
+    int productsPerPage = 10;
+    int totalPages = (int) Math.ceil((double) productResponses.size() / productsPerPage);
+    int currentPage = (request.getParameter("page") != null) ? Integer.parseInt(request.getParameter("page")) : 1;
+    int startIndex = (currentPage - 1) * productsPerPage;
+    int endIndex = Math.min(startIndex + productsPerPage, productResponses.size());
+%>
 <header>
     <div class="firstArea">
         <div class="logo_search_cart">
@@ -98,34 +108,41 @@
         <img src="Image/SlideStore/slide1.png" alt="">
     </div>
 </div>
-    <div class="page1 page">
-        <ul class="listItemProduct" id="allOfCategory">
-            <%
-                List<ProductResponse> productResponses = (List<ProductResponse>) request.getAttribute("products");
-                if (productResponses != null) {
-                    for (ProductResponse p : productResponses
-                    ) {
-            %>
-            <li class="itemProduct">
-                <a href="detailsProduct?productId=<%=p.getId()%>"><img src="Image/Product/<%=p.getImage()%>" alt="" class="imageProduct"></a>
-                <a href="" class="linkProduct"><%=p.getName()%>
-                </a>
-                <div class="evalute"><span>Đánh giá: <ul class="fiveStar">
+<div class="page1 page">
+    <ul class="listItemProduct" id="allOfCategory">
+        <%
+            for (int i = startIndex; i < endIndex; i++) {
+                ProductResponse p = productResponses.get(i);
+        %>
+        <li class="itemProduct">
+            <a href="detailsProduct?productId=<%=p.getId()%>"><img src="Image/Product/<%=p.getImage()%>" alt=""
+                                                                   class="imageProduct"></a>
+            <a href="" class="linkProduct"><%=p.getName()%>
+            </a>
+            <div class="evalute"><span>Đánh giá: <ul class="fiveStar">
                 <li><i class="fa-solid fa-star"></i></li>
                 <li><i class="fa-solid fa-star"></i></li>
                 <li><i class="fa-solid fa-star"></i></li>
                 <li><i class="fa-solid fa-star"></i></li>
                 <li><i class="fa-solid fa-star"></i></li>
             </ul></span></div>
-                <p class="priceProduct"><%=p.getPrice()%>
-                </p>
-            </li>
-            <%
-                    }
-                }
-            %>
-        </ul>
+            <p class="priceProduct"><%=p.getPrice()%>
+            </p>
+        </li>
+        <%
+
+            }
+        %>
+    </ul>
+    <div class="pagination">
+        <% for (int i = 1; i <= totalPages; i++) { %>
+        <a href="allProductofCategory.jsp?page=<%=i%>" class="<%= (i == currentPage) ? "active" : "" %>">
+            <%=i%>
+        </a>
+        <% } %>
     </div>
+</div>
+
 <script>
     document.body.innerHTML += addFooter();
 </script>

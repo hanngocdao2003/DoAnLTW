@@ -159,9 +159,6 @@
         <ul class="describe">
             <li class="describe-p"><%=s.trim()%>
             </li>
-            <%--            <li class="describe-p">Màu sắc: Trắng/Đen/Hồng</li>--%>
-            <%--            <li class="describe-p">Thiết kế và sản xuất: Miều Est.2013</li>--%>
-            <%--            <li class="describe-p">Nơi sản xuất: Việt Nam</li>--%>
         </ul>
         <%}%>
         <hr style="margin-bottom: 20px;">
@@ -176,7 +173,7 @@
             <li>Không là lên chi tiết trang trí</li>
         </ul>
     </div>
-    <%}%>
+    <%%>
 </div>
 
 <script>

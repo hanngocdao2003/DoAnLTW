@@ -80,6 +80,9 @@
                         <li class="menu_Category_Item">Váy</li>
                     </a>
                 </ul>
+                <form id="productSearchForm" action="findProduct" method="get">
+                    <input type="hidden" name="nameproduct" id="categoryInput"/>
+                </form>
             </button>
             <ul class="Menupage">
                 <a href="index.html" class="linkpage Home">
@@ -263,6 +266,12 @@
 </div>
 <script>
     document.body.innerHTML += addFooter();
+
+    function findProducts(category) {
+        document.getElementById("categoryInput").value = category;
+        document.getElementById("productSearchForm").submit();
+    }
+
 </script>
 </body>
 </html>
