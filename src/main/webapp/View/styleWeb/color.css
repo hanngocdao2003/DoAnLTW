@@ -8,5 +8,6 @@ body{
     --back-product: #f1d2c8;
     --butMinus: rgba(132, 153, 164, 0.5);
     --butMinus2: rgba(132, 153, 164, 0.1);
-    --taskMenu: #A7BCD4FF
+    --taskMenu: #A7BCD4FF;
+    --back-admin: #fbeded;
 }
