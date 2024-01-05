@@ -249,23 +249,23 @@
             </div>
             <div class="add-product-here">
                 <div class="pictures" id="picture">
-                    <label for="input-file">Tải ảnh lên
-                        <input type="file" id="input-file" name="image1" accept="Image/*">
+                    <label>Tải ảnh lên
+                        <input type="file" class="input-file" name="image1" accept="Image/*">
                     </label>
                 </div>
                 <div class="pictures">
-                    <label for="input-file">Tải ảnh lên
-                        <input type="file" id="input-file" name="image1" accept="Image/*">
+                    <label>Tải ảnh lên
+                        <input type="file" class="input-file" name="image1" accept="Image/*">
                     </label>
                 </div>
                 <div class="pictures">
-                    <label for="input-file">Tải ảnh lên
-                        <input type="file" id="input-file" name="image1" accept="Image/*">
+                    <label >Tải ảnh lên
+                        <input type="file" class="input-file" name="image1" accept="Image/*">
                     </label>
                 </div>
                 <div class="pictures">
-                    <label for="input-file">Tải ảnh lên
-                        <input type="file" id="input-file" name="image1" accept="Image/*">
+                    <label>Tải ảnh lên
+                        <input type="file" class="input-file" name="image1" accept="Image/*">
                     </label>
                 </div>
             </div>

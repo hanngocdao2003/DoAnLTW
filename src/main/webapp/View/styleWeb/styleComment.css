@@ -67,10 +67,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  a {
     font-size: 20px;
     text-decoration: none;
     color: white;
   }
+
 

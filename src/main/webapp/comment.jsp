@@ -17,11 +17,11 @@
   <div class="image">
     <a href="index.jsp" class="home"><img src="Image/BHD-nền%20trong%20suốt.svg" alt=""></a>
   </div>
-  <div class="wrapper">
+  <form class="wrapper" action="insertComment">
     <h2>Bạn có gì muốn nhắn gửi cho BHD Store ạ ? *</h2>
-    <textarea placeholder="Bạn nhập nội dung ở đây..." required></textarea>
-    <button><a href="">Ok, Xong rồi!</a></button>
-  </div>
+    <textarea name="feedback" placeholder="Bạn nhập nội dung ở đây..." required></textarea>
+    <button type="submit" class="buttonComment">Ok, Xong rồi!</button>
+  </form>
   <footer>
     <div class="contain">
       <div class="content">
