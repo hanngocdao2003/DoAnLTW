@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,6 +17,7 @@
     <link rel="icon" href="Image/logo/BHD-html.png" type="image/x-icon">
     <link rel="stylesheet" href="fonts/stylesheet.css">
     <link rel="stylesheet" href="View/styleWeb/color.css">
+    <script src="View/JSWeb/code.jquery.com_jquery-3.7.1.min.js"></script>
     <title>Admin</title>
 </head>
 
@@ -285,7 +287,6 @@
                 <button>Thêm sản phẩm</button>
             </div>
         </div>
-        <!-- Trên là đoạn code mới nhất -->
         <!-- Chức năng quản lý đơn hàng -->
         <div class="order-management" id="panel6">
             <div class="search_order">
@@ -379,44 +380,39 @@
             </div>
         </div>
         <!-- Chức năng thêm slide cho trang chủ -->
-        <div id="panel_addSlide">
+        <form id="panel_addSlide" action="addSlide">
             <div class="label">
-                <p style="color: #eeeeee">Thêm chương trình</p>
+                <p>Thêm chương trình</p>
             </div>
-            <div class="add-product-here">
-                <div class="pictures" id="picture">
-                    <label for="input-file">Tải ảnh lên
-                        <input type="file" id="input-file" name="image1" accept="image/*">
-                    </label>
-                </div>
-                <div class="pictures">
-                    <label for="input-file">Tải ảnh lên
-                        <input type="file" id="input-file" name="image1" accept="image/*">
-                    </label>
-                </div>
-                <div class="pictures">
-                    <label for="input-file">Tải ảnh lên
-                        <input type="file" id="input-file" name="image1" accept="image/*">
-                    </label>
-                </div>
-                <div class="pictures">
-                    <label for="input-file">Tải ảnh lên
-                        <input type="file" id="input-file" name="image1" accept="image/*">
-                    </label>
+            <div class="add-slide-here">
+                <div class="file-upload">
+                    <div class="image-upload-wrap">
+                        <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                        <div class="drag-text">
+                            <h3>Kéo và thả file hoặc chọn thêm ảnh</h3>
+                        </div>
+                    </div>
+                    <div class="file-upload-content">
+                        <img class="file-upload-image" src="#" alt="Ảnh của bạn" />
+                        <div class="image-title-wrap">
+                            <button type="button" onclick="removeUpload(this)" class="remove-image">Xóa ảnh trên</button>
+                        </div>
+                    </div>
                 </div>
             </div>
+
             <div class="footer-container">
                 <button>Xác nhận thêm</button>
-                <button>Xóa tất cả</button>
             </div>
-        </div>
+        </form>
     </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="View/event/data.js"></script>
-<script src="View/event/eventAdmin.js"></script>
-<script src="View/event/eventAddProduct.js"></script>
+<script src="View/JSWeb/data.js"></script>
+<script src="View/JSWeb/eventAdmin.js"></script>
+<script src="View/JSWeb/eventAddProduct.js"></script>
+<script src="View/JSWeb/addSlide.js"></script>
 </body>
 
 </html>
