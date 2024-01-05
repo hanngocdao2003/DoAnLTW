@@ -62,7 +62,7 @@ public class ProductDAO {
     }
 
 
-	public static List<ProductEntity> findAll(Map<String, String> search) {
+	public static List<ProductEntity> findProduct(Map<String, String> search) {
 		List<ProductEntity> productEntities = new ArrayList<>();
 		StringBuilder sql = new StringBuilder();
 		sql.append("SELECT p.id, p.name, p.price, p.details FROM shopquanao.products p ");
@@ -72,9 +72,6 @@ public class ProductDAO {
 		sql.append(searchWithJoin(search));
 		sql.append(searchWithoutJoin(search));
 		sql.append("GROUP BY p.name");
-        sql.append(searchWithJoin(search));
-        sql.append(searchWithoutJoin(search));
-        sql.append("GROUP BY p.name");
 
         try (Connection conn = ConnectionUtils.getConnection();
              Statement stmt = conn.createStatement();

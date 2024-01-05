@@ -176,7 +176,7 @@
             <li>Không là lên chi tiết trang trí</li>
         </ul>
     </div>
-    <%}%>
+    <%%>
 </div>
 
 <script>
