@@ -123,7 +123,7 @@
     align-items: center;
     gap: 10%;
   }
-  .footer-container > button{
+  .footer-container > .button{
     padding: 20px;
     background-color: var(--color-valencia-approx);
     color: white;

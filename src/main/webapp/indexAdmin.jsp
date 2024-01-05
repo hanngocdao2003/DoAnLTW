@@ -380,14 +380,16 @@
             </div>
         </div>
         <!-- Chức năng thêm slide cho trang chủ -->
-        <form id="panel_addSlide" action="addSlide">
+        <form id="panel_addSlide" method="post" action="addSlide" enctype="multipart/form-data" >
             <div class="label">
                 <p>Thêm chương trình</p>
             </div>
             <div class="add-slide-here">
                 <div class="file-upload">
+                    <label for="imageName">Image Name:</label>
+                    <input type="text" id="imageName" name="imageName" required>
                     <div class="image-upload-wrap">
-                        <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                        <input multiple="multiple" name="imageFile" class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
                         <div class="drag-text">
                             <h3>Kéo và thả file hoặc chọn thêm ảnh</h3>
                         </div>
@@ -402,7 +404,7 @@
             </div>
 
             <div class="footer-container">
-                <button>Xác nhận thêm</button>
+                <input type="submit" value="Submit" class="button">
             </div>
         </form>
     </div>

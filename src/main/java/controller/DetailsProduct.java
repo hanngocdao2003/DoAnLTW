@@ -37,13 +37,13 @@ public class DetailsProduct extends HttpServlet {
     doGet(request, response);
     }
 
-//    private ProductResponse getProductDetail(String productId) {
-//        // Gọi ProductService để lấy chi tiết sản phẩm
-//        Map<String, String> search = new HashMap<>();
-//        search.put("productId", productId);
-//        List<ProductResponse> productDetails = ProductService.findProduct(search);
-//
-//        // Kiểm tra và trả về sản phẩm chi tiết (có thể cần xử lý nếu danh sách không rỗng)
-//        return productDetails.isEmpty() ? null : productDetails.get(0);
-//    }
+    private ProductResponse getProductDetail(String productId) {
+        // Gọi ProductService để lấy chi tiết sản phẩm
+        Map<String, String> search = new HashMap<>();
+        search.put("productId", productId);
+        List<ProductResponse> productDetails = ProductService.findProduct(search);
+
+        // Kiểm tra và trả về sản phẩm chi tiết (có thể cần xử lý nếu danh sách không rỗng)
+        return productDetails.isEmpty() ? null : productDetails.get(0);
+    }
 }
