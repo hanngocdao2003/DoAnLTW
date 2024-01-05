@@ -6,7 +6,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    border: 2px solid #FBC0C3CC;
+    border: 2px solid var(--back-footer);
     border-radius: 20px;
     padding: 20px;
 }
@@ -20,10 +20,10 @@
 }
 
 .info_panel .product-management .select_product .category > li {
-    border: 2px solid #FBC0C3CC;
+    border: 2px solid var(--back-product);
     border-radius: 10px;
-    background-color: #FBC0C3CC;
-    color: #a62c2c;
+    background-color: var(--back-product);
+    color: var(--font);
     margin: 0px 50px;
     padding: 10px 20px;
     width: 20%;
@@ -35,15 +35,15 @@
 }
 
 .info_panel .product-management .select_product .category > li:hover {
-    border: 2px solid #a62c2c;
-    background-color: #a62c2c;
+    border: 2px solid var(--font);
+    background-color: var(--font);
     color: white;
 }
 
 .info_panel .product-management .select_product .category .submenu {
     display: none;
     position: absolute;
-    background-color: #FBC0C3CC;
+    background-color: var(--back-product);
     padding: 10px;
     list-style: none;
     z-index: 1;
@@ -58,15 +58,15 @@
 .info_panel .product-management .select_product .category .submenu > li {
     display: block;
     padding: 5px;
-    color: #a62c2c;
-    border: 2px solid #a62c2c;
+    color: var(--font);
+    border: 2px solid var(--font);
     border-radius: 5px;
     margin-top: 5px;
 }
 
 .info_panel .product-management .select_product .category .submenu > li:hover {
-    border: 2px solid #a62c2c;
-    background-color: #a62c2c;
+    border: 2px solid var(--font);
+    background-color: var(--font);
     color: white;
     border-radius: 10px;
 }
@@ -85,10 +85,10 @@
 }
 
 td input[type="button"] {
-    background: rgba(255, 128, 128, 0.8);
-    color: #a62c2c;
+    background: var(--back);
+    color: var(--font);
     border-radius: 5px;
-    border: 2px solid #a62c2c;
+    border: 2px solid var(--font);
     cursor: pointer;
     padding: 5px 10px;
 }
@@ -110,7 +110,7 @@ td input[type="button"] {
 .search {
     display: flex;
     flex-direction: row;
-    border: 2px solid #a62c2c;
+    border: 2px solid var(--font);
     border-radius: 10px;
     width: 25%;
 }
@@ -134,7 +134,7 @@ form .filter #filter-select option {
     justify-content: center;
     align-items: center;
     width: 15%;
-    background-color: #a62c2c;
+    background-color: var(--font);
     color: white;
     border: none;
     border-bottom-right-radius: 8px;
@@ -149,7 +149,7 @@ form .filter #filter-select option {
 #filter-select {
     display: flex;
     flex-direction: row;
-    border: 2px solid #a62c2c;
+    border: 2px solid var(--font);
     border-radius: 10px;
     width: 100%;
 
@@ -164,6 +164,6 @@ form .filter #filter-select option {
 
 #panel3 .main_label {
     border-radius: 10px;
-    border: 2px solid #FBC0C3CC;
+    border: 2px solid var(--back-footer);
     padding: 25px;
 }

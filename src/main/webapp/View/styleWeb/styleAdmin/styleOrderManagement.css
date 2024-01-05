@@ -44,7 +44,6 @@
     justify-content: center;
     align-items: center;
     width: 15%;
-    background-color: #a62c2c;
     color: white;
     border: none;
     border-bottom-right-radius: 8px;
@@ -78,7 +77,7 @@
 
 #info_order {
     border-radius: 10px;
-    border: 2px solid #FBC0C3CC;
+    border: 2px solid var(--back-footer);
     padding: 25px;
 }
 
@@ -95,8 +94,8 @@
     gap: 10px;
     display: flex;
     flex-direction: row;
-    border: 2px solid #ff8080;
-    background: rgba(255, 128, 128, 0.3);
+    border: 2px solid var(--back-footer);
+    background: var(--butMinus2);
 }
 
 .status {
@@ -105,7 +104,7 @@
 }
 
 .status > p {
-    color: #a62c2c;
+    color: var(--font);
     font-size: 25px;
     text-transform: uppercase;
     padding: 10px 5px;
