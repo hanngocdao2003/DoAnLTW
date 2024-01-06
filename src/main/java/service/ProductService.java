@@ -1,10 +1,7 @@
 package service;
 
 import bean.*;
-import dao.ColorDAO;
-import dao.ImageDAO;
-import dao.ProductDAO;
-import dao.SizeDAO;
+import dao.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,11 +18,9 @@ public class ProductService {
         ImageDAO imageDAO = new ImageDAO();
         ColorDAO colorDAO = new ColorDAO();
         SizeDAO sizeDAO = new SizeDAO();
-
         for (ProductEntity item : productEntities) {
             Integer productId = item.getId();
             List<ImageEntity> imageEntities = imageDAO.findImage(productId);
-
             List<ColorEntity> colorEntities = colorDAO.findColor(productId);
             List<SizeEntity> sizeEntities = sizeDAO.findSize(productId);
             //dùng feature java 8 để lấy list màu, size

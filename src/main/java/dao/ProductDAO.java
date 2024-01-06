@@ -71,7 +71,7 @@ public class ProductDAO {
 		sql.append("WHERE 1 = 1 "); // bắt buộc có WHERE 1 = 1
 		sql.append(searchWithJoin(search));
 		sql.append(searchWithoutJoin(search));
-		sql.append("GROUP BY p.name");
+		sql.append("GROUP BY p.id");
 
         try (Connection conn = ConnectionUtils.getConnection();
              Statement stmt = conn.createStatement();
