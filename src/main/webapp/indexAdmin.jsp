@@ -1,4 +1,7 @@
+<%@ page import="bean.CommentReponse" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.text.SimpleDateFormat" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -362,51 +365,67 @@
                 </form>
             </div>
             <div id="content">
-                <div class="main_label">
+                <form class="main_label" action="your-servlet-url" method="post">
                     <table id="table3">
                         <thead>
                         <tr>
                             <th class="label">Số thứ tự</th>
                             <th class="label">Tên khách hàng</th>
                             <th class="label">Nội dung phản hồi</th>
+                            <th class="label">Ngày bình luận</th>
                             <th class="label">Đánh dấu đã đọc</th>
-                            <th class="label">Chức năng</th>
                         </tr>
                         </thead>
                         <tbody>
+<%--                        <%--%>
+<%--                            List<CommentReponse> comments = (List<CommentReponse>) request.getAttribute("comments");--%>
+<%--                            for (CommentReponse comment : comments) {--%>
+<%--                        %>--%>
+<%--                        <tr>--%>
+<%--                            <td><p><%= comment.getId() %></p></td>--%>
+<%--                            <td><p><%= comment.getNameUser() %></p></td>--%>
+<%--                            <td><p><%= comment.getFeedback() %></p></td>--%>
+<%--                            <td><p><%= new SimpleDateFormat("dd/MM/yyyy").format(comment.getDate_cmt()) %></p></td>--%>
+<%--                            <td><input type="checkbox" id="checkbox_<%= comment.getId() %>"></td>--%>
+<%--                        </tr>--%>
+<%--                        <%--%>
+<%--                            }--%>
+<%--                        %>--%>
                         </tbody>
                     </table>
-                </div>
+                </form>
             </div>
         </div>
         <!-- Chức năng thêm slide cho trang chủ -->
-        <form id="panel_addSlide" method="post" action="addSlide" enctype="multipart/form-data" >
-            <div class="label">
-                <p>Thêm chương trình</p>
-            </div>
-            <div class="add-slide-here">
-                <div class="file-upload">
-                    <label for="imageName">Image Name:</label>
-                    <input type="text" id="imageName" name="imageName" required>
-                    <div class="image-upload-wrap">
-                        <input multiple="multiple" name="imageFile" class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
-                        <div class="drag-text">
-                            <h3>Kéo và thả file hoặc chọn thêm ảnh</h3>
+        <div id="panel_addSlide">
+            <form method="post" action="addSlide" enctype="multipart/form-data" >
+                <div class="label">
+                    <p>Thêm chương trình</p>
+                </div>
+                <div class="add-slide-here">
+                    <div class="file-upload">
+                        <label for="imageName">Image Name:</label>
+                        <input type="text" id="imageName" name="imageName" required>
+                        <div class="image-upload-wrap">
+                            <input multiple="multiple" name="imageFile" class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                            <div class="drag-text">
+                                <h3>Kéo và thả file hoặc chọn thêm ảnh</h3>
+                            </div>
                         </div>
-                    </div>
-                    <div class="file-upload-content">
-                        <img class="file-upload-image" src="#" alt="Ảnh của bạn" />
-                        <div class="image-title-wrap">
-                            <button type="button" onclick="removeUpload(this)" class="remove-image">Xóa ảnh trên</button>
+                        <div class="file-upload-content">
+                            <img class="file-upload-image" src="#" alt="Ảnh của bạn" />
+                            <div class="image-title-wrap">
+                                <button type="button" onclick="removeUpload(this)" class="remove-image">Xóa ảnh trên</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="footer-container">
-                <input type="submit" value="Submit" class="button">
-            </div>
-        </form>
+                <div class="footer-container">
+                    <input type="submit" value="Submit" class="button">
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 

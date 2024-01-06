@@ -41,7 +41,38 @@ public class UserDAO {
         }
         return userEntityList;
     }
+    public UserEntity getUser(int id){
+        StringBuilder sql = new StringBuilder();
+        sql.append("SELECT id, fullName, phone, email, password, status, roleId, birthday, province, district, ward, numHouse " + "from users where id=" + id);
 
+        try {
+            Connection conn = ConnectionUtils.getConnection();
+            PreparedStatement stmt;
+            if (conn != null) {
+                stmt = conn.prepareStatement(sql.toString());
+                ResultSet rs = stmt.executeQuery();
+                if(rs.next()) {
+                    UserEntity userEntity = new UserEntity();
+                    userEntity.setId(rs.getInt("id"));
+                    userEntity.setFullName(rs.getString("fullName"));
+                    userEntity.setPhone(rs.getString("phone"));
+                    userEntity.setEmail(rs.getString("email"));
+                    userEntity.setPassword(rs.getString("password"));
+                    userEntity.setStatus(rs.getShort("status"));
+                    userEntity.setRoleId(rs.getString("roleId"));
+                    userEntity.setBirthday(rs.getString("birthday"));
+                    userEntity.setProvince(rs.getString("province"));
+                    userEntity.setDistrict(rs.getString("district"));
+                    userEntity.setWard(rs.getString("ward"));
+                    userEntity.setNumHouse(rs.getString("numHouse"));
+                    return userEntity;
+                }
+            }
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        return null;
+    }
 
     public static String toString(List<UserEntity> userEntityList) {
         String resutl = "";
@@ -91,8 +122,9 @@ public class UserDAO {
 
     public static void main(String[] args) {
         UserDAO userDAO = new UserDAO();
-        List<UserEntity> userEntityList = userDAO.getAccount("0901323070");
-        System.out.println(toString(userEntityList));
+//        List<UserEntity> userEntityList = userDAO.getAccount("0901323070");
+//        System.out.println(toString(userEntityList));
+        System.out.println(userDAO.getUser(2));
 
 
     }

@@ -2,9 +2,9 @@ package bean;
 
 import java.sql.Date;
 
-public class CommentForWeb {
+public class CommentReponse {
     private int id;
-    private int id_user;
+    private String nameUser;
     private String feedback;
     private Date date_cmt;
 
@@ -12,39 +12,39 @@ public class CommentForWeb {
         return id;
     }
 
-    public Date getDate_cmt() {
-        return date_cmt;
-    }
-
-    public int getId_user() {
-        return id_user;
+    public String getNameUser() {
+        return nameUser;
     }
 
     public String getFeedback() {
         return feedback;
     }
 
+    public Date getDate_cmt() {
+        return date_cmt;
+    }
+
     public void setId(int id) {
         this.id = id;
     }
 
-    public void setDate_cmt(Date date_cmt) {
-        this.date_cmt = date_cmt;
+    public void setNameUser(String nameUser) {
+        this.nameUser = nameUser;
     }
 
     public void setFeedback(String feedback) {
         this.feedback = feedback;
     }
 
-    public void setId_user(int id_user) {
-        this.id_user = id_user;
+    public void setDate_cmt(Date date_cmt) {
+        this.date_cmt = date_cmt;
     }
 
     @Override
     public String toString() {
-        return "CommentForWeb{" +
+        return "CommentReponse{" +
                 "id=" + id +
-                ", id_user=" + id_user +
+                ", nameUser='" + nameUser + '\'' +
                 ", feedback='" + feedback + '\'' +
                 ", date_cmt=" + date_cmt +
                 '}';
