@@ -1,4 +1,8 @@
 <%@ page import="bean.UserEntity" %>
+<%@ page import="java.util.List" %>
+<%@ page import="bean.Slide" %>
+<%@ page import="controller.ImageSliderServlet" %>
+<%@ page import="service.Add_Image_Service" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -104,12 +108,18 @@
         </div>
     </div>
 </header>
-<div class="SliderShow_Store">
+<div class="SliderShow_Store" >
     <div class="SlideList">
-        <img src="Image/SlideStore/slide3.png" alt="">
+        <%
+            List<String> imagePaths = Add_Image_Service.loadSlider();
+            for (String imagePath : imagePaths) {
+        %>
+        <img src="<%= imagePath %>" alt="">
+        <% } %>
+       <%-- <img src="Image/SlideStore/slide3.png" alt="">
         <img src="Image/SlideStore/slide2.png" alt="">
         <img src="Image/SlideStore/slide4.png" alt="">
-        <img src="Image/SlideStore/slide1.png" alt="">
+        <img src="Image/SlideStore/slide1.png" alt="">--%>
     </div>
 </div>
 <div class="CategoryCard">
