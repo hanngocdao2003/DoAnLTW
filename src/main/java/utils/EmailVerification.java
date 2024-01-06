@@ -46,4 +46,8 @@ public class EmailVerification {
         }
     }
 
+    public static void main(String[] args) {
+        sendVerificationEmail("21130328@st.hcmuaf.edu.vn", generateToken());
+    }
+
 }

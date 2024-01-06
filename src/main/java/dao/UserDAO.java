@@ -2,6 +2,7 @@ package dao;
 
 import bean.UserEntity;
 import database.ConnectionUtils;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -74,11 +75,11 @@ public class UserDAO {
     }
 
     public static boolean verifyUser(String phone) {
-        String query = "update shopquanao.users set status = 1, roleId = 'R2' where phone = ?";
+        String query = "update shopquanao.users set status = 1, roleId = 'R2', birthday = null, province = null, district= null, ward= null, numHouse=null where phone = " + phone;
         try (Connection con = ConnectionUtils.getConnection();
              PreparedStatement pst = con.prepareStatement(query)) {
 
-            pst.setString(1, phone);
+           // pst.setString(1, phone);
 
             int row = pst.executeUpdate();
 
@@ -94,11 +95,5 @@ public class UserDAO {
         /*List<UserEntity> userEntityList = userDAO.getAccount("0901323070");
         System.out.println(toString(userEntityList));*/
 
-        UserEntity user = new UserEntity();
-        user.setFullName("han");
-        user.setPhone("0908555555");
-        user.setEmail("han@gmail.com");
-        user.setPassword("han123");
-        System.out.println(userDAO.addUser(user));
     }
 }
