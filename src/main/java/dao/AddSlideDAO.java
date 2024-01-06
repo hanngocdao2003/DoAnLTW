@@ -1,10 +1,14 @@
 package dao;
 
+import bean.Slide;
 import database.ConnectionUtils;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class AddSlideDAO {
 
@@ -30,6 +34,26 @@ public class AddSlideDAO {
             e.printStackTrace();
         }
         return false;
+    }
+
+    public List<Slide> loadSlider() {
+        List<Slide> slideList = new ArrayList<>();
+        String sql = "select id,name,data from shopquanao.image_slideshow";
+        try {
+            Connection con = ConnectionUtils.getConnection();
+            PreparedStatement preparedStatement = con.prepareStatement(sql);
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                Slide slide = new Slide();
+                slide.setId(rs.getInt("id"));
+                slide.setLink(rs.getString("name"));
+                slide.setData(rs.getBytes("data"));
+                slideList.add(slide);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return slideList;
     }
 
 }
