@@ -5,147 +5,103 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="Image/fontawesome-free-6.4.2-web/css/all.min.css">
-  <link rel="stylesheet" href="View/styleWeb/styleMenu.css">
-  <link rel="stylesheet" href="View/styleWeb/styleCart.css">
+  <link rel="stylesheet" href="Image/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="View/styleWeb/styleFooter.css">
-  <link rel="stylesheet" href="View/styleWeb/styleButtonAdd.css">
-  <link rel="icon" href="Image/BHD-html.png" type="image/x-icon">
+  <link rel="stylesheet" href="View/styleWeb/styleHeader.css">
+  <link rel="stylesheet" href="View/styleWeb/styleCart.css">
+  <link rel="stylesheet" href="View/styleWeb/color.css">
+  <link rel="icon" href="Image/logo/BHD-html.png" type="image/x-icon">
   <title>Giỏ hàng</title>
 </head>
 
 <body>
-  <div id="menu_container">
-    <nav class="main_menu">
-      <div class="menu">
-        <a href="index.jsp" class="logo">
-          <img src="Image/BHD-nền%20trong%20suốt.svg" alt="404">
-          <h1>BHD Boutique</h1>
-        </a>
-        <div class="list_item">
-          <ul class="menu_item">
-            <li class="item">
-              <a href="index.jsp">Trang chủ</a>
-            </li>
-            <li class="item">
-              <a href="allProductofCategory.html">Bộ sưu tập</a>
-            </li>
-            <li class="item">
-              <a href="View/fileHTMLProduct/ItemShirt/FullShirt.html">Áo
-                <a href="">
-                  <i class="fa-solid fa-chevron-down"></i>
-                </a>
-                <ul class="dropdown ao_item">
-                  <li class="item sub_item">
-                    <a href="View/fileHTMLProduct/ItemShirt/T_Shirt.html">Áo thun</a>
-                  </li>
-                  <li class="item sub_item">
-                    <a href="View/fileHTMLProduct/ItemShirt/StyleShirt.html">Áo kiểu</a>
-                  </li>
-                  <li class="item sub_item">
-                    <a href="View/fileHTMLProduct/ItemShirt/Shirt.html">Áo sơ mi</a>
-                  </li>
-                  <li class="item sub_item">
-                    <a href="View/fileHTMLProduct/ItemShirt/CroptopShirt.html">Áo croptop</a>
-                  </li>
-                </ul>
-              </a>
-            </li>
-            <li class="item">
-              <a href="View/fileHTMLProduct/ItemJacket/fullJacket.html">Áo khoác
-                <i class="fa-solid fa-chevron-down"></i>
-              </a>
-              <ul class="dropdown aokhoac_item">
-                <li class="item sub_item">
-                  <a href="View/fileHTMLProduct/ItemJacket/jacketWind.html">Áo khoác gió</a>
-                </li>
-                <li class="item sub_item">
-                  <a href="View/fileHTMLProduct/ItemJacket/sweater.html">Áo khoác len</a>
-                </li>
-                <li class="item sub_item">
-                  <a href="View/fileHTMLProduct/ItemJacket/jacketBlazer.html">Blazer</a>
-                </li>
-                <li class="item sub_item">
-                  <a href="View/fileHTMLProduct/ItemJacket/jacketJean.html">Áo khoác Jean/Kaki</a>
-                </li>
-              </ul>
-            </li>
-            <li class="item">
-              <a href="View/fileHTMLProduct/ItemTrouser/fullTrouser.html">Quần
-                <i class="fa-solid fa-chevron-down"></i>
-              </a>
-              <ul class="dropdown quan_item">
-                <li class="item sub_item">
-                  <a href="View/fileHTMLProduct/ItemTrouser/TrouserLong.html">Quần dài</a>
-                </li>
-                <li class="item sub_item">
-                  <a href="View/fileHTMLProduct/ItemTrouser/TrouserShort.html">Quần ngắn</a>
-                </li>
-              </ul>
-            </li>
-            <li class="item">
-              <a href="View/fileHTMLProduct/ItemDress/fullDress.html">Đầm
-                <i class="fa-solid fa-chevron-down"></i>
-              </a>
-              <ul class="dropdown dam_item">
-                <li class="item sub_item">
-                  <a href="View/fileHTMLProduct/ItemDress/DressStyle.html">Đầm kiểu</a>
-                </li>
-                <li class="item sub_item">
-                  <a href="View/fileHTMLProduct/ItemDress/CamisoleDress.html">Yếm đầm</a>
-                </li>
-                <li class="item sub_item">
-                  <a href="View/fileHTMLProduct/ItemDress/DressFullSet.html">Nguyên bộ</a>
-                </li>
-              </ul>
-            </li>
-            <li class="item">
-              <a href="View/fileHTMLProduct/ItemSkirt/fullSkirt.html">Váy
-                <i class="fa-solid fa-chevron-down"></i>
-              </a>
-              <ul class="dropdown vay_item">
-                <li class="item sub_item">
-                  <a href="View/fileHTMLProduct/ItemSkirt/LongSkirt.html">Váy dài</a>
-                </li>
-                <li class="item sub_item">
-                  <a href="View/fileHTMLProduct/ItemSkirt/ShortSkirt.html">Váy ngắn</a>
-                </li>
-              </ul>
-            </li>
-            <li class="item">
-              <a id="contact">Liên hệ</a>
-            </li>
-          </ul>
-        </div>
-        <div class="task">
-          <ul class="task_item">
-            <li class="logo_item">
-              <a class="SearchItem"> <i class="fa-solid fa-magnifying-glass" style="color: #ff8080;"></i>
-              </a>
-            </li>
-            <li class="logo_item">
-              <a href="indexLogin.jsp"><i class="fa-solid fa-user" style="color: #ff8080;"></i></a>
-              <ul class="personalArea">
-                <li class="personal-Item"><a href="indexPersonal.jsp">Thông tin cá nhân</a></li>
-                <li class="personal-Item"><a href="index.jsp">Đăng xuất</a></li>
-              </ul>
-            <li class="logo_item">
-              <a href="indexCart.html"><i class="fa-solid fa-cart-shopping" style="color: #ff8080;"></i>
-              </a>
-            </li>
-          </ul>
-
-          </li>
-        </div>
+<header>
+  <div class="firstArea">
+    <div class="logo_search_cart">
+      <div class="logo">
+        <img src="Image/logo/BHD-nền%20trong%20suốt.svg" alt="404">
+        <h1>BHD Boutique</h1>
       </div>
-      <div class="searchArea" id="searchArea">
-        <form class="searchForm">
-          <input type="text" class="search" id="searchProduct">
-          <button class="btnsearchProduct"><i class="fa-solid fa-magnifying-glass" style="color: #ff8080;"></i></button>
+      <div class="search_Category">
+        <form class="Search" action="findProduct" method="get">
+          <input name="keyword" type="text" class="input_search" placeholder="Nhập sản phẩm cần tìm">
+          <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
       </div>
-    </nav>
+      <div class="rightIcon">
+        <a href="" class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
+
+        <%
+          String success = (String) session.getAttribute("Success");
+          if (success != null) {
+        %>
+        <a href="indexPersonal.jsp" class="user"><i class="fa-solid fa-user"
+                                                    style="margin-right: 5px"></i> <%= success %>
+        </a>
+        <%
+        } else {
+        %>
+        <a href="indexLogin.jsp" class="user"><i class="fa-solid fa-user"></i></a>
+        <%
+          }
+        %>
+      </div>
+    </div>
   </div>
+  <div class="menu_container">
+    <div class="task_menu">
+      <button class="btn_Category_search" id="btn_Category_search">
+                    <span>
+                        Danh mục
+                    </span>
+        <i class="fa-solid fa-angle-down"></i>
+        <ul class="menu_Category" id="menu_Category">
+          <a>
+            <li class="menu_Category_Item">Tất cả sản phẩm</li>
+          </a>
+          <a>
+            <li class="menu_Category_Item">Áo</li>
+          </a>
+          <a>
+            <li class="menu_Category_Item">Áo khoác</li>
+          </a>
+          <a>
+            <li class="menu_Category_Item">Quần</li>
+          </a>
+          <a>
+            <li class="menu_Category_Item">Đầm</li>
+          </a>
+          <a>
+            <li class="menu_Category_Item">Váy</li>
+          </a>
+        </ul>
+        <form id="productSearchForm" action="findProduct" method="get">
+          <input type="hidden" name="nameproduct" id="categoryInput"/>
+        </form>
+      </button>
+      <ul class="Menupage">
+        <a href="index.html" class="linkpage Home">
+          <li class="Item_menuPage">Trang chủ</li>
+        </a>
+        <a href="" class="linkpage Shop">
+          <li class="Item_menuPage ">Cửa hàng</li>
+        </a>
+        <a href="collection.jsp" class="linkpage Collection">
+          <li class="Item_menuPage ">Bộ sưu tập</li>
+        </a>
+        <a href="#" class="linkpage Contact" id="Contact">
+          <li class="Item_menuPage" id="Contact_Us">Liên hệ</li>
+        </a>
+        <a href="" class="linkpage Fashion">
+          <li class="Item_menuPage">Xu hướng thời trang</li>
+        </a>
+        <a href="comment.jsp" class="linkpage Comment">
+          <li class="Item_menuPage">Đóng góp ý kiến</li>
+        </a>
+      </ul>
+    </div>
+  </div>
+</header>
   <div class="details_cart">
     <div class="introduce">
       <p style="color: brown;">Giỏ hàng của bạn</p>

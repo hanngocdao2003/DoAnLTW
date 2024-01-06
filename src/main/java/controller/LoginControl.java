@@ -31,6 +31,7 @@ public class LoginControl extends HttpServlet {
         if (userEntity == null){
             request.setAttribute("Error", "Tên đăng nhập hoặc mật khẩu không đúng");
         }else {
+            session.setAttribute("User_Login", userEntity);
             if (userEntity.getRoleId().equals("R1")){
                 url = ADSUCCESS;
                 session.setAttribute("Success", userEntity.getFullName());

@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="View/styleWeb/styleFooter.css">
   <link rel="stylesheet" href="Image/fontawesome-free-6.4.2-web/css/all.min.css">
   <link rel="icon" href="Image/BHD-html.png" type="image/x-icon">
+  <link rel="stylesheet" href="View/styleWeb/color.css">
   <title>Đóng góp ý kiến</title>
 </head>
 
@@ -16,11 +17,11 @@
   <div class="image">
     <a href="index.jsp" class="home"><img src="Image/BHD-nền%20trong%20suốt.svg" alt=""></a>
   </div>
-  <div class="wrapper">
+  <form class="wrapper" action="insertComment">
     <h2>Bạn có gì muốn nhắn gửi cho BHD Store ạ ? *</h2>
-    <textarea placeholder="Bạn nhập nội dung ở đây..." required></textarea>
-    <button><a href="">Ok, Xong rồi!</a></button>
-  </div>
+    <textarea name="feedback" placeholder="Bạn nhập nội dung ở đây..." required></textarea>
+    <button type="submit" class="buttonComment">Ok, Xong rồi!</button>
+  </form>
   <footer>
     <div class="contain">
       <div class="content">

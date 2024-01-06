@@ -11,23 +11,30 @@ public class UserDAO {
     public List<UserEntity> getAccount(String numberPhone) {
         List<UserEntity> userEntityList = new ArrayList<>();
         StringBuilder sql = new StringBuilder();
-        sql.append("SELECT users.id, users.fullName, users.phone, users.email, users.password, users.status, users.roleId from users where users.phone ='" + numberPhone + "'" +
-                "and users.status = 1");
+        sql.append("SELECT id, fullName, phone, email, password, status, roleId, birthday, province, district, ward, numHouse " + "from users where phone = '" + numberPhone + "' and status = 1");
 
         try {
             Connection conn = ConnectionUtils.getConnection();
-            PreparedStatement stmt = conn.prepareStatement(sql.toString());
-            ResultSet rs = stmt.executeQuery(sql.toString());
-            while (rs.next()) {
-                UserEntity userEntity = new UserEntity();
-                userEntity.setId(rs.getInt("id"));
-                userEntity.setFullName(rs.getString("fullName"));
-                userEntity.setPhone(rs.getString("phone"));
-                userEntity.setEmail(rs.getString("email"));
-                userEntity.setPassword(rs.getString("password"));
-                userEntity.setStatus(rs.getShort("status"));
-                userEntity.setRoleId(rs.getString("roleId"));
-                userEntityList.add(userEntity);
+            PreparedStatement stmt;
+            if (conn != null) {
+                stmt = conn.prepareStatement(sql.toString());
+                ResultSet rs = stmt.executeQuery();
+                while (rs.next()) {
+                    UserEntity userEntity = new UserEntity();
+                    userEntity.setId(rs.getInt("id"));
+                    userEntity.setFullName(rs.getString("fullName"));
+                    userEntity.setPhone(rs.getString("phone"));
+                    userEntity.setEmail(rs.getString("email"));
+                    userEntity.setPassword(rs.getString("password"));
+                    userEntity.setStatus(rs.getShort("status"));
+                    userEntity.setRoleId(rs.getString("roleId"));
+                    userEntity.setBirthday(rs.getString("birthday"));
+                    userEntity.setProvince(rs.getString("province"));
+                    userEntity.setDistrict(rs.getString("district"));
+                    userEntity.setWard(rs.getString("ward"));
+                    userEntity.setNumHouse(rs.getString("numHouse"));
+                    userEntityList.add(userEntity);
+                }
             }
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
@@ -83,8 +90,10 @@ public class UserDAO {
     }
 
     public static void main(String[] args) {
-       UserDAO userDAO = new UserDAO();
-       List<UserEntity> userEntityList =  userDAO.getAccount("0901323080");
-        System.out.println(userEntityList);
+        UserDAO userDAO = new UserDAO();
+        List<UserEntity> userEntityList = userDAO.getAccount("0901323070");
+        System.out.println(toString(userEntityList));
+
+
     }
 }

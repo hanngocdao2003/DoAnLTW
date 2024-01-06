@@ -8,6 +8,11 @@ public class UserEntity {
     private String password;
     private Short status;
     private String roleId;
+    private String birthday;
+    private String province;
+    private String district;
+    private String ward;
+    private  String numHouse;
 
     public Integer getId() {
         return id;
@@ -65,6 +70,46 @@ public class UserEntity {
         this.roleId = roleId;
     }
 
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
+    }
+
+    public String getProvince() {
+        return province;
+    }
+
+    public void setProvince(String province) {
+        this.province = province;
+    }
+
+    public String getDistrict() {
+        return district;
+    }
+
+    public void setDistrict(String district) {
+        this.district = district;
+    }
+
+    public String getWard() {
+        return ward;
+    }
+
+    public void setWard(String ward) {
+        this.ward = ward;
+    }
+
+    public String getNumHouse() {
+        return numHouse;
+    }
+
+    public void setNumHouse(String numHouse) {
+        this.numHouse = numHouse;
+    }
+
     @Override
     public String toString() {
         return "UserEntity{" +
@@ -75,6 +120,11 @@ public class UserEntity {
                 ", password='" + password + '\'' +
                 ", status=" + status +
                 ", roleId='" + roleId + '\'' +
+                ", birthday='" + birthday + '\'' +
+                ", province='" + province + '\'' +
+                ", district='" + district + '\'' +
+                ", ward='" + ward + '\'' +
+                ", numHouse='" + numHouse + '\'' +
                 '}';
     }
 }

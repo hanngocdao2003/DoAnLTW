@@ -56,8 +56,7 @@ public class ProductService {
         List<ColorEntity> colorEntities = colorDAO.findColor(productId);
         List<SizeEntity> sizeEntities = sizeDAO.findSize(productId);
 
-        String color = colorEntities.stream().map(colors -> colors.getCode()).collect(Collectors.joining(", "));
-        String size = sizeEntities.stream().map(sizes -> sizes.getSize()).collect(Collectors.joining(", "));
+        String color = colorEntities.stream().map(colors -> colors.getCode()).collect(Collectors.joining(", "));String size = sizeEntities.stream().map(sizes -> sizes.getSize()).collect(Collectors.joining(", "));
         String image = imageEntities.stream().map(img -> img.getLink()).collect(Collectors.joining(", "));
 
         productResponse.setId(productEntity.getId());
@@ -71,4 +70,3 @@ public class ProductService {
         return productResponse;
     }
 }
-

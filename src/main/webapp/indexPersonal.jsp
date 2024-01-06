@@ -1,4 +1,6 @@
+<%@ page import="bean.UserEntity" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%-- Debug: In ra thông tin Session --%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -111,27 +113,47 @@
     </div>
     <hr>
     <div class="information-acc">
-        <div class="inf_acc">
+        <form class="inf_acc" action="Personal" method="post">
+            <%
+                UserEntity userEntity = (UserEntity) session.getAttribute("user");
+                System.out.println(userEntity);
+                String fullName = (userEntity != null) ? userEntity.getFullName() : "";
+                String numberPhone = (userEntity != null) ? userEntity.getPhone() : "";
+                String email = (userEntity != null) ? userEntity.getEmail() : "";
+                String birthday = (userEntity != null) ? userEntity.getBirthday() : "";
+                String province = (userEntity != null) ? userEntity.getProvince() : "";
+                String district = (userEntity != null) ? userEntity.getDistrict() : "";
+                String ward = (userEntity != null) ? userEntity.getWard() : "";
+                String numHouse = (userEntity != null) ? userEntity.getNumHouse() : "";
+            %>
             <label for="fullName">Họ và tên :</label>
-            <input type="text" id="fullName" readonly value="Nguyễn Thanh Bình">
-            <label for="numberPhone">Số điện thoại :</label>
-            <input type="text" id="numberPhone" readonly>
-            <label for="email">Email :</label>
-            <input type="email" id="email" readonly>
-            <label for="birthday">Ngày sinh :</label>
-            <input type="date" id="birthday" readonly>
-            <label for="birthday">Địa chỉ :</label>
-            <div class="address label_information">
-                <input type="text" placeholder="Tỉnh-Thành phố" readonly>
-                <input type="text" placeholder="Quận-Huyện" readonly>
-                <input type="text" placeholder="Xã-Phường-Thị trấn" readonly>
-                <input type="text" placeholder="Số nhà-Đường" readonly>
-            </div>
+            <input type="text" id="fullName" readonly value="<%= fullName %>" name="fullName">
 
-        </div>
+            <label for="numberPhone">Số điện thoại :</label>
+            <input type="text" id="numberPhone" readonly value="<%= numberPhone %>" name="numberPhone">
+
+            <label for="email">Email :</label>
+            <input type="email" id="email" readonly value="<%= email %>" name="email">
+
+            <label for="birthday">Ngày sinh :</label>
+            <input type="date" id="birthday" readonly value="<%= birthday %>" name="birthday">
+
+            <label for="address">Địa chỉ :</label>
+            <div id="address" class="address label_information">
+                <input type="text" placeholder="Tỉnh-Thành phố" readonly value="<%= province %>" name="province">
+                <input type="text" placeholder="Quận-Huyện" readonly value="<%= district %>" name="district">
+                <input type="text" placeholder="Xã-Phường-Thị trấn" readonly value="<%= ward %>" name="ward">
+                <input type="text" placeholder="Số nhà-Đường" readonly value="<%= numHouse %>" name="numHouse">
+            </div>
+        </form>
+
+
     </div>
     <div class="buttonOfpage">
-        <a href="indexLogin.jsp"><button class="logOut">Đăng xuất</button></a>
+        <a href="indexLogin.jsp">
+            <button class="logOut">Đăng xuất</button>
+<%--            nếu user trong session thì xóa user kho secsion + trở về index.jsp--%>
+        </a>
         <button class="update">Cập nhập thông tin</button>
     </div>
 </div>
@@ -141,3 +163,4 @@
 </body>
 
 </html>
+
