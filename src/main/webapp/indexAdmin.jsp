@@ -256,15 +256,17 @@
                         <label for="imageName">Image Name:</label>
                         <input type="text" id="imageName" name="imageName" required>
                         <div class="image-upload-wrap">
-                            <input multiple="multiple" name="imageFile" class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                            <input multiple="multiple" name="imageFile" class="file-upload-input" type='file'
+                                   onchange="readURL(this);" accept="image/*"/>
                             <div class="drag-text">
                                 <h3>Kéo và thả file hoặc chọn thêm ảnh</h3>
                             </div>
                         </div>
                         <div class="file-upload-content">
-                            <img class="file-upload-image" src="#" alt="Ảnh của bạn" />
+                            <img class="file-upload-image" src="#" alt="Ảnh của bạn"/>
                             <div class="image-title-wrap">
-                                <button type="button" onclick="removeUpload(this)" class="remove-image">Xóa ảnh trên</button>
+                                <button type="button" onclick="removeUpload(this)" class="remove-image">Xóa ảnh trên
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -272,15 +274,17 @@
                         <label for="imageName">Image Name:</label>
                         <input type="text" id="imageName" name="imageName" required>
                         <div class="image-upload-wrap">
-                            <input multiple="multiple" name="imageFile" class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                            <input multiple="multiple" name="imageFile" class="file-upload-input" type='file'
+                                   onchange="readURL(this);" accept="image/*"/>
                             <div class="drag-text">
                                 <h3>Kéo và thả file hoặc chọn thêm ảnh</h3>
                             </div>
                         </div>
                         <div class="file-upload-content">
-                            <img class="file-upload-image" src="#" alt="Ảnh của bạn" />
+                            <img class="file-upload-image" src="#" alt="Ảnh của bạn"/>
                             <div class="image-title-wrap">
-                                <button type="button" onclick="removeUpload(this)" class="remove-image">Xóa ảnh trên</button>
+                                <button type="button" onclick="removeUpload(this)" class="remove-image">Xóa ảnh trên
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -288,15 +292,17 @@
                         <label for="imageName">Image Name:</label>
                         <input type="text" id="imageName" name="imageName" required>
                         <div class="image-upload-wrap">
-                            <input multiple="multiple" name="imageFile" class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                            <input multiple="multiple" name="imageFile" class="file-upload-input" type='file'
+                                   onchange="readURL(this);" accept="image/*"/>
                             <div class="drag-text">
                                 <h3>Kéo và thả file hoặc chọn thêm ảnh</h3>
                             </div>
                         </div>
                         <div class="file-upload-content">
-                            <img class="file-upload-image" src="#" alt="Ảnh của bạn" />
+                            <img class="file-upload-image" src="#" alt="Ảnh của bạn"/>
                             <div class="image-title-wrap">
-                                <button type="button" onclick="removeUpload(this)" class="remove-image">Xóa ảnh trên</button>
+                                <button type="button" onclick="removeUpload(this)" class="remove-image">Xóa ảnh trên
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -304,15 +310,17 @@
                         <label for="imageName">Image Name:</label>
                         <input type="text" id="imageName" name="imageName" required>
                         <div class="image-upload-wrap">
-                            <input multiple="multiple" name="imageFile" class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                            <input multiple="multiple" name="imageFile" class="file-upload-input" type='file'
+                                   onchange="readURL(this);" accept="image/*"/>
                             <div class="drag-text">
                                 <h3>Kéo và thả file hoặc chọn thêm ảnh</h3>
                             </div>
                         </div>
                         <div class="file-upload-content">
-                            <img class="file-upload-image" src="#" alt="Ảnh của bạn" />
+                            <img class="file-upload-image" src="#" alt="Ảnh của bạn"/>
                             <div class="image-title-wrap">
-                                <button type="button" onclick="removeUpload(this)" class="remove-image">Xóa ảnh trên</button>
+                                <button type="button" onclick="removeUpload(this)" class="remove-image">Xóa ảnh trên
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -413,7 +421,7 @@
                     </div>
                     <div class="filter">
                         <select name="filter-select" id="filter-select">
-                            <option value= "alphabet">Sắp xếp theo chưa đọc</option>
+                            <option value="alphabet">Sắp xếp theo chưa đọc</option>
                             <option value="alphabet">Sắp xếp theo chưa phản hồi</option>
                         </select>
                     </div>
@@ -432,20 +440,20 @@
                         </tr>
                         </thead>
                         <tbody>
-<%--                        <%--%>
-<%--                            List<CommentReponse> comments = (List<CommentReponse>) request.getAttribute("comments");--%>
-<%--                            for (CommentReponse comment : comments) {--%>
-<%--                        %>--%>
-<%--                        <tr>--%>
-<%--                            <td><p><%= comment.getId() %></p></td>--%>
-<%--                            <td><p><%= comment.getNameUser() %></p></td>--%>
-<%--                            <td><p><%= comment.getFeedback() %></p></td>--%>
-<%--                            <td><p><%= new SimpleDateFormat("dd/MM/yyyy").format(comment.getDate_cmt()) %></p></td>--%>
-<%--                            <td><input type="checkbox" id="checkbox_<%= comment.getId() %>"></td>--%>
-<%--                        </tr>--%>
-<%--                        <%--%>
-<%--                            }--%>
-<%--                        %>--%>
+                        <%--                        <%--%>
+                        <%--                            List<CommentReponse> comments = (List<CommentReponse>) request.getAttribute("comments");--%>
+                        <%--                            for (CommentReponse comment : comments) {--%>
+                        <%--                        %>--%>
+                        <%--                        <tr>--%>
+                        <%--                            <td><p><%= comment.getId() %></p></td>--%>
+                        <%--                            <td><p><%= comment.getNameUser() %></p></td>--%>
+                        <%--                            <td><p><%= comment.getFeedback() %></p></td>--%>
+                        <%--                            <td><p><%= new SimpleDateFormat("dd/MM/yyyy").format(comment.getDate_cmt()) %></p></td>--%>
+                        <%--                            <td><input type="checkbox" id="checkbox_<%= comment.getId() %>"></td>--%>
+                        <%--                        </tr>--%>
+                        <%--                        <%--%>
+                        <%--                            }--%>
+                        <%--                        %>--%>
                         </tbody>
                     </table>
                 </form>
@@ -453,7 +461,7 @@
         </div>
         <!-- Chức năng thêm slide cho trang chủ -->
         <div id="panel_addSlide">
-            <form method="post" action="addSlide" enctype="multipart/form-data" >
+            <form method="post" action="addSlide" enctype="multipart/form-data">
                 <div class="label">
                     <p>Thêm chương trình</p>
                 </div>
@@ -462,15 +470,17 @@
                         <label for="imageName">Image Name:</label>
                         <input type="text" id="imageName" name="imageName" required>
                         <div class="image-upload-wrap">
-                            <input multiple="multiple" name="imageFile" class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                            <input multiple="multiple" name="imageFile" class="file-upload-input" type='file'
+                                   onchange="readURL(this);" accept="image/*"/>
                             <div class="drag-text">
                                 <h3>Kéo và thả file hoặc chọn thêm ảnh</h3>
                             </div>
                         </div>
                         <div class="file-upload-content">
-                            <img class="file-upload-image" src="#" alt="Ảnh của bạn" />
+                            <img class="file-upload-image" src="#" alt="Ảnh của bạn"/>
                             <div class="image-title-wrap">
-                                <button type="button" onclick="removeUpload(this)" class="remove-image">Xóa ảnh trên</button>
+                                <button type="button" onclick="removeUpload(this)" class="remove-image">Xóa ảnh trên
+                                </button>
                             </div>
                         </div>
                     </div>
