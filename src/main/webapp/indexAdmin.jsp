@@ -247,48 +247,103 @@
         </div>
         <!-- Chức năng thêm sản phẩm -->
         <div class="container-add-product" id="panel5">
-            <div class="label">
-                <p style="color: #eeeeee">Thêm sản phẩm</p>
-            </div>
-            <div class="add-product-here">
-                <div class="pictures" id="picture">
-                    <label>Tải ảnh lên
-                        <input type="file" class="input-file" name="image1" accept="Image/*">
-                    </label>
+            <form action="">
+                <div class="label">
+                    <p style="color: #eeeeee">Thêm sản phẩm</p>
                 </div>
-                <div class="pictures">
-                    <label>Tải ảnh lên
-                        <input type="file" class="input-file" name="image1" accept="Image/*">
-                    </label>
+                <div class="add-product-here">
+                    <div class="file-upload">
+                        <label for="imageName">Image Name:</label>
+                        <input type="text" id="imageName" name="imageName" required>
+                        <div class="image-upload-wrap">
+                            <input multiple="multiple" name="imageFile" class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                            <div class="drag-text">
+                                <h3>Kéo và thả file hoặc chọn thêm ảnh</h3>
+                            </div>
+                        </div>
+                        <div class="file-upload-content">
+                            <img class="file-upload-image" src="#" alt="Ảnh của bạn" />
+                            <div class="image-title-wrap">
+                                <button type="button" onclick="removeUpload(this)" class="remove-image">Xóa ảnh trên</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="file-upload">
+                        <label for="imageName">Image Name:</label>
+                        <input type="text" id="imageName" name="imageName" required>
+                        <div class="image-upload-wrap">
+                            <input multiple="multiple" name="imageFile" class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                            <div class="drag-text">
+                                <h3>Kéo và thả file hoặc chọn thêm ảnh</h3>
+                            </div>
+                        </div>
+                        <div class="file-upload-content">
+                            <img class="file-upload-image" src="#" alt="Ảnh của bạn" />
+                            <div class="image-title-wrap">
+                                <button type="button" onclick="removeUpload(this)" class="remove-image">Xóa ảnh trên</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="file-upload">
+                        <label for="imageName">Image Name:</label>
+                        <input type="text" id="imageName" name="imageName" required>
+                        <div class="image-upload-wrap">
+                            <input multiple="multiple" name="imageFile" class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                            <div class="drag-text">
+                                <h3>Kéo và thả file hoặc chọn thêm ảnh</h3>
+                            </div>
+                        </div>
+                        <div class="file-upload-content">
+                            <img class="file-upload-image" src="#" alt="Ảnh của bạn" />
+                            <div class="image-title-wrap">
+                                <button type="button" onclick="removeUpload(this)" class="remove-image">Xóa ảnh trên</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="file-upload">
+                        <label for="imageName">Image Name:</label>
+                        <input type="text" id="imageName" name="imageName" required>
+                        <div class="image-upload-wrap">
+                            <input multiple="multiple" name="imageFile" class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                            <div class="drag-text">
+                                <h3>Kéo và thả file hoặc chọn thêm ảnh</h3>
+                            </div>
+                        </div>
+                        <div class="file-upload-content">
+                            <img class="file-upload-image" src="#" alt="Ảnh của bạn" />
+                            <div class="image-title-wrap">
+                                <button type="button" onclick="removeUpload(this)" class="remove-image">Xóa ảnh trên</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="pictures">
-                    <label >Tải ảnh lên
-                        <input type="file" class="input-file" name="image1" accept="Image/*">
-                    </label>
+                <div class="info-of-product">
+                    <div class="name-product">
+                        <input type="text" name="name-pro" placeholder="Thêm tên sản phẩm">
+                    </div>
+                    <div class="price-product">
+                        <input type="text" name="price-pro" placeholder="Thêm giá sản phẩm">
+                    </div>
+                    <div class="type-product">
+                        <input type="text" name="name-pro" placeholder="Thêm loại sản phẩm">
+                    </div>
+                    <div class="discount-product">
+                        <input type="text" name="name-pro" placeholder="Mã giảm giá (nếu có)">
+                    </div>
+                    <div class="suplipper-product">
+                        <input type="text" name="name-pro" placeholder="Thêm mã nhà cung cấp">
+                    </div>
+                    <div class="quantity-product">
+                        <input type="text" name="name-pro" placeholder="Số lượng nhập vào kho">
+                    </div>
                 </div>
-                <div class="pictures">
-                    <label>Tải ảnh lên
-                        <input type="file" class="input-file" name="image1" accept="Image/*">
-                    </label>
+                <div class="describe">
+                    <textarea placeholder="Mô tả sản phẩm..." required></textarea>
                 </div>
-            </div>
-            <div class="info-of-product">
-                <div class="name-product">
-                    <input type="text" name="name-pro" placeholder="Thêm tên sản phẩm">
+                <div class="footer-container">
+                    <button>Thêm sản phẩm</button>
                 </div>
-                <div class="price-product">
-                    <input type="text" name="price-pro" placeholder="Thêm giá sản phẩm">
-                </div>
-                <div class="type-product">
-                    <input type="text" name="name-pro" placeholder="Thêm loại sản phẩm">
-                </div>
-            </div>
-            <div class="describe">
-                <textarea placeholder="Mô tả sản phẩm..." required></textarea>
-            </div>
-            <div class="footer-container">
-                <button>Thêm sản phẩm</button>
-            </div>
+            </form>
         </div>
         <!-- Chức năng quản lý đơn hàng -->
         <div class="order-management" id="panel6">

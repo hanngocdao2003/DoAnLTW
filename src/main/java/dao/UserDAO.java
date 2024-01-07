@@ -28,7 +28,6 @@ public class UserDAO {
                     userEntity.setPassword(rs.getString("password"));
                     userEntity.setStatus(rs.getShort("status"));
                     userEntity.setRoleId(rs.getString("roleId"));
-                    userEntity.setBirthday(rs.getString("birthday"));
                     userEntity.setProvince(rs.getString("province"));
                     userEntity.setDistrict(rs.getString("district"));
                     userEntity.setWard(rs.getString("ward"));
@@ -60,7 +59,6 @@ public class UserDAO {
                     userEntity.setPassword(rs.getString("password"));
                     userEntity.setStatus(rs.getShort("status"));
                     userEntity.setRoleId(rs.getString("roleId"));
-                    userEntity.setBirthday(rs.getString("birthday"));
                     userEntity.setProvince(rs.getString("province"));
                     userEntity.setDistrict(rs.getString("district"));
                     userEntity.setWard(rs.getString("ward"));
@@ -123,13 +121,13 @@ public class UserDAO {
     public static void main(String[] args) {
         UserDAO userDAO = new UserDAO();
 
-        System.out.println(userDAO.getUser(2));
-
-        UserEntity user = new UserEntity();
-        user.setFullName("han");
-        user.setPhone("0908555555");
-        user.setEmail("han@gmail.com");
-        user.setPassword("han123");
-        System.out.println(userDAO.addUser(user));
+        System.out.println(userDAO.toString(userDAO.getAccount("0901323070")));
+//
+//        UserEntity user = new UserEntity();
+//        user.setFullName("han");
+//        user.setPhone("0908555555");
+//        user.setEmail("han@gmail.com");
+//        user.setPassword("han123");
+//        System.out.println(userDAO.addUser(user));
     }
 }

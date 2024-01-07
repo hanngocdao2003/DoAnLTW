@@ -113,46 +113,36 @@
     </div>
     <hr>
     <div class="information-acc">
-        <form class="inf_acc" action="Personal" method="post">
-            <%
-                UserEntity userEntity = (UserEntity) session.getAttribute("user");
-                System.out.println(userEntity);
-                String fullName = (userEntity != null) ? userEntity.getFullName() : "";
-                String numberPhone = (userEntity != null) ? userEntity.getPhone() : "";
-                String email = (userEntity != null) ? userEntity.getEmail() : "";
-                String birthday = (userEntity != null) ? userEntity.getBirthday() : "";
-                String province = (userEntity != null) ? userEntity.getProvince() : "";
-                String district = (userEntity != null) ? userEntity.getDistrict() : "";
-                String ward = (userEntity != null) ? userEntity.getWard() : "";
-                String numHouse = (userEntity != null) ? userEntity.getNumHouse() : "";
-            %>
-            <label for="fullName">Họ và tên :</label>
-            <input type="text" id="fullName" readonly value="<%= fullName %>" name="fullName">
+        <form class="inf_acc" action="LoginControl" method="post">
+            <label for="fullName">Họ và tên:</label>
+            <input type="text" id="fullName" readonly value="<%= (String) session.getAttribute("fullName") %>"
+                   name="fullName">
 
-            <label for="numberPhone">Số điện thoại :</label>
-            <input type="text" id="numberPhone" readonly value="<%= numberPhone %>" name="numberPhone">
+            <label for="numberPhone">Số điện thoại:</label>
+            <input type="text" id="numberPhone" readonly value="<%= (String) session.getAttribute("numberPhone") %>"
+                   name="numberPhone">
 
-            <label for="email">Email :</label>
-            <input type="email" id="email" readonly value="<%= email %>" name="email">
+            <label for="email">Email:</label>
+            <input type="email" id="email" readonly value="<%= (String) session.getAttribute("email") %>" name="email">
 
-            <label for="birthday">Ngày sinh :</label>
-            <input type="date" id="birthday" readonly value="<%= birthday %>" name="birthday">
-
-            <label for="address">Địa chỉ :</label>
+            <label for="address">Địa chỉ:</label>
             <div id="address" class="address label_information">
-                <input type="text" placeholder="Tỉnh-Thành phố" readonly value="<%= province %>" name="province">
-                <input type="text" placeholder="Quận-Huyện" readonly value="<%= district %>" name="district">
-                <input type="text" placeholder="Xã-Phường-Thị trấn" readonly value="<%= ward %>" name="ward">
-                <input type="text" placeholder="Số nhà-Đường" readonly value="<%= numHouse %>" name="numHouse">
+                <input type="text" placeholder="Tỉnh-Thành phố" readonly
+                       value="<%=(String) session.getAttribute("province") %>" name="province">
+                <input type="text" placeholder="Quận-Huyện" readonly
+                       value="<%=(String) session.getAttribute("district") %>" name="district">
+                <input type="text" placeholder="Xã-Phường-Thị trấn" readonly
+                       value="<%=(String) session.getAttribute("ward") %>" name="ward">
+                <input type="text" placeholder="Số nhà-Đường" readonly
+                       value="<%=(String) session.getAttribute("numHouse") %>" name="numHouse">
             </div>
         </form>
-
 
     </div>
     <div class="buttonOfpage">
         <a href="indexLogin.jsp">
             <button class="logOut">Đăng xuất</button>
-<%--            nếu user trong session thì xóa user kho secsion + trở về index.jsp--%>
+            <%--            nếu user trong session thì xóa user kho secsion + trở về index.jsp--%>
         </a>
         <button class="update">Cập nhập thông tin</button>
     </div>

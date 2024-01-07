@@ -31,7 +31,14 @@ public class LoginControl extends HttpServlet {
         if (userEntity == null){
             request.setAttribute("Error", "Tên đăng nhập hoặc mật khẩu không đúng");
         }else {
-            session.setAttribute("User_Login", userEntity);
+            session.setAttribute("fullName", userEntity.getFullName());
+            session.setAttribute("numberPhone", userEntity.getPhone());
+            session.setAttribute("email", userEntity.getEmail());
+            session.setAttribute("province", userEntity.getProvince());
+            session.setAttribute("district", userEntity.getDistrict());
+            session.setAttribute("ward", userEntity.getWard());
+            session.setAttribute("numHouse", userEntity.getNumHouse());
+            request.getRequestDispatcher("indexPersonal.jsp").forward(request, response);
             if (userEntity.getRoleId().equals("R1")){
                 url = ADSUCCESS;
                 session.setAttribute("Success", userEntity.getFullName());
@@ -43,11 +50,4 @@ public class LoginControl extends HttpServlet {
 
         request.getRequestDispatcher(url).forward(request, response);
     }
-
-
-
-
-
-
-
 }
