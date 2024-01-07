@@ -1,5 +1,7 @@
 package bean;
 
+import java.sql.Date;
+
 public class UserEntity {
     private Integer id;
     private String fullName;
@@ -8,7 +10,6 @@ public class UserEntity {
     private String password;
     private Short status;
     private String roleId;
-    private String birthday;
     private String province;
     private String district;
     private String ward;
@@ -70,14 +71,6 @@ public class UserEntity {
         this.roleId = roleId;
     }
 
-    public String getBirthday() {
-        return birthday;
-    }
-
-    public void setBirthday(String birthday) {
-        this.birthday = birthday;
-    }
-
     public String getProvince() {
         return province;
     }
@@ -120,7 +113,6 @@ public class UserEntity {
                 ", password='" + password + '\'' +
                 ", status=" + status +
                 ", roleId='" + roleId + '\'' +
-                ", birthday='" + birthday + '\'' +
                 ", province='" + province + '\'' +
                 ", district='" + district + '\'' +
                 ", ward='" + ward + '\'' +

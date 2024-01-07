@@ -37,21 +37,23 @@
             </div>
             <div class="rightIcon">
                 <a href="" class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
-
-                <%
-                    String success = (String) session.getAttribute("Success");
-                    if (success != null) {
-                %>
-                <a href="indexPersonal.jsp" class="user"><i class="fa-solid fa-user"
-                                                            style="margin-right: 5px"></i> <%= success %>
-                </a>
-                <%
-                } else {
-                %>
-                <a href="indexLogin.jsp" class="user"><i class="fa-solid fa-user"></i></a>
-                <%
-                    }
-                %>
+                <form action="LogOut" method="post">
+                    <button class="logOut">Đăng xuất</button>
+                </form>
+                <%--                <%--%>
+                <%--                    String success = (String) session.getAttribute("Success");--%>
+                <%--                    if (success != null) {--%>
+                <%--                %>--%>
+                <%--                <a href="indexPersonal.jsp" class="user"><i class="fa-solid fa-user"--%>
+                <%--                                                            style="margin-right: 5px"></i> <%= success %>--%>
+                <%--                </a>--%>
+                <%--                <%--%>
+                <%--                } else {--%>
+                <%--                %>--%>
+                <%--                <a href="indexLogin.jsp" class="user"><i class="fa-solid fa-user"></i></a>--%>
+                <%--                <%--%>
+                <%--                    }--%>
+                <%--                %>--%>
             </div>
         </div>
     </div>
@@ -113,6 +115,7 @@
     </div>
     <hr>
     <div class="information-acc">
+<<<<<<< HEAD
         <form class="inf_acc" action="Personal" method="post">
             <%--  <%
                   UserEntity userEntity = (UserEntity) session.getAttribute("user");
@@ -146,11 +149,40 @@
                 <input type="text" placeholder="Quận-Huyện" readonly name="district" value="<%= loggedInUser.getDistrict() %>">
                 <input type="text" placeholder="Xã-Phường-Thị trấn" readonly name="ward" value="<%= loggedInUser.getWard() %>">
                 <input type="text" placeholder="Số nhà-Đường" readonly name="numHouse" value="<%= loggedInUser.getNumHouse() %>">
+=======
+        <form class="inf_acc" action="LoginControl" method="post">
+            <label for="fullName">Họ và tên:</label>
+            <input type="text" id="fullName" readonly value="<%= (String) session.getAttribute("fullName") != null ? (String) session.getAttribute("fullName") : "" %>" name="fullName">
+
+            <label for="numberPhone">Số điện thoại:</label>
+            <input type="text" id="numberPhone" readonly value="<%= (String) session.getAttribute("numberPhone") != null ? (String) session.getAttribute("numberPhone") : "" %>" name="numberPhone">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" readonly value="<%= (String) session.getAttribute("email") != null ? (String) session.getAttribute("email") : "" %>" name="email">
+
+            <label for="address">Địa chỉ:</label>
+            <div id="address" class="address label_information">
+                <input type="text" placeholder="Tỉnh-Thành phố" readonly
+                       value="<%= (String) session.getAttribute("province") != null ? (String) session.getAttribute("province") : "" %>" name="province" id="province">
+                <input type="text" placeholder="Quận-Huyện" readonly
+                       value="<%= (String) session.getAttribute("district") != null ? (String) session.getAttribute("district") : "" %>" name="district" id="district">
+                <input type="text" placeholder="Xã-Phường-Thị trấn" readonly
+                       value="<%= (String) session.getAttribute("ward") != null ? (String) session.getAttribute("ward") : "" %>" name="ward" id="ward">
+                <input type="text" placeholder="Số nhà-Đường" readonly
+                       value="<%= (String) session.getAttribute("numHouse") != null ? (String) session.getAttribute("numHouse") : "" %>" name="numHouse" id="numHouse">
+            </div>
+            <div></div>
+            <div class="buttonOfpage">
+                <form action="">
+                    <button class="update" id="update">Cập nhật thông tin</button>
+                </form>
+>>>>>>> 5f6e1973b767ede3901c4e37851271e5ada1a4fb
             </div>
         </form>
 
 
     </div>
+<<<<<<< HEAD
     <div class="buttonOfpage">
         <a href="indexLogin.jsp">
             <button class="logOut">Đăng xuất</button>
@@ -158,9 +190,18 @@
         </a>
         <button class="update">Cập nhật thông tin</button>
     </div>
+=======
+
+>>>>>>> 5f6e1973b767ede3901c4e37851271e5ada1a4fb
 </div>
 <script>
     document.body.innerHTML += addFooter();
+
+</script>
+<script src="View/JSWeb/eventPersonal.js">
+</script>
+<script>
+
 </script>
 </body>
 

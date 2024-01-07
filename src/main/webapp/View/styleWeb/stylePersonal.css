@@ -119,7 +119,31 @@
 
 }
 .logOut {
+    font-size: 22px;
+    padding: 5px 10px;
+    background-color: rgb(115, 141, 171);
+    color: white;
+    border-radius: 10px;
+}
+.logOut:hover{
+    background-color: #75625e;
+    cursor: pointer;
 }
 .update {
+    font-size: 22px;
+    padding: 5px 10px;
+    background-color: rgb(115, 141, 171);
+    color: white;
+    border-radius: 10px;
+}
+.update:hover{
+    background-color: #75625e;
+    cursor: pointer;
+}
+.linkpage.Home{
+    background-color: rgba(0, 0, 0, 0);
+}
+.linkpage.Home:hover{
+    background-color: #75625e
 }
 
