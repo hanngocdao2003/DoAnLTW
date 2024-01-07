@@ -84,14 +84,14 @@
     width: 100%;
 }
 
-td input[type="button"] {
-    background: var(--back);
-    color: var(--font);
-    border-radius: 5px;
-    border: 2px solid var(--font);
-    cursor: pointer;
-    padding: 5px 10px;
-}
+/*td input[type="button"] {*/
+/*    background: var(--back);*/
+/*    color: var(--font);*/
+/*    border-radius: 5px;*/
+/*    border: 2px solid var(--font);*/
+/*    cursor: pointer;*/
+/*    padding: 5px 10px;*/
+/*}*/
 
 .main_label {
     width: 82%;
