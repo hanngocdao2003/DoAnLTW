@@ -23,11 +23,11 @@ public class LoginControl extends HttpServlet {
         final String SUCCESS = "index.jsp";
         final String ADSUCCESS = "indexAdmin.jsp";
         response.setContentType("text/html; charset=UTF-8");
-        HttpSession session = request.getSession(true);
-        String url = ERROR;
         String userName = request.getParameter("userName");
         String password = request.getParameter("password");
         UserEntity userEntity =  UserService.checkLogin(userName, password);
+        HttpSession session = request.getSession(true);
+        String url = ERROR;
         if (userEntity == null){
             request.setAttribute("Error", "Tên đăng nhập hoặc mật khẩu không đúng");
         }else {

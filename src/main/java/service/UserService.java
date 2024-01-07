@@ -1,6 +1,7 @@
 package service;
 
 import bean.UserEntity;
+import dao.PersonalDAO;
 import dao.UserDAO;
 import utils.EmailVerification;
 
@@ -41,15 +42,19 @@ public class UserService {
         return registrationSuccess;
     }
 
+    public static UserEntity getUserByPhone(String phone) {
+        return new PersonalDAO().loadInformation(phone);
+    }
 
     public static void main(String[] args) {
         //    System.out.println(checkLogin("0901323080", "admin1").getFullName());
-        UserEntity userEntity = new UserEntity();
-        userEntity.setEmail("hanngocdao2003@gmail.com");
-        userEntity.setFullName("han");
-        userEntity.setPhone("0908555555");
-        userEntity.setPassword("han123");
-        System.out.println(registerUser(userEntity));
+//        UserEntity userEntity = new UserEntity();
+//        userEntity.setEmail("hanngocdao2003@gmail.com");
+//        userEntity.setFullName("han");
+//        userEntity.setPhone("0908555555");
+//        userEntity.setPassword("han123");
+//        System.out.println(registerUser(userEntity));
+
 
 
     }

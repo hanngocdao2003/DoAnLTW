@@ -114,36 +114,38 @@
     <hr>
     <div class="information-acc">
         <form class="inf_acc" action="Personal" method="post">
-            <%
-                UserEntity userEntity = (UserEntity) session.getAttribute("user");
-                System.out.println(userEntity);
-                String fullName = (userEntity != null) ? userEntity.getFullName() : "";
-                String numberPhone = (userEntity != null) ? userEntity.getPhone() : "";
-                String email = (userEntity != null) ? userEntity.getEmail() : "";
-                String birthday = (userEntity != null) ? userEntity.getBirthday() : "";
-                String province = (userEntity != null) ? userEntity.getProvince() : "";
-                String district = (userEntity != null) ? userEntity.getDistrict() : "";
-                String ward = (userEntity != null) ? userEntity.getWard() : "";
-                String numHouse = (userEntity != null) ? userEntity.getNumHouse() : "";
-            %>
+            <%--  <%
+                  UserEntity userEntity = (UserEntity) session.getAttribute("user");
+                  System.out.println(userEntity);
+                  String fullName = (userEntity != null) ? userEntity.getFullName() : "";
+                  String numberPhone = (userEntity != null) ? userEntity.getPhone() : "";
+                  String email = (userEntity != null) ? userEntity.getEmail() : "";
+                  String birthday = (userEntity != null) ? userEntity.getBirthday() : "";
+                  String province = (userEntity != null) ? userEntity.getProvince() : "";
+                  String district = (userEntity != null) ? userEntity.getDistrict() : "";
+                  String ward = (userEntity != null) ? userEntity.getWard() : "";
+                  String numHouse = (userEntity != null) ? userEntity.getNumHouse() : "";
+              %>--%>
+            <%UserEntity loggedInUser = (UserEntity) request.getAttribute("loggedInUser");%>
             <label for="fullName">Họ và tên :</label>
-            <input type="text" id="fullName" readonly value="<%= fullName %>" name="fullName">
+            <input type="text" id="fullName" readonly name="fullName" value="<%= loggedInUser.getFullName() %>">
 
             <label for="numberPhone">Số điện thoại :</label>
-            <input type="text" id="numberPhone" readonly value="<%= numberPhone %>" name="numberPhone">
+            <input type="text" id="numberPhone" readonly name="numberPhone" value="<%= loggedInUser.getPhone() %>">
 
             <label for="email">Email :</label>
-            <input type="email" id="email" readonly value="<%= email %>" name="email">
+            <input type="email" id="email" readonly name="email" value="<%= loggedInUser.getEmail() %>">
 
             <label for="birthday">Ngày sinh :</label>
-            <input type="date" id="birthday" readonly value="<%= birthday %>" name="birthday">
+            <input type="date" id="birthday" readonly name="birthday" value="<%= loggedInUser.getBirthday() %>">
+
 
             <label for="address">Địa chỉ :</label>
             <div id="address" class="address label_information">
-                <input type="text" placeholder="Tỉnh-Thành phố" readonly value="<%= province %>" name="province">
-                <input type="text" placeholder="Quận-Huyện" readonly value="<%= district %>" name="district">
-                <input type="text" placeholder="Xã-Phường-Thị trấn" readonly value="<%= ward %>" name="ward">
-                <input type="text" placeholder="Số nhà-Đường" readonly value="<%= numHouse %>" name="numHouse">
+                <input type="text" placeholder="Tỉnh-Thành phố" readonly name="province" value="<%= loggedInUser.getProvince() %>">
+                <input type="text" placeholder="Quận-Huyện" readonly name="district" value="<%= loggedInUser.getDistrict() %>">
+                <input type="text" placeholder="Xã-Phường-Thị trấn" readonly name="ward" value="<%= loggedInUser.getWard() %>">
+                <input type="text" placeholder="Số nhà-Đường" readonly name="numHouse" value="<%= loggedInUser.getNumHouse() %>">
             </div>
         </form>
 
@@ -152,9 +154,9 @@
     <div class="buttonOfpage">
         <a href="indexLogin.jsp">
             <button class="logOut">Đăng xuất</button>
-<%--            nếu user trong session thì xóa user kho secsion + trở về index.jsp--%>
+            <%--            nếu user trong session thì xóa user kho secsion + trở về index.jsp--%>
         </a>
-        <button class="update">Cập nhập thông tin</button>
+        <button class="update">Cập nhật thông tin</button>
     </div>
 </div>
 <script>
