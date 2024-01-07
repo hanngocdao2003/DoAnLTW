@@ -121,17 +121,5 @@ public class UserDAO {
 
     public static void main(String[] args) {
         UserDAO userDAO = new UserDAO();
-
-<<<<<<< HEAD
-=======
-        System.out.println(userDAO.toString(userDAO.getAccount("0901323070")));
-//
-//        UserEntity user = new UserEntity();
-//        user.setFullName("han");
-//        user.setPhone("0908555555");
-//        user.setEmail("han@gmail.com");
-//        user.setPassword("han123");
-//        System.out.println(userDAO.addUser(user));
->>>>>>> 5f6e1973b767ede3901c4e37851271e5ada1a4fb
     }
 }

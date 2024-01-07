@@ -115,84 +115,47 @@
     </div>
     <hr>
     <div class="information-acc">
-<<<<<<< HEAD
-        <form class="inf_acc" action="Personal" method="post">
-            <%--  <%
-                  UserEntity userEntity = (UserEntity) session.getAttribute("user");
-                  System.out.println(userEntity);
-                  String fullName = (userEntity != null) ? userEntity.getFullName() : "";
-                  String numberPhone = (userEntity != null) ? userEntity.getPhone() : "";
-                  String email = (userEntity != null) ? userEntity.getEmail() : "";
-                  String birthday = (userEntity != null) ? userEntity.getBirthday() : "";
-                  String province = (userEntity != null) ? userEntity.getProvince() : "";
-                  String district = (userEntity != null) ? userEntity.getDistrict() : "";
-                  String ward = (userEntity != null) ? userEntity.getWard() : "";
-                  String numHouse = (userEntity != null) ? userEntity.getNumHouse() : "";
-              %>--%>
-            <%UserEntity loggedInUser = (UserEntity) request.getAttribute("loggedInUser");%>
-            <label for="fullName">Họ và tên :</label>
-            <input type="text" id="fullName" readonly name="fullName" value="<%= loggedInUser.getFullName() %>">
-
-            <label for="numberPhone">Số điện thoại :</label>
-            <input type="text" id="numberPhone" readonly name="numberPhone" value="<%= loggedInUser.getPhone() %>">
-
-            <label for="email">Email :</label>
-            <input type="email" id="email" readonly name="email" value="<%= loggedInUser.getEmail() %>">
-
-            <label for="birthday">Ngày sinh :</label>
-            <input type="date" id="birthday" readonly name="birthday" value="<%= loggedInUser.getBirthday() %>">
-
-
-            <label for="address">Địa chỉ :</label>
-            <div id="address" class="address label_information">
-                <input type="text" placeholder="Tỉnh-Thành phố" readonly name="province" value="<%= loggedInUser.getProvince() %>">
-                <input type="text" placeholder="Quận-Huyện" readonly name="district" value="<%= loggedInUser.getDistrict() %>">
-                <input type="text" placeholder="Xã-Phường-Thị trấn" readonly name="ward" value="<%= loggedInUser.getWard() %>">
-                <input type="text" placeholder="Số nhà-Đường" readonly name="numHouse" value="<%= loggedInUser.getNumHouse() %>">
-=======
         <form class="inf_acc" action="LoginControl" method="post">
             <label for="fullName">Họ và tên:</label>
-            <input type="text" id="fullName" readonly value="<%= (String) session.getAttribute("fullName") != null ? (String) session.getAttribute("fullName") : "" %>" name="fullName">
+            <input type="text" id="fullName" readonly
+                   value="<%= (String) session.getAttribute("fullName") != null ? (String) session.getAttribute("fullName") : "" %>"
+                   name="fullName">
 
             <label for="numberPhone">Số điện thoại:</label>
-            <input type="text" id="numberPhone" readonly value="<%= (String) session.getAttribute("numberPhone") != null ? (String) session.getAttribute("numberPhone") : "" %>" name="numberPhone">
+            <input type="text" id="numberPhone" readonly
+                   value="<%= (String) session.getAttribute("numberPhone") != null ? (String) session.getAttribute("numberPhone") : "" %>"
+                   name="numberPhone">
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" readonly value="<%= (String) session.getAttribute("email") != null ? (String) session.getAttribute("email") : "" %>" name="email">
+            <label for="email">Email:</label><input type="email" id="email" readonly
+                                                    value="<%= (String) session.getAttribute("email") != null ? (String) session.getAttribute("email") : "" %>"
+                                                    name="email">
 
             <label for="address">Địa chỉ:</label>
             <div id="address" class="address label_information">
                 <input type="text" placeholder="Tỉnh-Thành phố" readonly
-                       value="<%= (String) session.getAttribute("province") != null ? (String) session.getAttribute("province") : "" %>" name="province" id="province">
+                       value="<%= (String) session.getAttribute("province") != null ? (String) session.getAttribute("province") : "" %>"
+                       name="province" id="province">
                 <input type="text" placeholder="Quận-Huyện" readonly
-                       value="<%= (String) session.getAttribute("district") != null ? (String) session.getAttribute("district") : "" %>" name="district" id="district">
+                       value="<%= (String) session.getAttribute("district") != null ? (String) session.getAttribute("district") : "" %>"
+                       name="district" id="district">
                 <input type="text" placeholder="Xã-Phường-Thị trấn" readonly
-                       value="<%= (String) session.getAttribute("ward") != null ? (String) session.getAttribute("ward") : "" %>" name="ward" id="ward">
+                       value="<%= (String) session.getAttribute("ward") != null ? (String) session.getAttribute("ward") : "" %>"
+                       name="ward" id="ward">
                 <input type="text" placeholder="Số nhà-Đường" readonly
-                       value="<%= (String) session.getAttribute("numHouse") != null ? (String) session.getAttribute("numHouse") : "" %>" name="numHouse" id="numHouse">
+                       value="<%= (String) session.getAttribute("numHouse") != null ? (String) session.getAttribute("numHouse") : "" %>"
+                       name="numHouse" id="numHouse">
             </div>
             <div></div>
             <div class="buttonOfpage">
                 <form action="">
                     <button class="update" id="update">Cập nhật thông tin</button>
                 </form>
->>>>>>> 5f6e1973b767ede3901c4e37851271e5ada1a4fb
             </div>
         </form>
 
 
     </div>
-<<<<<<< HEAD
-    <div class="buttonOfpage">
-        <a href="indexLogin.jsp">
-            <button class="logOut">Đăng xuất</button>
-            <%--            nếu user trong session thì xóa user kho secsion + trở về index.jsp--%>
-        </a>
-        <button class="update">Cập nhật thông tin</button>
-    </div>
-=======
 
->>>>>>> 5f6e1973b767ede3901c4e37851271e5ada1a4fb
 </div>
 <script>
     document.body.innerHTML += addFooter();
@@ -206,4 +169,3 @@
 </body>
 
 </html>
-

@@ -3,8 +3,10 @@
 <%@ page import="java.util.List" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 
+
 <!DOCTYPE html>
 <html lang="en">
+
 
 <head>
     <meta charset="UTF-8">
@@ -24,11 +26,13 @@
     <title>Admin</title>
 </head>
 
+
 <body>
 <header class="logo">
     <img src="Image/BHD-nền%20trong%20suốt.svg" alt="">
     <h3 style="font-family: 'Brush Script MT', cursive">BHD Boutique</h3>
 </header>
+
 
 <div class="center" style="display: flex;">
     <div class="left_panel" style="width: 18%;">
@@ -432,20 +436,20 @@
                         </tr>
                         </thead>
                         <tbody>
-<%--                        <%--%>
-<%--                            List<CommentReponse> comments = (List<CommentReponse>) request.getAttribute("comments");--%>
-<%--                            for (CommentReponse comment : comments) {--%>
-<%--                        %>--%>
-<%--                        <tr>--%>
-<%--                            <td><p><%= comment.getId() %></p></td>--%>
-<%--                            <td><p><%= comment.getNameUser() %></p></td>--%>
-<%--                            <td><p><%= comment.getFeedback() %></p></td>--%>
-<%--                            <td><p><%= new SimpleDateFormat("dd/MM/yyyy").format(comment.getDate_cmt()) %></p></td>--%>
-<%--                            <td><input type="checkbox" id="checkbox_<%= comment.getId() %>"></td>--%>
-<%--                        </tr>--%>
-<%--                        <%--%>
-<%--                            }--%>
-<%--                        %>--%>
+                        <%--                        <%--%>
+                        <%--                            List<CommentReponse> comments = (List<CommentReponse>) request.getAttribute("comments");--%>
+                        <%--                            for (CommentReponse comment : comments) {--%>
+                        <%--                        %>--%>
+                        <%--                        <tr>--%>
+                        <%--                            <td><p><%= comment.getId() %></p></td>--%>
+                        <%--                            <td><p><%= comment.getNameUser() %></p></td>--%>
+                        <%--                            <td><p><%= comment.getFeedback() %></p></td>--%>
+                        <%--                            <td><p><%= new SimpleDateFormat("dd/MM/yyyy").format(comment.getDate_cmt()) %></p></td>--%>
+                        <%--                            <td><input type="checkbox" id="checkbox_<%= comment.getId() %>"></td>--%>
+                        <%--                        </tr>--%>
+                        <%--                        <%--%>
+                        <%--                            }--%>
+                        <%--                        %>--%>
                         </tbody>
                     </table>
                 </form>
@@ -476,6 +480,7 @@
                     </div>
                 </div>
 
+
                 <div class="footer-container">
                     <input type="submit" value="Submit" class="button">
                 </div>
@@ -484,6 +489,7 @@
     </div>
 </div>
 
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="View/JSWeb/data.js"></script>
 <script src="View/JSWeb/eventAdmin.js"></script>
@@ -491,4 +497,6 @@
 <script src="View/JSWeb/addSlide.js"></script>
 </body>
 
+
 </html>
+
