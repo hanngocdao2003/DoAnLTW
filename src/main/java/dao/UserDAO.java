@@ -11,7 +11,7 @@ public class UserDAO {
     public List<UserEntity> getAccount(String numberPhone) {
         List<UserEntity> userEntityList = new ArrayList<>();
         StringBuilder sql = new StringBuilder();
-        sql.append("SELECT id, fullName, phone, email, password, status, roleId, birthday, province, district, ward, numHouse " + "from users where phone = '" + numberPhone + "' and status = 1");
+        sql.append("SELECT id, fullName, phone, email, password, status, roleId, province, district, ward, numHouse " + "from users where phone = '" + numberPhone + "' and status = 1");
 
         try {
             Connection conn = ConnectionUtils.getConnection();
@@ -42,7 +42,7 @@ public class UserDAO {
     }
     public UserEntity getUser(int id){
         StringBuilder sql = new StringBuilder();
-        sql.append("SELECT id, fullName, phone, email, password, status, roleId, birthday, province, district, ward, numHouse " + "from users where id=" + id);
+        sql.append("SELECT id, fullName, phone, email, password, status, roleId, province, district, ward, numHouse " + "from users where id=" + id);
 
         try {
             Connection conn = ConnectionUtils.getConnection();
