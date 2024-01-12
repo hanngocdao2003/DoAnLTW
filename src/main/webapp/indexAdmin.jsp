@@ -78,7 +78,7 @@
                             <i class="fa-solid fa-circle" style="color: var(--border);"></i>
                             Thêm trình chiếu
                         </li>
-                        <a href="../View/indexChangePass.html" style="text-decoration: none">
+                        <a href="indexChangePass.jsp" style="text-decoration: none">
                             <li class="item">
                                 <i class="fa-solid fa-circle" style="color: var(--border);"></i>
                                 Đổi mật khẩu

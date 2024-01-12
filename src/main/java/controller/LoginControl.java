@@ -39,7 +39,7 @@ public class LoginControl extends HttpServlet {
             session.setAttribute("district", userEntity.getDistrict());
             session.setAttribute("ward", userEntity.getWard());
             session.setAttribute("numHouse", userEntity.getNumHouse());
-          if (userEntity.getRoleId().equals("R1")){
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               if (userEntity.getRoleId().equals("R1")){
                 url = ADSUCCESS;
                 session.setAttribute("Success", userEntity.getFullName());
             }else{

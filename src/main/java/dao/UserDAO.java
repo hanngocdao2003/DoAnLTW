@@ -41,7 +41,8 @@ public class UserDAO {
         }
         return userEntityList;
     }
-    public UserEntity getUser(int id){
+
+    public UserEntity getUser(int id) {
         StringBuilder sql = new StringBuilder();
         sql.append("SELECT id, fullName, phone, email, password, status, roleId, province, district, ward, numHouse " + "from users where id=" + id);
 
@@ -51,7 +52,7 @@ public class UserDAO {
             if (conn != null) {
                 stmt = conn.prepareStatement(sql.toString());
                 ResultSet rs = stmt.executeQuery();
-                if(rs.next()) {
+                if (rs.next()) {
                     UserEntity userEntity = new UserEntity();
                     userEntity.setId(rs.getInt("id"));
                     userEntity.setFullName(rs.getString("fullName"));
@@ -108,7 +109,7 @@ public class UserDAO {
         try (Connection con = ConnectionUtils.getConnection();
              PreparedStatement pst = con.prepareStatement(query)) {
 
-           // pst.setString(1, phone);
+            // pst.setString(1, phone);
 
             int row = pst.executeUpdate();
 
@@ -119,7 +120,45 @@ public class UserDAO {
         }
     }
 
+    public boolean updatePass(String phone, String pass) {
+        String query = "update users set password = ? where phone = ?";
+        try {
+            Connection con = ConnectionUtils.getConnection();
+            PreparedStatement preparedStatement = con.prepareStatement(query);
+
+            preparedStatement.setString(1, pass);
+            preparedStatement.setString(2, phone);
+
+            int row = preparedStatement.executeUpdate();
+
+            return row > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public String getPass(String phone) {
+        UserEntity user = new UserEntity();
+        String query = "select password from users where phone = " + phone;
+
+        try {
+            Connection con = ConnectionUtils.getConnection();
+            PreparedStatement preparedStatement = con.prepareStatement(query);
+
+            ResultSet rs = preparedStatement.executeQuery();
+            if (rs.next()) {
+                user.setPassword(rs.getString("password"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return user.getPassword();
+    }
+
     public static void main(String[] args) {
         UserDAO userDAO = new UserDAO();
+
     }
 }

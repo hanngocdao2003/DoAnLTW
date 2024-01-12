@@ -39,8 +39,15 @@ public class UserService {
         return registrationSuccess;
     }
 
-    public static void main(String[] args) {
+    public static boolean updatePass(String phone, String pass) {
+        return new UserDAO().updatePass(phone, pass);
+    }
 
+    public static String getPass(String phone) {
+        return new UserDAO().getPass(phone);
+    }
+
+    public static void main(String[] args) {
     }
 
 }

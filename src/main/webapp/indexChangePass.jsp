@@ -4,15 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
-    <link rel="stylesheet" href="View/styles/styleChangePass.css">
-    <link rel="stylesheet" href="Image/fontawesome-free-6.4.2-web/css/all.min.css">
-    <link rel="stylesheet" href="View/styles/styleFooter.css">
-=======
     <link rel="stylesheet" href="View/styleWeb/styleChangePass.css">
     <link rel="stylesheet" href="Image/fontawesome-free-6.4.2-web/css/all.min.css">
     <link rel="stylesheet" href="View/styleWeb/styleFooter.css">
->>>>>>> ce55c1b1c586f9abd72ae39524a89e94bb83bd5c
     <link rel="icon" href="Image/BHD-html.png" type="image/x-icon">
     <title>Đổi mật khẩu</title>
 </head>
@@ -24,14 +18,14 @@
 <!--    <i class="fa-regular fa-circle-xmark" style="color: #ff8080;"></i>-->
 <!--        </span>-->
     </div>
-    <form action="" class="form">
+    <form action="/changePass" class="form" method="post">
         <div class="center">
-            <input type="password" placeholder="Mật khẩu hiện tại">
-            <input type="password" placeholder="Mật khẩu mới">
-            <input type="password" placeholder="Nhập lại mật khẩu mới">
+            <input type="password" placeholder="Mật khẩu hiện tại" name="oldPass" required>
+            <input type="password" placeholder="Mật khẩu mới" name="newPass1" required>
+            <input type="password" placeholder="Nhập lại mật khẩu mới" name="newPass2" required>
         </div>
         <div class="button">
-            <input type="button" value="Đổi mật khẩu">
+            <input type="submit" value="Đổi mật khẩu">
         </div>
     </form>
     <div class="footer">
