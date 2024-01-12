@@ -18,7 +18,7 @@
     <script src="View/JSWeb/addPart.js"></script>
     <script src="View/JSWeb/JSHome.js"></script>
     <script src="View/JSWeb/slideShow.js"></script>
-    <title>Thông tin cá nhân</title>
+    <title>Câp nhật thông tin</title>
 </head>
 
 <body>
@@ -110,14 +110,14 @@
 </header>
 <div class="infor-user">
     <div class="label">
-        <p style="color: brown;">Tài khoản của bạn</p>
+        <p style="color: brown;">Cập nhật thông tin cá nhân</p>
         <div class="crossbar"></div>
     </div>
     <hr>
     <div class="information-acc">
-        <form class="inf_acc" action="LoginControl" method="post">
+        <form class="inf_acc" action="uploadInformation" method="post">
             <label for="fullName">Họ và tên:</label>
-            <input type="text" id="fullName" readonly
+            <input type="text" id="fullName"
                    value="<%= (String) session.getAttribute("fullName") != null ? (String) session.getAttribute("fullName") : "" %>"
                    name="fullName">
 
@@ -133,28 +133,24 @@
 
             <label for="address">Địa chỉ:</label>
             <div id="address" class="address label_information">
-                <input type="text" placeholder="Tỉnh-Thành phố" readonly
+                <input type="text" placeholder="Tỉnh-Thành phố"
                        value="<%= (String) session.getAttribute("province") != null ? (String) session.getAttribute("province") : "" %>"
                        name="province" id="province">
-                <input type="text" placeholder="Quận-Huyện" readonly
+                <input type="text" placeholder="Quận-Huyện"
                        value="<%= (String) session.getAttribute("district") != null ? (String) session.getAttribute("district") : "" %>"
                        name="district" id="district">
-                <input type="text" placeholder="Xã-Phường-Thị trấn" readonly
+                <input type="text" placeholder="Xã-Phường-Thị trấn"
                        value="<%= (String) session.getAttribute("ward") != null ? (String) session.getAttribute("ward") : "" %>"
                        name="ward" id="ward">
-                <input type="text" placeholder="Số nhà-Đường" readonly
+                <input type="text" placeholder="Số nhà-Đường"
                        value="<%= (String) session.getAttribute("numHouse") != null ? (String) session.getAttribute("numHouse") : "" %>"
                        name="numHouse" id="numHouse">
             </div>
             <div></div>
-
+            <div class="buttonOfpage">
+                <button type="submit" class="update" id="update">Cập nhật</button>
+            </div>
         </form>
-
-        <div class="buttonOfpage">
-            <a href="UpdatePersonal.jsp">
-                <button type="submit" class="update" id="update">Cập nhật thông tin</button>
-            </a>
-        </div>
 
 
     </div>

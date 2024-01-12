@@ -32,6 +32,7 @@ public class LoginControl extends HttpServlet {
             request.setAttribute("Error", "Tên đăng nhập hoặc mật khẩu không đúng");
         }else {
             session.setAttribute("User", userEntity);
+            session.setAttribute("Id", userEntity.getId());
             session.setAttribute("fullName", userEntity.getFullName());
             session.setAttribute("numberPhone", userEntity.getPhone());
             session.setAttribute("email", userEntity.getEmail());
