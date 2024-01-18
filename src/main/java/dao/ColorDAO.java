@@ -26,7 +26,7 @@ public class ColorDAO {
                 colorEntities.add(colorEntity);
             }
         } catch (Exception ex) {
-            System.out.println(ex.getMessage());
+            System.out.println("error colors " + ex.getMessage());
         }
         return colorEntities;
     }

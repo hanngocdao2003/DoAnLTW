@@ -8,6 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="View/styleWeb/styleDetails.css">
+    <link rel="stylesheet" href="View/styleWeb/color.css">
     <link rel="stylesheet" href="View/styleWeb/styleFooter.css">
     <link rel="stylesheet" href="View/styleWeb/styleButtonAdd.css">
     <script src="View/JSWeb/eventButtonAdd.js"></script>
@@ -18,7 +19,6 @@
     <script src="View/JSWeb/JSDetails.js"></script>
     <title>Chi tiết đơn hàng</title>
 </head>
-
 <body>
 <header>
     <div class="firstArea">
@@ -145,7 +145,7 @@
                                           style="color: #fff; margin-left: 5px;"></i>Thêm vào
                     giỏ hàng
                 </button>
-                <button class="buy-btn"><i class="fa-solid fa-bag-shopping"></i>Mua ngay</button>
+<%--                <button class="buy-btn"><i class="fa-solid fa-bag-shopping"></i>Mua ngay</button>--%>
             </div>
         </div>
         <hr style="margin-bottom: 20px;">

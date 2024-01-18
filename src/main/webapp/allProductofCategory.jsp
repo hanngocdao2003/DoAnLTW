@@ -25,12 +25,6 @@
 <body>
 <% List<ProductResponse> productResponses = (List<ProductResponse>) request.getAttribute("products");
 
-    // Pagination settings
-    int productsPerPage = 10;
-    int totalPages = (int) Math.ceil((double) productResponses.size() / productsPerPage);
-    int currentPage = (request.getParameter("page") != null) ? Integer.parseInt(request.getParameter("page")) : 1;
-    int startIndex = (currentPage - 1) * productsPerPage;
-    int endIndex = Math.min(startIndex + productsPerPage, productResponses.size());
 %>
 <header>
     <div class="firstArea">
@@ -40,8 +34,8 @@
                 <h1>BHD Boutique</h1>
             </div>
             <div class="search_Category">
-                <form class="Search" action="findProduct" method="get">
-                    <input name="nameproduct" type="text" class="input_search" placeholder="Nhập sản phẩm cần tìm">
+                <form class="Search" action="findProduct" method="get" onsubmit="return validateForm()">
+                    <input name="nameproduct" id="productInput" type="text" class="input_search" required placeholder="Nhập sản phẩm cần tìm">
                     <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
             </div>
@@ -111,8 +105,7 @@
 <div class="page1 page">
     <ul class="listItemProduct" id="allOfCategory">
         <%
-            for (int i = startIndex; i < endIndex; i++) {
-                ProductResponse p = productResponses.get(i);
+            for (ProductResponse p : productResponses) {
         %>
         <li class="itemProduct">
             <a href="detailsProduct?productId=<%=p.getId()%>"><img src="Image/Product/<%=p.getImage()%>" alt=""
@@ -130,21 +123,22 @@
             </p>
         </li>
         <%
-
             }
         %>
     </ul>
-    <div class="pagination">
-        <% for (int i = 1; i <= totalPages; i++) { %>
-        <a href="allProductofCategory.jsp?page=<%=i%>" class="<%= (i == currentPage) ? "active" : "" %>">
-            <%=i%>
-        </a>
-        <% } %>
     </div>
-</div>
 
 <script>
     document.body.innerHTML += addFooter();
+
+    function validateForm() {
+        var productInput = document.getElementById('productInput').value;
+        if (productInput.trim() === null) {
+            alert("Vui lòng nhập sản phẩm cần tìm");
+            return false;
+        }
+        return true;
+    }
 </script>
 </body>
 </html>

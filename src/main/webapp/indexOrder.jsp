@@ -4,17 +4,16 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="Image/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="View/JSWeb/code.jquery.com_jquery-3.7.1.min.js">
     <link rel="stylesheet" href="View/styleWeb/styleHeader.css">
-    <link rel="stylesheet" href="View/styleWeb/color.css">
     <link rel="stylesheet" href="View/styleWeb/styleOrder.css">
     <link rel="stylesheet" href="View/styleWeb/styleFooter.css">
-    <link rel="icon" href="Image/logo/BHD-html.png" type="image/x-icon">
-    <script src="View/JSWeb/code.jquery.com_jquery-3.7.1.min.js"></script>
-    <script src="View/JSWeb/slick.min.js"></script>
+    <link rel="stylesheet" href="View/styleWeb/styleButtonAdd.css">
+    <link rel="stylesheet" href="View/styleWeb/color.css">
+    <link rel="stylesheet" href="Image/fontawesome-free-6.4.2-web/css/all.min.css">
+    <script src="View/JSWeb/eventAddProduct.js"></script>
+    <link rel="icon" href="Image/BHD-html.png" type="image/x-icon">
     <script src="View/JSWeb/addPart.js"></script>
-    <script src="View/JSWeb/JSHome.js"></script>
-    <script src="View/JSWeb/slideShow.js"></script>
     <title>Đơn hàng</title>
 </head>
 <body>
@@ -182,13 +181,13 @@
             </div>
         </div>
         <hr>
-        <div class="voucher">
-            <div class="ten-percent">
-                <p>Mã giảm giá</p>
-                <p>Giảm 10% cho đơn hàng từ 399k</p>
-                <button>Áp dụng</button>
-            </div>
-        </div>
+<%--        <div class="voucher">--%>
+<%--            <div class="ten-percent">--%>
+<%--                <p>Mã giảm giá</p>--%>
+<%--                <p>Giảm 10% cho đơn hàng từ 399k</p>--%>
+<%--                <button>Áp dụng</button>--%>
+<%--            </div>--%>
+<%--        </div>--%>
         <hr>
         <div class="detail-cost">
             <div class="price">

@@ -51,6 +51,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -64,13 +65,18 @@ public class FindProduct extends HttpServlet {
         int currentPage = (pageParam != null) ? Integer.parseInt(pageParam) : 1;
 
         // Lấy tên sản phẩm từ request
-        String name = request.getParameter("nameproduct");
+        String name = request.getParameter("keyword"); //""
 
         // Gọi Service Layer để lấy danh sách sản phẩm theo tên
         ProductService productService = new ProductService();
         Map<String, String> searchParams = new HashMap<>();
         searchParams.put("name", name);
-        List<ProductResponse> productList = productService.findProduct(searchParams);
+        List<ProductResponse> productList = new ArrayList<>();
+      try{
+          productList = productService.findProduct(searchParams);
+      }catch (Exception e){
+          System.out.println("error find products " + e.getMessage());
+      }
 
         // Thực hiện phân trang
         int productsPerPage = 15;

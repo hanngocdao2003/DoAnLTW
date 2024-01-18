@@ -18,8 +18,10 @@
         flex-direction: column;
         width: 18%;
         border: 2px solid #b98c71;
-        background-color: rgba(255, 207, 253, 0.5);
+        background-color: rgba(182, 203, 216, 0.8);
+        /*background-color: white;*/
         border-radius: 10px;
+
         cursor: pointer;
         flex-basis: 18%;
         margin-bottom: 3%;

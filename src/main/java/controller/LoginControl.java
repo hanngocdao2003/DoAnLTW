@@ -3,7 +3,6 @@ package controller;
 import bean.UserEntity;
 import service.UserService;
 
-
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -39,7 +38,7 @@ public class LoginControl extends HttpServlet {
             session.setAttribute("district", userEntity.getDistrict());
             session.setAttribute("ward", userEntity.getWard());
             session.setAttribute("numHouse", userEntity.getNumHouse());
-            request.getRequestDispatcher("indexPersonal.jsp").forward(request, response);
+            request.getRequestDispatcher("indexAdmin.jsp").forward(request, response);
             if (userEntity.getRoleId().equals("R1")){
                 url = ADSUCCESS;
                 session.setAttribute("Success", userEntity.getFullName());
@@ -48,7 +47,6 @@ public class LoginControl extends HttpServlet {
                 session.setAttribute("Success", userEntity.getFullName());
             }
         }
-
         request.getRequestDispatcher(url).forward(request, response);
     }
 }

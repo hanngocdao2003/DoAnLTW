@@ -6,6 +6,7 @@ public class CartProduct {
     private int quantity;
     private String size;
     private String color;
+    private int quantityExist;
     private int productId;
 
     public CartProduct(int quantity, String size, String color, int productId) {
@@ -13,6 +14,14 @@ public class CartProduct {
         this.size = size;
         this.color = color;
         this.productId = productId;
+    }
+
+    public int getQuantityExist() {
+        return quantityExist;
+    }
+
+    public void setQuantityExist(int quantityExist) {
+        this.quantityExist = quantityExist;
     }
 
     public int getQuantity() {

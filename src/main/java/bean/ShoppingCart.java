@@ -55,26 +55,26 @@ public class ShoppingCart {
 
 
 
-    public static void main(String[] args) {
-        // Tạo đối tượng ShoppingCart
-        ShoppingCart shoppingCart = new ShoppingCart();
-
-        // Thêm sản phẩm vào giỏ hàng
-        shoppingCart.addProduct("Red", "M", 1, 2);
-        shoppingCart.addProduct("Blue", "L", 2, 1);
-        shoppingCart.addProduct("Blue", "L", 2, 2);
-        System.out.println(shoppingCart.mapCart);
-
-        shoppingCart.increasingQuantity(1, 0);
-        shoppingCart.increasingQuantity(1, 0);
-        System.out.println(shoppingCart.mapCart);
-
-        shoppingCart.decreaseQuantity(1, 0);
-        shoppingCart.decreaseQuantity(1, 0);
-        shoppingCart.decreaseQuantity(1, 0);
-        System.out.println(shoppingCart.mapCart);
-
-        shoppingCart.removeProduct(1, 0);
-        System.out.println(shoppingCart.mapCart);
-    }
+//    public static void main(String[] args) {
+//        // Tạo đối tượng ShoppingCart
+//        ShoppingCart shoppingCart = new ShoppingCart();
+//
+//        // Thêm sản phẩm vào giỏ hàng
+//        shoppingCart.addProduct("Red", "M", 1, 2);
+//        shoppingCart.addProduct("Blue", "L", 2, 1);
+//        shoppingCart.addProduct("Blue", "L", 2, 2);
+//        System.out.println(shoppingCart.mapCart);
+//
+//        shoppingCart.increasingQuantity(1, 0);
+//        shoppingCart.increasingQuantity(1, 0);
+//        System.out.println(shoppingCart.mapCart);
+//
+//        shoppingCart.decreaseQuantity(1, 0);
+//        shoppingCart.decreaseQuantity(1, 0);
+//        shoppingCart.decreaseQuantity(1, 0);
+//        System.out.println(shoppingCart.mapCart);
+//
+//        shoppingCart.removeProduct(1, 0);
+//        System.out.println(shoppingCart.mapCart);
+//    }
 }
