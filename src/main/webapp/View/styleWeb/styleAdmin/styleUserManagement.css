@@ -65,6 +65,26 @@
 .main_label {
     width: 100%;
 }
+.main_label > .btn_upload {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+.main_label > .btn_upload > button {
+    padding: 15px 10px;
+    font-size: 22px;
+    border-radius: 20px;
+    background-color: rgb(115, 141, 171);
+    color: white;
+}
+.main_label > .btn_upload > button:hover {
+    background-color: #75625e;
+    cursor: pointer;
+}
+
+
 
 #table {
     width: 100%;

@@ -40,6 +40,7 @@ const config = {
 const canvas = document.getElementById("canvas");
 const chart = new Chart(canvas, config);
 
+
 // Dữ liệu cho quản lý người dùng
 function loadData() {
     var htmls = listUsers.map(function (user) {
@@ -81,27 +82,27 @@ loadDataOrder();
 
 
 
-function loadDataComment() {
-    var htmls = "";
-    for (var i = 0; i < comments.length; i++) {
-        var cmt = comments[i];
-        // Sử dụng Moment.js để định dạng ngày
-        var formattedDate = moment(cmt.date_cmt).format("DD/MM/YYYY");
-
-        htmls += '<tr>' +
-            '<td>' + cmt.NO + '</td>' +
-            '<td>' + cmt.name + '</td>' +
-            '<td>' + cmt.content + '</td>' +
-            '<td>' + formattedDate + '</td>' +
-            '<td><input type="checkbox"></td>' +
-            '</tr>';
-    }
-
-    var select = document.querySelector("#table3 tbody");
-    select.innerHTML = htmls;
-}
-
-loadDataComment();
+// function loadDataComment() {
+//     var htmls = "";
+//     for (var i = 0; i < comments.length; i++) {
+//         var cmt = comments[i];
+//         // Sử dụng Moment.js để định dạng ngày
+//         var formattedDate = moment(cmt.date_cmt).format("DD/MM/YYYY");
+//
+//         htmls += '<tr>' +
+//             '<td>' + cmt.NO + '</td>' +
+//             '<td>' + cmt.name + '</td>' +
+//             '<td>' + cmt.content + '</td>' +
+//             '<td>' + formattedDate + '</td>' +
+//             '<td><input type="checkbox"></td>' +
+//             '</tr>';
+//     }
+//
+//     var select = document.querySelector("#table3 tbody");
+//     select.innerHTML = htmls;
+// }
+//
+// loadDataComment();
 
 function loadDataProduct() {
     var htmls = listProduct.map(function (cmt) {
