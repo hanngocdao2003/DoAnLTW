@@ -8,6 +8,13 @@ import java.util.Map;
 public class ShoppingCart {
     private Map<Integer, List<CartProduct>> mapCart = new HashMap<>();
 
+    public Map<Integer, List<CartProduct>> getMapCart() {
+        return mapCart;
+    }
+
+    public void setMapCart(Map<Integer, List<CartProduct>> mapCart) {
+        this.mapCart = mapCart;
+    }
 
     public boolean addProduct(String color, String size, int productId, int quantity) {
         CartProduct cartProduct = new CartProduct(quantity, size, color, productId);
@@ -54,17 +61,26 @@ public class ShoppingCart {
     }
 
 
+    public int getTotalItem(){
+        int total = 0;
+        for (int item :
+                mapCart.keySet()) {
+            total += mapCart.get(item).size();
+        }
+        return total;
+    }
 
-//    public static void main(String[] args) {
+    public static void main(String[] args) {
 //        // Tạo đối tượng ShoppingCart
-//        ShoppingCart shoppingCart = new ShoppingCart();
+        ShoppingCart shoppingCart = new ShoppingCart();
+        System.out.println(shoppingCart.getTotalItem());
 //
 //        // Thêm sản phẩm vào giỏ hàng
 //        shoppingCart.addProduct("Red", "M", 1, 2);
 //        shoppingCart.addProduct("Blue", "L", 2, 1);
 //        shoppingCart.addProduct("Blue", "L", 2, 2);
 //        System.out.println(shoppingCart.mapCart);
-//
+
 //        shoppingCart.increasingQuantity(1, 0);
 //        shoppingCart.increasingQuantity(1, 0);
 //        System.out.println(shoppingCart.mapCart);
@@ -73,8 +89,9 @@ public class ShoppingCart {
 //        shoppingCart.decreaseQuantity(1, 0);
 //        shoppingCart.decreaseQuantity(1, 0);
 //        System.out.println(shoppingCart.mapCart);
-//
+
 //        shoppingCart.removeProduct(1, 0);
 //        System.out.println(shoppingCart.mapCart);
-//    }
+//        System.out.println(shoppingCart.getTotalItem());
+    }
 }

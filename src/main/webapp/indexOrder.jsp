@@ -1,3 +1,4 @@
+<%@ page import="bean.ProductResponse" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,8 +32,7 @@
                 </form>
             </div>
             <div class="rightIcon">
-                <a href="" class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
-
+                <a href="indexOrder.jsp" class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
                 <%
                     String success = (String) session.getAttribute("Success");
                     if (success != null) {
@@ -115,10 +115,6 @@
             <input type="text" placeholder="Email">
             <input type="text " placeholder="Địa chỉ">
             <input type="text" placeholder="Ghi chú (VD: giao sau 10h)">
-            <!-- <div class="save-address">
-                <input type="checkbox" id="check">
-                <label for="check">Lưu địa chỉ cho lần mua hàng tiếp theo</label>
-            </div> -->
         </div>
         <div class="payment">
             <h1>Hình thức thanh toán</h1>
@@ -150,10 +146,14 @@
     <div class="straight-line"></div>
     <div class="cart-details">
         <h1>Đơn hàng</h1>
+        <%
+            ProductResponse p = (ProductResponse) request.getAttribute("productDetail");
+            System.out.println(p);
+            if (p != null) {%>
         <div class="product">
-            <img src="Image/Product/ÁO%20LEN%20AIMEE.jpg" alt="">
+            <img src="<%=p.getImage()%>" alt="">
             <div class="details">
-                <h3>ÁO LEN AIMEE</h3>
+                <h3><%=p.getName()%></h3>
                 <div class="choose">
                     <select name="color" id="colour" style="margin-right: 20px">
                         <option>Đen</option>
@@ -167,19 +167,13 @@
                     </select>
                 </div>
                 <div class="cost">
-                    <!-- <form>
-                        <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-
-                        </div>
-                        <input type="number" id="number" value="1"/>
-                        <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+
-                        </div>
-                    </form> -->
-                    <span id="total" style="font-size: 30px">290.000 VND</span>
+                    <span id="total" style="font-size: 30px"><%=p.getPrice()%></span>
                     <span id="quantity">Số lượng: <span> 2</span></span>
                 </div>
-                <button><i class="fa-regular fa-trash-can" style="color: #ffffff;"></i>Xóa sản phẩm</button>
+                <button id="removeBtn"><i class="fa-regular fa-trash-can" style="color: #ffffff;"></i>Xóa sản phẩm</button>
             </div>
         </div>
+        <%}%>
         <hr>
 <%--        <div class="voucher">--%>
 <%--            <div class="ten-percent">--%>

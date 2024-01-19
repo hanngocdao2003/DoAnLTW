@@ -60,37 +60,16 @@ import java.util.Map;
 public class FindProduct extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Lấy tham số trang từ request
-        String pageParam = request.getParameter("page");
-        int currentPage = (pageParam != null) ? Integer.parseInt(pageParam) : 1;
-
-        // Lấy tên sản phẩm từ request
-        String name = request.getParameter("keyword"); //""
-
-        // Gọi Service Layer để lấy danh sách sản phẩm theo tên
+        String name = request.getParameter("nameproduct");
         ProductService productService = new ProductService();
         Map<String, String> searchParams = new HashMap<>();
         searchParams.put("name", name);
-        List<ProductResponse> productList = new ArrayList<>();
-      try{
-          productList = productService.findProduct(searchParams);
-      }catch (Exception e){
-          System.out.println("error find products " + e.getMessage());
-      }
-
-        // Thực hiện phân trang
-        int productsPerPage = 15;
-        int startIndex = (currentPage - 1) * productsPerPage;
-        int endIndex = Math.min(startIndex + productsPerPage, productList.size());
-        List<ProductResponse> productsForPage = productList.subList(startIndex, endIndex);
-
-        // Đặt dữ liệu vào Request Attribute
-        request.setAttribute("products", productsForPage);
-        request.setAttribute("currentPage", currentPage);
-        request.setAttribute("totalPages", (int) Math.ceil((double) productList.size() / productsPerPage));
-
+        List<ProductResponse> productList = productService.findProduct(searchParams);
+        System.out.println(productList);
+        request.setAttribute("products", productList);
         RequestDispatcher dispatcher = request.getRequestDispatcher("allProductofCategory.jsp");
         dispatcher.forward(request, response);
+
     }
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

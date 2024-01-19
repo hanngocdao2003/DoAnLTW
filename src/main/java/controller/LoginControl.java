@@ -26,11 +26,12 @@ public class LoginControl extends HttpServlet {
         String url = ERROR;
         String userName = request.getParameter("userName");
         String password = request.getParameter("password");
-        UserEntity userEntity =  UserService.checkLogin(userName, password);
-        if (userEntity == null){
+        UserEntity userEntity = UserService.checkLogin(userName, password);
+        if (userEntity == null) {
             request.setAttribute("Error", "Tên đăng nhập hoặc mật khẩu không đúng");
-        }else {
+        } else {
             session.setAttribute("User", userEntity);
+            session.setAttribute("Id", userEntity.getId());
             session.setAttribute("fullName", userEntity.getFullName());
             session.setAttribute("numberPhone", userEntity.getPhone());
             session.setAttribute("email", userEntity.getEmail());
@@ -38,11 +39,13 @@ public class LoginControl extends HttpServlet {
             session.setAttribute("district", userEntity.getDistrict());
             session.setAttribute("ward", userEntity.getWard());
             session.setAttribute("numHouse", userEntity.getNumHouse());
+
             request.getRequestDispatcher("indexAdmin.jsp").forward(request, response);
-            if (userEntity.getRoleId().equals("R1")){
+
+            if (userEntity.getRoleId().equals("R1")) {
                 url = ADSUCCESS;
                 session.setAttribute("Success", userEntity.getFullName());
-            }else{
+            } else {
                 url = SUCCESS;
                 session.setAttribute("Success", userEntity.getFullName());
             }

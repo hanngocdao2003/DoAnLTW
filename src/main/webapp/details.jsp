@@ -1,5 +1,7 @@
 <%@ page import="bean.ProductResponse" %>
 <%@ page import="java.util.List" %>
+<%@ page import="java.security.Provider" %>
+<%@ page import="bean.ShoppingCart" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,10 +19,19 @@
     <link rel="stylesheet" href="View/styleWeb/color.css">
     <script src="View/JSWeb/addPart.js"></script>
     <script src="View/JSWeb/JSDetails.js"></script>
+
+    <script type="text/javascript" src="View/JSWeb/jquery-3.7.1.js"></script>
+
     <title>Chi tiết đơn hàng</title>
 </head>
 <body>
 <header>
+    <%
+        ShoppingCart cart = (ShoppingCart) session.getAttribute("cart");
+        if(cart == null) {
+            cart = new ShoppingCart();
+        }
+    %>
     <div class="firstArea">
         <div class="logo_search_cart">
             <div class="logo">
@@ -33,7 +44,9 @@
                     <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
             </div>
-            <a href="" class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="" class="cart"><i class="fa-solid fa-cart-shopping"></i><span>
+                            <%= cart.getTotalItem() %>
+                        </span></a>
             <a href="indexLogin.jsp" class="user"><i class="fa-solid fa-user"></i></a>
         </div>
     </div>
@@ -88,18 +101,18 @@
         </div>
     </div>
 </header>
-<div class="container">
-    <%
-        ProductResponse p = (ProductResponse) request.getAttribute("productDetail");
-        System.out.println(p);
-        if (p != null) {
-    %>
+<%
+    ProductResponse p = (ProductResponse) request.getAttribute("productDetail");
+    System.out.println(p);
+    if (p != null) {
+%>
+<div class="container" id="product" product-id="<%=p.getId()%>">
+
     <div class="img-product">
         <div class="mini-img-product">
             <img src="Image/Product/<%= p.getImage()%>" alt="">
 
         </div>
-        <%}%>
         <div class="zoom-image-product">
             <img src="Image/Product/<%= p.getImage() %>" alt="">`
         </div>
@@ -125,27 +138,28 @@
                 <%
                     String colors = p.getColor();
                     String[] arrColor = colors.split(",");
-                    for (String c : arrColor) {
+
+                    for (int i = 0; i < arrColor.length; i++) {
+                        String c = arrColor[i];
                 %>
-<%--                bị lỗi kệ nó, không sao hết nhé--%>
-                <button id="btn-black" class="btn black" style="background-color: #<%=c.trim()%>;"></button>
+                <button class="btn button color" style="background-color: #<%=c.trim()%>;" value="#<%=c.trim()%>"></button>
                 <%}%>
             </div>
             <p class="size" style="margin-bottom: 5px; font-weight: bold;">Kích thước:</p>
             <%
                 String sizes = p.getSize();
                 String[] arr = sizes.split(",");
-                for (String size : arr) {
+                for (int i = 0; i < arr.length; i++) {
+                    String s = arr[i];
             %>
-            <button class="size-btn s"><%=size.trim()%>
-            </button>
+            <button class="button size-btn size" value="<%=s.trim()%>"><%=s.trim()%></button>
             <%}%>
             <div class="add" style="margin-bottom: 10px;">
-                <button class="add-pd"><i class="fa-solid fa-cart-shopping"
-                                          style="color: #fff; margin-left: 5px;"></i>Thêm vào
-                    giỏ hàng
-                </button>
-<%--                <button class="buy-btn"><i class="fa-solid fa-bag-shopping"></i>Mua ngay</button>--%>
+                    <button class="add-pd add-cart"><i class="fa-solid fa-cart-shopping"
+                                              style="color: #fff; margin-left: 5px;"></i>Thêm vào giỏ hàng
+
+
+                    </button>
             </div>
         </div>
         <hr style="margin-bottom: 20px;">
@@ -173,8 +187,8 @@
             <li>Không là lên chi tiết trang trí</li>
         </ul>
     </div>
-    <%%>
 </div>
+<%}%>
 
 <script>
     document.body.innerHTML += addFooter();

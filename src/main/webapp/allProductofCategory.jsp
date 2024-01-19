@@ -23,9 +23,6 @@
     <title>Bộ sưu tập</title>
 </head>
 <body>
-<% List<ProductResponse> productResponses = (List<ProductResponse>) request.getAttribute("products");
-
-%>
 <header>
     <div class="firstArea">
         <div class="logo_search_cart">
@@ -105,13 +102,14 @@
 <div class="page1 page">
     <ul class="listItemProduct" id="allOfCategory">
         <%
-            for (ProductResponse p : productResponses) {
+            List<ProductResponse> productResponses = (List<ProductResponse>) request.getAttribute("products");
+            if (productResponses != null) {
+                for (ProductResponse p : productResponses
+                ) {
         %>
         <li class="itemProduct">
-            <a href="detailsProduct?productId=<%=p.getId()%>"><img src="Image/Product/<%=p.getImage()%>" alt=""
-                                                                   class="imageProduct"></a>
-            <a href="" class="linkProduct"><%=p.getName()%>
-            </a>
+            <a href="detailsProduct?productId=<%=p.getId()%>"><img src="Image/Product/<%=p.getImage()%>" alt="" class="imageProduct"></a>
+            <a href="detailsProduct?productId=<%=p.getId()%>" class="linkProduct"><%=p.getName()%></a>
             <div class="evalute"><span>Đánh giá: <ul class="fiveStar">
                 <li><i class="fa-solid fa-star"></i></li>
                 <li><i class="fa-solid fa-star"></i></li>
@@ -121,8 +119,10 @@
             </ul></span></div>
             <p class="priceProduct"><%=p.getPrice()%>
             </p>
+
         </li>
         <%
+                }
             }
         %>
     </ul>
