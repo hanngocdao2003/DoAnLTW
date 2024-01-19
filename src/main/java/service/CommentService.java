@@ -20,12 +20,14 @@ public class CommentService {
         return true;
     }
     public List<CommentReponse> listCommentOfUser() throws SQLException {
-        return new CommentForWebDAO().commentsForWeb();
+        CommentForWebDAO comment = new CommentForWebDAO();
+        List<CommentReponse> list = comment.commentsForWeb();
+        return  list;
     }
-    public String print(List<CommentReponse> list){
+    private String print(List<CommentReponse> list){
         String result = "";
         for(CommentReponse c : list){
-            result += c;
+            result += c + "\n";
         }
         return result;
     }

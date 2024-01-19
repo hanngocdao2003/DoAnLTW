@@ -24,7 +24,7 @@ public class ReceiveComment extends HttpServlet {
         String feedback = req.getParameter("feedback");
         System.out.println(feedback);
         HttpSession session = req.getSession();
-        UserEntity userId = (UserEntity) session.getAttribute("User_Login");
+        UserEntity userId = (UserEntity) session.getAttribute("User");
         System.out.println(userId);
         Date date_cmt = new Date(System.currentTimeMillis());
         System.out.println(date_cmt);

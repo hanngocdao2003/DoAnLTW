@@ -83,15 +83,15 @@ public class UserDAO {
     }
 
 
-    public boolean addUser(UserEntity user) {
-
-        String query = "insert into shopquanao.users (fullName, phone, email, password) values (?,?,?,?)";
+    public boolean addUser(UserEntity user, String token) {
+        String query = "insert into shopquanao.users (fullName, phone, email, password, token) values (?,?,?,?, ?)";
         try (Connection con = ConnectionUtils.getConnection()) {
             PreparedStatement pst = con.prepareStatement(query);
             pst.setString(1, user.getFullName());
             pst.setString(2, user.getPhone());
             pst.setString(3, user.getEmail());
             pst.setString(4, user.getPassword());
+            pst.setString(5, token);
 
             int row = pst.executeUpdate();
 
@@ -121,7 +121,7 @@ public class UserDAO {
     }
 
     public boolean updatePass(String phone, String pass) {
-        String query = "update users set password = ? where phone = ?";
+        String query = "update users set password = ? where phone = ? and status = 1";
         try {
             Connection con = ConnectionUtils.getConnection();
             PreparedStatement preparedStatement = con.prepareStatement(query);
@@ -160,5 +160,26 @@ public class UserDAO {
     public static void main(String[] args) {
         UserDAO userDAO = new UserDAO();
 
+    }
+
+    public boolean verifyUser(String email, String token) throws SQLException {
+        String sql = "SELECT email, token FROM users WHERE email = ? AND token = ?";
+        Connection con = ConnectionUtils.getConnection();
+        PreparedStatement statement = con.prepareStatement(sql);
+        statement.setString(1, email);
+        statement.setString(2, token);
+        ResultSet resultSet = statement.executeQuery();
+        boolean checkVerify = resultSet.next();
+        resultSet.close();
+        statement.close();
+        if(checkVerify) {
+            String  sqlUpdate = "UPDATE users SET token = NULL WHERE email = ?";
+            statement = con.prepareStatement(sqlUpdate);
+            statement.setString(1, email);
+            statement.executeUpdate();
+            statement.close();
+        }
+
+        return checkVerify;
     }
 }

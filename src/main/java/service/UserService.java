@@ -4,6 +4,7 @@ import bean.UserEntity;
 import dao.UserDAO;
 import utils.EmailVerification;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class UserService {
@@ -25,17 +26,16 @@ public class UserService {
 
         // Kiểm tra xem người dùng đã tồn tại hay chưa
         UserEntity existingUser = checkLogin(user.getPhone(), user.getPassword());
-        boolean registrationSuccess = userDAO.addUser(user);
         if (existingUser != null) {
             // Người dùng đã tồn tại, không thể đăng ký
             return false;
-        } else {
-            if (registrationSuccess) {
-                // Nếu đăng ký thành công, tạo token và gửi email xác nhận
-                String token = EmailVerification.generateToken();
-                EmailVerification.sendVerificationEmail(user.getEmail(), token);
-            }
         }
+
+        String token = EmailVerification.generateToken();
+        boolean registrationSuccess = userDAO.addUser(user, token);
+        if (registrationSuccess)
+            // Nếu đăng ký thành công, tạo token và gửi email xác nhận
+            EmailVerification.sendVerificationEmail(user.getEmail(), token);
         return registrationSuccess;
     }
 
@@ -50,5 +50,8 @@ public class UserService {
     public static void main(String[] args) {
     }
 
+    public static boolean verifyUser(String email, String token) throws SQLException {
+        return new UserDAO().verifyUser(email, token);
+    }
 }
 

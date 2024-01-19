@@ -5,28 +5,14 @@
     box-sizing: border-box;
     font-size: 20px;
 }
-
 body {
     background: var(--back-admin);
     position: relative;
 
 }
-#logOut{
-    position: absolute;
-    right: 10%;
+#panel7{
+    width: 100%;
 }
-.logOut {
-    font-size: 22px;
-    padding: 5px 10px;
-    background-color: rgb(115, 141, 171);
-    color: white;
-    border-radius: 10px;
-}
-.logOut:hover{
-    background-color: #75625e;
-    cursor: pointer;
-}
-
 .logo {
     background: var(--back-product);
     display: flex;
@@ -39,7 +25,6 @@ body {
     width: 100%;
     z-index: 1;
 }
-
 .logo > img {
     width: 100px;
     height: 100px;
@@ -49,7 +34,6 @@ body {
     color: var(--font-o);
     font-size: 30px;
 }
-
 .center .left_panel .menu_bar .bar {
     display: flex;
     flex-direction: column;
@@ -130,22 +114,6 @@ body {
     color: white !important;
     background-color: var(--font);
 }
-.linkUploadCommentAdmin{
-    text-decoration: none;
-}
-
-/* .center .left_panel .menu_bar .bar .button_logout {
-    margin-bottom: 100%;
-} */
-
-/* .center {
-    display: flex;
-} */
-
-/* .left_panel {
-    width: 18%;
-} */
-
 .center .info_panel {
     width: 82%;
     display: flex;
@@ -158,24 +126,13 @@ body {
     height: 100%;
 
 }
-
-/* Xong phần khung trang admin */
-#panel1 {
-    display: block;
-}
-
-#panel1 > h2 {
-    font-size: 40px !important;
-    font-family: 'Pacifico';
-}
-
 table {
     width: 100%;
     border-collapse: collapse;
 }
 
 th, td {
-    text-align: left;
+    text-align: center;
     padding: 15px;
 }
 
@@ -227,3 +184,44 @@ input[type = "checkbox"] {
     width: 20px;
     height: 20px;
 }
+td{
+    text-align: center;
+}
+.main_label > .btn_upload {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+.main_label > .btn_upload > button {
+    padding: 15px 10px;
+    font-size: 22px;
+    border-radius: 20px;
+    background-color: rgb(115, 141, 171);
+    color: white;
+}
+.main_label > .btn_upload > button:hover {
+    background-color: #75625e;
+    cursor: pointer;
+}
+#logOut{
+    position: absolute;
+    right: 10%;
+}
+.logOut {
+    font-size: 22px;
+    padding: 5px 10px;
+    background-color: rgb(115, 141, 171);
+    color: white;
+    border-radius: 10px;
+}
+.logOut:hover{
+    background-color: #75625e;
+    cursor: pointer;
+}
+.btn_check{
+    padding: 5px 10px;
+}
+
+

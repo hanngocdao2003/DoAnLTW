@@ -5,17 +5,19 @@ import bean.CommentReponse;
 import database.ConnectionUtils;
 
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 public class CommentForWebDAO {
-    private static final String INSERT_COMMENT_SQL = "INSERT INTO comment_for_web(id_user, feedback, date_cmt) VALUES (?, ?, ?)";
+    private static final String INSERT_COMMENT_SQL = "INSERT INTO comment_for_web(id_user, feedback, date_cmt, reader) VALUES (?, ?, ?, ?)";
     public boolean insertComment(int id_user, String feedback, Date date_cmt) {
         try (Connection connection = ConnectionUtils.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(INSERT_COMMENT_SQL)) {
             preparedStatement.setInt(1, id_user);
             preparedStatement.setString(2, feedback);
             preparedStatement.setDate(3, date_cmt);
+            preparedStatement.setInt(4, 0);
 
             preparedStatement.executeUpdate();
             return true;
@@ -43,17 +45,18 @@ public class CommentForWebDAO {
         }
         return comments;
     }
-    public String print(List<CommentReponse> list){
+    private String print(List<CommentReponse> list){
         String result = "";
         for(CommentReponse c : list){
-            result += c;
+            result += c + "\n";
         }
         return result;
     }
 
     public static void main(String[] args) throws SQLException {
         CommentForWebDAO dao = new CommentForWebDAO();
-        System.out.println(dao.print(dao.commentsForWeb()));
+//        dao.insertComment(2, "Tôi là Thanh Bình", Date.valueOf(LocalDate.now()));
+//        System.out.println(dao.print(dao.commentsForWeb()));
     }
 
 }

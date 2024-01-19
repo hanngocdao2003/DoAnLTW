@@ -18,7 +18,7 @@
 <!--    <i class="fa-regular fa-circle-xmark" style="color: #ff8080;"></i>-->
 <!--        </span>-->
     </div>
-    <form action="/changePass" class="form" method="post">
+    <form action="changePass" class="form" method="post">
         <div class="center">
             <input type="password" placeholder="Mật khẩu hiện tại" name="oldPass" required>
             <input type="password" placeholder="Mật khẩu mới" name="newPass1" required>

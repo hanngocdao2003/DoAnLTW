@@ -24,6 +24,8 @@ public class SignUp extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
         try {
             // Lấy thông tin từ form
             String fullName = request.getParameter("inputName");
@@ -51,9 +53,7 @@ public class SignUp extends HttpServlet {
 
             if (verificationSuccess) {
                 UserDAO.verifyUser(phoneNumber);
-                response.sendRedirect("verification-success.jsp");
-            } else {
-                response.sendRedirect("verification-fail.jsp");
+                new Verify();
             }
         } catch (Exception e) {
             e.printStackTrace();
