@@ -37,8 +37,8 @@ public class ChangePasswordServlet extends HttpServlet {
         } else {
             if (newPass1.equals(newPass2)) {
                 UserService.updatePass(phone, newPass1);
-                session.setAttribute("password", newPass1);
-              //  req.getRequestDispatcher("indexLogin.jsp").forward(req, resp);
+                //session.setAttribute("password", newPass1);
+                req.getRequestDispatcher("indexLogin.jsp").forward(req, resp);
             }
         }
     }
