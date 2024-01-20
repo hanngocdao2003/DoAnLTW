@@ -138,6 +138,24 @@ public class UserDAO {
         return false;
     }
 
+    public boolean updatePassByCode(String code, String pass) {
+        String query = "update users set password = ? where token = ? and status = 1";
+        try {
+            Connection con = ConnectionUtils.getConnection();
+            PreparedStatement preparedStatement = con.prepareStatement(query);
+
+            preparedStatement.setString(1, pass);
+            preparedStatement.setString(2, code);
+
+            int row = preparedStatement.executeUpdate();
+
+            return row > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
     public String getPass(String phone) {
         UserEntity user = new UserEntity();
         String query = "select password from users where phone = " + phone;
@@ -157,11 +175,6 @@ public class UserDAO {
         return user.getPassword();
     }
 
-    public static void main(String[] args) {
-        UserDAO userDAO = new UserDAO();
-
-    }
-
     public boolean verifyUser(String email, String token) throws SQLException {
         String sql = "SELECT email, token FROM users WHERE email = ? AND token = ?";
         Connection con = ConnectionUtils.getConnection();
@@ -172,8 +185,8 @@ public class UserDAO {
         boolean checkVerify = resultSet.next();
         resultSet.close();
         statement.close();
-        if(checkVerify) {
-            String  sqlUpdate = "UPDATE users SET token = NULL WHERE email = ?";
+        if (checkVerify) {
+            String sqlUpdate = "UPDATE users SET token = NULL WHERE email = ?";
             statement = con.prepareStatement(sqlUpdate);
             statement.setString(1, email);
             statement.executeUpdate();
@@ -181,5 +194,81 @@ public class UserDAO {
         }
 
         return checkVerify;
+    }
+
+    public boolean checkEmail(String email) {
+        UserEntity user = new UserEntity();
+        String query = "select email from users where email = ? and status = 1";
+
+        try {
+            Connection con = ConnectionUtils.getConnection();
+            PreparedStatement preparedStatement = con.prepareStatement(query);
+            preparedStatement.setString(1, email);
+            ResultSet rs = preparedStatement.executeQuery();
+
+            return rs.next();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public boolean saveCode(String email, String token) {
+        String sql = "UPDATE users SET token = ? WHERE email = ? AND status = 1";
+        Connection con = ConnectionUtils.getConnection();
+        PreparedStatement statement = null;
+        try {
+            statement = con.prepareStatement(sql);
+            statement.setString(1, token);
+            statement.setString(2, email);
+
+            int row = statement.executeUpdate();
+
+            return row > 0;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public boolean deleteCode(String email) {
+        String sql = "UPDATE users SET token = NULL WHERE email = ? AND status = 1";
+        Connection con = ConnectionUtils.getConnection();
+        PreparedStatement statement = null;
+        try {
+            statement = con.prepareStatement(sql);
+            statement.setString(1, email);
+
+            int row = statement.executeUpdate();
+
+            return row > 0;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public String getEmail(String token) {
+        UserEntity user = new UserEntity();
+        String query = "select email from users where token = ? and status = 1";
+
+        try {
+            Connection con = ConnectionUtils.getConnection();
+            PreparedStatement preparedStatement = con.prepareStatement(query);
+            preparedStatement.setString(1, token);
+            ResultSet rs = preparedStatement.executeQuery();
+
+            if (rs.next()) {
+                user.setEmail(rs.getString("email"));
+            }
+            return user.getEmail();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static void main(String[] args) {
+        UserDAO userDAO = new UserDAO();
     }
 }

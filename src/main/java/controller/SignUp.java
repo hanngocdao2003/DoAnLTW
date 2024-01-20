@@ -41,6 +41,9 @@ public class SignUp extends HttpServlet {
                 response.sendRedirect("error.jsp?message=InvalidParameters");
                 return;
             }
+            if (password.equals(repassword)) {
+                request.setAttribute("password", "Vui lòng nhập đúng mật khẩu");
+            }
 
             // Tạo user
             UserEntity user = new UserEntity();
@@ -51,8 +54,11 @@ public class SignUp extends HttpServlet {
 
             boolean verificationSuccess = UserService.registerUser(user);
 
-            if (verificationSuccess) {
+            if (!verificationSuccess) {
+                request.setAttribute("fail", "Tài khoản đã tồn tại.");
+            } else {
                 UserDAO.verifyUser(phoneNumber);
+                response.sendRedirect("verifying.jsp");
                 new Verify();
             }
         } catch (Exception e) {

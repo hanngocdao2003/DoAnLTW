@@ -1,14 +1,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Xác thực thành công</title>
+    <title>Xác thực tài khoản</title>
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        body{
+
+        body {
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -17,7 +18,7 @@
     </style>
 </head>
 <body>
-<h2>Xác thực tài khoản thành công!</h2>
-<p>Bạn có thể đăng nhập ngay <a href="indexLogin.jsp">Đăng nhập</a>!</p>
+<h2>Vui lòng xác thực tài khoản!</h2>
+<p>Link xác thực đã được gửi đến email của bạn!</p>
 </body>
 </html>

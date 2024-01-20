@@ -4,46 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="View/styleWeb/styleForgetPass.css">
-    <link rel="stylesheet" href="View/styleWeb/color.css">
+    <link rel="stylesheet" href="View/styleWeb/styleChangePass.css">
     <link rel="stylesheet" href="Image/fontawesome-free-6.4.2-web/css/all.min.css">
     <link rel="stylesheet" href="View/styleWeb/styleFooter.css">
     <link rel="icon" href="Image/BHD-html.png" type="image/x-icon">
-    <title>Quên mật khẩu</title>
+    <title>Thiết lập lại mật khẩu</title>
 </head>
 <body>
 <div id="container">
     <div class="header">
-        <p>Quên mật khẩu</p>
-        <span>
-    <i class="fa-regular fa-circle-xmark" style="color: #ff8080;"></i>
-        </span>
+        <p>Thiết lập lại mật khẩu</p>
+        <!--        <span>-->
+        <!--    <i class="fa-regular fa-circle-xmark" style="color: #ff8080;"></i>-->
+        <!--        </span>-->
     </div>
-    <form action="ForgetPasswordServlet" class="form" method="post">
+    <form action="ResetPasswordServlet" class="form" method="post">
         <div class="center">
-            <input type="email" id="email" placeholder="Email" name="email">
+            <input type="text" placeholder="Mã xác nhận" name="code" required>
+            <input type="password" placeholder="Mật khẩu mới" name="newPass1" required>
+            <input type="password" placeholder="Nhập lại mật khẩu mới" name="newPass2" required>
         </div>
         <%
-            String error = (String) request.getAttribute("fail");
-            if (error != null) {
+            String error = (String) request.getAttribute("NotEqual");
         %>
         <span><%= error%></span>
-        <%}%>
+
         <div class="button">
-            <input type="submit" value="khôi phục" style="
-    padding: 10px 20px;
-    text-transform: uppercase;
-    background-color: var(--back);
-    color: var(--font);
-    border-radius: 10px;
-    border-color: var(--font-o);
-">
+            <input type="submit" value="Thiết lập lại mật khẩu">
         </div>
     </form>
-    <div class="footer">
-        <p>Bạn đã nhớ mật khẩu?</p>
-        <a href="indexLogin.jsp">Trở về đăng nhập</a>
-    </div>
 </div>
 <footer>
     <div class="contain">
@@ -65,6 +54,7 @@
             <ul>
                 <li><a href="policy-7days.jsp">Chính sách đổi trả 7 ngày</a></li>
                 <li><a href="">Chính sách khuyến mãi</a></li>
+                <li><a href="">Chính sách bảo mật</a></li>
                 <li><a href="">Chính sách giao hàng</a></li>
             </ul>
             <div class="media">

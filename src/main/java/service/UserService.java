@@ -43,15 +43,35 @@ public class UserService {
         return new UserDAO().updatePass(phone, pass);
     }
 
+    public static boolean updatePassByCode(String code, String pass) {
+        return new UserDAO().updatePassByCode(code, pass);
+    }
+
     public static String getPass(String phone) {
         return new UserDAO().getPass(phone);
     }
 
-    public static void main(String[] args) {
-    }
-
     public static boolean verifyUser(String email, String token) throws SQLException {
         return new UserDAO().verifyUser(email, token);
+    }
+
+    public static boolean checkEmail(String email) {
+        return new UserDAO().checkEmail(email);
+    }
+
+    public static boolean saveCode(String email, String code) {
+        return new UserDAO().saveCode(email, code);
+    }
+
+    public static boolean deleteCode(String email) {
+        return new UserDAO().deleteCode(email);
+    }
+
+    public static String getEmail(String code) {
+        return new UserDAO().getEmail(code);
+    }
+
+    public static void main(String[] args) {
     }
 }
 

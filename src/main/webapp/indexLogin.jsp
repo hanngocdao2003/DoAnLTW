@@ -12,7 +12,7 @@
     <script src="View/JSWeb/jquery-3.7.1.js"></script>
     <script src="View/JSWeb/LoginEvent.JS"></script>
     <title>Đăng Nhập</title>
-   
+
 </head>
 
 <body>
@@ -21,20 +21,22 @@
         <a href="index.jsp"><img src="Image/BHD-nền%20trong%20suốt.svg" alt="" class="logo"></a>
         <form action="LoginControl" class="formSignIn" method="post">
             <h1 class="titleSignIn">Đăng nhập</h1>
-            <%String error = (String) request.getAttribute("Error");
-            if(error != null){
+            <%
+                String error = (String) request.getAttribute("Error");
+                if (error != null) {
             %>
             <span><%= error%></span>
             <%}%>
             <div class="NameAcc">
-                <label for="inputNumPhone" class="label" >Số điện thoại:</label>
-                <input type="text" id="inputNumPhone" placeholder="Nhập số điện thoại" name = "userName">
+                <label for="inputNumPhone" class="label">Số điện thoại:</label>
+                <input type="text" id="inputNumPhone" placeholder="Nhập số điện thoại" name="userName">
             </div>
             <div class="passAcc">
                 <label for="inputPass" class="label">Mật khẩu:</label>
                 <div class="passplace">
-                    <input type="password" id="inputPass" placeholder="Nhập mật khẩu" autocomplete="current-password" name="password">
-                    <div  class="hidden-appear" id="hidden-appear-SinIn-pass">
+                    <input type="password" id="inputPass" placeholder="Nhập mật khẩu" autocomplete="current-password"
+                           name="password">
+                    <div class="hidden-appear" id="hidden-appear-SinIn-pass">
                         <i class="fa-regular fa-eye" id="eye"></i>
                     </div>
                 </div>
@@ -61,6 +63,12 @@
                     <i class="fa-solid fa-share"></i>
                     Trở lại đăng nhập
                 </a>
+                <%
+                    String fail = (String) request.getAttribute("fail");
+                    if (fail != null) {
+                %>
+                <span><%= fail%></span>
+                <%}%>
             </div>
             <div class="NameUser">
                 <label for="inputName" class="label">Họ và tên:</label>
@@ -73,7 +81,8 @@
             </div>
             <div class="NameAcc">
                 <label for="inputNumPhoneRect" class="label">Số điện thoại:</label>
-                <input type="text" id="inputNumPhoneRect" placeholder="Nhập số điện thoại" required name="inputNumPhoneRect">
+                <input type="text" id="inputNumPhoneRect" placeholder="Nhập số điện thoại" required
+                       name="inputNumPhoneRect">
 
             </div>
             <div class="password_Area">
@@ -81,9 +90,10 @@
                     <label for="inputPassRect" class="label">Mật khẩu:</label>
                     <div class="passplace">
 
-                        <input type="password" id="inputPassRect" placeholder="Nhập mật khẩu" required name="inputPassRect">
+                        <input type="password" id="inputPassRect" placeholder="Nhập mật khẩu" required
+                               name="inputPassRect">
 
-                        <div  class="hidden-appear" id="hidden-appear-SingUp-pass">
+                        <div class="hidden-appear" id="hidden-appear-SingUp-pass">
                             <i class="fa-regular fa-eye" id="eye"></i>
                         </div>
                     </div>
@@ -99,6 +109,12 @@
                     </div>
                 </div>
             </div>
+            <%
+                String password = (String) request.getAttribute("password");
+                if (password != null) {
+            %>
+            <span><%= password%></span>
+            <%}%>
             <div class="buttonSubmit Register">
                 <input type="submit" class="button" value="Đăng ký">
             </div>
