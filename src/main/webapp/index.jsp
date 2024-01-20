@@ -89,10 +89,10 @@
                 </form>
             </button>
             <ul class="Menupage">
-                <a href="index.html" class="linkpage Home">
+                <a href="index.jsp" class="linkpage Home">
                     <li class="Item_menuPage">Trang chủ</li>
                 </a>
-                <a href="" class="linkpage Shop">
+                <a href="allProductofCategory.jsp" class="linkpage Shop">
                     <li class="Item_menuPage ">Cửa hàng</li>
                 </a>
                 <a href="collection.jsp" class="linkpage Collection">

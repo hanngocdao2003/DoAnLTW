@@ -20,18 +20,28 @@ public class CommentService {
         return true;
     }
     public List<CommentReponse> listCommentOfUser() throws SQLException {
-        return new CommentForWebDAO().commentsForWeb();
+        CommentForWebDAO comment = new CommentForWebDAO();
+        List<CommentReponse> list = comment.commentsForWeb();
+        return  list;
     }
-    public String print(List<CommentReponse> list){
+    public boolean checkCmt(int id) throws SQLException {
+        CommentForWebDAO dao = new CommentForWebDAO();
+        String result = dao.checkCmtForAdmin(id);
+        if(result.isEmpty()){
+            return true;
+        }
+        return false;
+    }
+    private String print(List<CommentReponse> list){
         String result = "";
         for(CommentReponse c : list){
-            result += c;
+            result += c + "\n";
         }
         return result;
     }
     public static void main(String[] args) throws SQLException {
        CommentService cmt = new CommentService();
-        System.out.println(cmt.print(cmt.listCommentOfUser()));
+        //System.out.println(cmt.print(cmt.listCommentOfUser()));
     }
 
 }

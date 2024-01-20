@@ -7,6 +7,15 @@ public class CommentForWeb {
     private int id_user;
     private String feedback;
     private Date date_cmt;
+    private int reader;
+
+    public int getReader() {
+        return reader;
+    }
+
+    public void setReader(int reader) {
+        this.reader = reader;
+    }
 
     public int getId() {
         return id;
@@ -47,6 +56,7 @@ public class CommentForWeb {
                 ", id_user=" + id_user +
                 ", feedback='" + feedback + '\'' +
                 ", date_cmt=" + date_cmt +
+                ", reader=" + reader +
                 '}';
     }
 }

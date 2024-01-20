@@ -2,6 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.util.Collections" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,6 +29,10 @@
 <header class="logo">
     <img src="Image/BHD-nền%20trong%20suốt.svg" alt="">
     <h3 style="font-family: 'Brush Script MT', cursive">BHD Boutique</h3>
+    <form action="LogOut" method="post" id="logOut">
+        <button class="logOut">Đăng xuất</button>
+    </form>
+
 </header>
 
 <div class="center" style="display: flex;">
@@ -66,28 +71,23 @@
                             <i class="fa-solid fa-circle" style="color: var(--border);"></i>
                             Quản lý người dùng
                         </li>
-                        <li class="item" onclick="handleClick(this, 'panel7')">
-                            <i class="fa-solid fa-circle" style="color: var(--border);"></i>
-                            Phản hồi người dùng
-                        </li>
+                        <a href="uploadCmt" class="linkUploadCommentAdmin">
+                            <li class="item" onclick="handleClick(this, 'panel7')">
+                                <i class="fa-solid fa-circle" style="color: var(--border);"></i>
+                                Phản hồi người dùng
+                            </li>
+                        </a>
                         <li class="item" onclick="handleClick(this, 'panel_addSlide')">
                             <i class="fa-solid fa-circle" style="color: var(--border);"></i>
                             Thêm trình chiếu
                         </li>
-                        <a href="../View/indexChangePass.html" style="text-decoration: none">
+                        <a href="indexForgetPass.jsp" style="text-decoration: none">
                             <li class="item">
                                 <i class="fa-solid fa-circle" style="color: var(--border);"></i>
                                 Đổi mật khẩu
                             </li>
                         </a>
                     </ul>
-                </div>
-                <div class="button_logout" style="margin-bottom: 100%;">
-                    <a href="indexLogin.jsp">
-                        <button><i class="fa-solid fa-right-from-bracket" style="color: var(--border);"></i>
-                            Đăng xuất
-                        </button>
-                    </a>
                 </div>
             </div>
         </nav>
@@ -410,55 +410,42 @@
             </div>
         </div>
         <!-- Chức năng phản hồi người dùng -->
-        <div class="reply" id="panel7">
-            <div class="search-reply">
-                <form action="" id="form_search">
-                    <div class="search">
-                        <input type="text" class="input" placeholder="Tìm kiếm theo tên">
-                        <button class="btn_search">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </button>
-                    </div>
-                    <div class="filter">
-                        <select name="filter-select" id="filter-select">
-                            <option value="alphabet">Sắp xếp theo chưa đọc</option>
-                            <option value="alphabet">Sắp xếp theo chưa phản hồi</option>
-                        </select>
-                    </div>
-                </form>
-            </div>
-            <div id="content">
-                <form class="main_label" action="your-servlet-url" method="post">
-                    <table id="table3">
-                        <thead>
-                        <tr>
-                            <th class="label">Số thứ tự</th>
-                            <th class="label">Tên khách hàng</th>
-                            <th class="label">Nội dung phản hồi</th>
-                            <th class="label">Ngày bình luận</th>
-                            <th class="label">Đánh dấu đã đọc</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <%--                        <%--%>
-                        <%--                            List<CommentReponse> comments = (List<CommentReponse>) request.getAttribute("comments");--%>
-                        <%--                            for (CommentReponse comment : comments) {--%>
-                        <%--                        %>--%>
-                        <%--                        <tr>--%>
-                        <%--                            <td><p><%= comment.getId() %></p></td>--%>
-                        <%--                            <td><p><%= comment.getNameUser() %></p></td>--%>
-                        <%--                            <td><p><%= comment.getFeedback() %></p></td>--%>
-                        <%--                            <td><p><%= new SimpleDateFormat("dd/MM/yyyy").format(comment.getDate_cmt()) %></p></td>--%>
-                        <%--                            <td><input type="checkbox" id="checkbox_<%= comment.getId() %>"></td>--%>
-                        <%--                        </tr>--%>
-                        <%--                        <%--%>
-                        <%--                            }--%>
-                        <%--                        %>--%>
-                        </tbody>
-                    </table>
-                </form>
-            </div>
-        </div>
+        <%--        <div class="reply" id="panel7">--%>
+        <%--            &lt;%&ndash;            <div class="search-reply">&ndash;%&gt;--%>
+        <%--            &lt;%&ndash;                <form action="" id="form_search">&ndash;%&gt;--%>
+        <%--            &lt;%&ndash;                    <div class="search">&ndash;%&gt;--%>
+        <%--            &lt;%&ndash;                        <input type="text" class="input" placeholder="Tìm kiếm theo tên">&ndash;%&gt;--%>
+        <%--            &lt;%&ndash;                        <button class="btn_search">&ndash;%&gt;--%>
+        <%--            &lt;%&ndash;                            <i class="fa-solid fa-magnifying-glass"></i>&ndash;%&gt;--%>
+        <%--            &lt;%&ndash;                        </button>&ndash;%&gt;--%>
+        <%--            &lt;%&ndash;                    </div>&ndash;%&gt;--%>
+        <%--            &lt;%&ndash;                    <div class="filter">&ndash;%&gt;--%>
+        <%--            &lt;%&ndash;                        <select name="filter-select" id="filter-select">&ndash;%&gt;--%>
+        <%--            &lt;%&ndash;                            <option value="alphabet">Sắp xếp theo chưa đọc</option>&ndash;%&gt;--%>
+        <%--            &lt;%&ndash;                            <option value="alphabet">Sắp xếp theo chưa phản hồi</option>&ndash;%&gt;--%>
+        <%--            &lt;%&ndash;                        </select>&ndash;%&gt;--%>
+        <%--            &lt;%&ndash;                    </div>&ndash;%&gt;--%>
+        <%--            &lt;%&ndash;                </form>&ndash;%&gt;--%>
+        <%--            &lt;%&ndash;            </div>&ndash;%&gt;--%>
+        <%--            <div id="content">--%>
+        <%--                <form class="main_label" action="uploadCmt" method="post">--%>
+        <%--                    <table id="table3">--%>
+        <%--                        <thead>--%>
+        <%--                        <tr>--%>
+        <%--                            <th class="label">Số thứ tự</th>--%>
+        <%--                            <th class="label">Tên khách hàng</th>--%>
+        <%--                            <th class="label">Nội dung phản hồi</th>--%>
+        <%--                            <th class="label">Ngày bình luận</th>--%>
+        <%--                            <th class="label">Đánh dấu đã đọc</th>--%>
+        <%--                        </tr>--%>
+        <%--                        </thead>--%>
+        <%--                    </table>--%>
+        <%--                    <div class="btn_upload">--%>
+        <%--                        <button  class="btn_show">Tải dữ liệu</button>--%>
+        <%--                    </div>--%>
+        <%--                </form>--%>
+        <%--            </div>--%>
+        <%--        </div>--%>
         <!-- Chức năng thêm slide cho trang chủ -->
         <div id="panel_addSlide">
             <form method="post" action="addSlide" enctype="multipart/form-data">

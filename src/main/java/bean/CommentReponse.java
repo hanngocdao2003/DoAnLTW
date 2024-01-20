@@ -7,6 +7,15 @@ public class CommentReponse {
     private String nameUser;
     private String feedback;
     private Date date_cmt;
+    private  int reader;
+
+    public int getReader() {
+        return reader;
+    }
+
+    public void setReader(int reader) {
+        this.reader = reader;
+    }
 
     public int getId() {
         return id;
