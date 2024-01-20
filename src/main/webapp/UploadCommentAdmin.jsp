@@ -28,7 +28,7 @@
                     <i class="fa-solid fa-lock" style="color: var(--border); font-size: 20px;"></i>
                     <h2 style="color: var(--font);">Admin</h2>
                 </div>
-                <div class="button_add_product" onclick="buttonClick('panel5')">
+                <div class="button_add_product">
                     <i class="fa-solid fa-plus" style="color: var(--border);"></i>
                     Thêm sản phẩm
                 </div>
@@ -56,13 +56,15 @@
                             <i class="fa-solid fa-circle" style="color: var(--border);"></i>
                             Quản lý người dùng
                         </li>
-                        <li class="item" onclick="handleClick(this, 'panel7')">
-                            <i class="fa-solid fa-circle" style="color: var(--border);"></i>
-                            Phản hồi người dùng
+                        <li class="item" onclick="handleClick(this, 'panel7')"
+                            style="border: 2px solid var(--font);border-radius: 20px;color: white !important;background-color: var(--font);">
+                            <a href="UploadCommentAdmin.jsp" style="color: white !important"><i class="fa-solid fa-circle"
+                                                                style="color: var(--border);"></i>
+                                Phản hồi người dùng</a>
                         </li>
                         <li class="item" onclick="handleClick(this, 'panel_addSlide')">
-                            <i class="fa-solid fa-circle" style="color: var(--border);"></i>
-                            Thêm trình chiếu
+                            <a href="indexAdmin.jsp" style="color: var(--font)"><i class="fa-solid fa-circle" style="color: var(--border);"></i>
+                                Thêm trình chiếu</a>
                         </li>
                         <a href="indexForgetPass.jsp" style="text-decoration: none">
                             <li class="item">
@@ -71,13 +73,6 @@
                             </li>
                         </a>
                     </ul>
-                </div>
-                <div class="button_logout" style="margin-bottom: 100%;">
-                    <a href="indexLogin.jsp">
-                        <button><i class="fa-solid fa-right-from-bracket" style="color: var(--border);"></i>
-                            Đăng xuất
-                        </button>
-                    </a>
                 </div>
             </div>
         </nav>
@@ -108,7 +103,7 @@
                         %>
                         <tr>
 
-<%--                            <% System.out.println(comments.get(i).getId());%>--%>
+                            <%--                            <% System.out.println(comments.get(i).getId());%>--%>
                             <td><%= i + 1 %>
                             </td>
                             <td><%= comments.get(i).getNameUser() %>
@@ -131,7 +126,7 @@
                 </form>
                 <form action="readCmt" class="btn_read_cmt">
                     <% for (Integer id : listID) { %>
-                    <input type="hidden" value="<%= id %>" name="IDcmt" />
+                    <input type="hidden" value="<%= id %>" name="IDcmt"/>
                     <% } %>
                     <input type="submit" class="button_read_all" value="Đã đọc tất cả">
                 </form>
