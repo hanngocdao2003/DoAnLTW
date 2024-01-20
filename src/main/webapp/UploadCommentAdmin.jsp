@@ -1,7 +1,7 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.List" %>
 <%@ page import="bean.CommentReponse" %>
+<%@ page import="java.util.ArrayList" %>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -94,24 +94,29 @@
                             <th class="label">Tên khách hàng</th>
                             <th class="label">Nội dung phản hồi</th>
                             <th class="label">Ngày bình luận</th>
-                            <th class="label">Đánh dấu đã đọc</th>
                         </tr>
                         </thead>
                         <tbody>
                         <%
                             List<CommentReponse> comments;
                             comments = (List<CommentReponse>) session.getAttribute("Comments");
-
+                            List<Integer> listID = new ArrayList<>();
                             System.out.println(comments);
-                            if(comments != null && !comments.isEmpty()) {
-                                for(CommentReponse c : comments){
+                            if (comments != null && !comments.isEmpty()) {
+                                for (int i = 0; i < comments.size(); i++) {
+                                    listID.add(comments.get(i).getId());
                         %>
                         <tr>
-                            <td><%= c.getId() %></td>
-                            <td><%= c.getNameUser() %></td>
-                            <td><%= c.getFeedback() %></td>
-                            <td><%= c.getDate_cmt() %></td>
-                            <td><input type="button" value="Đã đọc" class="btn_check"></td>
+
+<%--                            <% System.out.println(comments.get(i).getId());%>--%>
+                            <td><%= i + 1 %>
+                            </td>
+                            <td><%= comments.get(i).getNameUser() %>
+                            </td>
+                            <td><%= comments.get(i).getFeedback() %>
+                            </td>
+                            <td><%= comments.get(i).getDate_cmt() %>
+                            </td>
                         </tr>
                         <%
                             }
@@ -123,6 +128,12 @@
                         <% } %>
                         </tbody>
                     </table>
+                </form>
+                <form action="readCmt" class="btn_read_cmt">
+                    <% for (Integer id : listID) { %>
+                    <input type="hidden" value="<%= id %>" name="IDcmt" />
+                    <% } %>
+                    <input type="submit" class="button_read_all" value="Đã đọc tất cả">
                 </form>
             </div>
         </div>

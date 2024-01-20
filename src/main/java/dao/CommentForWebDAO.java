@@ -11,6 +11,7 @@ import java.util.List;
 
 public class CommentForWebDAO {
     private static final String INSERT_COMMENT_SQL = "INSERT INTO comment_for_web(id_user, feedback, date_cmt, reader) VALUES (?, ?, ?, ?)";
+
     public boolean insertComment(int id_user, String feedback, Date date_cmt) {
         try (Connection connection = ConnectionUtils.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(INSERT_COMMENT_SQL)) {
@@ -27,9 +28,10 @@ public class CommentForWebDAO {
         }
         return false;
     }
+
     public List<CommentReponse> commentsForWeb() throws SQLException {
         List<CommentReponse> comments = new ArrayList<>();
-        String sql = "SELECT comment_for_web.id, users.fullName, comment_for_web.feedback, comment_for_web.date_cmt FROM comment_for_web inner join users on users.id = comment_for_web.id_user;";
+        String sql = "SELECT comment_for_web.id, users.fullName, comment_for_web.feedback, comment_for_web.date_cmt FROM comment_for_web inner join users on users.id = comment_for_web.id_user where reader = 0;";
         try (Connection connection = ConnectionUtils.getConnection();
              PreparedStatement statement = connection.prepareStatement(sql);
              ResultSet resultSet = statement.executeQuery()) {
@@ -45,9 +47,21 @@ public class CommentForWebDAO {
         }
         return comments;
     }
-    private String print(List<CommentReponse> list){
+
+    public String checkCmtForAdmin(int id) throws SQLException {
         String result = "";
-        for(CommentReponse c : list){
+        String sql = "update comment_for_web set reader = 1 where id = ?";
+        Connection connection = ConnectionUtils.getConnection();
+        PreparedStatement statement = connection.prepareStatement(sql);
+        statement.setInt(1, id);
+        statement.executeUpdate();
+        result = print(commentsForWeb());
+        return result;
+    }
+
+    private String print(List<CommentReponse> list) {
+        String result = "";
+        for (CommentReponse c : list) {
             result += c + "\n";
         }
         return result;
@@ -56,7 +70,8 @@ public class CommentForWebDAO {
     public static void main(String[] args) throws SQLException {
         CommentForWebDAO dao = new CommentForWebDAO();
 //        dao.insertComment(2, "Tôi là Thanh Bình", Date.valueOf(LocalDate.now()));
-//        System.out.println(dao.print(dao.commentsForWeb()));
+        //       System.out.println(dao.print(dao.commentsForWeb()));
+        System.out.println(dao.checkCmtForAdmin(3));
     }
 
 }

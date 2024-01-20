@@ -220,8 +220,21 @@ td{
     background-color: #75625e;
     cursor: pointer;
 }
-.btn_check{
+.button_read_all{
+    font-size: 22px;
     padding: 5px 10px;
+    background-color: rgb(115, 141, 171);
+    color: white;
+    border-radius: 10px;
 }
-
+.button_read_all:hover{
+    background-color: #75625e;
+    cursor: pointer;
+}
+.btn_read_cmt{
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 

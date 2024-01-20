@@ -56,6 +56,7 @@ public class CommentForWeb {
                 ", id_user=" + id_user +
                 ", feedback='" + feedback + '\'' +
                 ", date_cmt=" + date_cmt +
+                ", reader=" + reader +
                 '}';
     }
 }
