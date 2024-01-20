@@ -22,10 +22,10 @@ public class Increase extends HttpServlet {
 
     private void IncreaseProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-        UserEntity userEntity = (UserEntity) session.getAttribute("User_Login");
-        if (userEntity == null) {
-            response.sendRedirect("indexLogin.jsp");
-        } else {
+//        UserEntity userEntity = (UserEntity) session.getAttribute("User_Login");
+//        if (userEntity == null) {
+//            response.sendRedirect("indexLogin.jsp");
+//        } else {
             ShoppingCart shoppingCarts = (ShoppingCart) session.getAttribute("cart");
             if (shoppingCarts == null) {
                 ShoppingCart shoppingCart = new ShoppingCart();
@@ -36,6 +36,6 @@ public class Increase extends HttpServlet {
             int quantity = Integer.parseInt(request.getParameter("quantity"));
             int productId = Integer.parseInt(request.getParameter("productId"));
             //shoppingCarts.increasingQuantity(productId, );
-        }
+//        }
     }
 }

@@ -37,11 +37,13 @@
     }
 
     .linkProduct {
+        color: brown;
         text-align: center;
         font-size: 20px;
         text-transform: uppercase;
         text-wrap: nowrap;
         overflow: hidden;
+        text-decoration: none;
     }
 
     .evalute>span {

@@ -10,7 +10,7 @@ function addFooter() {
           nhận được mọi ý kiến đóng góp từ khách
           hàng để có thể nâng cấp trải nghiệm dịch
           vụ và sản phẩm tốt hơn nữa. </p>
-        <a href="comment.html"><button class="idea-btn">Đóng góp ý kiến</button></a>
+<!--        <a href="comment.html"><button class="idea-btn">Đóng góp ý kiến</button></a>-->
       </div>
       <div class="list-policy">
         <p class="policy-lb">Chính sách</p>

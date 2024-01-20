@@ -34,11 +34,12 @@ function addCart() {
         };
 
         $.ajax({
-            url: '/addtocart',
+            url: '/maven_war_exploded/addtocart',
             type: 'POST',
             data: data,
             success: function (data) {
                 console.log(data.totalItems);
+                document.getElementById("totalitem").innerText = data.totalItems;
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 console.log(errorThrown);

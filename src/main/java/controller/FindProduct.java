@@ -56,7 +56,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@WebServlet(name = "findProduct", value = "/findProduct")
+@WebServlet(name = "Product", value = "/Product")
 public class FindProduct extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -69,7 +69,6 @@ public class FindProduct extends HttpServlet {
         request.setAttribute("products", productList);
         RequestDispatcher dispatcher = request.getRequestDispatcher("allProductofCategory.jsp");
         dispatcher.forward(request, response);
-
     }
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

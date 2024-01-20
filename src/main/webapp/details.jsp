@@ -44,7 +44,7 @@
                     <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
             </div>
-            <a href="" class="cart"><i class="fa-solid fa-cart-shopping"></i><span>
+            <a href="" class="cart"><i class="fa-solid fa-cart-shopping"></i><span id="totalitem">
                             <%= cart.getTotalItem() %>
                         </span></a>
             <a href="indexLogin.jsp" class="user"><i class="fa-solid fa-user"></i></a>

@@ -74,4 +74,30 @@ public class ProductService {
 
         return productResponse;
     }
+
+    public static ProductResponse findProductByImage(String image) {
+        ProductEntity productEntity = ProductDAO.findProductByImage(image);
+        ProductResponse productResponse = new ProductResponse();
+
+        ImageDAO imageDAO = new ImageDAO();
+        ColorDAO colorDAO = new ColorDAO();
+        SizeDAO sizeDAO = new SizeDAO();
+
+        List<ImageEntity> imageEntities = imageDAO.findImage(productEntity.getId());
+        List<ColorEntity> colorEntities = colorDAO.findColor(productEntity.getId());
+        List<SizeEntity> sizeEntities = sizeDAO.findSize(productEntity.getId());
+
+        String color = colorEntities.stream().map(colors -> colors.getCode()).collect(Collectors.joining(", "));String size = sizeEntities.stream().map(sizes -> sizes.getSize()).collect(Collectors.joining(", "));
+        String images = imageEntities.stream().map(img -> img.getLink()).collect(Collectors.joining(", "));
+
+        productResponse.setId(productEntity.getId());
+        productResponse.setName(productEntity.getName());
+        productResponse.setPrice(productEntity.getPrice());
+        productResponse.setDetails(productEntity.getDetails());
+        productResponse.setColor(color);
+        productResponse.setSize(size);
+        productResponse.setImage(images);
+
+        return productResponse;
+    }
 }

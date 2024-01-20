@@ -260,7 +260,17 @@ a>.menu_Category_Item {
 
 }
 
-.TitleCategory {}
+.TitleCategory {
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 10px 20px;
+    background-color: var(--back);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
 
 .TitleCategory>span {
     font-size: 20px;

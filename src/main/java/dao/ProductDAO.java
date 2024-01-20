@@ -33,6 +33,12 @@ public class ProductDAO {
                 sql.append("AND c.categoryName LIKE '%" + category + "%' ");
             }
         }
+        if (search.containsKey("images")) {
+            String image = search.get("images");
+            if (image != null && !image.isEmpty()) {
+                sql.append("AND images.link = '" + image + "' ");
+            }
+        }
         return sql.toString();
     }
 
@@ -88,5 +94,26 @@ public class ProductDAO {
             System.out.println(ex.getMessage());
         }
         return productEntities;
+    }
+
+    public static ProductEntity findProductByImage(String img) {
+        ProductEntity productEntity = new ProductEntity();
+        String sql = "SELECT products.*\n" +
+                "FROM products\n" +
+                "INNER JOIN images ON products.id = images.productId\n" +
+                "WHERE images.link = '" + img + "'";
+        try (Connection conn = ConnectionUtils.getConnection();Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(sql.toString())) {
+
+            if (rs.next()) {
+                productEntity.setId(rs.getInt("id"));
+                productEntity.setName(rs.getString("name"));
+                productEntity.setPrice(rs.getInt("price"));
+                productEntity.setDetails(rs.getString("details"));
+            }
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        return productEntity;
     }
 }

@@ -33,8 +33,7 @@ public class AddToCart extends HttpServlet {
 //        } else {
         ShoppingCart shoppingCarts = (ShoppingCart) session.getAttribute("cart");
         if (shoppingCarts == null) {
-            ShoppingCart shoppingCart = new ShoppingCart();
-            session.setAttribute("cart", shoppingCart);
+            shoppingCarts = new ShoppingCart();
         }
         String color = request.getParameter("color");
         String size = request.getParameter("size");
@@ -55,8 +54,6 @@ public class AddToCart extends HttpServlet {
         jsonObject.put("totalItems", totalItems);
         response.setContentType("application/json");
         response.getWriter().println(jsonObject);
-
-
-//        }
+//    }
     }
 }
