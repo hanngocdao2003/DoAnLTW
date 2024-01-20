@@ -24,6 +24,14 @@ public class CommentService {
         List<CommentReponse> list = comment.commentsForWeb();
         return  list;
     }
+    public boolean checkCmt(int id) throws SQLException {
+        CommentForWebDAO dao = new CommentForWebDAO();
+        String result = dao.checkCmtForAdmin(id);
+        if(result.isEmpty()){
+            return true;
+        }
+        return false;
+    }
     private String print(List<CommentReponse> list){
         String result = "";
         for(CommentReponse c : list){
@@ -33,7 +41,7 @@ public class CommentService {
     }
     public static void main(String[] args) throws SQLException {
        CommentService cmt = new CommentService();
-        System.out.println(cmt.print(cmt.listCommentOfUser()));
+        //System.out.println(cmt.print(cmt.listCommentOfUser()));
     }
 
 }
