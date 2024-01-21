@@ -169,86 +169,7 @@
         <span>Sản phẩm mới</span>
         <div class="SliderShow_Product">
             <div class="SlideListProduct">
-                <%--                <form class="Search" action="productImage" method="get" id="productForm">--%>
-                <%--                    <div class="CategoryItem Dress"--%>
-                <%--                         onclick="submitFormWithImageName('Áo kiểu Amory.png')">--%>
-                <%--                        <input type="text" name="image" id="imageInput"--%>
-                <%--                               value="Áo%20kiểu%20Amory.png" hidden="hidden">--%>
-                <%--                        <img src="Image/Product/Áo%20kiểu%20Amory.png" alt="">--%>
-                <%--                    </div>--%>
-                <%--                </form>--%>
-                <%--                <form class="Search" action="productImage" method="get" id="productForm">--%>
-                <%--                    <div class="CategoryItem Dress"--%>
-                <%--                         onclick="submitFormWithImageName('1_4d6348ce5d064c11b44230176bfcf978.png')">--%>
-                <%--                        <input type="text" name="image" id="imageInput"--%>
-                <%--                               value="1_4d6348ce5d064c11b44230176bfcf978.png" hidden="hidden">--%>
-                <%--                        <img src="Image/Product/1_4d6348ce5d064c11b44230176bfcf978.png" alt="">--%>
-                <%--                    </div>--%>
-                <%--                </form>--%>
-                <%--                <form class="Search" action="productImage" method="get" id="productForm">--%>
-                <%--                    <div class="CategoryItem Dress"--%>
-                <%--                         onclick="submitFormWithImageName('1_4d6348ce5d064c11b44230176bfcf978.png')">--%>
-                <%--                        <input type="text" name="image" id="imageInput"--%>
-                <%--                               value="1_4d6348ce5d064c11b44230176bfcf978.png" hidden="hidden">--%>
-                <%--                        <img src="Image/Product/1_4d6348ce5d064c11b44230176bfcf978.png" alt="">--%>
-                <%--                    </div>--%>
-                <%--                </form>--%>
-                <%--                <form class="Search" action="productImage" method="get" id="productForm">--%>
-                <%--                    <div class="CategoryItem Dress"--%>
-                <%--                         onclick="submitFormWithImageName('1_4d6348ce5d064c11b44230176bfcf978.png')">--%>
-                <%--                        <input type="text" name="image" id="imageInput"--%>
-                <%--                               value="1_4d6348ce5d064c11b44230176bfcf978.png" hidden="hidden">--%>
-                <%--                        <img src="Image/Product/1_4d6348ce5d064c11b44230176bfcf978.png" alt="">--%>
-                <%--                    </div>--%>
-                <%--                </form>--%>
-                <%--                <form class="Search" action="productImage" method="get" id="productForm">--%>
-                <%--                    <div class="CategoryItem Dress"--%>
-                <%--                         onclick="submitFormWithImageName('1_4d6348ce5d064c11b44230176bfcf978.png')">--%>
-                <%--                        <input type="text" name="image" id="imageInput"--%>
-                <%--                               value="1_4d6348ce5d064c11b44230176bfcf978.png" hidden="hidden">--%>
-                <%--                        <img src="Image/Product/1_4d6348ce5d064c11b44230176bfcf978.png" alt="">--%>
-                <%--                    </div>--%>
-                <%--                </form>--%>
-                <%--                <form class="Search" action="productImage" method="get" id="productForm">--%>
-                <%--                    <div class="CategoryItem Dress"--%>
-                <%--                         onclick="submitFormWithImageName('1_4d6348ce5d064c11b44230176bfcf978.png')">--%>
-                <%--                        <input type="text" name="image" id="imageInput"--%>
-                <%--                               value="1_4d6348ce5d064c11b44230176bfcf978.png" hidden="hidden">--%>
-                <%--                        <img src="Image/Product/1_4d6348ce5d064c11b44230176bfcf978.png" alt="">--%>
-                <%--                    </div>--%>
-                <%--                </form>--%>
-                <%--                <form class="Search" action="productImage" method="get" id="productForm">--%>
-                <%--                    <div class="CategoryItem Dress"--%>
-                <%--                         onclick="submitFormWithImageName('1_4d6348ce5d064c11b44230176bfcf978.png')">--%>
-                <%--                        <input type="text" name="image" id="imageInput"--%>
-                <%--                               value="1_4d6348ce5d064c11b44230176bfcf978.png" hidden="hidden">--%>
-                <%--                        <img src="Image/Product/1_4d6348ce5d064c11b44230176bfcf978.png" alt="">--%>
-                <%--                    </div>--%>
-                <%--                </form>--%>
-                <%--                <form class="Search" action="productImage" method="get" id="productForm">--%>
-                <%--                    <div class="CategoryItem Dress"--%>
-                <%--                         onclick="submitFormWithImageName('1_4d6348ce5d064c11b44230176bfcf978.png')">--%>
-                <%--                        <input type="text" name="image" id="imageInput"--%>
-                <%--                               value="1_4d6348ce5d064c11b44230176bfcf978.png" hidden="hidden">--%>
-                <%--                        <img src="Image/Product/1_4d6348ce5d064c11b44230176bfcf978.png" alt="">--%>
-                <%--                    </div>--%>
-                <%--                </form>--%>
-                <%--                <form class="Search" action="productImage" method="get" id="productForm">--%>
-                <%--                    <div class="CategoryItem Dress"--%>
-                <%--                         onclick="submitFormWithImageName('1_4d6348ce5d064c11b44230176bfcf978.png')">--%>
-                <%--                        <input type="text" name="image" id="imageInput"--%>
-                <%--                               value="1_4d6348ce5d064c11b44230176bfcf978.png" hidden="hidden">--%>
-                <%--                        <img src="Image/Product/1_4d6348ce5d064c11b44230176bfcf978.png" alt="">--%>
-                <%--                    </div>--%>
-                <%--                </form>--%>
-                <%--                <form class="Search" action="productImage" method="get" id="productForm">--%>
-                <%--                    <div class="CategoryItem Dress"--%>
-                <%--                         onclick="submitFormWithImageName('1_4d6348ce5d064c11b44230176bfcf978.png')">--%>
-                <%--                        <input type="text" name="image" id="imageInput"--%>
-                <%--                               value="1_4d6348ce5d064c11b44230176bfcf978.png" hidden="hidden">--%>
-                <%--                        <img src="Image/Product/1_4d6348ce5d064c11b44230176bfcf978.png" alt="">--%>
-                <%--                    </div>--%>
-                <%--                </form>--%>
+                <img src="Image/Product/1_4d6348ce5d064c11b44230176bfcf978.png" alt="">
                 <img src="Image/Product/Áo%20kiểu%20Amory.png" alt="">
                 <img src="Image/Product/Quần%20dài%20Foris.png" alt="">
                 <img src="Image/Product/Quần%20Garo.jpg" alt="">
@@ -370,13 +291,6 @@
         document.getElementById("productSearchForm").submit();
     }
 
-    function submitFormWithImageName(imageName) {
-        // Thay đổi giá trị của trường nameproduct
-        document.getElementById("imageInput").value = imageName;
-
-        // Submit form
-        document.getElementById("productForm").submit();
-    }
 </script>
 </body>
 </html>
