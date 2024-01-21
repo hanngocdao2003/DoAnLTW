@@ -16,6 +16,12 @@ public class ResetPasswordServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        final String RESET = "reset-password.jsp";
+        final String LOGIN = "indexLogin.jsp";
+        final String FAIL = "verification-fail.jsp";
+
+        String url = RESET;
+
         String code = request.getParameter("code");
         String newPass1 = request.getParameter("newPass1");
         String newPass2 = request.getParameter("newPass2");
@@ -26,13 +32,14 @@ public class ResetPasswordServlet extends HttpServlet {
         if (newPass1.equals(newPass2)) {
             verify = UserService.updatePassByCode(code, newPass1);
             if (verify) {
-                response.sendRedirect("indexLogin.jsp");
+                url = LOGIN;
                 UserService.deleteCode(email);
             } else {
-                response.sendRedirect("verification-fail.jsp");
+                url = FAIL;
             }
         } else {
             request.setAttribute("NotEqual", "Mật khẩu không trùng nhau");
         }
+        request.getRequestDispatcher(url).forward(request, response);
     }
 }

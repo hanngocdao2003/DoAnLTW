@@ -27,7 +27,7 @@
             String error = (String) request.getAttribute("fail");
             if (error != null) {
         %>
-        <span><%= error%></span>
+        <span style="padding: 20px"><%= error%></span>
         <%}%>
         <div class="button">
             <input type="submit" value="khôi phục" style="

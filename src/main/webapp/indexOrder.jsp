@@ -5,11 +5,13 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="Image/fontawesome-free-6.4.2-web/css/all.min.css">
-    <link rel="stylesheet" href="View/styles/styleMenu.css">
-    <link rel="stylesheet" href="View/styles/styleOrder.css">
-    <link rel="stylesheet" href="View/styles/styleFooter.css">
-    <link rel="stylesheet" href="View/styles/styleButtonAdd.css">
-    <script src="View/event/eventButtonAdd.js"></script>
+    <link rel="stylesheet" href="View/styleWeb/styleMenu.css">
+    <link rel="stylesheet" href="View/styleWeb/styleOrder.css">
+    <link rel="stylesheet" href="View/styleWeb/styleFooter.css">
+    <link rel="stylesheet" href="View/styleWeb/styleButtonAdd.css">
+    <link rel="stylesheet" href="View/styleWeb/color.css">
+
+    <script src="View/JSWeb/eventButtonAdd.js"></script>
     <link rel="icon" href="Image/BHD-html.png" type="image/x-icon">
     <title>Đơn hàng</title>
 </head>
@@ -23,11 +25,27 @@
         <div class="search_Category">
             <form class="Search" action="findProduct" method="get">
                 <input name="keyword" type="text" class="input_search" placeholder="Nhập sản phẩm cần tìm">
-                <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
         </div>
-        <a href="" class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
-        <a href="indexLogin.jsp" class="user"><i class="fa-solid fa-user"></i></a>
+        <div class="rightIcon">
+            <a href="" class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
+
+            <%
+                String success = (String) session.getAttribute("Success");
+                if (success != null) {
+            %>
+            <a href="indexPersonal.jsp" class="user"><i class="fa-solid fa-user"
+                                                        style="margin-right: 5px"></i> <%= success %>
+            </a>
+            <%
+            } else {
+            %>
+            <a href="indexLogin.jsp" class="user"><i class="fa-solid fa-user"></i></a>
+            <%
+                }
+            %>
+        </div>
     </div>
 </div>
 <div class="menu_container">
@@ -59,7 +77,7 @@
             </ul>
         </button>
         <ul class="Menupage">
-            <a href="index.html" class="linkpage Home">
+            <a href="index.jsp" class="linkpage Home">
                 <li class="Item_menuPage">Trang chủ</li>
             </a>
             <a href="" class="linkpage Shop">
@@ -80,17 +98,17 @@
         </ul>
     </div>
 </div>
-<div class="cart">
+<form action="" style="display: flex">
     <div class="container-choose">
         <div class="information-cus">
             <h1>Thông tin vận chuyển</h1>
             <div class="name-phone">
-                <input type="text" placeholder="Họ và tên">
-                <input type="text" placeholder="Số điện thoại">
+                <input type="text" placeholder="Họ và tên" name="fullname">
+                <input type="text" placeholder="Số điện thoại" name="phone">
             </div>
-            <input type="text" placeholder="Email">
-            <input type="text " placeholder="Địa chỉ">
-            <input type="text" placeholder="Ghi chú (VD: giao sau 10h)">
+            <input type="text" placeholder="Email" name="email">
+            <input type="text " placeholder="Địa chỉ" name="address">
+            <input type="text" placeholder="Ghi chú (VD: giao sau 10h)" name="note">
             <!-- <div class="save-address">
                 <input type="checkbox" id="check">
                 <label for="check">Lưu địa chỉ cho lần mua hàng tiếp theo</label>
@@ -99,22 +117,22 @@
         <div class="payment">
             <h1>Hình thức thanh toán</h1>
             <div class="cod">
-                <input type="radio">
+                <input type="radio" value="cod">
                 <img src="Image/cart/COD.png" alt="">
                 <p>COD <br>Thanh toán khi nhận hàng</p>
             </div>
             <div class="momo">
-                <input type="radio">
+                <input type="radio" value="momo">
                 <img src="Image/cart/momo.png" alt="">
                 <p>Thanh toán MoMo</p>
             </div>
             <div class="zalo-pay">
-                <input type="radio">
+                <input type="radio" value="zalo">
                 <img src="Image/cart/zalopay.png" alt="">
                 <p>Thanh toán ZaloPay</p>
             </div>
             <div class="vn-pay">
-                <input type="radio">
+                <input type="radio" value="card">
                 <img src="Image/cart/Vnpay.png" alt="">
                 <p>Thẻ ATM / Thẻ tín dụng (Credit card) / Thẻ ghi nợ (Debit card)</p>
             </div>
@@ -123,6 +141,8 @@
             </div>
         </div>
     </div>
+
+<div class="cart">
     <div class="straight-line"></div>
     <div class="cart-details">
         <h1>Đơn hàng</h1>
@@ -189,6 +209,7 @@
         </div>
     </div>
 </div>
+</form>
 <footer>
     <div class="contain">
         <div class="content">
@@ -247,6 +268,6 @@
         </div>
     </div>
 </footer>
-<script src="View/event/eventCart.js"></script>
+<script src="View/JSWeb/eventCart.js"></script>
 </body>
 </html>

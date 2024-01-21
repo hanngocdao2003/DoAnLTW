@@ -26,9 +26,10 @@
         </div>
         <%
             String error = (String) request.getAttribute("NotEqual");
+            if (error != null) {
         %>
-        <span><%= error%></span>
-
+        <span style="padding: 20px"><%= error%></span>
+        <%}%>
         <div class="button">
             <input type="submit" value="Thiết lập lại mật khẩu">
         </div>

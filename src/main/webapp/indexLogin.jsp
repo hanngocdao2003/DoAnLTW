@@ -63,12 +63,7 @@
                     <i class="fa-solid fa-share"></i>
                     Trở lại đăng nhập
                 </a>
-                <%
-                    String fail = (String) request.getAttribute("fail");
-                    if (fail != null) {
-                %>
-                <span><%= fail%></span>
-                <%}%>
+
             </div>
             <div class="NameUser">
                 <label for="inputName" class="label">Họ và tên:</label>
@@ -109,6 +104,13 @@
                     </div>
                 </div>
             </div>
+            <%
+                String fail = (String) request.getAttribute("fail");
+                if (fail != null) {
+            %>
+            <span><%= fail%></span>
+            <%}%>
+
             <%
                 String password = (String) request.getAttribute("password");
                 if (password != null) {

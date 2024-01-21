@@ -21,22 +21,34 @@ public class UserService {
         return null;
     }
 
+    public static UserEntity checkRegister(String numberPhone, String email) {
+        UserDAO userDAO = new UserDAO();
+        List<UserEntity> userEntityList = userDAO.getAccount(numberPhone);
+        if (!userEntityList.isEmpty()) {
+            UserEntity user = userEntityList.get(0);
+            if (user.getEmail().equals(email)) {
+                return user;
+            }
+        }
+        return null;
+    }
+
     public static boolean registerUser(UserEntity user) {
         UserDAO userDAO = new UserDAO();
 
         // Kiểm tra xem người dùng đã tồn tại hay chưa
-        UserEntity existingUser = checkLogin(user.getPhone(), user.getPassword());
+        UserEntity existingUser = checkRegister(user.getPhone(), user.getEmail());
         if (existingUser != null) {
             // Người dùng đã tồn tại, không thể đăng ký
             return false;
+        } else {
+            String token = EmailVerification.generateToken();
+            boolean registrationSuccess = userDAO.addUser(user, token);
+            if (registrationSuccess)
+                // Nếu đăng ký thành công, tạo token và gửi email xác nhận
+                EmailVerification.sendVerificationEmail(user.getEmail(), token);
+            return registrationSuccess;
         }
-
-        String token = EmailVerification.generateToken();
-        boolean registrationSuccess = userDAO.addUser(user, token);
-        if (registrationSuccess)
-            // Nếu đăng ký thành công, tạo token và gửi email xác nhận
-            EmailVerification.sendVerificationEmail(user.getEmail(), token);
-        return registrationSuccess;
     }
 
     public static boolean updatePass(String phone, String pass) {

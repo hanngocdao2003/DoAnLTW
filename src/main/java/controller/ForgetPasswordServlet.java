@@ -18,12 +18,16 @@ public class ForgetPasswordServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        final String FORGET = "indexForgetPass.jsp";
+        final String RESET = "reset-password.jsp";
+
+        String url = FORGET;
         String email = (String) request.getParameter("email");
         boolean checkEmail = UserService.checkEmail(email);
 
         response.setContentType("text/html; charset=UTF-8");
         if (checkEmail) {
-            request.getRequestDispatcher("reset-password.jsp").forward(request, response);
+            url = RESET;
             String code = EmailVerification.generateConfirmationCode();
             boolean sendSuccess = EmailVerification.sendConfirmationEmail(email, code);
             if (sendSuccess) {
@@ -33,5 +37,6 @@ public class ForgetPasswordServlet extends HttpServlet {
         } else {
             request.setAttribute("fail", "Vui lòng nhập đúng email");
         }
+        request.getRequestDispatcher(url).forward(request, response);
     }
 }
