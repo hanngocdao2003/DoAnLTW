@@ -34,6 +34,6 @@ public class ReadCmt extends HttpServlet {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        req.getRequestDispatcher("UploadCommentAdmin.jsp.jsp").forward(req, resp);
+        req.getRequestDispatcher("UploadCommentAdmin.jsp").forward(req, resp);
     }
 }

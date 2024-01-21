@@ -37,23 +37,21 @@
             </div>
             <div class="rightIcon">
                 <a href="" class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
+
+                <%
+                    String success = (String) session.getAttribute("Success");
+                    if (success != null) {
+                %>
                 <form action="LogOut" method="post">
                     <button class="logOut">Đăng xuất</button>
                 </form>
-                <%--                <%--%>
-                <%--                    String success = (String) session.getAttribute("Success");--%>
-                <%--                    if (success != null) {--%>
-                <%--                %>--%>
-                <%--                <a href="indexPersonal.jsp" class="user"><i class="fa-solid fa-user"--%>
-                <%--                                                            style="margin-right: 5px"></i> <%= success %>--%>
-                <%--                </a>--%>
-                <%--                <%--%>
-                <%--                } else {--%>
-                <%--                %>--%>
-                <%--                <a href="indexLogin.jsp" class="user"><i class="fa-solid fa-user"></i></a>--%>
-                <%--                <%--%>
-                <%--                    }--%>
-                <%--                %>--%>
+                <%
+                } else {
+                %>
+                <a href="indexLogin.jsp" class="user"><i class="fa-solid fa-user"></i></a>
+                <%
+                    }
+                %>
             </div>
         </div>
     </div>

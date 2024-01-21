@@ -71,11 +71,13 @@
                             <i class="fa-solid fa-circle" style="color: var(--border);"></i>
                             Quản lý đơn hàng
                         </li>
-                        <li class="item" onclick="handleClick(this, 'panel4')">
-                            <i class="fa-solid fa-circle" style="color: var(--border);"></i>
-                            Quản lý người dùng
-                        </li>
-                        <a href="uploadCmt" class="linkUploadCommentAdmin">
+                        <a href="ManagUser.jsp" class="linkUpload">
+                            <li class="item" onclick="handleClick(this, 'panel4')">
+                                <i class="fa-solid fa-circle" style="color: var(--border);"></i>
+                                Quản lý người dùng
+                            </li>
+                        </a>
+                        <a href="uploadCmt" class="linkUpload">
                             <li class="item" onclick="handleClick(this, 'panel7')">
                                 <i class="fa-solid fa-circle" style="color: var(--border);"></i>
                                 Phản hồi người dùng
@@ -212,43 +214,43 @@
                 </table>
             </div>
         </div>
-        <!-- Chức năng quản lý người dùng -->
-        <div class="customer-management" id="panel4">
-            <div class="seach_customer">
-                <form action="" id="form_search">
-                    <div class="search">
-                        <input type="text" class="input" placeholder="Tìm kiếm theo tên">
-                        <button class="btn_search">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </button>
-                    </div>
-                    <div class="filter">
-                        <select name="filter-select" id="filter-select">
-                            <option value="alphabet">Sắp xếp theo tên người dùng</option>
-                            <option value="alphabet">Sắp xếp theo tài khoản bị khóa</option>
-                        </select>
-                    </div>
-                </form>
-            </div>
-            <div id="info_customer">
-                <div class="main_label">
-                    <table id="table">
-                        <thead>
-                        <tr>
-                            <th class="label">Tên người dùng</th>
-                            <th class="label">Số điện thoại</th>
-                            <th class="label">Email</th>
-                            <th class="label">Quyền</th>
-                            <th class="label">Khóa</th>
-                            <th class="label">Chức năng</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
+<%--        <!-- Chức năng quản lý người dùng -->--%>
+<%--        <div class="customer-management" id="panel4">--%>
+<%--            <div class="seach_customer">--%>
+<%--                <form action="" id="form_search">--%>
+<%--                    <div class="search">--%>
+<%--                        <input type="text" class="input" placeholder="Tìm kiếm theo tên">--%>
+<%--                        <button class="btn_search">--%>
+<%--                            <i class="fa-solid fa-magnifying-glass"></i>--%>
+<%--                        </button>--%>
+<%--                    </div>--%>
+<%--                    <div class="filter">--%>
+<%--                        <select name="filter-select" id="filter-select">--%>
+<%--                            <option value="alphabet">Sắp xếp theo tên người dùng</option>--%>
+<%--                            <option value="alphabet">Sắp xếp theo tài khoản bị khóa</option>--%>
+<%--                        </select>--%>
+<%--                    </div>--%>
+<%--                </form>--%>
+<%--            </div>--%>
+<%--            <div id="info_customer">--%>
+<%--                <div class="main_label">--%>
+<%--                    <table id="table">--%>
+<%--                        <thead>--%>
+<%--                        <tr>--%>
+<%--                            <th class="label">Tên người dùng</th>--%>
+<%--                            <th class="label">Số điện thoại</th>--%>
+<%--                            <th class="label">Email</th>--%>
+<%--                            <th class="label">Quyền</th>--%>
+<%--                            <th class="label">Khóa</th>--%>
+<%--                            <th class="label">Chức năng</th>--%>
+<%--                        </tr>--%>
+<%--                        </thead>--%>
+<%--                        <tbody>--%>
+<%--                        </tbody>--%>
+<%--                    </table>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+<%--        </div>--%>
         <!-- Chức năng thêm sản phẩm -->
         <div class="container-add-product" id="panel5">
             <form action="">
