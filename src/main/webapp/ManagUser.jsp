@@ -1,17 +1,24 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="bean.InformationUser" %>
 <%@ page import="java.util.List" %>
-<%@ page import="bean.CommentReponse" %>
-<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.ArrayList" %><%--
+  Created by IntelliJ IDEA.
+  User: nguye
+  Date: 1/20/2024
+  Time: 3:44 PM
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="View/styleWeb/styleAdmin/styleUploadComment.css">
+    <link rel="stylesheet" href="View/styleWeb/styleAdmin/styleUserManagement.css">
     <link rel="stylesheet" href="View/styleWeb/color.css">
-
-    <title>Phản hồi của người dùng</title>
+    <link rel="stylesheet" href="View/styleWeb/styleAdmin/styleAdmin.css">
+    <title>Quản lý người dùng</title>
 </head>
 <body>
 <header class="logo">
@@ -20,6 +27,7 @@
     <form action="LogOut" method="post" id="logOut">
         <button class="logOut">Đăng xuất</button>
     </form>
+
 </header>
 <div class="center" style="display: flex;">
     <div class="left_panel" style="width: 18%;">
@@ -59,12 +67,14 @@
                         </li>
                         <li class="item" onclick="handleClick(this, 'panel7')"
                             style="border: 2px solid var(--font);border-radius: 20px;color: white !important;background-color: var(--font);">
-                            <a href="UploadCommentAdmin.jsp" style="color: white !important"><i class="fa-solid fa-circle"
-                                                                style="color: var(--border);"></i>
+                            <a href="UploadCommentAdmin.jsp" style="color: white !important"><i
+                                    class="fa-solid fa-circle"
+                                    style="color: var(--border);"></i>
                                 Phản hồi người dùng</a>
                         </li>
                         <li class="item" onclick="handleClick(this, 'panel_addSlide')">
-                            <a href="indexAdmin.jsp" style="color: var(--font)"><i class="fa-solid fa-circle" style="color: var(--border);"></i>
+                            <a href="indexAdmin.jsp" style="color: var(--font)"><i class="fa-solid fa-circle"
+                                                                                   style="color: var(--border);"></i>
                                 Thêm trình chiếu</a>
                         </li>
                         <a href="indexForgetPass.jsp" style="text-decoration: none">
@@ -79,39 +89,51 @@
         </nav>
     </div>
     <div id="info_panel" class="info_panel">
-        <!-- Chức năng phản hồi người dùng -->
-        <div class="reply" id="panel7">
-            <div id="content">
-                <form class="main_label" action="uploadCmt" method="get">
-                    <table id="table3">
+        <!-- Chức năng quản lý người dùng -->
+        <div class="customer-management" id="panel4">
+            <div id="info_customer">
+                <form class="main_label running" action="uploadInfUser">
+                    <span>Thông tin các tài khoản</span>
+                    <table class="table">
                         <thead>
                         <tr>
-                            <th class="label">Số thứ tự</th>
-                            <th class="label">Tên khách hàng</th>
-                            <th class="label">Nội dung phản hồi</th>
-                            <th class="label">Ngày bình luận</th>
+                            <th class="label">Tên người dùng</th>
+                            <th class="label">Số điện thoại</th>
+                            <th class="label">Email</th>
+                            <th class="label">Quyền</th>
+                            <th class="label">Trạng thái</th>
+                            <th class="label">Khóa tài khoản</th>
                         </tr>
                         </thead>
                         <tbody>
                         <%
-                            List<CommentReponse> comments;
-                            comments = (List<CommentReponse>) session.getAttribute("Comments");
+                            List<InformationUser> infUser;
+                            infUser = (List<InformationUser>) session.getAttribute("listUser");
                             List<Integer> listID = new ArrayList<>();
-                            System.out.println(comments);
-                            if (comments != null && !comments.isEmpty()) {
-                                for (int i = 0; i < comments.size(); i++) {
-                                    listID.add(comments.get(i).getId());
+                            System.out.println(infUser);
+                            String running = "Đang hoạt động";
+                            String lockUser = "Đã khóa";
+                            if (infUser != null && !infUser.isEmpty()) {
+                                for (int i = 0; i < infUser.size(); i++) {
+
                         %>
                         <tr>
-
-                            <%--                            <% System.out.println(comments.get(i).getId());%>--%>
-                            <td><%= i + 1 %>
+                            <td><%= infUser.get(i).getName() %>
                             </td>
-                            <td><%= comments.get(i).getNameUser() %>
+                            <td><%= infUser.get(i).getNumberphone() %>
                             </td>
-                            <td><%= comments.get(i).getFeedback() %>
+                            <td><%= infUser.get(i).getEmail() %>
                             </td>
-                            <td><%= comments.get(i).getDate_cmt() %>
+                            <td><%= infUser.get(i).getRole() %>
+                            </td>
+                            <td><%if (infUser.get(i).getStatus() == 1) {%>
+                                <%= running%>
+                                <%} else {%>
+                                <%= lockUser%>
+                                <%}%>
+                            </td>
+                            <td>
+                                <input type="button" value="Khóa tài khoản">
                             </td>
                         </tr>
                         <%
@@ -123,18 +145,33 @@
                         </tr>
                         <% } %>
                         </tbody>
+                        </tbody>
                     </table>
+
                 </form>
-                <form action="readCmt" class="btn_read_cmt">
-                    <% for (Integer id : listID) { %>
-                    <input type="hidden" value="<%= id %>" name="IDcmt"/>
-                    <% } %>
-                    <input type="submit" class="button_read_all" value="Đã đọc tất cả">
-                </form>
+                <div class="main_label lock">
+                    <span>Các tài khoản đã khóa</span>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th class="label">Tên người dùng</th>
+                            <th class="label">Số điện thoại</th>
+                            <th class="label">Email</th>
+                            <th class="label">Quyền</th>
+                            <th class="label">Trạng thái</th>
+                            <th class="label">Khóa tài khoản</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+
+                </div>
             </div>
         </div>
 
     </div>
 </div>
+
 </body>
 </html>

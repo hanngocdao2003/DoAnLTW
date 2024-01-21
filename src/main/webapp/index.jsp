@@ -42,13 +42,22 @@
 
                 <%
                     String success = (String) session.getAttribute("Success");
-                    if (success != null) {
+                    String roleID = (String) session.getAttribute("Role");
+                    System.out.println(success);
+                    System.out.println(roleID);
+                    if (success != null && "R1".equals(roleID)) {
                 %>
-                <a href="indexPersonal.jsp" class="user"><i class="fa-solid fa-user"
+                <a href="indexAdmin.jsp" class="user"><i class="fa-solid fa-user"
                                                             style="margin-right: 5px"></i> <%= success %>
                 </a>
                 <%
-                } else {
+                } else if (success != null) {
+                %>
+                <a href="indexPersonal.jsp" class="user"><i class="fa-solid fa-user"
+                                                         style="margin-right: 5px"></i> <%= success %>
+                </a>
+                <%
+                } else{
                 %>
                 <a href="indexLogin.jsp" class="user"><i class="fa-solid fa-user"></i></a>
                 <%
