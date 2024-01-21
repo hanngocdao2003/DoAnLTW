@@ -312,7 +312,7 @@
     padding: 10px 40px;
     border-radius: 30px;
     border: none;
-    background: #FF8080FF;
+    background: var(--but);
     color: white;
     font-size: 20px;
     text-align: center;

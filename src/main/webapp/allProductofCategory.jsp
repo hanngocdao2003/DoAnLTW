@@ -9,10 +9,11 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="Image/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="View/styleWeb/styleFooter.css">
     <link rel="stylesheet" href="View/styleWeb/styleHeader.css">
     <link rel="stylesheet" href="View/styleWeb/color.css">
     <link rel="stylesheet" href="View/styleWeb/styleProduct.css">
+    <link rel="stylesheet" href="View/styleWeb/stylePagination.css">
+    <link rel="stylesheet" href="View/styleWeb/styleFooter.css">
     <link rel="icon" href="Image/logo/BHD-html.png" type="image/x-icon">
     <script src="View/JSWeb/code.jquery.com_jquery-3.7.1.min.js"></script>
     <script src="View/JSWeb/slick.min.js"></script>
@@ -30,8 +31,8 @@
                 <h1>BHD Boutique</h1>
             </div>
             <div class="search_Category">
-                <form class="Search" action="findProduct" method="get">
-                    <input name="nameproduct" type="text" class="input_search" placeholder="Nhập sản phẩm cần tìm">
+                <form class="Search" action="findProduct" method="get" onsubmit="return validateForm()">
+                    <input name="nameproduct" id="productInput" type="text" class="input_search" required placeholder="Nhập sản phẩm cần tìm">
                     <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
             </div>
@@ -98,36 +99,46 @@
         <img src="Image/SlideStore/slide1.png" alt="">
     </div>
 </div>
-    <div class="page1 page">
-        <ul class="listItemProduct" id="allOfCategory">
-            <%
-                List<ProductResponse> productResponses = (List<ProductResponse>) request.getAttribute("products");
-                if (productResponses != null) {
-                    for (ProductResponse p : productResponses
-                    ) {
-            %>
-            <li class="itemProduct">
-                <a href="detailsProduct?productId=<%=p.getId()%>"><img src="Image/Product/<%=p.getImage()%>" alt="" class="imageProduct"></a>
-                <a href="" class="linkProduct"><%=p.getName()%>
-                </a>
-                <div class="evalute"><span>Đánh giá: <ul class="fiveStar">
+<div class="page1 page">
+    <ul class="listItemProduct" id="allOfCategory">
+        <%
+            List<ProductResponse> productResponses = (List<ProductResponse>) request.getAttribute("products");
+            if (productResponses != null) {
+                for (ProductResponse p : productResponses
+                ) {
+        %>
+        <li class="itemProduct">
+            <a href="detailsProduct?productId=<%=p.getId()%>"><img src="Image/Product/<%=p.getImage()%>" alt="" class="imageProduct"></a>
+            <a href="detailsProduct?productId=<%=p.getId()%>" class="linkProduct"><%=p.getName()%></a>
+            <div class="evalute"><span>Đánh giá: <ul class="fiveStar">
                 <li><i class="fa-solid fa-star"></i></li>
                 <li><i class="fa-solid fa-star"></i></li>
                 <li><i class="fa-solid fa-star"></i></li>
                 <li><i class="fa-solid fa-star"></i></li>
                 <li><i class="fa-solid fa-star"></i></li>
             </ul></span></div>
-                <p class="priceProduct"><%=p.getPrice()%>
-                </p>
-            </li>
-            <%
-                    }
+            <p class="priceProduct"><%=p.getPrice()%>
+            </p>
+
+        </li>
+        <%
                 }
-            %>
-        </ul>
+            }
+        %>
+    </ul>
     </div>
+
 <script>
     document.body.innerHTML += addFooter();
+
+    function validateForm() {
+        var productInput = document.getElementById('productInput').value;
+        if (productInput.trim() === null) {
+            alert("Vui lòng nhập sản phẩm cần tìm");
+            return false;
+        }
+        return true;
+    }
 </script>
 </body>
 </html>

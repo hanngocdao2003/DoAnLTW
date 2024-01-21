@@ -1,10 +1,7 @@
 package service;
 
 import bean.*;
-import dao.ColorDAO;
-import dao.ImageDAO;
-import dao.ProductDAO;
-import dao.SizeDAO;
+import dao.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,19 +12,22 @@ public class ProductService {
     public static List<ProductResponse> findProduct(Map<String, String> search) {
         // khởi tạo list để lấy các đối tượng lấy được từ lớp productDAO
         List<ProductEntity> productEntities = ProductDAO.findProduct(search);
+        System.out.println(productEntities.size());
         // tạo thêm một list mới với đối tượng ProductResponse để đưa các thông tin cần hiển thị ra màn hình
         List<ProductResponse> result = new ArrayList<>();
         // tạo đối tượng lấy hình ảnh, màu, size từng sản phẩm
         ImageDAO imageDAO = new ImageDAO();
         ColorDAO colorDAO = new ColorDAO();
         SizeDAO sizeDAO = new SizeDAO();
-
         for (ProductEntity item : productEntities) {
             Integer productId = item.getId();
             List<ImageEntity> imageEntities = imageDAO.findImage(productId);
-
             List<ColorEntity> colorEntities = colorDAO.findColor(productId);
             List<SizeEntity> sizeEntities = sizeDAO.findSize(productId);
+
+            System.out.println(imageEntities.size());
+            System.out.println(colorEntities.size());
+            System.out.println(sizeEntities.size());
             //dùng feature java 8 để lấy list màu, size
             String color = colorEntities.stream().map(colors -> colors.getCode()).collect(Collectors.joining(", "));
             String size = sizeEntities.stream().map(sizes -> sizes.getSize()).collect(Collectors.joining(", "));
@@ -71,6 +71,32 @@ public class ProductService {
         productResponse.setColor(color);
         productResponse.setSize(size);
         productResponse.setImage(image);
+
+        return productResponse;
+    }
+
+    public static ProductResponse findProductByImage(String image) {
+        ProductEntity productEntity = ProductDAO.findProductByImage(image);
+        ProductResponse productResponse = new ProductResponse();
+
+        ImageDAO imageDAO = new ImageDAO();
+        ColorDAO colorDAO = new ColorDAO();
+        SizeDAO sizeDAO = new SizeDAO();
+
+        List<ImageEntity> imageEntities = imageDAO.findImage(productEntity.getId());
+        List<ColorEntity> colorEntities = colorDAO.findColor(productEntity.getId());
+        List<SizeEntity> sizeEntities = sizeDAO.findSize(productEntity.getId());
+
+        String color = colorEntities.stream().map(colors -> colors.getCode()).collect(Collectors.joining(", "));String size = sizeEntities.stream().map(sizes -> sizes.getSize()).collect(Collectors.joining(", "));
+        String images = imageEntities.stream().map(img -> img.getLink()).collect(Collectors.joining(", "));
+
+        productResponse.setId(productEntity.getId());
+        productResponse.setName(productEntity.getName());
+        productResponse.setPrice(productEntity.getPrice());
+        productResponse.setDetails(productEntity.getDetails());
+        productResponse.setColor(color);
+        productResponse.setSize(size);
+        productResponse.setImage(images);
 
         return productResponse;
     }

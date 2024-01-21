@@ -1,45 +1,49 @@
 document.addEventListener("DOMContentLoaded", function () {
-    var btnColor = document.querySelectorAll(".btn"); // Sửa thành querySelectorAll
-
-    btnColor.forEach(function (button) {
-        button.addEventListener('click', function () {
-            // Gọi hàm thay đổi màu
-            changeColor(button);
-        });
+    $(".color").click(function () {
+        $(".color").removeClass("active");
+        $(".color").css({"border": ""});
+        $(this).css({"border": "5px solid var( --but)"});
+        $(this).addClass("active");
     });
 
-    function changeColor(clickedButton) {
-        // Đặt màu cam cho button được click
-        clickedButton.style.border = '5px solid var( --but)'; // Sửa thành 'border' thay vì 'boder'
-
-        // Đặt lại màu của các button khác
-        btnColor.forEach(function (button) {
-            if (button !== clickedButton) {
-                button.style.border = ''; // Sửa thành 'border' thay vì 'backgroundColor'
-            }
-        });
-    }
+    $(".size").click(function () {
+        $(".size").removeClass("active");
+        $(".size").css({"border": ""});
+        $(this).css({"border": "5px solid var( --but)"});
+        $(this).addClass("active");
+    });
+    addCart();
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    var btnColor = document.querySelectorAll(".size-btn"); // Sửa thành querySelectorAll
+function addCart() {
+    $(".add-cart").click(() => {
+        //bắt sự kiện người dùng chọn mẫu nào, màu gì, và san pham la j, số lương
+        //ajax truyen 3 tham so tren vào body của request đẻ gui len server.
+        var id = $("#product").attr("product-id");
+        console.log(id);
+        $(".container").attr("id")
+        var color = $(".color.active").attr("value");
+        console.log(color);
+        var size = $(".size.active").attr("value");
+        console.log(size);
 
-    btnColor.forEach(function (button) {
-        button.addEventListener('click', function () {
-            // Gọi hàm thay đổi màu
-            changeColor(button);
+        var data = {
+            'id': id,
+            'color': color,
+            'size': size,
+        };
+
+        $.ajax({
+            url: '/maven_war_exploded/addtocart',
+            type: 'POST',
+            data: data,
+            success: function (data) {
+                console.log(data.totalItems);
+                document.getElementById("totalitem").innerText = data.totalItems;
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(errorThrown);
+            }
         });
     });
-
-    function changeColor(clickedButton) {
-        // Đặt màu cam cho button được click
-        clickedButton.style.border = '5px solid var( --but)'; // Sửa thành 'border' thay vì 'boder'
-
-        // Đặt lại màu của các button khác
-        btnColor.forEach(function (button) {
-            if (button !== clickedButton) {
-                button.style.border = ''; // Sửa thành 'border' thay vì 'backgroundColor'
-            }
-        });
-    }
-});
+}

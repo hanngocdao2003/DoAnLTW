@@ -3,7 +3,6 @@ package controller;
 import bean.UserEntity;
 import service.UserService;
 
-
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -25,12 +24,14 @@ public class LoginControl extends HttpServlet {
         response.setContentType("text/html; charset=UTF-8");
         String userName = request.getParameter("userName");
         String password = request.getParameter("password");
-        UserEntity userEntity =  UserService.checkLogin(userName, password);
+
+        UserEntity userEntity = UserService.checkLogin(userName, password);
         HttpSession session = request.getSession(true);
         String url = ERROR;
-        if (userEntity == null){
+
+        if (userEntity == null) {
             request.setAttribute("Error", "Tên đăng nhập hoặc mật khẩu không đúng");
-        }else {
+        } else {
             session.setAttribute("User", userEntity);
             session.setAttribute("Id", userEntity.getId());
             session.setAttribute("fullName", userEntity.getFullName());
@@ -40,15 +41,17 @@ public class LoginControl extends HttpServlet {
             session.setAttribute("district", userEntity.getDistrict());
             session.setAttribute("ward", userEntity.getWard());
             session.setAttribute("numHouse", userEntity.getNumHouse());
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               if (userEntity.getRoleId().equals("R1")){
+            request.getRequestDispatcher("indexAdmin.jsp").forward(request, response);
+
+            if (userEntity.getRoleId().equals("R1")) {
                 url = ADSUCCESS;
                 session.setAttribute("Success", userEntity.getFullName());
-            }else{
+            } else {
                 url = SUCCESS;
                 session.setAttribute("Success", userEntity.getFullName());
             }
         }
-
         request.getRequestDispatcher(url).forward(request, response);
     }
 }
+

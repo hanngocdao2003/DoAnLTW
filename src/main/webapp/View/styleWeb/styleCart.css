@@ -37,7 +37,7 @@ header {
 
 .logo>h1 {
   font-family: 'Brush Script MT';
-  color: brown;
+  color: rgba(19, 86, 138, 0.8);
   font-size: 32px;
   text-transform: uppercase;
 }

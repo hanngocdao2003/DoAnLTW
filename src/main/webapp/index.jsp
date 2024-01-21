@@ -10,9 +10,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Image/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="View/styleWeb/styleFooter.css">
+    <link rel="stylesheet" href="View/styleWeb/styleMenu.css">
     <link rel="stylesheet" href="View/styleWeb/styleHeader.css">
-
+    <link rel="stylesheet" href="View/styleWeb/styleOrder.css">
+    <link rel="stylesheet" href="View/styleWeb/styleFooter.css">
     <link rel="stylesheet" href="View/styleWeb/color.css">
     <link rel="icon" href="Image/logo/BHD-html.png" type="image/x-icon">
     <script src="View/JSWeb/code.jquery.com_jquery-3.7.1.min.js"></script>
@@ -32,14 +33,13 @@
                 <h1>BHD Boutique</h1>
             </div>
             <div class="search_Category">
-                <form class="Search" action="findProduct" method="get">
+                <form class="Search" action="Product" method="get">
                     <input name="keyword" type="text" class="input_search" placeholder="Nhập sản phẩm cần tìm">
                     <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
             </div>
             <div class="rightIcon">
                 <a href="" class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
-
                 <%
                     String success = (String) session.getAttribute("Success");
                     if (success != null) {
@@ -84,6 +84,9 @@
                         <li class="menu_Category_Item">Váy</li>
                     </a>
                 </ul>
+                <form id="productSearchForm" action="findProduct" method="get">
+                    <input type="hidden" name="nameproduct" id="categoryInput"/>
+                </form>
             </button>
             <ul class="Menupage">
                 <a href="index.jsp" class="linkpage Home">
@@ -108,7 +111,7 @@
         </div>
     </div>
 </header>
-<div class="SliderShow_Store" >
+<div class="SliderShow_Store">
     <div class="SlideList">
         <%
             List<String> imagePaths = Add_Image_Service.loadSlider();
@@ -116,41 +119,49 @@
         %>
         <img src="<%= imagePath %>" alt="">
         <% } %>
-       <%-- <img src="Image/SlideStore/slide3.png" alt="">
-        <img src="Image/SlideStore/slide2.png" alt="">
-        <img src="Image/SlideStore/slide4.png" alt="">
-        <img src="Image/SlideStore/slide1.png" alt="">--%>
     </div>
 </div>
 <div class="CategoryCard">
     <a href="">
-        <div class="CategoryItem T-Shirt">
-            <div class="TitleCategory"><span>Áo</span></div>
-        </div>
+        <form class="Search" action="Product" method="get">
+            <div class="CategoryItem T-Shirt">
+                <input type="text" name="nameproduct" value="Áo" hidden="hidden">
+                <button class="TitleCategory" name="keyword" type="submit"><span>Áo</span></button>
+            </div>
+        </form>
+    </a>
+    <a href="">
+        <form class="Search" action="Product" method="get">
+            <div class="CategoryItem Jacket">
+                <input type="text" name="nameproduct" value="Áo Khoác" hidden="hidden">
+                <button class="TitleCategory" type="submit"><span>Áo khoác</span></button>
+            </div>
+        </form>
+    </a>
+    <a href="">
+        <form class="Search" action="Product" method="get">
+            <div class="CategoryItem Trouser">
+                <input type="text" name="nameproduct" value="Quần" hidden="hidden">
+                <button class="TitleCategory" type="submit"><span>Quần</span></button>
+            </div>
+        </form>
     </a>
 
     <a href="">
-        <div class="CategoryItem Jacket">
-            <div class="TitleCategory"><span>Áo Khoác</span></div>
-        </div>
+        <form class="Search" action="Product" method="get">
+            <div class="CategoryItem Dress">
+                <input type="text" name="nameproduct" value="Đầm" hidden="hidden">
+                <button class="TitleCategory" type="submit"><span>Đầm</span></button>
+            </div>
+        </form>
     </a>
-
     <a href="">
-        <div class="CategoryItem Trouser">
-            <div class="TitleCategory"><span>Quần</span></div>
-        </div>
-    </a>
-
-    <a href="">
-        <div class="CategoryItem Dress">
-            <div class="TitleCategory"><span>Đầm</span></div>
-        </div>
-    </a>
-
-    <a href="">
-        <div class="CategoryItem Skirt">
-            <div class="TitleCategory"><span>Váy</span></div>
-        </div>
+        <form class="Search" action="Product" method="get">
+            <div class="CategoryItem Skirt">
+                <input type="text" name="nameproduct" value="Váy" hidden="hidden">
+                <button class="TitleCategory" type="submit"><span>Váy</span></button>
+            </div>
+        </form>
     </a>
 </div>
 <div class="Top10 NewProductOfStore">
@@ -158,6 +169,86 @@
         <span>Sản phẩm mới</span>
         <div class="SliderShow_Product">
             <div class="SlideListProduct">
+                <%--                <form class="Search" action="productImage" method="get" id="productForm">--%>
+                <%--                    <div class="CategoryItem Dress"--%>
+                <%--                         onclick="submitFormWithImageName('Áo kiểu Amory.png')">--%>
+                <%--                        <input type="text" name="image" id="imageInput"--%>
+                <%--                               value="Áo%20kiểu%20Amory.png" hidden="hidden">--%>
+                <%--                        <img src="Image/Product/Áo%20kiểu%20Amory.png" alt="">--%>
+                <%--                    </div>--%>
+                <%--                </form>--%>
+                <%--                <form class="Search" action="productImage" method="get" id="productForm">--%>
+                <%--                    <div class="CategoryItem Dress"--%>
+                <%--                         onclick="submitFormWithImageName('1_4d6348ce5d064c11b44230176bfcf978.png')">--%>
+                <%--                        <input type="text" name="image" id="imageInput"--%>
+                <%--                               value="1_4d6348ce5d064c11b44230176bfcf978.png" hidden="hidden">--%>
+                <%--                        <img src="Image/Product/1_4d6348ce5d064c11b44230176bfcf978.png" alt="">--%>
+                <%--                    </div>--%>
+                <%--                </form>--%>
+                <%--                <form class="Search" action="productImage" method="get" id="productForm">--%>
+                <%--                    <div class="CategoryItem Dress"--%>
+                <%--                         onclick="submitFormWithImageName('1_4d6348ce5d064c11b44230176bfcf978.png')">--%>
+                <%--                        <input type="text" name="image" id="imageInput"--%>
+                <%--                               value="1_4d6348ce5d064c11b44230176bfcf978.png" hidden="hidden">--%>
+                <%--                        <img src="Image/Product/1_4d6348ce5d064c11b44230176bfcf978.png" alt="">--%>
+                <%--                    </div>--%>
+                <%--                </form>--%>
+                <%--                <form class="Search" action="productImage" method="get" id="productForm">--%>
+                <%--                    <div class="CategoryItem Dress"--%>
+                <%--                         onclick="submitFormWithImageName('1_4d6348ce5d064c11b44230176bfcf978.png')">--%>
+                <%--                        <input type="text" name="image" id="imageInput"--%>
+                <%--                               value="1_4d6348ce5d064c11b44230176bfcf978.png" hidden="hidden">--%>
+                <%--                        <img src="Image/Product/1_4d6348ce5d064c11b44230176bfcf978.png" alt="">--%>
+                <%--                    </div>--%>
+                <%--                </form>--%>
+                <%--                <form class="Search" action="productImage" method="get" id="productForm">--%>
+                <%--                    <div class="CategoryItem Dress"--%>
+                <%--                         onclick="submitFormWithImageName('1_4d6348ce5d064c11b44230176bfcf978.png')">--%>
+                <%--                        <input type="text" name="image" id="imageInput"--%>
+                <%--                               value="1_4d6348ce5d064c11b44230176bfcf978.png" hidden="hidden">--%>
+                <%--                        <img src="Image/Product/1_4d6348ce5d064c11b44230176bfcf978.png" alt="">--%>
+                <%--                    </div>--%>
+                <%--                </form>--%>
+                <%--                <form class="Search" action="productImage" method="get" id="productForm">--%>
+                <%--                    <div class="CategoryItem Dress"--%>
+                <%--                         onclick="submitFormWithImageName('1_4d6348ce5d064c11b44230176bfcf978.png')">--%>
+                <%--                        <input type="text" name="image" id="imageInput"--%>
+                <%--                               value="1_4d6348ce5d064c11b44230176bfcf978.png" hidden="hidden">--%>
+                <%--                        <img src="Image/Product/1_4d6348ce5d064c11b44230176bfcf978.png" alt="">--%>
+                <%--                    </div>--%>
+                <%--                </form>--%>
+                <%--                <form class="Search" action="productImage" method="get" id="productForm">--%>
+                <%--                    <div class="CategoryItem Dress"--%>
+                <%--                         onclick="submitFormWithImageName('1_4d6348ce5d064c11b44230176bfcf978.png')">--%>
+                <%--                        <input type="text" name="image" id="imageInput"--%>
+                <%--                               value="1_4d6348ce5d064c11b44230176bfcf978.png" hidden="hidden">--%>
+                <%--                        <img src="Image/Product/1_4d6348ce5d064c11b44230176bfcf978.png" alt="">--%>
+                <%--                    </div>--%>
+                <%--                </form>--%>
+                <%--                <form class="Search" action="productImage" method="get" id="productForm">--%>
+                <%--                    <div class="CategoryItem Dress"--%>
+                <%--                         onclick="submitFormWithImageName('1_4d6348ce5d064c11b44230176bfcf978.png')">--%>
+                <%--                        <input type="text" name="image" id="imageInput"--%>
+                <%--                               value="1_4d6348ce5d064c11b44230176bfcf978.png" hidden="hidden">--%>
+                <%--                        <img src="Image/Product/1_4d6348ce5d064c11b44230176bfcf978.png" alt="">--%>
+                <%--                    </div>--%>
+                <%--                </form>--%>
+                <%--                <form class="Search" action="productImage" method="get" id="productForm">--%>
+                <%--                    <div class="CategoryItem Dress"--%>
+                <%--                         onclick="submitFormWithImageName('1_4d6348ce5d064c11b44230176bfcf978.png')">--%>
+                <%--                        <input type="text" name="image" id="imageInput"--%>
+                <%--                               value="1_4d6348ce5d064c11b44230176bfcf978.png" hidden="hidden">--%>
+                <%--                        <img src="Image/Product/1_4d6348ce5d064c11b44230176bfcf978.png" alt="">--%>
+                <%--                    </div>--%>
+                <%--                </form>--%>
+                <%--                <form class="Search" action="productImage" method="get" id="productForm">--%>
+                <%--                    <div class="CategoryItem Dress"--%>
+                <%--                         onclick="submitFormWithImageName('1_4d6348ce5d064c11b44230176bfcf978.png')">--%>
+                <%--                        <input type="text" name="image" id="imageInput"--%>
+                <%--                               value="1_4d6348ce5d064c11b44230176bfcf978.png" hidden="hidden">--%>
+                <%--                        <img src="Image/Product/1_4d6348ce5d064c11b44230176bfcf978.png" alt="">--%>
+                <%--                    </div>--%>
+                <%--                </form>--%>
                 <img src="Image/Product/Áo%20kiểu%20Amory.png" alt="">
                 <img src="Image/Product/Quần%20dài%20Foris.png" alt="">
                 <img src="Image/Product/Quần%20Garo.jpg" alt="">
@@ -273,6 +364,19 @@
 </div>
 <script>
     document.body.innerHTML += addFooter();
+
+    function findProducts(category) {
+        document.getElementById("categoryInput").value = category;
+        document.getElementById("productSearchForm").submit();
+    }
+
+    function submitFormWithImageName(imageName) {
+        // Thay đổi giá trị của trường nameproduct
+        document.getElementById("imageInput").value = imageName;
+
+        // Submit form
+        document.getElementById("productForm").submit();
+    }
 </script>
 </body>
 </html>
