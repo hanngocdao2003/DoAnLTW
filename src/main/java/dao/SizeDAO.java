@@ -24,7 +24,7 @@ public class SizeDAO {
                 sizeEntities.add(sizeEntity);
             }
         } catch (Exception ex) {
-            System.out.println(ex.getMessage());
+            System.out.println("error sizes " + ex.getMessage());
         }
         return sizeEntities;
     }

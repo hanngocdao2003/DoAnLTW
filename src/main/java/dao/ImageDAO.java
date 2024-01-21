@@ -13,10 +13,10 @@ import java.util.List;
 public class ImageDAO {
     public List<ImageEntity> findImage(int productId) {
         List<ImageEntity> imageEntities = new ArrayList<>();
-        String sql = "SELECT i.id, i.link, i.productId FROM shopquanao.images i"
+        String sql = "SELECT i.id, i.link, i.productId FROM shopquanao.images AS i"
                 + " WHERE 1 = 1 ";
         if (productId != 0) {
-            sql += " AND productId LIKE '%" + productId +"%' ";
+            sql += " AND productId = " + productId;
         }
         try (Connection conn = ConnectionUtils.getConnection();
              Statement stmt = conn.createStatement();
@@ -29,7 +29,7 @@ public class ImageDAO {
                 imageEntities.add(imageEntity);
             }
         } catch (Exception ex) {
-            System.out.println(ex.getMessage());
+            System.out.println("error images " +ex.getMessage());
         }
         return imageEntities;
     }

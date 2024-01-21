@@ -26,7 +26,7 @@
   
   .wrapper {
     width: 700px;
-    background: #E9BCB1;
+    background: var(--back-footer);
     border-radius: 10px;
     padding: 25px 25px 30px;
     margin-bottom: 5%;
@@ -62,7 +62,7 @@
     padding: 10px 20px;
     border-radius: 20px;
     border: none;
-    background: #CC8487;
+    background: var(--but);
     margin-top: 20px;
     display: flex;
     justify-content: center;
