@@ -1,12 +1,6 @@
 <%@ page import="bean.InformationUser" %>
 <%@ page import="java.util.List" %>
-<%@ page import="java.util.ArrayList" %><%--
-  Created by IntelliJ IDEA.
-  User: nguye
-  Date: 1/20/2024
-  Time: 3:44 PM
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -92,7 +86,8 @@
         <!-- Chức năng quản lý người dùng -->
         <div class="customer-management" id="panel4">
             <div id="info_customer">
-                <form class="main_label running" action="uploadInfUser">
+
+                <form class="main_label running" action="uploadInfUser" method="get">
                     <span>Thông tin các tài khoản</span>
                     <table class="table">
                         <thead>
@@ -109,7 +104,6 @@
                         <%
                             List<InformationUser> infUser;
                             infUser = (List<InformationUser>) session.getAttribute("listUser");
-                            List<Integer> listID = new ArrayList<>();
                             System.out.println(infUser);
                             String running = "Đang hoạt động";
                             String lockUser = "Đã khóa";
@@ -126,12 +120,13 @@
                             </td>
                             <td><%= infUser.get(i).getRole() %>
                             </td>
-                            <td><%if (infUser.get(i).getStatus() == 1) {%>
-                                <%= running%>
-                                <%} else {%>
-                                <%= lockUser%>
-                                <%}%>
+                            <%if (infUser.get(i).getStatus() == 1) {%>
+                            <td><%=running %>
                             </td>
+                            <%} else {%>
+                            <td><%=lockUser %>
+                            </td>
+                            <%}%>
                             <td>
                                 <input type="button" value="Khóa tài khoản">
                             </td>

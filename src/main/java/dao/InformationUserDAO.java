@@ -15,9 +15,11 @@ public class InformationUserDAO {
     public List<InformationUser> listInfUser() throws SQLException {
         List<InformationUser> result = new ArrayList<>();
         String sql = "select users.fullName, users.phone, users.email, roles.roleName, users.status \n" +
-                "from users inner join roles on roles.id = users.roleId;";
+                "from users inner join roles on roles.id = users.roleId where  users.roleID = ? and users.status = ?";
         Connection connection = ConnectionUtils.getConnection();
         PreparedStatement statement = connection.prepareStatement(sql);
+        statement.setString(1, "R2");
+        statement.setInt(2, 1);
         ResultSet rs = statement.executeQuery();
         while (rs.next()){
             InformationUser user = new InformationUser();

@@ -1,5 +1,6 @@
 package controller;
 
+import bean.CommentReponse;
 import bean.InformationUser;
 import service.InformationUserService;
 
@@ -21,10 +22,12 @@ public class UploadUserForAdmin extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        HttpSession session = req.getSession();
-        InformationUserService service = new InformationUserService();
         try {
-            List<InformationUser> list = service.loadDataUser();
+            HttpSession session = req.getSession();
+            InformationUserService service = new InformationUserService();
+            List<InformationUser> list;
+            list = service.loadDataUser();
+            System.out.println(print(list));
             session.setAttribute("listUser", list);
             for(InformationUser user : list){
                 session.setAttribute("nameInfUSer", user.getName());
@@ -32,11 +35,19 @@ public class UploadUserForAdmin extends HttpServlet {
                 session.setAttribute("phoneInfUser", user.getNumberphone());
                 session.setAttribute("roleInfUser", user.getRole());
                 session.setAttribute("statusInfUser", user.getStatus());
-                req.getRequestDispatcher("ManagUser.jsp").forward(req, resp);
+
             }
+            req.getRequestDispatcher("ManagUser.jsp").forward(req, resp);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
 
+    }
+    public String print(List<InformationUser> list){
+        String result = "";
+        for(InformationUser c : list){
+            result += c + "\n";
+        }
+        return result;
     }
 }

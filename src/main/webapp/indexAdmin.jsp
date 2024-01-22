@@ -67,7 +67,7 @@
                             <i class="fa-solid fa-circle" style="color: var(--border);"></i>
                             Quản lý đơn hàng
                         </li>
-                        <a href="ManagUser.jsp" class="linkUpload">
+                        <a href="uploadInfUser" class="linkUpload">
                             <li class="item" onclick="handleClick(this, 'panel4')">
                                 <i class="fa-solid fa-circle" style="color: var(--border);"></i>
                                 Quản lý người dùng

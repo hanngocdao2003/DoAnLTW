@@ -48,16 +48,16 @@
                     if (success != null && "R1".equals(roleID)) {
                 %>
                 <a href="indexAdmin.jsp" class="user"><i class="fa-solid fa-user"
-                                                            style="margin-right: 5px"></i> <%= success %>
+                                                         style="margin-right: 5px"></i> <%= success %>
                 </a>
                 <%
                 } else if (success != null) {
                 %>
                 <a href="indexPersonal.jsp" class="user"><i class="fa-solid fa-user"
-                                                         style="margin-right: 5px"></i> <%= success %>
+                                                            style="margin-right: 5px"></i> <%= success %>
                 </a>
                 <%
-                } else{
+                } else {
                 %>
                 <a href="indexLogin.jsp" class="user"><i class="fa-solid fa-user"></i></a>
                 <%
