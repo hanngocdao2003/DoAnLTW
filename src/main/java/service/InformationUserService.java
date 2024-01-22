@@ -12,6 +12,11 @@ public class InformationUserService {
       List<InformationUser> result = dao.listInfUser();
       return  result;
   }
+    public List<InformationUser> loadDataLockUser() throws SQLException {
+        InformationUserDAO dao = new InformationUserDAO();
+        List<InformationUser> result = dao.listLockUser();
+        return  result;
+    }
     private String print(List<InformationUser> list) {
         String result = "";
         for (InformationUser user : list) {
@@ -22,6 +27,6 @@ public class InformationUserService {
 
     public static void main(String[] args) throws SQLException {
         InformationUserService service = new InformationUserService();
-        System.out.println(service.print(service.loadDataUser()));
+        System.out.println(service.print(service.loadDataLockUser()));
     }
 }

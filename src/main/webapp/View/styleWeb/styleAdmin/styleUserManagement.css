@@ -130,6 +130,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100%;
+    flex-direction: column;
 
 }
 
@@ -270,5 +271,21 @@ td {
     font-size: 35px;
     font-weight: bold;
     text-transform: uppercase;
+}
+.firstPanel{
+    width: 82%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.firstPanel>a{
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: bold;
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 20px;
+    color: white;
+    background-color: var(--but);
 }
 
