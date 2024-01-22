@@ -70,6 +70,7 @@ public class FindProduct extends HttpServlet {
         RequestDispatcher dispatcher = request.getRequestDispatcher("allProductofCategory.jsp");
         dispatcher.forward(request, response);
     }
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);

@@ -31,7 +31,7 @@ public class LoginControl extends HttpServlet {
 
         if (userEntity == null) {
             request.setAttribute("Error", "Tên đăng nhập hoặc mật khẩu không đúng");
-        }else {
+        } else {
             session.setAttribute("Role", userEntity.getRoleId());
             session.setAttribute("User", userEntity);
             session.setAttribute("Id", userEntity.getId());
@@ -46,7 +46,7 @@ public class LoginControl extends HttpServlet {
             if (userEntity.getRoleId().equals("R1")) {
                 url = ADSUCCESS;
                 session.setAttribute("Success", userEntity.getFullName());
-            }else{
+            } else {
 
                 url = SUCCESS;
                 session.setAttribute("Success", userEntity.getFullName());

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="View/styleWeb/styleChangePass.css">
     <link rel="stylesheet" href="Image/fontawesome-free-6.4.2-web/css/all.min.css">
     <link rel="stylesheet" href="View/styleWeb/styleFooter.css">
+
     <link rel="icon" href="Image/BHD-html.png" type="image/x-icon">
     <title>Đổi mật khẩu</title>
 </head>

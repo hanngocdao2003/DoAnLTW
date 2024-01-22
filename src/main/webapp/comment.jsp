@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="bean.ShoppingCart" %>
 <!DOCTYPE html>
 <html lang="en">
 
