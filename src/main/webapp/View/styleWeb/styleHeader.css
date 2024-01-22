@@ -129,11 +129,11 @@ a>.menu_Category_Item {
     color: var(--but);
 }
 
-.cart {
-    /*position: absolute;*/
-    /*right: 200px;*/
-    /*bottom: auto;*/
-    /*top: auto;*/
+.cartHeader {
+    position: absolute;
+    right: 200px;
+    bottom: auto;
+    top: auto;
 }
 .rightIcon{
     position: absolute;

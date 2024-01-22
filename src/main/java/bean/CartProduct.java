@@ -8,12 +8,14 @@ public class CartProduct {
     private String color;
     private int quantityExist;
     private int productId;
+    private ProductResponse product;
 
     public CartProduct(int quantity, String size, String color, int productId) {
         this.quantity = quantity;
         this.size = size;
         this.color = color;
         this.productId = productId;
+        this.product = new ProductResponse();
     }
 
     public int getQuantityExist() {

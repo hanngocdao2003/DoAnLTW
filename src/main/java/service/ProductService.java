@@ -13,9 +13,7 @@ public class ProductService {
         // khởi tạo list để lấy các đối tượng lấy được từ lớp productDAO
         List<ProductEntity> productEntities = ProductDAO.findProduct(search);
         System.out.println(productEntities.size());
-        // tạo thêm một list mới với đối tượng ProductResponse để đưa các thông tin cần hiển thị ra màn hình
         List<ProductResponse> result = new ArrayList<>();
-        // tạo đối tượng lấy hình ảnh, màu, size từng sản phẩm
         ImageDAO imageDAO = new ImageDAO();
         ColorDAO colorDAO = new ColorDAO();
         SizeDAO sizeDAO = new SizeDAO();
@@ -25,9 +23,6 @@ public class ProductService {
             List<ColorEntity> colorEntities = colorDAO.findColor(productId);
             List<SizeEntity> sizeEntities = sizeDAO.findSize(productId);
 
-            System.out.println(imageEntities.size());
-            System.out.println(colorEntities.size());
-            System.out.println(sizeEntities.size());
             //dùng feature java 8 để lấy list màu, size
             String color = colorEntities.stream().map(colors -> colors.getCode()).collect(Collectors.joining(", "));
             String size = sizeEntities.stream().map(sizes -> sizes.getSize()).collect(Collectors.joining(", "));

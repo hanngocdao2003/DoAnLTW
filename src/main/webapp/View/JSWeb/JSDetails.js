@@ -32,7 +32,6 @@ function addCart() {
             'color': color,
             'size': size,
         };
-
         $.ajax({
             url: '/maven_war_exploded/addtocart',
             type: 'POST',
