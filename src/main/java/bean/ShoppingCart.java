@@ -1,5 +1,7 @@
 package bean;
 
+import service.ProductService;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -70,16 +72,32 @@ public class ShoppingCart {
         return total;
     }
 
-    public static void main(String[] args) {
-//        // Tạo đối tượng ShoppingCart
-        ShoppingCart shoppingCart = new ShoppingCart();
-        System.out.println(shoppingCart.getTotalItem());
+//    public double getTotalPrice() {
+//        double totalPrice = 0.0;
 //
-//        // Thêm sản phẩm vào giỏ hàng
+//        for (List<CartProduct> cartProducts : mapCart.values()) {
+//            for (CartProduct product : cartProducts) {
+//                // Tính giá tiền cho từng sản phẩm và cộng vào tổng giá tiền
+//                ProductResponse productResponse = ProductService.getDetails(product.getProductId());
+//                System.out.println(productResponse);
+//                totalPrice += productResponse.getPrice() * product.getQuantity();
+//            }
+//        }
+//
+//        return totalPrice;
+//    }
+
+//    public static void main(String[] args) {
+//        // Tạo đối tượng ShoppingCart
+//        ShoppingCart shoppingCart = new ShoppingCart();
+//        System.out.println(shoppingCart.getTotalItem());
+//
+        // Thêm sản phẩm vào giỏ hàng
 //        shoppingCart.addProduct("Red", "M", 1, 2);
 //        shoppingCart.addProduct("Blue", "L", 2, 1);
 //        shoppingCart.addProduct("Blue", "L", 2, 2);
 //        System.out.println(shoppingCart.mapCart);
+//        System.out.println(shoppingCart.getTotalItem());
 
 //        shoppingCart.increasingQuantity(1, 0);
 //        shoppingCart.increasingQuantity(1, 0);
@@ -93,5 +111,5 @@ public class ShoppingCart {
 //        shoppingCart.removeProduct(1, 0);
 //        System.out.println(shoppingCart.mapCart);
 //        System.out.println(shoppingCart.getTotalItem());
-    }
+
 }

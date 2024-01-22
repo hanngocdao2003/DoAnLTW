@@ -3,6 +3,7 @@
 <%@ page import="bean.CartProduct" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Map" %>
+<%@ page import="service.ProductService" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +26,7 @@
 <header>
     <%
         ShoppingCart shoppingCart = (ShoppingCart) session.getAttribute("cart");
-        if(shoppingCart == null) {
+        if (shoppingCart == null) {
             shoppingCart = new ShoppingCart();
         }
     %>
@@ -36,13 +37,14 @@
                 <h1>BHD Boutique</h1>
             </div>
             <div class="search_Category">
-                <form class="Search" action="findProduct" method="get">
+                <form class="Search" action="Product" method="get">
                     <input name="keyword" type="text" class="input_search" placeholder="Nhập sản phẩm cần tìm">
-                    <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
             </div>
-            <a href="indexOrder.jsp" class="cartHeader"><i class="fa-solid fa-cart-shopping"></i><span id="totalitem" style="color: var(--but)">
-                            <%= shoppingCart.getTotalItem() %>
+            <a href="indexOrder.jsp" class="cartHeader"><i class="fa-solid fa-cart-shopping"></i><span id="totalitem"
+                                                                                                       style="color: var(--but)">
+                            <%= shoppingCart.getTotalItem()%>
                         </span></a>
             <a href="indexLogin.jsp" class="user"><i class="fa-solid fa-user"></i></a>
         </div>
@@ -139,48 +141,65 @@
     </div>
     <div class="straight-line"></div>
     <div class="cart-details">
-        <h1>Đơn hàng</h1>
-<%--        <form action="Product" method="GET" id="productForm">--%>
-<%--        <%--%>
+        <h1>Giỏ hàng</h1>
+        <%
 
-<%--                Map<Integer, List<CartProduct>> mapCart = shoppingCart.getMapCart();--%>
-<%--                for (Map.Entry<Integer, List<CartProduct>> entry : mapCart.entrySet()) {--%>
-<%--                    int productId = entry.getKey();--%>
-<%--                    List<CartProduct> cartProducts = entry.getValue();--%>
-<%--                    for (CartProduct cartProduct : cartProducts) {%>--%>
+            Map<Integer, List<CartProduct>> mapCart = shoppingCart.getMapCart();
+//                    ProductService productService = new ProductService();
+            for (Map.Entry<Integer, List<CartProduct>> entry : mapCart.entrySet()) {
+                int productId = entry.getKey();
+                List<CartProduct> cartProducts = entry.getValue();
+                for (CartProduct cartProduct : cartProducts) {
+                    ProductResponse productResponse = ProductService.getDetails(cartProduct.getProductId());
+
+        %>
         <div class="product">
-            <img src="" alt="">
+            <input hidden="hidden" name="productId" value="<%=cartProduct.getProductId()%>">
+            <img src="Image/Product/<%=productResponse.getImage()%>" alt="">
             <div class="details">
-                <h3>Áo Len AIMEE</h3>
+                <h3><%=productResponse.getName()%>
+                </h3>
                 <div class="choose">
-                    <select name="color" id="colour" style="margin-right: 20px">
-                        <option>Đen</option>
-                        <option>Trắng</option>
-                        <option>Hồng</option>
-                    </select>
-                    <select name="size" id="size">
-                        <option>S</option>
-                        <option>M</option>
-                        <option>L</option>
-                    </select>
+                    <div class="color-in-cart" name="color" id="colour" style="margin-right: 20px">
+                        <%if(cartProduct.getColor().equalsIgnoreCase("#FF0000FF")){%>
+                        <p>Đỏ</p>
+                        <%}%>
+                        <%if(cartProduct.getColor().equalsIgnoreCase("#FFFFFFFF")){%>
+                        <p>Trắng</p>
+                        <%}%>
+                        <%if(cartProduct.getColor().equalsIgnoreCase("#000000FF")){%>
+                        <p>Đen</p>
+                        <%}%>
+                        <%if(cartProduct.getColor().equalsIgnoreCase("#008000FF")){%>
+                        <p>Xanh lá</p>
+                        <%}%>
+                    </div>
+                    <div class="size-in-cart" name="size" id="size">
+                        <p><%=cartProduct.getSize()%>
+                        </p>
+                    </div>
                 </div>
                 <div class="cost">
-                    <span id="total" style="font-size: 30px">350000%></span>
-                    <span id="quantity">Số lượng: <span> 2</span></span>
+<%--                    <span id="total" style="font-size: 30px"><%=productResponse.getPrice()%></span>--%>
+<%--                    <span id="quantity">Số lượng: <span><%=cartProduct.getQuantity()%></span></span>--%>
                 </div>
-                <button id="removeBtn"><i class="fa-regular fa-trash-can" style="color: #ffffff;"></i>Xóa sản phẩm</button>
+                <button id="removeBtn"><i class="fa-regular fa-trash-can" style="color: #ffffff;"></i>Xóa sản phẩm
+                </button>
             </div>
         </div>
-<%--        <%}}%>--%>
-        <hr>
-<%--        <div class="voucher">--%>
-<%--            <div class="ten-percent">--%>
-<%--                <p>Mã giảm giá</p>--%>
-<%--                <p>Giảm 10% cho đơn hàng từ 399k</p>--%>
-<%--                <button>Áp dụng</button>--%>
-<%--            </div>--%>
-<%--        </div>--%>
-        <hr>
+        <hr style="margin:10px 0px">
+        <%
+                }
+            }
+        %>
+
+        <%--        <div class="voucher">--%>
+        <%--            <div class="ten-percent">--%>
+        <%--                <p>Mã giảm giá</p>--%>
+        <%--                <p>Giảm 10% cho đơn hàng từ 399k</p>--%>
+        <%--                <button>Áp dụng</button>--%>
+        <%--            </div>--%>
+        <%--        </div>--%>
         <div class="detail-cost">
             <div class="price">
                 <p class="lable">Tạm tính</p>
@@ -203,7 +222,6 @@
         <div id="accept_pay">
             <button>Chấp nhận thanh toán</button>
         </div>
-<%--        </form>--%>
     </div>
 </div>
 <script>

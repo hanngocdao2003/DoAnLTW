@@ -34,15 +34,15 @@
         <div class="logo_search_cart">
             <div class="logo">
                 <img src="Image/logo/BHD-nền%20trong%20suốt.svg" alt="404">
-                <h1>BHD Boutique</h1>
+                <a href="index.jsp"><h1 class="nameBrand">BHD Boutique</h1></a>
             </div>
             <div class="search_Category">
-                <form class="Search" action="findProduct" method="get">
+                <form class="Search" action="Product" method="get">
                     <input name="keyword" type="text" class="input_search" placeholder="Nhập sản phẩm cần tìm">
                     <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
             </div>
-            <a href="indexOrder.jsp" class="cart"><i class="fa-solid fa-cart-shopping"></i><span id="totalitem" style="color: var(--but)">
+            <a href="indexOrder.jsp" class="cartHeader"><i class="fa-solid fa-cart-shopping"></i><span id="totalitem" style="color: var(--but)">
                             <%= cart.getTotalItem() %>
                         </span></a>
             <a href="indexLogin.jsp" class="user"><i class="fa-solid fa-user"></i></a>

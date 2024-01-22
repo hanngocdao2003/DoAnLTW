@@ -43,7 +43,7 @@
     width: 100px;
   }
 
-  .logo>h1 {
+  .logo a .nameBrand{
     font-family: 'Brush Script MT';
     color: brown;
     font-size: 32px;
