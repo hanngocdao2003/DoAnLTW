@@ -42,7 +42,7 @@
             <div class="search_Category">
                 <form class="Search" action="Product" method="get">
                     <input name="keyword" type="text" class="input_search" placeholder="Nhập sản phẩm cần tìm">
-                    <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
             </div>
 
@@ -184,16 +184,16 @@
         <span>Sản phẩm mới</span>
         <div class="SliderShow_Product">
             <div class="SlideListProduct">
-                <a><img src="Image/Product/Áo%20kiểu%20Amory.png" alt=""></a>a
-                <a><img src="Image/Product/Quần%20dài%20Foris.png" alt=""></a>a
-                <a><img src="Image/Product/Quần%20Garo.jpg" alt=""></a>a
-                <a><img src="Image/Product/Quần%20Dài%20Doris%20(2).jpg" alt=""></a>a
-                <a><img src="Image/Product/ÁO%20KHOÁC%20KASEY.jpg" alt=""></a>a
-                <a><img src="Image/Product/ÁO%20KHOÁC%20HENNA.jpg" alt=""></a>a
-                <a><img src="Image/Product/Đầm%20hai%20dây%20pamela%20(2).jpg" alt=""></a>a
-                <a><img src="Image/Product/Váy%20Dài%20Arisha.png" alt=""></a>a
-                <a><img src="Image/Product/VÁY%20NGẮN%20VALERIE.jpg" alt=""></a>a
-                <a><img src="Image/Product/Váy%20dài%20Belle.jpg" alt=""></a>a
+                <a><img src="Image/Product/Áo%20kiểu%20Amory.png" alt=""></a>
+                <a><img src="Image/Product/Quần%20dài%20Foris.png" alt=""></a>
+                <a><img src="Image/Product/Quần%20Garo.jpg" alt=""></a>
+                <a><img src="Image/Product/Quần%20Dài%20Doris%20(2).jpg" alt=""></a>
+                <a><img src="Image/Product/ÁO%20KHOÁC%20KASEY.jpg" alt=""></a>
+                <a><img src="Image/Product/ÁO%20KHOÁC%20HENNA.jpg" alt=""></a>
+                <a><img src="Image/Product/Đầm%20hai%20dây%20pamela%20(2).jpg" alt=""></a>
+                <a><img src="Image/Product/Váy%20Dài%20Arisha.png" alt=""></a>
+                <a><img src="Image/Product/VÁY%20NGẮN%20VALERIE.jpg" alt=""></a>
+                <a><img src="Image/Product/Váy%20dài%20Belle.jpg" alt=""></a>
 
             </div>
         </div>
