@@ -343,17 +343,23 @@ a>.menu_Category_Item {
 
 
 }
-
-.slick-track {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    column-gap: 20px;
+.SliderShow_Product{
+    .slick-track {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 20px;
+    }
+    .slick-track >a > img{
+        width: 214px;
+    }
 }
+
 
 .SlideListProduct>div {
     width: 80%;
 }
+
 
 .OfCategory {
     display: flex;

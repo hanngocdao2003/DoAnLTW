@@ -136,12 +136,12 @@
         top: auto;
     }
 
-    .user {
-        position: absolute;
-        right: 150px;
-        bottom: auto;
-        top: auto;
-    }
+    /*.user {*/
+    /*    position: absolute;*/
+    /*    right: 150px;*/
+    /*    bottom: auto;*/
+    /*    top: auto;*/
+    /*}*/
 
     .fa-cart-shopping {
         font-size: 20px;
