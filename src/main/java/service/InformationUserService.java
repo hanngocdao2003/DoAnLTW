@@ -17,6 +17,14 @@ public class InformationUserService {
         List<InformationUser> result = dao.listLockUser();
         return  result;
     }
+    public boolean blockUser(int id) throws SQLException {
+      InformationUserDAO dao = new InformationUserDAO();
+      return dao.blockUser(id);
+    }
+    public boolean unlockUser(int id) throws SQLException {
+        InformationUserDAO dao = new InformationUserDAO();
+        return dao.unlockUser(id);
+    }
     private String print(List<InformationUser> list) {
         String result = "";
         for (InformationUser user : list) {
@@ -27,6 +35,7 @@ public class InformationUserService {
 
     public static void main(String[] args) throws SQLException {
         InformationUserService service = new InformationUserService();
-        System.out.println(service.print(service.loadDataLockUser()));
+ //       System.out.println(service.print(service.loadDataLockUser()));
+        System.out.println(service.unlockUser(3));
     }
 }

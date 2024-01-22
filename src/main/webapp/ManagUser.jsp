@@ -132,7 +132,7 @@
                             </td>
                             <%}%>
                             <td>
-                                <input type="button" value="Khóa tài khoản">
+                                <a href="blockUser?idBl=<%=infUser.get(i).getId()%>">Khóa tài khoản</a>
                             </td>
                         </tr>
                         <%
@@ -140,7 +140,7 @@
                         } else {
                         %>
                         <tr>
-                            <td colspan="5">Không có dữ liệu để hiển thị</td>
+                            <td colspan="6">Không có dữ liệu để hiển thị</td>
                         </tr>
                         <% } %>
                         </tbody>

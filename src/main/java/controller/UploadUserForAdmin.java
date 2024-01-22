@@ -30,6 +30,7 @@ public class UploadUserForAdmin extends HttpServlet {
             System.out.println(print(list));
             session.setAttribute("listUser", list);
             for(InformationUser user : list){
+                session.setAttribute("idInfUser", user.getId());
                 session.setAttribute("nameInfUSer", user.getName());
                 session.setAttribute("emailInfUser", user.getEmail());
                 session.setAttribute("phoneInfUser", user.getNumberphone());

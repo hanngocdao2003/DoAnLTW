@@ -86,7 +86,7 @@
     </div>
     <div id="info_panel" class="info_panel">
         <div class="firstPanel">
-            <a href="ManagUser.jsp"><i class="fa-solid fa-caret-left"></i> Các tài khoản bị khóa</a>
+            <a href="uploadInfUser"><i class="fa-solid fa-caret-left"></i> Quản lý tài khoản</a>
         </div>
         <!-- Chức năng quản lý người dùng -->
         <div class="customer-management" id="panel4">
@@ -133,7 +133,7 @@
                             </td>
                             <%}%>
                             <td>
-                                <input type="button" value="Mở khóa tài khoản">
+                                <a href="unlockUser?idUl=<%=infUser.get(i).getId()%>">Mở khóa tài khoản</a>
                             </td>
                         </tr>
                         <%
@@ -141,7 +141,7 @@
                         } else {
                         %>
                         <tr>
-                            <td colspan="5">Không có dữ liệu để hiển thị</td>
+                            <td colspan="6">Không có dữ liệu để hiển thị</td>
                         </tr>
                         <% } %>
                         </tbody>

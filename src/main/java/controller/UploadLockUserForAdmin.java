@@ -30,10 +30,12 @@ public class UploadLockUserForAdmin extends HttpServlet {
             System.out.println(print(list));
             session.setAttribute("listLockUser", list);
             for (InformationUser user : list) {
+                session.setAttribute("idLockUser", user.getId());
                 session.setAttribute("nameLockUSer", user.getName());
                 session.setAttribute("emailLockUser", user.getEmail());
                 session.setAttribute("phoneLockUser", user.getNumberphone());
                 session.setAttribute("roleLockUser", user.getRole());
+                session.setAttribute("statusLockUser", user.getStatus());
             }
             req.getRequestDispatcher("ManagerLockUser.jsp").forward(req, resp);
         } catch (SQLException e) {
