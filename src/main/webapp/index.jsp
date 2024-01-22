@@ -184,17 +184,17 @@
         <span>Sản phẩm mới</span>
         <div class="SliderShow_Product">
             <div class="SlideListProduct">
-                <img src="Image/Product/1_4d6348ce5d064c11b44230176bfcf978.png" alt="">
-                <img src="Image/Product/Áo%20kiểu%20Amory.png" alt="">
-                <img src="Image/Product/Quần%20dài%20Foris.png" alt="">
-                <img src="Image/Product/Quần%20Garo.jpg" alt="">
-                <img src="Image/Product/Quần%20Dài%20Doris%20(2).jpg" alt="">
-                <img src="Image/Product/ÁO%20KHOÁC%20KASEY.jpg" alt="">
-                <img src="Image/Product/ÁO%20KHOÁC%20HENNA.jpg" alt="">
-                <img src="Image/Product/Đầm%20hai%20dây%20pamela%20(2).jpg" alt="">
-                <img src="Image/Product/Váy%20Dài%20Arisha.png" alt="">
-                <img src="Image/Product/VÁY%20NGẮN%20VALERIE.jpg" alt="">
-                <img src="Image/Product/Váy%20dài%20Belle.jpg" alt="">
+                <a><img src="Image/Product/Áo%20kiểu%20Amory.png" alt=""></a>a
+                <a><img src="Image/Product/Quần%20dài%20Foris.png" alt=""></a>a
+                <a><img src="Image/Product/Quần%20Garo.jpg" alt=""></a>a
+                <a><img src="Image/Product/Quần%20Dài%20Doris%20(2).jpg" alt=""></a>a
+                <a><img src="Image/Product/ÁO%20KHOÁC%20KASEY.jpg" alt=""></a>a
+                <a><img src="Image/Product/ÁO%20KHOÁC%20HENNA.jpg" alt=""></a>a
+                <a><img src="Image/Product/Đầm%20hai%20dây%20pamela%20(2).jpg" alt=""></a>a
+                <a><img src="Image/Product/Váy%20Dài%20Arisha.png" alt=""></a>a
+                <a><img src="Image/Product/VÁY%20NGẮN%20VALERIE.jpg" alt=""></a>a
+                <a><img src="Image/Product/Váy%20dài%20Belle.jpg" alt=""></a>a
+
             </div>
         </div>
     </div>
