@@ -1,11 +1,13 @@
 package bean;
 
+import java.sql.Date;
+
 public class BillEntity {
     private String id;
     private String userName;
     private String userPhone;
     private String userAddress;
-    private String dateCreated;
+    private Date dateCreated;
     private String note;
     private Integer userId;
     private String statusPayment;
@@ -44,11 +46,11 @@ public class BillEntity {
         this.userAddress = userAddress;
     }
 
-    public String getDateCreated() {
+    public Date getDateCreated() {
         return dateCreated;
     }
 
-    public void setDateCreated(String dateCreated) {
+    public void setDateCreated(Date dateCreated) {
         this.dateCreated = dateCreated;
     }
 

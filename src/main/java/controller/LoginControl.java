@@ -42,7 +42,6 @@ public class LoginControl extends HttpServlet {
             session.setAttribute("district", userEntity.getDistrict());
             session.setAttribute("ward", userEntity.getWard());
             session.setAttribute("numHouse", userEntity.getNumHouse());
-            request.getRequestDispatcher("indexAdmin.jsp").forward(request, response);
 
             if (userEntity.getRoleId().equals("R1")) {
                 url = ADSUCCESS;

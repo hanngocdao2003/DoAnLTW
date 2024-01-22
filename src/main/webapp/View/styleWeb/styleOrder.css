@@ -6,7 +6,7 @@
     }
 
     body {
-       background: linear-gradient(90deg, rgba(198, 225, 246, 0.5), rgba(251, 214, 227, 0.5));
+        background: linear-gradient(90deg, rgba(198, 225, 246, 0.5), rgba(251, 214, 227, 0.5));
     }
 
     header {
@@ -136,13 +136,12 @@
         top: auto;
     }
 
-    .user {
+    /*.user {
         position: absolute;
         right: 150px;
         bottom: auto;
         top: auto;
-    }
-
+    }*/
     .fa-cart-shopping {
         font-size: 20px;
         color: var(--but);
@@ -463,6 +462,11 @@
         font-size: 18px;
         background: var(--but);
         color: white;
+    }
+
+    #accept_pay button:hover {
+        background-color: var(--font-o);
+        cursor: pointer;
     }
 
     .cart .cart-details .total-cost p {

@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Xác thực thành công</title>
+    <link rel="icon" href="Image/BHD-html.png" type="image/x-icon">
     <style>
         *{
             margin: 0;
