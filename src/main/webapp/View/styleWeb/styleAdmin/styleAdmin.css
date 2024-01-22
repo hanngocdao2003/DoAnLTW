@@ -130,7 +130,7 @@ body {
     color: white !important;
     background-color: var(--font);
 }
-.linkUploadCommentAdmin{
+.linkUpload{
     text-decoration: none;
 }
 

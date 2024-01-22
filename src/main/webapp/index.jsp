@@ -29,7 +29,7 @@
 <header>
     <%
         ShoppingCart cart = (ShoppingCart) session.getAttribute("cart");
-        if(cart == null) {
+        if (cart == null) {
             cart = new ShoppingCart();
         }
     %>
@@ -45,10 +45,34 @@
                     <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
             </div>
-            <a href="indexOrder.jsp" class="cartHeader"><i class="fa-solid fa-cart-shopping"></i><span id="totalitem" style="color: var(--but)">
-                            <%= cart.getTotalItem() %>
-                        </span></a>
-            <a href="indexLogin.jsp" class="user"><i class="fa-solid fa-user"></i></a>
+
+            <div class="rightIcon">
+                <a href="" class="cartHeader"><i class="fa-solid fa-cart-shopping"></i></a>
+                <%
+                    String success = (String) session.getAttribute("Success");
+                    String roleID = (String) session.getAttribute("Role");
+                    System.out.println(success);
+                    System.out.println(roleID);
+                    if (success != null && "R1".equals(roleID)) {
+                %>
+                <a href="indexAdmin.jsp" class="user"><i class="fa-solid fa-user"
+                                                         style="margin-right: 5px"></i> <%= success %>
+                </a>
+                <%
+                } else if (success != null) {
+                %>
+                <a href="indexPersonal.jsp" class="user"><i class="fa-solid fa-user"
+                                                            style="margin-right: 5px"></i> <%= success %>
+                </a>
+                <%
+                } else {
+                %>
+                <a href="indexLogin.jsp" class="user"><i class="fa-solid fa-user"></i></a>
+                <%
+                    }
+                %>
+            </div>
+
         </div>
     </div>
     <div class="menu_container">
@@ -160,39 +184,17 @@
         <span>Sản phẩm mới</span>
         <div class="SliderShow_Product">
             <div class="SlideListProduct">
-                <%--                <img src="Image/Product/1_4d6348ce5d064c11b44230176bfcf978.png" alt="">--%>
-                <%--                <img src="Image/Product/Áo%20kiểu%20Amory.png" alt="">--%>
-                <%--                <img src="Image/Product/Quần%20dài%20Foris.png" alt="">--%>
-                <%--                <img src="Image/Product/Quần%20Garo.jpg" alt="">--%>
-                <%--                <img src="Image/Product/Quần%20Dài%20Doris%20(2).jpg" alt="">--%>
-                <%--                <img src="Image/Product/ÁO%20KHOÁC%20KASEY.jpg" alt="">--%>
-                <%--                <img src="Image/Product/ÁO%20KHOÁC%20HENNA.jpg" alt="">--%>
-                <%--                <img src="Image/Product/Đầm%20hai%20dây%20pamela%20(2).jpg" alt="">--%>
-                <%--                <img src="Image/Product/Váy%20Dài%20Arisha.png" alt="">--%>
-                <%--                <img src="Image/Product/VÁY%20NGẮN%20VALERIE.jpg" alt="">--%>
-                <%--                <img src="Image/Product/Váy%20dài%20Belle.jpg" alt="">--%>
-                <img src="Image/Product/1_4d6348ce5d064c11b44230176bfcf978.png" alt=""
-                     data-image-name="1_4d6348ce5d064c11b44230176bfcf978.png">
-                <img src="Image/Product/1_5d89f3a0beb04041b7d1fff41ba9c4a9.png" alt=""
-                     data-image-name="1_5d89f3a0beb04041b7d1fff41ba9c4a9.png">
-                <img src="Image/Product/1_5d89f3a0beb04041b7d1fff41ba9c4a9.png" alt=""
-                     data-image-name="1_5d89f3a0beb04041b7d1fff41ba9c4a9.png">
-                <img src="Image/Product/1_6b3e58acbea74e529e8e74807a75a28a.jpg" alt=""
-                     data-image-name="1_6b3e58acbea74e529e8e74807a75a28a.jpg">
-                <img src="Image/Product/1_6bd7bbb42a6e4e1e96c580b5900ec981.png" alt=""
-                     data-image-name="1_6bd7bbb42a6e4e1e96c580b5900ec981.png">
-                <img src="Image/Product/1_6ca6e30d3b7249fb8339f713c2151130.jpg" alt=""
-                     data-image-name="1_6ca6e30d3b7249fb8339f713c2151130.jpg">
-                <img src="Image/Product/1_6d84d10e1f274aaba60f44e3c4637031.png" alt=""
-                     data-image-name="1_6d84d10e1f274aaba60f44e3c4637031.png">
-                <img src="Image/Product/1_6d817024922e4e258618e2e57d1bcd53.jpg" alt=""
-                     data-image-name="1_6d817024922e4e258618e2e57d1bcd53.jpg">
-                <img src="Image/Product/1_6f48bd559c514b29b11e9fef25933d2e.jpg" alt=""
-                     data-image-name="1_6f48bd559c514b29b11e9fef25933d2e.jpg">
-                <img src="Image/Product/1_6fb3cf8401a9489fae69f70e7ac64ce5.png" alt=""
-                     data-image-name="1_6fb3cf8401a9489fae69f70e7ac64ce5.png">
-                <img src="Image/Product/1_06da2dd0e40540e1be7ac0ab776d2aa3.jpg" alt=""
-                     data-image-name="1_06da2dd0e40540e1be7ac0ab776d2aa3.jpg">
+                <img src="Image/Product/1_4d6348ce5d064c11b44230176bfcf978.png" alt="">
+                <img src="Image/Product/Áo%20kiểu%20Amory.png" alt="">
+                <img src="Image/Product/Quần%20dài%20Foris.png" alt="">
+                <img src="Image/Product/Quần%20Garo.jpg" alt="">
+                <img src="Image/Product/Quần%20Dài%20Doris%20(2).jpg" alt="">
+                <img src="Image/Product/ÁO%20KHOÁC%20KASEY.jpg" alt="">
+                <img src="Image/Product/ÁO%20KHOÁC%20HENNA.jpg" alt="">
+                <img src="Image/Product/Đầm%20hai%20dây%20pamela%20(2).jpg" alt="">
+                <img src="Image/Product/Váy%20Dài%20Arisha.png" alt="">
+                <img src="Image/Product/VÁY%20NGẮN%20VALERIE.jpg" alt="">
+                <img src="Image/Product/Váy%20dài%20Belle.jpg" alt="">
             </div>
         </div>
     </div>
@@ -311,7 +313,7 @@
             $.ajax({
                 type: "GET", // Hoặc "GET" tùy thuộc vào phương thức của bạn
                 url: "/productImage",
-                data: { imageName: imageName },
+                data: {imageName: imageName},
                 dataType: "json",
                 success: function (response) {
                     // Xử lý dữ liệu trả về từ server
