@@ -57,20 +57,21 @@
                             <i class="fa-solid fa-circle" style="color: var(--border);"></i>
                             Quản lý đơn hàng
                         </li>
-                        <li class="item" onclick="handleClick(this, 'panel4')">
+                        <li class="item" style="color: white; border: 2px solid var(--font);
+    border-radius: 20px;
+    background-color: var(--font);">
                             <i class="fa-solid fa-circle" style="color: var(--border);"></i>
                             Quản lý người dùng
                         </li>
-                        <li class="item" onclick="handleClick(this, 'panel7')"
-                            style="border: 2px solid var(--font);border-radius: 20px;color: white !important;background-color: var(--font);">
-                            <a href="UploadCommentAdmin.jsp" style="color: white !important"><i
+                        <li class="item">
+                            <a href="UploadCommentAdmin.jsp"><i
                                     class="fa-solid fa-circle"
                                     style="color: var(--border);"></i>
                                 Phản hồi người dùng</a>
                         </li>
-                        <li class="item" onclick="handleClick(this, 'panel_addSlide')">
-                            <a href="indexAdmin.jsp" style="color: var(--font)"><i class="fa-solid fa-circle"
-                                                                                   style="color: var(--border);"></i>
+                        <li class="item">
+                            <a href="indexAdmin.jsp"><i class="fa-solid fa-circle"
+                                                        style="color: var(--border);"></i>
                                 Thêm trình chiếu</a>
                         </li>
                         <a href="indexForgetPass.jsp" style="text-decoration: none">
@@ -133,7 +134,9 @@
                             </td>
                             <%}%>
                             <td>
-                                <a href="unlockUser?idUl=<%=infUser.get(i).getId()%>">Mở khóa tài khoản</a>
+                                <a href="#"> <a href="unlockUser?idUl=<%=infUser.get(i).getId()%>" class="btn_lock">Mở
+                                    khóa tài khoản</a>
+                                </a>
                             </td>
                         </tr>
                         <%

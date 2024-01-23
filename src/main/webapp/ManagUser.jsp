@@ -9,10 +9,9 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="View/styleWeb/styleAdmin/styleUserManagement.css">
     <link rel="stylesheet" href="View/styleWeb/color.css">
     <link rel="stylesheet" href="View/styleWeb/styleAdmin/styleAdmin.css">
-
+    <link rel="stylesheet" href="View/styleWeb/styleAdmin/styleUserManagement.css">
     <link rel="stylesheet" href="Image/fontawesome/css/all.min.css">
     <title>Quản lý người dùng</title>
 </head>
@@ -57,20 +56,21 @@
                             <i class="fa-solid fa-circle" style="color: var(--border);"></i>
                             Quản lý đơn hàng
                         </li>
-                        <li class="item" onclick="handleClick(this, 'panel4')">
+                        <li class="item" style="color: white; border: 2px solid var(--font);
+    border-radius: 20px;
+    background-color: var(--font);">
                             <i class="fa-solid fa-circle" style="color: var(--border);"></i>
                             Quản lý người dùng
                         </li>
-                        <li class="item" onclick="handleClick(this, 'panel7')"
-                            style="border: 2px solid var(--font);border-radius: 20px;color: white !important;background-color: var(--font);">
-                            <a href="UploadCommentAdmin.jsp" style="color: white !important"><i
+                        <li class="item">
+                            <a href="UploadCommentAdmin.jsp"><i
                                     class="fa-solid fa-circle"
                                     style="color: var(--border);"></i>
                                 Phản hồi người dùng</a>
                         </li>
-                        <li class="item" onclick="handleClick(this, 'panel_addSlide')">
-                            <a href="indexAdmin.jsp" style="color: var(--font)"><i class="fa-solid fa-circle"
-                                                                                   style="color: var(--border);"></i>
+                        <li class="item">
+                            <a href="indexAdmin.jsp"><i class="fa-solid fa-circle"
+                                                        style="color: var(--border);"></i>
                                 Thêm trình chiếu</a>
                         </li>
                         <a href="indexForgetPass.jsp" style="text-decoration: none">
@@ -132,7 +132,8 @@
                             </td>
                             <%}%>
                             <td>
-                                <a href="blockUser?idBl=<%=infUser.get(i).getId()%>">Khóa tài khoản</a>
+                                <a href="#"><a href="blockUser?idBl=<%=infUser.get(i).getId()%>" class="btn_lock">Khóa
+                                    tài khoản</a></a>
                             </td>
                         </tr>
                         <%
