@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="bean.ShoppingCart" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,75 +21,82 @@
     <title>Bộ sưu tập</title>
 </head>
 <body>
-    <header>
-        <div class="firstArea">
-            <div class="logo_search_cart">
-                <div class="logo">
-                    <img src="Image/logo/BHD-nền%20trong%20suốt.svg" alt="404">
-                    <h1>BHD Boutique</h1>
-                </div>
-                <div class="search_Category">
-                    <form class="Search" action="findProduct" method="get">
-                        <input name="keyword" type="text" class="input_search" placeholder="Nhập sản phẩm cần tìm">
-
-                        <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
-                    </form>
-                </div>
-                <a href="" class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
-                <a href="indexLogin.jsp" class="user"><i class="fa-solid fa-user"></i></a>
+<header>
+    <%
+        ShoppingCart cart = (ShoppingCart) session.getAttribute("cart");
+        if(cart == null) {
+            cart = new ShoppingCart();
+        }
+    %>
+    <div class="firstArea">
+        <div class="logo_search_cart">
+            <div class="logo">
+                <img src="Image/logo/BHD-nền%20trong%20suốt.svg" alt="404">
+                <h1>BHD Boutique</h1>
             </div>
+            <div class="search_Category">
+                <form class="Search" action="findProduct" method="get">
+                    <input name="keyword" type="text" class="input_search" placeholder="Nhập sản phẩm cần tìm">
+                    <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+            </div>
+            <a href="indexOrder.jsp" class="cartHeader"><i class="fa-solid fa-cart-shopping"></i><span id="totalitem" style="color: var(--but)">
+                            <%= cart.getTotalItem() %>
+                        </span></a>
+            <a href="indexLogin.jsp" class="user"><i class="fa-solid fa-user"></i></a>
         </div>
-        <div class="menu_container">
-            <div class="task_menu">
-                <button class="btn_Category_search" id="btn_Category_search">
+    </div>
+    <div class="menu_container">
+        <div class="task_menu">
+            <button class="btn_Category_search" id="btn_Category_search">
                     <span>
                         Danh mục
                     </span>
-                    <i class="fa-solid fa-angle-down"></i>
-                    <ul class="menu_Category" id="menu_Category">
-                        <a>
-                            <li class="menu_Category_Item">Tất cả sản phẩm</li>
-                        </a>
-                        <a>
-                            <li class="menu_Category_Item">Áo</li>
-                        </a>
-                        <a>
-                            <li class="menu_Category_Item">Áo khoác</li>
-                        </a>
-                        <a>
-                            <li class="menu_Category_Item">Quần</li>
-                        </a>
-                        <a>
-                            <li class="menu_Category_Item">Đầm</li>
-                        </a>
-                        <a>
-                            <li class="menu_Category_Item">Váy</li>
-                        </a>
-                    </ul>
-                </button>
-                <ul class="Menupage">
-                    <a href="index.html" class="linkpage Home">
-                        <li class="Item_menuPage">Trang chủ</li>
+                <i class="fa-solid fa-angle-down"></i>
+                <ul class="menu_Category" id="menu_Category">
+                    <a>
+                        <li class="menu_Category_Item">Tất cả sản phẩm</li>
                     </a>
-                    <a href="" class="linkpage Shop">
-                        <li class="Item_menuPage ">Cửa hàng</li>
+                    <a>
+                        <li class="menu_Category_Item">Áo</li>
                     </a>
-                    <a href="collection.html" class="linkpage Collection">
-                        <li class="Item_menuPage ">Bộ sưu tập</li>
+                    <a>
+                        <li class="menu_Category_Item">Áo khoác</li>
                     </a>
-                    <a href="#" class="linkpage Contact" id="Contact">
-                        <li class="Item_menuPage" id="Contact_Us">Liên hệ</li>
+                    <a>
+                        <li class="menu_Category_Item">Quần</li>
                     </a>
-                    <a href="" class="linkpage Fashion">
-                        <li class="Item_menuPage">Xu hướng thời trang</li>
+                    <a>
+                        <li class="menu_Category_Item">Đầm</li>
                     </a>
-                    <a href="comment.jsp" class="linkpage Comment">
-                        <li class="Item_menuPage">Đóng góp ý kiến</li>
+                    <a>
+                        <li class="menu_Category_Item">Váy</li>
                     </a>
                 </ul>
-            </div>
+            </button>
+            <ul class="Menupage">
+                <a href="index.jsp" class="linkpage Home">
+                    <li class="Item_menuPage">Trang chủ</li>
+                </a>
+                <a href="" class="linkpage Shop">
+                    <li class="Item_menuPage ">Cửa hàng</li>
+                </a>
+                <a href="" class="linkpage Collection">
+                    <li class="Item_menuPage ">Bộ sưu tập</li>
+                </a>
+                <a href="" class="linkpage Contact">
+                    <li class="Item_menuPage">Liên hệ</li>
+                </a>
+                <a href="" class="linkpage Fashion">
+                    <li class="Item_menuPage">Xu hướng thời trang</li>
+                </a>
+                <a href="" class="linkpage Comment">
+                    <li class="Item_menuPage">Đóng góp ý kiến</li>
+                </a>
+            </ul>
         </div>
-    </header>
+    </div>
+</header>
     <div class="SliderShow_Store">
         <div class="SlideList">
             <img src="Image/SlideStore/slide3.png" alt="">

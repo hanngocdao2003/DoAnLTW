@@ -18,10 +18,8 @@
     <link rel="icon" href="Image/logo/BHD-html.png" type="image/x-icon">
     <link rel="stylesheet" href="View/styleWeb/color.css">
     <script src="View/JSWeb/addPart.js"></script>
-    <script src="View/JSWeb/JSDetails.js"></script>
-
     <script type="text/javascript" src="View/JSWeb/jquery-3.7.1.js"></script>
-
+    <script src="View/JSWeb/JSDetails.js"></script>
     <title>Chi tiết đơn hàng</title>
 </head>
 <body>
@@ -44,7 +42,7 @@
                     <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
             </div>
-            <a href="" class="cart"><i class="fa-solid fa-cart-shopping"></i><span id="totalitem">
+            <a href="indexOrder.jsp" class="cart"><i class="fa-solid fa-cart-shopping"></i><span id="totalitem" style="color: var(--but)">
                             <%= cart.getTotalItem() %>
                         </span></a>
             <a href="indexLogin.jsp" class="user"><i class="fa-solid fa-user"></i></a>
@@ -155,11 +153,11 @@
             <button class="button size-btn size" value="<%=s.trim()%>"><%=s.trim()%></button>
             <%}%>
             <div class="add" style="margin-bottom: 10px;">
-                    <button class="add-pd add-cart"><i class="fa-solid fa-cart-shopping"
-                                              style="color: #fff; margin-left: 5px;"></i>Thêm vào giỏ hàng
+                <button class="add-pd add-cart"><i class="fa-solid fa-cart-shopping"
+                                                   style="color: #fff; margin-left: 5px;"></i>Thêm vào giỏ hàng
 
 
-                    </button>
+                </button>
             </div>
         </div>
         <hr style="margin-bottom: 20px;">

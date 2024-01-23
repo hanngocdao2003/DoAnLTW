@@ -130,7 +130,7 @@
         color: var(--but);
     }
 
-    .cart {
+    .cart-container {
         right: 200px;
         bottom: auto;
         top: auto;
@@ -209,7 +209,7 @@
         color: white;
     }
 
-    .cart {
+    .cart-container {
         display: flex;
         flex-direction: row;
     }
@@ -330,18 +330,18 @@
         color: white;
     }
 
-    .cart .cart-details {
+    .cart-container .cart-details {
         margin: 20px;
         display: flex;
         flex-direction: column;
     }
 
-    .cart .cart-details .product {
+    .cart-container .cart-details .product {
         display: flex;
         flex-direction: row;
     }
 
-    .cart .cart-details .product img {
+    .cart-container .cart-details .product img {
         width: 200px;
         margin: 10px 30px 10px 10px;
         border-radius: 10px;
@@ -355,7 +355,7 @@
         margin: 20px 0px 20px 0px;
     }
 
-    .cart .cart-details .product .cost {
+    .cart-container .cart-details .product .cost {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -377,7 +377,7 @@
         margin-right: 10px;
     }
 
-    .cart .cart-details .voucher {
+    .cart-container .cart-details .voucher {
         margin: 20px;
     }
 
@@ -405,7 +405,7 @@
         order: 2;
     }
 
-    .cart .cart-details .detail-cost p {
+    .cart-container .cart-details .detail-cost p {
         font-size: 18px;
         line-height: 4;
     }
@@ -436,7 +436,7 @@
         text-align: right;
     }
 
-    .cart .cart-details .total-cost {
+    .cart-container .cart-details .total-cost {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -444,7 +444,7 @@
         font-size: 18px;
     }
 
-    .cart .cart-details #accept_pay {
+    .cart-container .cart-details #accept_pay {
         position: relative;
         margin-top: 50px;
         display: flex;
@@ -465,22 +465,22 @@
         color: white;
     }
 
-    .cart .cart-details .total-cost p {
+    .cart-container .cart-details .total-cost p {
         flex: 1;
     }
 
-    .cart .cart-details .total-cost .label {
+    .cart-container .cart-details .total-cost .label {
         text-align: left;
     }
 
-    .cart .cart-details .total-cost .cost {
+    .cart-container .cart-details .total-cost .cost {
         text-align: right;
         font-size: 25px;
         font-weight: bold;
     }
 
-    .cart {
-        padding: 5%;
-    }
+    /*.cart {*/
+    /*    padding: 5%;*/
+    /*}*/
 
 }

@@ -1,5 +1,6 @@
 <%@ page import="bean.CommentReponse" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="bean.ShoppingCart" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.util.Collections" %>

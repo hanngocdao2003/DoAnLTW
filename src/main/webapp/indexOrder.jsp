@@ -1,4 +1,8 @@
 <%@ page import="bean.ProductResponse" %>
+<%@ page import="bean.ShoppingCart" %>
+<%@ page import="bean.CartProduct" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.Map" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,6 +23,12 @@
 </head>
 <body>
 <header>
+    <%
+        ShoppingCart shoppingCart = (ShoppingCart) session.getAttribute("cart");
+        if(shoppingCart == null) {
+            shoppingCart = new ShoppingCart();
+        }
+    %>
     <div class="firstArea">
         <div class="logo_search_cart">
             <div class="logo">
@@ -28,26 +38,13 @@
             <div class="search_Category">
                 <form class="Search" action="findProduct" method="get">
                     <input name="keyword" type="text" class="input_search" placeholder="Nhập sản phẩm cần tìm">
-                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
             </div>
-            <div class="rightIcon">
-                <a href="indexOrder.jsp" class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
-                <%
-                    String success = (String) session.getAttribute("Success");
-                    if (success != null) {
-                %>
-                <a href="indexPersonal.jsp" class="user"><i class="fa-solid fa-user"
-                                                            style="margin-right: 5px"></i> <%= success %>
-                </a>
-                <%
-                } else {
-                %>
-                <a href="indexLogin.jsp" class="user"><i class="fa-solid fa-user"></i></a>
-                <%
-                    }
-                %>
-            </div>
+            <a href="indexOrder.jsp" class="cartHeader"><i class="fa-solid fa-cart-shopping"></i><span id="totalitem" style="color: var(--but)">
+                            <%= shoppingCart.getTotalItem() %>
+                        </span></a>
+            <a href="indexLogin.jsp" class="user"><i class="fa-solid fa-user"></i></a>
         </div>
     </div>
     <div class="menu_container">
@@ -77,34 +74,31 @@
                         <li class="menu_Category_Item">Váy</li>
                     </a>
                 </ul>
-                <form id="productSearchForm" action="findProduct" method="get">
-                    <input type="hidden" name="nameproduct" id="categoryInput"/>
-                </form>
             </button>
             <ul class="Menupage">
-                <a href="index.html" class="linkpage Home">
+                <a href="index.jsp" class="linkpage Home">
                     <li class="Item_menuPage">Trang chủ</li>
                 </a>
                 <a href="" class="linkpage Shop">
                     <li class="Item_menuPage ">Cửa hàng</li>
                 </a>
-                <a href="collection.jsp" class="linkpage Collection">
+                <a href="" class="linkpage Collection">
                     <li class="Item_menuPage ">Bộ sưu tập</li>
                 </a>
-                <a href="#" class="linkpage Contact" id="Contact">
-                    <li class="Item_menuPage" id="Contact_Us">Liên hệ</li>
+                <a href="" class="linkpage Contact">
+                    <li class="Item_menuPage">Liên hệ</li>
                 </a>
                 <a href="" class="linkpage Fashion">
                     <li class="Item_menuPage">Xu hướng thời trang</li>
                 </a>
-                <a href="comment.jsp" class="linkpage Comment">
+                <a href="" class="linkpage Comment">
                     <li class="Item_menuPage">Đóng góp ý kiến</li>
                 </a>
             </ul>
         </div>
     </div>
 </header>
-<div class="cart">
+<div class="cart-container">
     <div class="container-choose">
         <div class="information-cus">
             <h1>Thông tin vận chuyển</h1>
@@ -146,14 +140,18 @@
     <div class="straight-line"></div>
     <div class="cart-details">
         <h1>Đơn hàng</h1>
-        <%
-            ProductResponse p = (ProductResponse) request.getAttribute("productDetail");
-            System.out.println(p);
-            if (p != null) {%>
+<%--        <form action="Product" method="GET" id="productForm">--%>
+<%--        <%--%>
+
+<%--                Map<Integer, List<CartProduct>> mapCart = shoppingCart.getMapCart();--%>
+<%--                for (Map.Entry<Integer, List<CartProduct>> entry : mapCart.entrySet()) {--%>
+<%--                    int productId = entry.getKey();--%>
+<%--                    List<CartProduct> cartProducts = entry.getValue();--%>
+<%--                    for (CartProduct cartProduct : cartProducts) {%>--%>
         <div class="product">
-            <img src="<%=p.getImage()%>" alt="">
+            <img src="" alt="">
             <div class="details">
-                <h3><%=p.getName()%></h3>
+                <h3>Áo Len AIMEE</h3>
                 <div class="choose">
                     <select name="color" id="colour" style="margin-right: 20px">
                         <option>Đen</option>
@@ -167,13 +165,13 @@
                     </select>
                 </div>
                 <div class="cost">
-                    <span id="total" style="font-size: 30px"><%=p.getPrice()%></span>
+                    <span id="total" style="font-size: 30px">350000%></span>
                     <span id="quantity">Số lượng: <span> 2</span></span>
                 </div>
                 <button id="removeBtn"><i class="fa-regular fa-trash-can" style="color: #ffffff;"></i>Xóa sản phẩm</button>
             </div>
         </div>
-        <%}%>
+<%--        <%}}%>--%>
         <hr>
 <%--        <div class="voucher">--%>
 <%--            <div class="ten-percent">--%>
@@ -205,6 +203,7 @@
         <div id="accept_pay">
             <button>Chấp nhận thanh toán</button>
         </div>
+<%--        </form>--%>
     </div>
 </div>
 <script>

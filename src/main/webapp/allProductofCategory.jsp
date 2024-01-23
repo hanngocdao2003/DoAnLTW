@@ -1,4 +1,5 @@
 <%@ page import="bean.ProductResponse" %>
+<%@ page import="bean.ShoppingCart" %>
 <%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
@@ -14,6 +15,7 @@
     <link rel="stylesheet" href="View/styleWeb/styleProduct.css">
     <link rel="stylesheet" href="View/styleWeb/stylePagination.css">
     <link rel="stylesheet" href="View/styleWeb/styleFooter.css">
+    <link rel="stylesheet" href="View/styleWeb/styleOutline.css">
     <link rel="icon" href="Image/logo/BHD-html.png" type="image/x-icon">
     <script src="View/JSWeb/code.jquery.com_jquery-3.7.1.min.js"></script>
     <script src="View/JSWeb/slick.min.js"></script>
@@ -24,6 +26,12 @@
 </head>
 <body>
 <header>
+    <%
+        ShoppingCart cart = (ShoppingCart) session.getAttribute("cart");
+        if(cart == null) {
+            cart = new ShoppingCart();
+        }
+    %>
     <div class="firstArea">
         <div class="logo_search_cart">
             <div class="logo">
@@ -31,12 +39,14 @@
                 <h1>BHD Boutique</h1>
             </div>
             <div class="search_Category">
-                <form class="Search" action="findProduct" method="get" onsubmit="return validateForm()">
-                    <input name="nameproduct" id="productInput" type="text" class="input_search" required placeholder="Nhập sản phẩm cần tìm">
-                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <form class="Search" action="findProduct" method="get">
+                    <input name="keyword" type="text" class="input_search" placeholder="Nhập sản phẩm cần tìm">
+                    <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
             </div>
-            <a href="" class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="indexOrder.jsp" class="cartHeader"><i class="fa-solid fa-cart-shopping"></i><span id="totalitem" style="color: var(--but)">
+                            <%= cart.getTotalItem() %>
+                        </span></a>
             <a href="indexLogin.jsp" class="user"><i class="fa-solid fa-user"></i></a>
         </div>
     </div>
@@ -69,22 +79,22 @@
                 </ul>
             </button>
             <ul class="Menupage">
-                <a href="index.html" class="linkpage Home">
+                <a href="index.jsp" class="linkpage Home">
                     <li class="Item_menuPage">Trang chủ</li>
                 </a>
                 <a href="" class="linkpage Shop">
                     <li class="Item_menuPage ">Cửa hàng</li>
                 </a>
-                <a href="collection.jsp" class="linkpage Collection">
+                <a href="" class="linkpage Collection">
                     <li class="Item_menuPage ">Bộ sưu tập</li>
                 </a>
-                <a href="#" class="linkpage Contact" id="Contact">
-                    <li class="Item_menuPage" id="Contact_Us">Liên hệ</li>
+                <a href="" class="linkpage Contact">
+                    <li class="Item_menuPage">Liên hệ</li>
                 </a>
                 <a href="" class="linkpage Fashion">
                     <li class="Item_menuPage">Xu hướng thời trang</li>
                 </a>
-                <a href="comment.jsp" class="linkpage Comment">
+                <a href="" class="linkpage Comment">
                     <li class="Item_menuPage">Đóng góp ý kiến</li>
                 </a>
             </ul>
@@ -117,6 +127,7 @@
                 <li><i class="fa-solid fa-star"></i></li>
                 <li><i class="fa-solid fa-star"></i></li>
             </ul></span></div>
+
             <p class="priceProduct"><%=p.getPrice()%>
             </p>
 
