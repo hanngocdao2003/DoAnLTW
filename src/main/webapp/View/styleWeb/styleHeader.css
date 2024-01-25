@@ -129,12 +129,12 @@ a>.menu_Category_Item {
     color: var(--but);
 }
 
-.cartHeader {
-    position: absolute;
-    right: 200px;
-    bottom: auto;
-    top: auto;
-}
+/*.cartHeader {*/
+/*    position: absolute;*/
+/*    right: 200px;*/
+/*    bottom: auto;*/
+/*    top: auto;*/
+/*}*/
 .rightIcon{
     position: absolute;
     display: flex;
@@ -221,6 +221,7 @@ a>.menu_Category_Item {
 .SliderShow_Store {
     width: 100%;
     position: relative;
+    z-index: -999;
 }
 
 .SlideList {

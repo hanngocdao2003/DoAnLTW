@@ -35,10 +35,10 @@
     %>
     <div class="firstArea">
         <div class="logo_search_cart">
-            <div class="logo">
+            <a href="index.jsp" class="logo">
                 <img src="Image/logo/BHD-nền%20trong%20suốt.svg" alt="404">
                 <h1>BHD Boutique</h1>
-            </div>
+            </a>
             <div class="search_Category">
                 <form class="Search" action="Product" method="get">
                     <input name="keyword" type="text" class="input_search" placeholder="Nhập sản phẩm cần tìm">
@@ -107,19 +107,19 @@
                 <a href="index.jsp" class="linkpage Home">
                     <li class="Item_menuPage">Trang chủ</li>
                 </a>
-                <a href="" class="linkpage Shop">
+                <a href="allProductofCategory.jsp" class="linkpage Shop">
                     <li class="Item_menuPage ">Cửa hàng</li>
                 </a>
-                <a href="" class="linkpage Collection">
+                <a href="allProductofCategory.jsp" class="linkpage Collection">
                     <li class="Item_menuPage ">Bộ sưu tập</li>
                 </a>
                 <a href="" class="linkpage Contact">
                     <li class="Item_menuPage">Liên hệ</li>
                 </a>
-                <a href="" class="linkpage Fashion">
-                    <li class="Item_menuPage">Xu hướng thời trang</li>
+                <a href="AboutUs.jsp" class="linkpage Fashion">
+                    <li class="Item_menuPage">Giới thiệu</li>
                 </a>
-                <a href="" class="linkpage Comment">
+                <a href="comment.jsp" class="linkpage Comment">
                     <li class="Item_menuPage">Đóng góp ý kiến</li>
                 </a>
             </ul>
