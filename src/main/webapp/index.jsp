@@ -47,7 +47,7 @@
             </div>
 
             <div class="rightIcon">
-                <a href="" class="cartHeader"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="indexOrder.jsp" class="cartHeader"><i class="fa-solid fa-cart-shopping"></i></a>
                 <%
                     String success = (String) session.getAttribute("Success");
                     String roleID = (String) session.getAttribute("Role");

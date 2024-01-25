@@ -105,6 +105,9 @@ a>.menu_Category_Item {
     gap: 1px;
 
 }
+.Search:hover{
+    cursor: pointer;
+}
 
 .input_search {
     font-size: 20px;
@@ -271,6 +274,9 @@ a>.menu_Category_Item {
     display: flex;
     align-items: center;
     justify-content: center
+}
+.TitleCategory:hover{
+    cursor: pointer;
 }
 
 .TitleCategory>span {
