@@ -16,7 +16,6 @@ public class Remove extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         ShoppingCart shoppingCart = (ShoppingCart) session.getAttribute("cart");
-
         if (shoppingCart == null) {
             shoppingCart = new ShoppingCart();
         }

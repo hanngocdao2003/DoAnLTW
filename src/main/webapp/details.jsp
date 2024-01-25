@@ -9,6 +9,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="View/styleWeb/styleHeader.css">
     <link rel="stylesheet" href="View/styleWeb/styleDetails.css">
     <link rel="stylesheet" href="View/styleWeb/color.css">
     <link rel="stylesheet" href="View/styleWeb/styleFooter.css">
@@ -32,10 +33,10 @@
     %>
     <div class="firstArea">
         <div class="logo_search_cart">
-            <div class="logo">
+            <a href="index.jsp" class="logo">
                 <img src="Image/logo/BHD-nền%20trong%20suốt.svg" alt="404">
-                <a href="index.jsp"><h1 class="nameBrand">BHD Boutique</h1></a>
-            </div>
+                <h1>BHD Boutique</h1>
+            </a>
             <div class="search_Category">
                 <form class="Search" action="Product" method="get">
                     <input name="keyword" type="text" class="input_search" placeholder="Nhập sản phẩm cần tìm">

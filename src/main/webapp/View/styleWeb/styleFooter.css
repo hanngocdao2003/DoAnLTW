@@ -27,6 +27,7 @@
 
   .content .store {
     display: flex;
+    text-decoration: none;
   }
 
   .content .store img {
