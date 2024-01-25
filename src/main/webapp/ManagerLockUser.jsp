@@ -9,9 +9,10 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="View/styleWeb/styleAdmin/styleUserManagement.css">
     <link rel="stylesheet" href="View/styleWeb/color.css">
     <link rel="stylesheet" href="View/styleWeb/styleAdmin/styleAdmin.css">
-    <link rel="stylesheet" href="View/styleWeb/styleAdmin/styleUserManagement.css">
+    <link rel="stylesheet" href="View/styleWeb/styleAdmin/styleLockUser.css">
     <link rel="stylesheet" href="Image/fontawesome/css/all.min.css">
     <title>Quản lý người dùng</title>
 </head>
@@ -86,12 +87,13 @@
     </div>
     <div id="info_panel" class="info_panel">
         <div class="firstPanel">
-            <a href="uploadLockUser">Các tài khoản bị khóa <i class="fa-solid fa-caret-right"></i></a>
+            <a href="uploadInfUser"><i class="fa-solid fa-caret-left"></i> Quản lý tài khoản</a>
         </div>
         <!-- Chức năng quản lý người dùng -->
         <div class="customer-management" id="panel4">
             <div id="info_customer">
-                <form class="main_label running" action="uploadInfUser" method="get">
+
+                <form class="main_label running" action="uploadLockUser" method="get">
                     <span>Thông tin các tài khoản</span>
                     <table class="table">
                         <thead>
@@ -107,7 +109,7 @@
                         <tbody>
                         <%
                             List<InformationUser> infUser;
-                            infUser = (List<InformationUser>) session.getAttribute("listUser");
+                            infUser = (List<InformationUser>) session.getAttribute("listLockUser");
                             System.out.println(infUser);
                             String running = "Đang hoạt động";
                             String lockUser = "Đã khóa";
@@ -132,8 +134,9 @@
                             </td>
                             <%}%>
                             <td>
-                                <a href="#"><a href="blockUser?idBl=<%=infUser.get(i).getId()%>" class="btn_lock">Khóa
-                                    tài khoản</a></a>
+                                <a href="#"> <a href="unlockUser?idUl=<%=infUser.get(i).getId()%>" class="btn_lock">Mở
+                                    khóa tài khoản</a>
+                                </a>
                             </td>
                         </tr>
                         <%

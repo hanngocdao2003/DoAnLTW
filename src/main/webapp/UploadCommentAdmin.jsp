@@ -64,7 +64,7 @@
                                 Phản hồi người dùng</a>
                         </li>
                         <li class="item" onclick="handleClick(this, 'panel_addSlide')">
-                            <a href="indexAdmin.jsp" style="color: var(--font)"><i class="fa-solid fa-circle" style="color: var(--border);"></i>
+                            <a href="indexAdmin.jsp" ><i class="fa-solid fa-circle" style="color: var(--border);"></i>
                                 Thêm trình chiếu</a>
                         </li>
                         <a href="indexForgetPass.jsp" style="text-decoration: none">

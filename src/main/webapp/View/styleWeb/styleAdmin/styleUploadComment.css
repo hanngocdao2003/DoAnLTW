@@ -97,7 +97,7 @@ body {
 }
 
 .center .left_panel .menu_bar .bar .menu_nav .menu .item > a {
-    color: var(--but);
+    color: var(--font);
     text-decoration: none;
 }
 
@@ -106,6 +106,10 @@ body {
     border-radius: 20px;
     color: white !important;
     background-color: var(--font);
+}
+.center .left_panel .menu_bar .bar .menu_nav .menu .item:hover > a {
+    color: white;
+
 }
 
 .bar .menu_nav .menu .item.active {

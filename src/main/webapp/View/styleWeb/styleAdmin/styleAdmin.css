@@ -113,7 +113,7 @@ body {
 }
 
 .center .left_panel .menu_bar .bar .menu_nav .menu .item > a {
-    color: var(--but);
+    color: var(--font);
     text-decoration: none;
 }
 
