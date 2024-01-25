@@ -1,4 +1,4 @@
-package controller;
+package controller.shoppingcart;
 
 import bean.ShoppingCart;
 import bean.UserEntity;
@@ -31,6 +31,7 @@ public class AddToCart extends HttpServlet {
 //        if (userEntity == null) {
 //            response.sendRedirect("indexLogin.jsp");
 //        } else {
+        int idUser = (int) session.getAttribute("Id");
         ShoppingCart shoppingCarts = (ShoppingCart) session.getAttribute("cart");
         if (shoppingCarts == null) {
             shoppingCarts = new ShoppingCart();
@@ -45,11 +46,11 @@ public class AddToCart extends HttpServlet {
         }
         int productId = Integer.parseInt(request.getParameter("id"));
         try {
-            shoppingCarts.addProduct(color, size, productId, quantity);
+            shoppingCarts.addProduct(idUser, color, size, productId, quantity);
         } catch (Exception e) {
         }
         session.setAttribute("cart", shoppingCarts);
-        int totalItems = shoppingCarts.getTotalItem();
+        int totalItems = shoppingCarts.getTotalItem(idUser);
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("totalItems", totalItems);
         response.setContentType("application/json");

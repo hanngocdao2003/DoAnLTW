@@ -18,23 +18,22 @@ public class ShoppingCart {
         this.mapCart = mapCart;
     }
 
-    public boolean addProduct(String color, String size, int productId, int quantity) {
+    public boolean addProduct( int idUser ,String color, String size, int productId, int quantity) {
         CartProduct cartProduct = new CartProduct(quantity, size, color, productId);
-        if (mapCart.containsKey(productId)) {
-            List<CartProduct> listCartProduct = mapCart.get(productId);
+        if (mapCart.containsKey(idUser)) {
+            List<CartProduct> listCartProduct = mapCart.get(idUser);
             if (listCartProduct.contains(cartProduct)) {
                 CartProduct product = listCartProduct.get(listCartProduct.indexOf(cartProduct));
                 product.setQuantity(product.getQuantity() + quantity);
                 System.out.println(product.getQuantity());
-                return true;
             } else {
                 listCartProduct.add(cartProduct);
-                return true;
             }
+            return true;
         } else {
-            List<CartProduct> listCartProduct2 = new ArrayList<>();
-            listCartProduct2.add(cartProduct);
-            mapCart.put(productId, listCartProduct2);
+            List<CartProduct> listCartProduct = new ArrayList<>();
+            listCartProduct.add(cartProduct);
+            mapCart.put(idUser, listCartProduct);
             return true;
         }
     }
@@ -62,15 +61,18 @@ public class ShoppingCart {
         return true;
     }
 
+    public int getTotalItem(int idUser) {
+        try{
 
-    public int getTotalItem(){
-        int total = 0;
-        for (int item :
-                mapCart.keySet()) {
-            total += mapCart.get(item).size();
+            return mapCart.get(idUser).size();
+        }catch (NullPointerException e){
+            return 0;
         }
-        return total;
     }
+
+//    public double getTotalPriceOfProduct(int productId) {
+//
+//    }
 
 //    public double getTotalPrice() {
 //        double totalPrice = 0.0;

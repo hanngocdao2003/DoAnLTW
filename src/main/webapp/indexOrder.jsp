@@ -25,9 +25,9 @@
 <body>
 <header>
     <%
-        ShoppingCart shoppingCart = (ShoppingCart) session.getAttribute("cart");
-        if (shoppingCart == null) {
-            shoppingCart = new ShoppingCart();
+        ShoppingCart cart = (ShoppingCart) session.getAttribute("cart");
+        if (cart == null) {
+            cart = new ShoppingCart();
         }
     %>
     <div class="firstArea">
@@ -44,7 +44,13 @@
             </div>
             <a href="indexOrder.jsp" class="cartHeader"><i class="fa-solid fa-cart-shopping"></i><span id="totalitem"
                                                                                                        style="color: var(--but)">
-                            <%= shoppingCart.getTotalItem()%>
+                             <%
+                                 Object idUser = request.getSession().getAttribute("Id");
+                                 if (idUser != null) {
+                                     int id = (Integer) idUser;
+                             %>
+                            <%= cart.getTotalItem(id) %>
+                                <%}%>
                         </span></a>
             <a href="indexLogin.jsp" class="user"><i class="fa-solid fa-user"></i></a>
         </div>
@@ -144,7 +150,7 @@
         <h1>Giỏ hàng</h1>
         <%
 
-            Map<Integer, List<CartProduct>> mapCart = shoppingCart.getMapCart();
+            Map<Integer, List<CartProduct>> mapCart = cart.getMapCart();
 //                    ProductService productService = new ProductService();
             for (Map.Entry<Integer, List<CartProduct>> entry : mapCart.entrySet()) {
                 int productId = entry.getKey();
@@ -180,8 +186,8 @@
                     </div>
                 </div>
                 <div class="cost">
-<%--                    <span id="total" style="font-size: 30px"><%=productResponse.getPrice()%></span>--%>
-<%--                    <span id="quantity">Số lượng: <span><%=cartProduct.getQuantity()%></span></span>--%>
+                    <span id="total" style="font-size: 30px"><%=productResponse.getPrice()%></span>
+                    <span id="quantity">Số lượng: <span><%=cartProduct.getQuantity()%></span></span>
                 </div>
                 <button id="removeBtn"><i class="fa-regular fa-trash-can" style="color: #ffffff;"></i>Xóa sản phẩm
                 </button>
@@ -226,6 +232,16 @@
 </div>
 <script>
     document.body.innerHTML += addFooter();
+    $('#removeBtn').click(function(e) {
+        e.preventDefault();
+        var productId = $(this).closest('.product').find('input[name="productId"]').val();
+        var quantity = $(this).closest('.product').find('input[name="quantity"]').val();
+        if (quantity > 1) {
+            $(this).closest('.product').find('input[name="quantity"]').val(parseInt(quantity) - 1);
+        } else {
+            $(this).closest('.product').remove();
+        }
+    })
 </script>
 </body>
 </html>

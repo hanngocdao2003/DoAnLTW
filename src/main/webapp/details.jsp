@@ -43,7 +43,13 @@
                 </form>
             </div>
             <a href="indexOrder.jsp" class="cartHeader"><i class="fa-solid fa-cart-shopping"></i><span id="totalitem" style="color: var(--but)">
-                            <%= cart.getTotalItem() %>
+                              <%
+                                  Object idUser = request.getSession().getAttribute("Id");
+                                  if (idUser != null) {
+                                      int id = (Integer) idUser;
+                              %>
+                            <%= cart.getTotalItem(id) %>
+                                <%}%>
                         </span></a>
             <a href="indexLogin.jsp" class="user"><i class="fa-solid fa-user"></i></a>
         </div>

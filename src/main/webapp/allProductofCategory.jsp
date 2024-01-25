@@ -28,7 +28,7 @@
 <header>
     <%
         ShoppingCart cart = (ShoppingCart) session.getAttribute("cart");
-        if(cart == null) {
+        if (cart == null) {
             cart = new ShoppingCart();
         }
     %>
@@ -45,7 +45,13 @@
                 </form>
             </div>
             <a href="indexOrder.jsp" class="cartHeader"><i class="fa-solid fa-cart-shopping"></i><span id="totalitem" style="color: var(--but)">
-                            <%= cart.getTotalItem() %>
+                          <%
+                              Object idUser = request.getSession().getAttribute("Id");
+                              if (idUser != null) {
+                                  int id = (Integer) idUser;
+                          %>
+                            <%= cart.getTotalItem(id) %>
+                         <%}%>
                         </span></a>
             <a href="indexLogin.jsp" class="user"><i class="fa-solid fa-user"></i></a>
         </div>
@@ -118,8 +124,10 @@
                 ) {
         %>
         <li class="itemProduct">
-            <a href="detailsProduct?productId=<%=p.getId()%>"><img src="Image/Product/<%=p.getImage()%>" alt="" class="imageProduct"></a>
-            <a href="detailsProduct?productId=<%=p.getId()%>" class="linkProduct"><%=p.getName()%></a>
+            <a href="detailsProduct?productId=<%=p.getId()%>"><img src="Image/Product/<%=p.getImage()%>" alt=""
+                                                                   class="imageProduct"></a>
+            <a href="detailsProduct?productId=<%=p.getId()%>" class="linkProduct"><%=p.getName()%>
+            </a>
             <div class="evalute"><span>Đánh giá: <ul class="fiveStar">
                 <li><i class="fa-solid fa-star"></i></li>
                 <li><i class="fa-solid fa-star"></i></li>
@@ -137,7 +145,7 @@
             }
         %>
     </ul>
-    </div>
+</div>
 
 <script>
     document.body.innerHTML += addFooter();
