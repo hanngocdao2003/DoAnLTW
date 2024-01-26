@@ -119,10 +119,12 @@
                     <h3 style="color: var(--font);">Sản phẩm đã bán</h3>
                 </div>
                 <div class="thongke">
-                    <i class="fa-solid fa-user" style="color: var(--border);"></i>
-                    <h2 style="color: var(--font);">0</h2>
+                    <i class="fa-solid fa-file-invoice-dollar" style="color: var(--border);"></i>
+                    <h2 style="color: var(--font);">
+                        <%= request.getAttribute("totalOrder")%>
+                    </h2>
                     <span class="temp"></span>
-                    <h3 style="color: var(--font);">Người đăng ký</h3>
+                    <h3 style="color: var(--font);">Đơn hàng</h3>
                 </div>
                 <div class="thongke">
                     <i class="fa-solid fa-eye" style="color: var(--border);"></i>
@@ -215,43 +217,43 @@
                 </table>
             </div>
         </div>
-<%--        <!-- Chức năng quản lý người dùng -->--%>
-<%--        <div class="customer-management" id="panel4">--%>
-<%--            <div class="seach_customer">--%>
-<%--                <form action="" id="form_search">--%>
-<%--                    <div class="search">--%>
-<%--                        <input type="text" class="input" placeholder="Tìm kiếm theo tên">--%>
-<%--                        <button class="btn_search">--%>
-<%--                            <i class="fa-solid fa-magnifying-glass"></i>--%>
-<%--                        </button>--%>
-<%--                    </div>--%>
-<%--                    <div class="filter">--%>
-<%--                        <select name="filter-select" id="filter-select">--%>
-<%--                            <option value="alphabet">Sắp xếp theo tên người dùng</option>--%>
-<%--                            <option value="alphabet">Sắp xếp theo tài khoản bị khóa</option>--%>
-<%--                        </select>--%>
-<%--                    </div>--%>
-<%--                </form>--%>
-<%--            </div>--%>
-<%--            <div id="info_customer">--%>
-<%--                <div class="main_label">--%>
-<%--                    <table id="table">--%>
-<%--                        <thead>--%>
-<%--                        <tr>--%>
-<%--                            <th class="label">Tên người dùng</th>--%>
-<%--                            <th class="label">Số điện thoại</th>--%>
-<%--                            <th class="label">Email</th>--%>
-<%--                            <th class="label">Quyền</th>--%>
-<%--                            <th class="label">Khóa</th>--%>
-<%--                            <th class="label">Chức năng</th>--%>
-<%--                        </tr>--%>
-<%--                        </thead>--%>
-<%--                        <tbody>--%>
-<%--                        </tbody>--%>
-<%--                    </table>--%>
-<%--                </div>--%>
-<%--            </div>--%>
-<%--        </div>--%>
+        <%--        <!-- Chức năng quản lý người dùng -->--%>
+        <%--        <div class="customer-management" id="panel4">--%>
+        <%--            <div class="seach_customer">--%>
+        <%--                <form action="" id="form_search">--%>
+        <%--                    <div class="search">--%>
+        <%--                        <input type="text" class="input" placeholder="Tìm kiếm theo tên">--%>
+        <%--                        <button class="btn_search">--%>
+        <%--                            <i class="fa-solid fa-magnifying-glass"></i>--%>
+        <%--                        </button>--%>
+        <%--                    </div>--%>
+        <%--                    <div class="filter">--%>
+        <%--                        <select name="filter-select" id="filter-select">--%>
+        <%--                            <option value="alphabet">Sắp xếp theo tên người dùng</option>--%>
+        <%--                            <option value="alphabet">Sắp xếp theo tài khoản bị khóa</option>--%>
+        <%--                        </select>--%>
+        <%--                    </div>--%>
+        <%--                </form>--%>
+        <%--            </div>--%>
+        <%--            <div id="info_customer">--%>
+        <%--                <div class="main_label">--%>
+        <%--                    <table id="table">--%>
+        <%--                        <thead>--%>
+        <%--                        <tr>--%>
+        <%--                            <th class="label">Tên người dùng</th>--%>
+        <%--                            <th class="label">Số điện thoại</th>--%>
+        <%--                            <th class="label">Email</th>--%>
+        <%--                            <th class="label">Quyền</th>--%>
+        <%--                            <th class="label">Khóa</th>--%>
+        <%--                            <th class="label">Chức năng</th>--%>
+        <%--                        </tr>--%>
+        <%--                        </thead>--%>
+        <%--                        <tbody>--%>
+        <%--                        </tbody>--%>
+        <%--                    </table>--%>
+        <%--                </div>--%>
+        <%--            </div>--%>
+        <%--        </div>--%>
         <!-- Chức năng thêm sản phẩm -->
         <div class="container-add-product" id="panel5">
             <form action="">

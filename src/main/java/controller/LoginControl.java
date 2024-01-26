@@ -26,10 +26,14 @@ public class LoginControl extends HttpServlet {
         String password = request.getParameter("password");
 
         UserEntity userEntity = UserService.checkLogin(userName, password);
+        boolean checkBlockAcc = UserService.getBlockAccount(userName);
+
         HttpSession session = request.getSession(true);
         String url = ERROR;
 
-        if (userEntity == null) {
+        if (checkBlockAcc) {
+            request.setAttribute("block", "Tài khoản đã bị khóa");
+        } else if (userEntity == null) {
             request.setAttribute("Error", "Tên đăng nhập hoặc mật khẩu không đúng");
         } else {
             session.setAttribute("Role", userEntity.getRoleId());

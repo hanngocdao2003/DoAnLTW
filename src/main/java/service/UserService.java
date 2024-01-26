@@ -83,6 +83,10 @@ public class UserService {
         return new UserDAO().getEmail(code);
     }
 
+    public static boolean getBlockAccount(String phone) {
+        return new UserDAO().getBlockAccount(phone);
+    }
+
     public static void main(String[] args) {
     }
 }

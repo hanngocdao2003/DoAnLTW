@@ -109,12 +109,18 @@
         <div class="container-choose">
             <div class="information-cus">
                 <h1>Thông tin vận chuyển</h1>
+                <%
+                    String fail = (String) request.getAttribute("null1");
+                    if (fail != null) {
+                %>
+                <span><%= fail%></span>
+                <%}%>
                 <div class="name-phone">
-                    <input type="text" placeholder="Họ và tên" name="fullName">
-                    <input type="text" placeholder="Số điện thoại" name="phone">
+                    <input type="text" placeholder="Họ và tên" name="fullName" required>
+                    <input type="text" placeholder="Số điện thoại" name="phone" required>
                 </div>
-                <input type="text" placeholder="Email" name="email">
-                <input type="text " placeholder="Địa chỉ" name="address">
+                <input type="text" placeholder="Email" name="email" required>
+                <input type="text " placeholder="Địa chỉ" name="address" required>
                 <input type="text" placeholder="Ghi chú (VD: giao sau 10h)" name="note">
             </div>
             <div class="payment">
@@ -139,6 +145,12 @@
                     <img src="Image/cart/Vnpay.png" alt="">
                     <p>Thẻ ATM / Thẻ tín dụng (Credit card) / Thẻ ghi nợ (Debit card)</p>
                 </div>
+                <%
+                    String fail1 = (String) request.getAttribute("null");
+                    if (fail1 != null) {
+                %>
+                <span><%= fail1%></span>
+                <%}%>
                 <div class="notification">
                     <span>Bạn chấp nhận thanh toán bằng COD</span>
                 </div>

@@ -41,6 +41,11 @@ public class OrderServlet extends HttpServlet {
             String address = request.getParameter("address");
             String note = request.getParameter("note");
 
+            if (fullName == null || phone == null || email == null || address == null) {
+                url = CURRENT;
+                request.setAttribute("null1", "Vui lòng nhập thông tin");
+            }
+
             String radio = request.getParameter("choose");
             String value = "";
             if (radio.equals("cod")) {
@@ -49,8 +54,11 @@ public class OrderServlet extends HttpServlet {
                 value = "Momo";
             } else if (radio.equals("zalo")) {
                 value = "ZaloPay";
-            } else {
+            } else if (radio.equals("card")) {
                 value = "Card";
+            } else {
+                url = CURRENT;
+                request.setAttribute("null", "Vui lòng chọn hình thức thanh toán");
             }
 
             Date created = new Date(System.currentTimeMillis());

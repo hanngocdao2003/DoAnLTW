@@ -74,6 +74,27 @@ public class UserDAO {
         return null;
     }
 
+    public boolean getBlockAccount(String phone) {
+        UserEntity user = new UserEntity();
+        String sql = "select status from users where phone = ?";
+        Connection con = ConnectionUtils.getConnection();
+        try {
+            PreparedStatement statement = con.prepareStatement(sql);
+            statement.setString(1, phone);
+            ResultSet rs = statement.executeQuery();
+            if (rs.next()) {
+                user.setStatus(rs.getShort("status"));
+                Short st = user.getStatus();
+                if (st == 0) {
+                    return true;
+                }
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return false;
+    }
+
     public static String toString(List<UserEntity> userEntityList) {
         String resutl = "";
         for (UserEntity userEntity : userEntityList) {

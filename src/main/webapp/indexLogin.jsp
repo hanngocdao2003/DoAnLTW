@@ -27,6 +27,12 @@
             %>
             <span><%= error%></span>
             <%}%>
+            <%
+                String error1 = (String) request.getAttribute("block");
+                if (error1 != null) {
+            %>
+            <span><%= error1%></span>
+            <%}%>
             <div class="NameAcc">
                 <label for="inputNumPhone" class="label">Số điện thoại:</label>
                 <input type="text" id="inputNumPhone" placeholder="Nhập số điện thoại" name="userName">
@@ -122,7 +128,7 @@
             </div>
         </form>
     </div>
-    <div class="intro" id="intro">
+    <div class="intro" id="intro" style="right: <%=request.getAttribute("fail") != null ? "50%" : "0%"%>">
         <div class="hello">
             <h3 class="welcome">BHD Boutique
                 <br>
