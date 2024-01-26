@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="Image/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="View/styleWeb/styleMenu.css">
     <link rel="stylesheet" href="View/styleWeb/styleHeader.css">
-    <link rel="stylesheet" href="View/styleWeb/styleOrder.css">
+<%--    <link rel="stylesheet" href="View/styleWeb/styleOrder.css">--%>
     <link rel="stylesheet" href="View/styleWeb/styleFooter.css">
     <link rel="stylesheet" href="View/styleWeb/color.css">
     <link rel="icon" href="Image/logo/BHD-html.png" type="image/x-icon">
@@ -109,9 +109,6 @@
                 </a>
                 <a href="allProductofCategory.jsp" class="linkpage Shop">
                     <li class="Item_menuPage ">Cửa hàng</li>
-                </a>
-                <a href="allProductofCategory.jsp" class="linkpage Collection">
-                    <li class="Item_menuPage ">Bộ sưu tập</li>
                 </a>
                 <a href="#" class="linkpage Contact" id="Contact">
                     <li class="Item_menuPage">Liên hệ</li>
