@@ -44,16 +44,41 @@
                     <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
             </div>
-            <a href="indexOrder.jsp" class="cartHeader"><i class="fa-solid fa-cart-shopping"></i><span id="totalitem" style="color: var(--but)">
-                          <%
-                              Object idUser = request.getSession().getAttribute("Id");
-                              if (idUser != null) {
-                                  int id = (Integer) idUser;
-                          %>
+            <div class="rightIcon">
+                <a href="" class="cartHeader"><i class="fa-solid fa-cart-shopping"></i><span id="totalitem"
+                                                                                             style="color: var(--but)">
+                             <%
+                                 Object idUser = request.getSession().getAttribute("Id");
+                                 if (idUser != null) {
+                                     int id = (Integer) idUser;
+                             %>
                             <%= cart.getTotalItem(id) %>
-                         <%}%>
+                                <%}%>
                         </span></a>
-            <a href="indexLogin.jsp" class="user"><i class="fa-solid fa-user"></i></a>
+                <%
+                    String success = (String) session.getAttribute("Success");
+                    String roleID = (String) session.getAttribute("Role");
+                    System.out.println(success);
+                    System.out.println(roleID);
+                    if (success != null && "R1".equals(roleID)) {
+                %>
+                <a href="indexAdmin.jsp" class="user"><i class="fa-solid fa-user"
+                                                         style="margin-right: 5px"></i> <%= success %>
+                </a>
+                <%
+                } else if (success != null) {
+                %>
+                <a href="indexPersonal.jsp" class="user"><i class="fa-solid fa-user"
+                                                            style="margin-right: 5px"></i> <%= success %>
+                </a>
+                <%
+                } else {
+                %>
+                <a href="indexLogin.jsp" class="user"><i class="fa-solid fa-user"></i></a>
+                <%
+                    }
+                %>
+            </div>
         </div>
     </div>
     <div class="menu_container">

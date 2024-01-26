@@ -113,7 +113,7 @@
     </div>
     <hr>
     <div class="information-acc">
-        <form class="inf_acc" action="LoginControl" method="post">
+        <form class="inf_acc" action="home" method="post">
             <label for="fullName">Họ và tên:</label>
             <input type="text" id="fullName" readonly
                    value="<%= (String) session.getAttribute("fullName") != null ? (String) session.getAttribute("fullName") : "" %>"

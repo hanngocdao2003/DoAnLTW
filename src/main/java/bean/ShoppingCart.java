@@ -2,10 +2,8 @@ package bean;
 
 import service.ProductService;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.text.NumberFormat;
+import java.util.*;
 
 public class ShoppingCart {
     private Map<Integer, List<CartProduct>> mapCart = new HashMap<>();
@@ -69,37 +67,32 @@ public class ShoppingCart {
             return 0;
         }
     }
+    public double getTotalPrice(){
+        double totalPrice = 0.0;
+        for (Map.Entry<Integer, List<CartProduct>> entry : mapCart.entrySet()) {
+            for (CartProduct cartProduct : entry.getValue()) {
+                totalPrice += cartProduct.getQuantity() * ProductService.getDetails(cartProduct.getProductId()).getPrice();
+            }
+        }
+        return totalPrice;
+    }
 
-//    public double getTotalPriceOfProduct(int productId) {
-//
-//    }
+    public String totalPriceFormatted(double cost) {
+        Locale vietnamese = new Locale("vi", "VN");
+        NumberFormat format = NumberFormat.getCurrencyInstance(vietnamese);
+        String price = format.format(cost);
+        return price;
+    }
 
-//    public double getTotalPrice() {
-//        double totalPrice = 0.0;
-//
-//        for (List<CartProduct> cartProducts : mapCart.values()) {
-//            for (CartProduct product : cartProducts) {
-//                // Tính giá tiền cho từng sản phẩm và cộng vào tổng giá tiền
-//                ProductResponse productResponse = ProductService.getDetails(product.getProductId());
-//                System.out.println(productResponse);
-//                totalPrice += productResponse.getPrice() * product.getQuantity();
-//            }
-//        }
-//
-//        return totalPrice;
-//    }
+    public static void main(String[] args) {
+        // Tạo đối tượng ShoppingCart
+        ShoppingCart shoppingCart = new ShoppingCart();
 
-//    public static void main(String[] args) {
-//        // Tạo đối tượng ShoppingCart
-//        ShoppingCart shoppingCart = new ShoppingCart();
-//        System.out.println(shoppingCart.getTotalItem());
-//
-        // Thêm sản phẩm vào giỏ hàng
-//        shoppingCart.addProduct("Red", "M", 1, 2);
-//        shoppingCart.addProduct("Blue", "L", 2, 1);
-//        shoppingCart.addProduct("Blue", "L", 2, 2);
-//        System.out.println(shoppingCart.mapCart);
-//        System.out.println(shoppingCart.getTotalItem());
+        shoppingCart.addProduct(1, "Red", "M", 1, 2);
+        shoppingCart.addProduct(1, "Blue", "L", 2, 1);
+        shoppingCart.addProduct(1,"Blue", "L", 2, 2);
+        System.out.println(shoppingCart.mapCart);
+        System.out.println(shoppingCart.getTotalPrice());
 
 //        shoppingCart.increasingQuantity(1, 0);
 //        shoppingCart.increasingQuantity(1, 0);
@@ -113,5 +106,5 @@ public class ShoppingCart {
 //        shoppingCart.removeProduct(1, 0);
 //        System.out.println(shoppingCart.mapCart);
 //        System.out.println(shoppingCart.getTotalItem());
-
+    }
 }

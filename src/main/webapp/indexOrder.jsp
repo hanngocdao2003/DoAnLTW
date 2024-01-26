@@ -42,8 +42,9 @@
                     <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
             </div>
-            <a href="indexOrder.jsp" class="cartHeader"><i class="fa-solid fa-cart-shopping"></i><span id="totalitem"
-                                                                                                       style="color: var(--but)">
+            <div class="rightIcon">
+                <a href="" class="cartHeader"><i class="fa-solid fa-cart-shopping"></i><span id="totalitem"
+                                                                                             style="color: var(--but)">
                              <%
                                  Object idUser = request.getSession().getAttribute("Id");
                                  if (idUser != null) {
@@ -52,7 +53,30 @@
                             <%= cart.getTotalItem(id) %>
                                 <%}%>
                         </span></a>
-            <a href="indexLogin.jsp" class="user"><i class="fa-solid fa-user"></i></a>
+                <%
+                    String success = (String) session.getAttribute("Success");
+                    String roleID = (String) session.getAttribute("Role");
+                    System.out.println(success);
+                    System.out.println(roleID);
+                    if (success != null && "R1".equals(roleID)) {
+                %>
+                <a href="indexAdmin.jsp" class="user"><i class="fa-solid fa-user"
+                                                         style="margin-right: 5px"></i> <%= success %>
+                </a>
+                <%
+                } else if (success != null) {
+                %>
+                <a href="indexPersonal.jsp" class="user"><i class="fa-solid fa-user"
+                                                            style="margin-right: 5px"></i> <%= success %>
+                </a>
+                <%
+                } else {
+                %>
+                <a href="indexLogin.jsp" class="user"><i class="fa-solid fa-user"></i></a>
+                <%
+                    }
+                %>
+            </div>
         </div>
     </div>
     <div class="menu_container">
@@ -166,16 +190,16 @@
                 </h3>
                 <div class="choose">
                     <div class="color-in-cart" name="color" id="colour" style="margin-right: 20px">
-                        <%if(cartProduct.getColor().equalsIgnoreCase("#FF0000FF")){%>
+                        <%if (cartProduct.getColor().equalsIgnoreCase("#FF0000FF")) {%>
                         <p>Đỏ</p>
                         <%}%>
-                        <%if(cartProduct.getColor().equalsIgnoreCase("#FFFFFFFF")){%>
+                        <%if (cartProduct.getColor().equalsIgnoreCase("#FFFFFFFF")) {%>
                         <p>Trắng</p>
                         <%}%>
-                        <%if(cartProduct.getColor().equalsIgnoreCase("#000000FF")){%>
+                        <%if (cartProduct.getColor().equalsIgnoreCase("#000000FF")) {%>
                         <p>Đen</p>
                         <%}%>
-                        <%if(cartProduct.getColor().equalsIgnoreCase("#008000FF")){%>
+                        <%if (cartProduct.getColor().equalsIgnoreCase("#008000FF")) {%>
                         <p>Xanh lá</p>
                         <%}%>
                     </div>
@@ -185,7 +209,7 @@
                     </div>
                 </div>
                 <div class="cost">
-                    <span id="total" style="font-size: 30px"><%=productResponse.getPrice()%></span>
+                    <span id="total" style="font-size: 30px"><%=cart.totalPriceFormatted(productResponse.getPrice())%></span>
                     <span id="quantity">Số lượng: <span><%=cartProduct.getQuantity()%></span></span>
                 </div>
                 <button id="removeBtn"><i class="fa-regular fa-trash-can" style="color: #ffffff;"></i>Xóa sản phẩm
@@ -208,7 +232,7 @@
         <div class="detail-cost">
             <div class="price">
                 <p class="lable">Tạm tính</p>
-                <p class="cost">290.000đ</p>
+                <p class="cost"><%=cart.totalPriceFormatted(cart.getTotalPrice())%></p>
             </div>
             <div class="sale-off">
                 <p clss="lable">Giảm giá</p>
@@ -222,7 +246,7 @@
         <hr>
         <div class="total-cost">
             <p class="label">Tổng</p>
-            <p class="cost">290.000đ</p>
+            <p class="cost"><%= cart.totalPriceFormatted(cart.getTotalPrice())%></p>
         </div>
         <div id="accept_pay">
             <button>Chấp nhận thanh toán</button>
@@ -231,7 +255,7 @@
 </div>
 <script>
     document.body.innerHTML += addFooter();
-    $('#removeBtn').click(function(e) {
+    $('#removeBtn').click(function (e) {
         e.preventDefault();
         var productId = $(this).closest('.product').find('input[name="productId"]').val();
         var quantity = $(this).closest('.product').find('input[name="quantity"]').val();

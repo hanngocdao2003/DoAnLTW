@@ -47,7 +47,16 @@
             </div>
 
             <div class="rightIcon">
-                <a href="" class="cartHeader"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="" class="cartHeader"><i class="fa-solid fa-cart-shopping"></i><span id="totalitem"
+                                                                                             style="color: var(--but)">
+                             <%
+                                 Object idUser = request.getSession().getAttribute("Id");
+                                 if (idUser != null) {
+                                     int id = (Integer) idUser;
+                             %>
+                            <%= cart.getTotalItem(id) %>
+                                <%}%>
+                        </span></a>
                 <%
                     String success = (String) session.getAttribute("Success");
                     String roleID = (String) session.getAttribute("Role");
@@ -107,19 +116,19 @@
                 <a href="index.jsp" class="linkpage Home">
                     <li class="Item_menuPage">Trang chủ</li>
                 </a>
-                <a href="" class="linkpage Shop">
+                <a href="allProductofCategory.jsp" class="linkpage Shop">
                     <li class="Item_menuPage ">Cửa hàng</li>
                 </a>
-                <a href="" class="linkpage Collection">
+                <a href="allProductofCategory.jsp" class="linkpage Collection">
                     <li class="Item_menuPage ">Bộ sưu tập</li>
                 </a>
                 <a href="" class="linkpage Contact">
                     <li class="Item_menuPage">Liên hệ</li>
                 </a>
-                <a href="" class="linkpage Fashion">
-                    <li class="Item_menuPage">Xu hướng thời trang</li>
+                <a href="AboutUs.jsp" class="linkpage Fashion">
+                    <li class="Item_menuPage">Giới thiệu</li>
                 </a>
-                <a href="" class="linkpage Comment">
+                <a href="comment.jsp" class="linkpage Comment">
                     <li class="Item_menuPage">Đóng góp ý kiến</li>
                 </a>
             </ul>
