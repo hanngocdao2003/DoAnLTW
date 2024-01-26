@@ -27,10 +27,6 @@ public class AddToCart extends HttpServlet {
 
     private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-        //UserEntity userEntity = (UserEntity) session.getAttribute("User_Login");
-//        if (userEntity == null) {
-//            response.sendRedirect("indexLogin.jsp");
-//        } else {
         int idUser = (int) session.getAttribute("Id");
         ShoppingCart shoppingCarts = (ShoppingCart) session.getAttribute("cart");
         if (shoppingCarts == null) {

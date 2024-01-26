@@ -43,8 +43,9 @@
                 </form>
             </div>
             <div class="rightIcon">
-                <a href="indexOrder.jsp" class="cartHeader"><i class="fa-solid fa-cart-shopping"></i><span id="totalitem"
-                                                                                             style="color: var(--but)">
+                <a href="indexOrder.jsp" class="cartHeader"><i class="fa-solid fa-cart-shopping"></i><span
+                        id="totalitem"
+                        style="color: var(--but)">
                              <%
                                  Object idUser = request.getSession().getAttribute("Id");
                                  if (idUser != null) {
@@ -170,18 +171,20 @@
         </div>
     </div>
     <div class="straight-line"></div>
+    <%
+
+        Map<Integer, List<CartProduct>> mapCart = cart.getMapCart();
+        for (Map.Entry<Integer, List<CartProduct>> entry : mapCart.entrySet()) {
+            int productId = entry.getKey();
+            List<CartProduct> cartProducts = entry.getValue();
+            for (CartProduct cartProduct : cartProducts) {
+                ProductResponse productResponse = ProductService.getDetails(cartProduct.getProductId());
+
+    %>
+    <% if (!cart.getMapCart().isEmpty())%>
     <div class="cart-details">
         <h1>Giỏ hàng</h1>
-        <%
 
-            Map<Integer, List<CartProduct>> mapCart = cart.getMapCart();
-            for (Map.Entry<Integer, List<CartProduct>> entry : mapCart.entrySet()) {
-                int productId = entry.getKey();
-                List<CartProduct> cartProducts = entry.getValue();
-                for (CartProduct cartProduct : cartProducts) {
-                    ProductResponse productResponse = ProductService.getDetails(cartProduct.getProductId());
-
-        %>
         <div class="product">
             <input hidden="hidden" name="productId" value="<%=cartProduct.getProductId()%>">
             <img src="Image/Product/<%=productResponse.getImage()%>" alt="">
@@ -209,7 +212,8 @@
                     </div>
                 </div>
                 <div class="cost">
-                    <span id="total" style="font-size: 30px"><%=cart.totalPriceFormatted(productResponse.getPrice())%></span>
+                    <span id="total"
+                          style="font-size: 30px"><%=cart.totalPriceFormatted(productResponse.getPrice())%></span>
                     <span id="quantity">Số lượng: <span><%=cartProduct.getQuantity()%></span></span>
                 </div>
                 <button id="removeBtn"><i class="fa-regular fa-trash-can" style="color: #ffffff;"></i>Xóa sản phẩm
@@ -217,10 +221,7 @@
             </div>
         </div>
         <hr style="margin:10px 0px">
-        <%
-                }
-            }
-        %>
+
 
         <%--        <div class="voucher">--%>
         <%--            <div class="ten-percent">--%>
@@ -232,7 +233,8 @@
         <div class="detail-cost">
             <div class="price">
                 <p class="lable">Tạm tính</p>
-                <p class="cost"><%=cart.totalPriceFormatted(cart.getTotalPrice())%></p>
+                <p class="cost"><%=cart.totalPriceFormatted(cart.getTotalPrice())%>
+                </p>
             </div>
             <div class="sale-off">
                 <p clss="lable">Giảm giá</p>
@@ -246,12 +248,19 @@
         <hr>
         <div class="total-cost">
             <p class="label">Tổng</p>
-            <p class="cost"><%= cart.totalPriceFormatted(cart.getTotalPrice())%></p>
+            <p class="cost"><%= cart.totalPriceFormatted(cart.getTotalPrice())%>
+            </p>
         </div>
         <div id="accept_pay">
             <button>Chấp nhận thanh toán</button>
         </div>
     </div>
+    <%
+            }
+
+
+        }
+    %>
 </div>
 <script>
     document.body.innerHTML += addFooter();
