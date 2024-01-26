@@ -146,9 +146,10 @@
                 <a href="index.jsp" class="linkpage Home">
                     <li class="Item_menuPage">Trang chủ</li>
                 </a>
-                <a href="allProductofCategory.jsp" class="linkpage Shop">
-                    <li class="Item_menuPage ">Cửa hàng</li>
-                </a>
+                <form class="linkpage Shop" action="Product" method="get" id="productForm">
+                    <input type="text" name="nameproduct" value="" style="display: none;">
+                    <li class="Item_menuPage" onclick="submitForm()">Cửa hàng</li>
+                </form>
                 <a href="#" class="linkpage Contact" id="Contact">
                     <li class="Item_menuPage">Liên hệ</li>
                 </a>
@@ -361,7 +362,9 @@
             });
         });
     });
-
+    function submitForm() {
+        document.getElementById('productForm').submit();
+    }
 </script>
 </body>
 </html>

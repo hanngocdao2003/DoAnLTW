@@ -171,20 +171,19 @@
         </div>
     </div>
     <div class="straight-line"></div>
-    <%
-
-        Map<Integer, List<CartProduct>> mapCart = cart.getMapCart();
-        for (Map.Entry<Integer, List<CartProduct>> entry : mapCart.entrySet()) {
-            int productId = entry.getKey();
-            List<CartProduct> cartProducts = entry.getValue();
-            for (CartProduct cartProduct : cartProducts) {
-                ProductResponse productResponse = ProductService.getDetails(cartProduct.getProductId());
-
-    %>
-    <% if (!cart.getMapCart().isEmpty())%>
-    <div class="cart-details">
+    <% if (!cart.getMapCart().isEmpty()) {%>
+ ư   <div class="cart-details">
         <h1>Giỏ hàng</h1>
+        <%
 
+            Map<Integer, List<CartProduct>> mapCart = cart.getMapCart();
+            for (Map.Entry<Integer, List<CartProduct>> entry : mapCart.entrySet()) {
+                int productId = entry.getKey();
+                List<CartProduct> cartProducts = entry.getValue();
+                for (CartProduct cartProduct : cartProducts) {
+                    ProductResponse productResponse = ProductService.getDetails(cartProduct.getProductId());
+
+        %>
         <div class="product">
             <input hidden="hidden" name="productId" value="<%=cartProduct.getProductId()%>">
             <img src="Image/Product/<%=productResponse.getImage()%>" alt="">
@@ -221,6 +220,11 @@
             </div>
         </div>
         <hr style="margin:10px 0px">
+        <%
+                }
+            }
+        %>
+
 
 
         <%--        <div class="voucher">--%>
@@ -255,12 +259,7 @@
             <button>Chấp nhận thanh toán</button>
         </div>
     </div>
-    <%
-            }
-
-
-        }
-    %>
+    <%}%>
 </div>
 <script>
     document.body.innerHTML += addFooter();
