@@ -43,7 +43,7 @@
                 </form>
             </div>
             <div class="rightIcon">
-                <a href="" class="cartHeader"><i class="fa-solid fa-cart-shopping"></i><span id="totalitem"
+                <a href="indexOrder.jsp" class="cartHeader"><i class="fa-solid fa-cart-shopping"></i><span id="totalitem"
                                                                                              style="color: var(--but)">
                              <%
                                  Object idUser = request.getSession().getAttribute("Id");

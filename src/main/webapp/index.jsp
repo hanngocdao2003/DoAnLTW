@@ -47,7 +47,7 @@
             </div>
 
             <div class="rightIcon">
-                <a href="" class="cartHeader"><i class="fa-solid fa-cart-shopping"></i><span id="totalitem"
+                <a href="indexOrder.jsp" class="cartHeader"><i class="fa-solid fa-cart-shopping"></i><span id="totalitem"
                                                                                              style="color: var(--but)">
                              <%
                                  Object idUser = request.getSession().getAttribute("Id");
@@ -96,7 +96,10 @@
                         <li class="menu_Category_Item">Tất cả sản phẩm</li>
                     </a>
                     <a>
+                        <form action="Product" method="get">
+                        <input type="text" name="nameproduct" value="Áo" hidden="hidden">
                         <li class="menu_Category_Item">Áo</li>
+                        </form>
                     </a>
                     <a>
                         <li class="menu_Category_Item">Áo khoác</li>

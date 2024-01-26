@@ -44,7 +44,7 @@
                 </form>
             </div>
             <div class="rightIcon">
-                <a href="" class="cartHeader"><i class="fa-solid fa-cart-shopping"></i><span id="totalitem"
+                <a href="indexOrder.jsp" class="cartHeader"><i class="fa-solid fa-cart-shopping"></i><span id="totalitem"
                                                                                              style="color: var(--but)">
                              <%
                                  Object idUser = request.getSession().getAttribute("Id");
@@ -154,14 +154,14 @@
             <p class="name"><%=p.getName()%>
             </p>
             <div class="quantity">
-                <div class="sale">
-                    <p class="sub-sale">Đã bán: 65</p>
-                </div>
-                <div class="inventory">
-                    <p class="sub-inventory">Còn lại: 134</p>
-                </div>
+<%--                <div class="sale">--%>
+<%--                    <p class="sub-sale">Đã bán: 65</p>--%>
+<%--                </div>--%>
+<%--                <div class="inventory">--%>
+<%--                    <p class="sub-inventory">Còn lại: 134</p>--%>
+<%--                </div>--%>
             </div>
-            <p class="price"><%=p.getPrice()%>
+            <p class="price"><%=cart.totalPriceFormatted(p.getPrice())%>
             </p>
             <p class="color" style="font-weight: bold;">Màu sắc:</p>
             <div class="color-btn" style="margin-bottom: 10px;">
