@@ -47,7 +47,16 @@
             </div>
 
             <div class="rightIcon">
-                <a href="indexOrder.jsp" class="cartHeader"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="indexOrder.jsp" class="cartHeader"><i class="fa-solid fa-cart-shopping"></i><span id="totalitem"
+                                                                                             style="color: var(--but)">
+                             <%
+                                 Object idUser = request.getSession().getAttribute("Id");
+                                 if (idUser != null) {
+                                     int id = (Integer) idUser;
+                             %>
+                            <%= cart.getTotalItem(id) %>
+                                <%}%>
+                        </span></a>
                 <%
                     String success = (String) session.getAttribute("Success");
                     String roleID = (String) session.getAttribute("Role");
@@ -88,6 +97,7 @@
                     </a>
                     <a>
                         <li class="menu_Category_Item">Áo</li>
+
                     </a>
                     <a>
                         <li class="menu_Category_Item">Áo khoác</li>
@@ -113,7 +123,7 @@
                 <a href="allProductofCategory.jsp" class="linkpage Collection">
                     <li class="Item_menuPage ">Bộ sưu tập</li>
                 </a>
-                <a href="" class="linkpage Contact">
+                <a href="#" class="linkpage Contact" id="Contact">
                     <li class="Item_menuPage">Liên hệ</li>
                 </a>
                 <a href="AboutUs.jsp" class="linkpage Fashion">

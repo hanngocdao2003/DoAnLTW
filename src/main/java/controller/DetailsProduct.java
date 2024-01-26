@@ -20,7 +20,6 @@ public class DetailsProduct extends HttpServlet {
         if (productId != null && !productId.isEmpty()) {
             ProductResponse productDetail = ProductService.getDetails(Integer.parseInt(productId));
             request.setAttribute("productDetail", productDetail);
-            // Chuyển hướng đến trang chi tiết (Details.jsp)
             RequestDispatcher dispatcher = request.getRequestDispatcher("/details.jsp");
             dispatcher.forward(request, response);
         } else {

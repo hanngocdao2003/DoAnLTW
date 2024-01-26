@@ -28,26 +28,57 @@
 <header>
     <%
         ShoppingCart cart = (ShoppingCart) session.getAttribute("cart");
-        if(cart == null) {
+        if (cart == null) {
             cart = new ShoppingCart();
         }
     %>
     <div class="firstArea">
         <div class="logo_search_cart">
-            <div class="logo">
+            <a href="index.jsp" class="logo">
                 <img src="Image/logo/BHD-nền%20trong%20suốt.svg" alt="404">
                 <h1>BHD Boutique</h1>
-            </div>
+            </a>
             <div class="search_Category">
                 <form class="Search" action="findProduct" method="get">
                     <input name="keyword" type="text" class="input_search" placeholder="Nhập sản phẩm cần tìm">
                     <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
             </div>
-            <a href="indexOrder.jsp" class="cartHeader"><i class="fa-solid fa-cart-shopping"></i><span id="totalitem" style="color: var(--but)">
-                            <%= cart.getTotalItem() %>
+            <div class="rightIcon">
+                <a href="indexOrder.jsp" class="cartHeader"><i class="fa-solid fa-cart-shopping"></i><span id="totalitem"
+                                                                                             style="color: var(--but)">
+                             <%
+                                 Object idUser = request.getSession().getAttribute("Id");
+                                 if (idUser != null) {
+                                     int id = (Integer) idUser;
+                             %>
+                            <%= cart.getTotalItem(id) %>
+                                <%}%>
                         </span></a>
-            <a href="indexLogin.jsp" class="user"><i class="fa-solid fa-user"></i></a>
+                <%
+                    String success = (String) session.getAttribute("Success");
+                    String roleID = (String) session.getAttribute("Role");
+                    System.out.println(success);
+                    System.out.println(roleID);
+                    if (success != null && "R1".equals(roleID)) {
+                %>
+                <a href="indexAdmin.jsp" class="user"><i class="fa-solid fa-user"
+                                                         style="margin-right: 5px"></i> <%= success %>
+                </a>
+                <%
+                } else if (success != null) {
+                %>
+                <a href="indexPersonal.jsp" class="user"><i class="fa-solid fa-user"
+                                                            style="margin-right: 5px"></i> <%= success %>
+                </a>
+                <%
+                } else {
+                %>
+                <a href="indexLogin.jsp" class="user"><i class="fa-solid fa-user"></i></a>
+                <%
+                    }
+                %>
+            </div>
         </div>
     </div>
     <div class="menu_container">
@@ -118,8 +149,10 @@
                 ) {
         %>
         <li class="itemProduct">
-            <a href="detailsProduct?productId=<%=p.getId()%>"><img src="Image/Product/<%=p.getImage()%>" alt="" class="imageProduct"></a>
-            <a href="detailsProduct?productId=<%=p.getId()%>" class="linkProduct"><%=p.getName()%></a>
+            <a href="detailsProduct?productId=<%=p.getId()%>"><img src="Image/Product/<%=p.getImage()%>" alt=""
+                                                                   class="imageProduct"></a>
+            <a href="detailsProduct?productId=<%=p.getId()%>" class="linkProduct"><%=p.getName()%>
+            </a>
             <div class="evalute"><span>Đánh giá: <ul class="fiveStar">
                 <li><i class="fa-solid fa-star"></i></li>
                 <li><i class="fa-solid fa-star"></i></li>
@@ -137,7 +170,7 @@
             }
         %>
     </ul>
-    </div>
+</div>
 
 <script>
     document.body.innerHTML += addFooter();

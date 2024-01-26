@@ -8,7 +8,7 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "LoginControl", value = "/LoginControl")
+@WebServlet(name = "LoginControl", value = "/home")
 public class LoginControl extends HttpServlet {
 
     @Override

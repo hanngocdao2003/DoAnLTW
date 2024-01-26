@@ -267,7 +267,7 @@
   } */
     .straight-line {
         border-left: 1px solid rgba(19, 86, 138, 0.8);
-        height: 1000px;
+        height: 100%;
     }
 
     .payment {
@@ -362,13 +362,35 @@
         line-height: 2;
     }
 
+    .product .color-in-cart {
+        margin-top: 20px;
+        width: 80px;
+        height: 20px;
+        border-radius: 10px;
+        border: 1px solid rgba(19, 86, 138, 0.8);
+        text-align: center;
+        color: white;
+        background-color: var(--but);
+    }
+
+    .product .size-in-cart {
+        margin-top: 20px;
+        width: 80px;
+        height: 20px;
+        border-radius: 10px;
+        border: 1px solid rgba(19, 86, 138, 0.8);
+        text-align: center;
+        color: white;
+        background-color: var(--but);
+    }
+
     .product .details button {
         width: 150px;
         margin-top: 23px;
         padding: 10px;
         border-radius: 10px;
         border: 1px solid #a62c2c;
-        background: #FF8080FF;
+        background: var(--but);
         color: white;
     }
 

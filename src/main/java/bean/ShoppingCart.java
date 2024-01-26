@@ -1,9 +1,9 @@
 package bean;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import service.ProductService;
+
+import java.text.NumberFormat;
+import java.util.*;
 
 public class ShoppingCart {
     private Map<Integer, List<CartProduct>> mapCart = new HashMap<>();
@@ -16,23 +16,22 @@ public class ShoppingCart {
         this.mapCart = mapCart;
     }
 
-    public boolean addProduct(String color, String size, int productId, int quantity) {
+    public boolean addProduct( int idUser ,String color, String size, int productId, int quantity) {
         CartProduct cartProduct = new CartProduct(quantity, size, color, productId);
-        if (mapCart.containsKey(productId)) {
-            List<CartProduct> listCartProduct = mapCart.get(productId);
+        if (mapCart.containsKey(idUser)) {
+            List<CartProduct> listCartProduct = mapCart.get(idUser);
             if (listCartProduct.contains(cartProduct)) {
                 CartProduct product = listCartProduct.get(listCartProduct.indexOf(cartProduct));
                 product.setQuantity(product.getQuantity() + quantity);
                 System.out.println(product.getQuantity());
-                return true;
             } else {
                 listCartProduct.add(cartProduct);
-                return true;
             }
+            return true;
         } else {
-            List<CartProduct> listCartProduct2 = new ArrayList<>();
-            listCartProduct2.add(cartProduct);
-            mapCart.put(productId, listCartProduct2);
+            List<CartProduct> listCartProduct = new ArrayList<>();
+            listCartProduct.add(cartProduct);
+            mapCart.put(idUser, listCartProduct);
             return true;
         }
     }
@@ -60,26 +59,40 @@ public class ShoppingCart {
         return true;
     }
 
+    public int getTotalItem(int idUser) {
+        try{
 
-    public int getTotalItem(){
-        int total = 0;
-        for (int item :
-                mapCart.keySet()) {
-            total += mapCart.get(item).size();
+            return mapCart.get(idUser).size();
+        }catch (NullPointerException e){
+            return 0;
         }
-        return total;
+    }
+    public double getTotalPrice(){
+        double totalPrice = 0.0;
+        for (Map.Entry<Integer, List<CartProduct>> entry : mapCart.entrySet()) {
+            for (CartProduct cartProduct : entry.getValue()) {
+                totalPrice += cartProduct.getQuantity() * ProductService.getDetails(cartProduct.getProductId()).getPrice();
+            }
+        }
+        return totalPrice;
+    }
+
+    public String totalPriceFormatted(double cost) {
+        Locale vietnamese = new Locale("vi", "VN");
+        NumberFormat format = NumberFormat.getCurrencyInstance(vietnamese);
+        String price = format.format(cost);
+        return price;
     }
 
     public static void main(String[] args) {
-//        // Tạo đối tượng ShoppingCart
+        // Tạo đối tượng ShoppingCart
         ShoppingCart shoppingCart = new ShoppingCart();
-        System.out.println(shoppingCart.getTotalItem());
-//
-//        // Thêm sản phẩm vào giỏ hàng
-//        shoppingCart.addProduct("Red", "M", 1, 2);
-//        shoppingCart.addProduct("Blue", "L", 2, 1);
-//        shoppingCart.addProduct("Blue", "L", 2, 2);
-//        System.out.println(shoppingCart.mapCart);
+
+        shoppingCart.addProduct(1, "Red", "M", 1, 2);
+        shoppingCart.addProduct(1, "Blue", "L", 2, 1);
+        shoppingCart.addProduct(1,"Blue", "L", 2, 2);
+        System.out.println(shoppingCart.mapCart);
+        System.out.println(shoppingCart.getTotalPrice());
 
 //        shoppingCart.increasingQuantity(1, 0);
 //        shoppingCart.increasingQuantity(1, 0);

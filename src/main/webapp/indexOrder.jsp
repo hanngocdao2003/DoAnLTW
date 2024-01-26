@@ -1,4 +1,11 @@
 <%@ page import="bean.ProductResponse" %>
+
+<%@ page import="bean.ShoppingCart" %>
+<%@ page import="bean.CartProduct" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.Map" %>
+<%@ page import="service.ProductService" %>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,26 +26,37 @@
 </head>
 <body>
 <header>
+
+    <%
+        ShoppingCart cart = (ShoppingCart) session.getAttribute("cart");
+        if (cart == null) {
+            cart = new ShoppingCart();
+        }
+    %>
+
     <div class="firstArea">
         <div class="logo_search_cart">
-            <div class="logo">
+            <a href="index.jsp" class="logo">
                 <img src="Image/logo/BHD-nền%20trong%20suốt.svg" alt="404">
                 <h1>BHD Boutique</h1>
-            </div>
+            </a>
             <div class="search_Category">
-                <form class="Search" action="findProduct" method="get">
+                <form class="Search" action="Product" method="get">
                     <input name="keyword" type="text" class="input_search" placeholder="Nhập sản phẩm cần tìm">
                     <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
             </div>
             <div class="rightIcon">
-<<<<<<< HEAD
-                <a href="indexOrder.jsp" class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
-                <%
-                    String success = (String) session.getAttribute("Success");
-                    if (success != null) {
-=======
-                <a href="" class="cartHeader"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="indexOrder.jsp" class="cartHeader"><i class="fa-solid fa-cart-shopping"></i><span id="totalitem"
+                                                                                                           style="color: var(--but)">
+                             <%
+                                 Object idUser = request.getSession().getAttribute("Id");
+                                 if (idUser != null) {
+                                     int id = (Integer) idUser;
+                             %>
+                            <%= cart.getTotalItem(id) %>
+                                <%}%>
+                        </span></a>
                 <%
                     String success = (String) session.getAttribute("Success");
                     String roleID = (String) session.getAttribute("Role");
@@ -51,7 +69,6 @@
                 </a>
                 <%
                 } else if (success != null) {
->>>>>>> c7cef43fb3069de4f969382579badcbc7e57beef
                 %>
                 <a href="indexPersonal.jsp" class="user"><i class="fa-solid fa-user"
                                                             style="margin-right: 5px"></i> <%= success %>
@@ -241,6 +258,16 @@
 </form>
 <script>
     document.body.innerHTML += addFooter();
+    $('#removeBtn').click(function (e) {
+        e.preventDefault();
+        var productId = $(this).closest('.product').find('input[name="productId"]').val();
+        var quantity = $(this).closest('.product').find('input[name="quantity"]').val();
+        if (quantity > 1) {
+            $(this).closest('.product').find('input[name="quantity"]').val(parseInt(quantity) - 1);
+        } else {
+            $(this).closest('.product').remove();
+        }
+    })
 </script>
 </body>
 </html>
