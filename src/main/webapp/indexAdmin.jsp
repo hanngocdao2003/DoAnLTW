@@ -72,14 +72,14 @@
                             <i class="fa-solid fa-circle" style="color: var(--border);"></i>
                             Quản lý đơn hàng
                         </li>
-                        <a href="ManagUser.jsp" class="linkUpload">
-                            <li class="item" onclick="handleClick(this, 'panel4')">
+                        <a href="uploadInfUser" class="linkUpload">
+                            <li class="item">
                                 <i class="fa-solid fa-circle" style="color: var(--border);"></i>
                                 Quản lý người dùng
                             </li>
                         </a>
                         <a href="uploadCmt" class="linkUpload">
-                            <li class="item" onclick="handleClick(this, 'panel7')">
+                            <li class="item">
                                 <i class="fa-solid fa-circle" style="color: var(--border);"></i>
                                 Phản hồi người dùng
                             </li>

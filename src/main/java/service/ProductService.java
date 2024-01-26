@@ -34,8 +34,8 @@ public class ProductService {
             productResponse.setName(item.getName());
             productResponse.setPrice(item.getPrice());
             productResponse.setDetails(item.getDetails());
-            productResponse.setImage(imageEntities.getFirst().getLink());
-            //productResponse.setImage(image);
+            //productResponse.setImage(imageEntities.getFirst().getLink());
+            productResponse.setImage(image);
             productResponse.setColor(color);
             productResponse.setSize(size);
 
@@ -56,7 +56,8 @@ public class ProductService {
         List<ColorEntity> colorEntities = colorDAO.findColor(productId);
         List<SizeEntity> sizeEntities = sizeDAO.findSize(productId);
 
-        String color = colorEntities.stream().map(colors -> colors.getCode()).collect(Collectors.joining(", "));String size = sizeEntities.stream().map(sizes -> sizes.getSize()).collect(Collectors.joining(", "));
+        String color = colorEntities.stream().map(colors -> colors.getCode()).collect(Collectors.joining(", "));
+        String size = sizeEntities.stream().map(sizes -> sizes.getSize()).collect(Collectors.joining(", "));
         String image = imageEntities.stream().map(img -> img.getLink()).collect(Collectors.joining(", "));
 
         productResponse.setId(productEntity.getId());
@@ -82,7 +83,8 @@ public class ProductService {
         List<ColorEntity> colorEntities = colorDAO.findColor(productEntity.getId());
         List<SizeEntity> sizeEntities = sizeDAO.findSize(productEntity.getId());
 
-        String color = colorEntities.stream().map(colors -> colors.getCode()).collect(Collectors.joining(", "));String size = sizeEntities.stream().map(sizes -> sizes.getSize()).collect(Collectors.joining(", "));
+        String color = colorEntities.stream().map(colors -> colors.getCode()).collect(Collectors.joining(", "));
+        String size = sizeEntities.stream().map(sizes -> sizes.getSize()).collect(Collectors.joining(", "));
         String images = imageEntities.stream().map(img -> img.getLink()).collect(Collectors.joining(", "));
 
         productResponse.setId(productEntity.getId());

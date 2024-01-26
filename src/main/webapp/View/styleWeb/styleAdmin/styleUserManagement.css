@@ -109,8 +109,15 @@ body {
 .center .left_panel .menu_bar .bar .menu_nav .menu .item:hover {
     border: 2px solid var(--font);
     border-radius: 20px;
-    color: white !important;
     background-color: var(--font);
+}
+.center .left_panel .menu_bar .bar .menu_nav .menu .item:hover > a {
+    color: white;
+
+}
+.center .left_panel .menu_bar .bar .menu_nav .menu .item > a {
+    color: var(--font);
+
 }
 
 .bar .menu_nav .menu .item.active {
@@ -130,6 +137,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100%;
+    flex-direction: column;
 
 }
 
@@ -271,4 +279,32 @@ td {
     font-weight: bold;
     text-transform: uppercase;
 }
+.firstPanel{
+    width: 82%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.firstPanel>a{
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: bold;
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 20px;
+    color: white;
+    background-color: var(--but);
+}
 
+.btn_lock{
+    text-decoration: none;
+    border: 2px solid black;
+    padding: 8px;
+    border-radius: 10px;
+    background-color: var(--but);
+    color: white;
+}
+.btn_lock:hover{
+    background-color: var(--font);
+    border: none;
+}

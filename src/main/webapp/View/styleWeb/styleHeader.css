@@ -105,6 +105,9 @@ a>.menu_Category_Item {
     gap: 1px;
 
 }
+.Search:hover{
+    cursor: pointer;
+}
 
 .input_search {
     font-size: 20px;
@@ -129,12 +132,12 @@ a>.menu_Category_Item {
     color: var(--but);
 }
 
-.cartHeader {
-    position: absolute;
-    right: 200px;
-    bottom: auto;
-    top: auto;
-}
+/*.cartHeader {*/
+/*    position: absolute;*/
+/*    right: 200px;*/
+/*    bottom: auto;*/
+/*    top: auto;*/
+/*}*/
 .rightIcon{
     position: absolute;
     display: flex;
@@ -221,6 +224,7 @@ a>.menu_Category_Item {
 .SliderShow_Store {
     width: 100%;
     position: relative;
+    z-index: -999;
 }
 
 .SlideList {
@@ -270,6 +274,9 @@ a>.menu_Category_Item {
     display: flex;
     align-items: center;
     justify-content: center
+}
+.TitleCategory:hover{
+    cursor: pointer;
 }
 
 .TitleCategory>span {

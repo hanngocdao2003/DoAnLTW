@@ -32,10 +32,26 @@
                 </form>
             </div>
             <div class="rightIcon">
+<<<<<<< HEAD
                 <a href="indexOrder.jsp" class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
                 <%
                     String success = (String) session.getAttribute("Success");
                     if (success != null) {
+=======
+                <a href="" class="cartHeader"><i class="fa-solid fa-cart-shopping"></i></a>
+                <%
+                    String success = (String) session.getAttribute("Success");
+                    String roleID = (String) session.getAttribute("Role");
+                    System.out.println(success);
+                    System.out.println(roleID);
+                    if (success != null && "R1".equals(roleID)) {
+                %>
+                <a href="indexAdmin.jsp" class="user"><i class="fa-solid fa-user"
+                                                         style="margin-right: 5px"></i> <%= success %>
+                </a>
+                <%
+                } else if (success != null) {
+>>>>>>> c7cef43fb3069de4f969382579badcbc7e57beef
                 %>
                 <a href="indexPersonal.jsp" class="user"><i class="fa-solid fa-user"
                                                             style="margin-right: 5px"></i> <%= success %>
