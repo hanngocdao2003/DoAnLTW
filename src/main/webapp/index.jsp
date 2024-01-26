@@ -96,10 +96,8 @@
                         <li class="menu_Category_Item">Tất cả sản phẩm</li>
                     </a>
                     <a>
-                        <form action="Product" method="get">
-                        <input type="text" name="nameproduct" value="Áo" hidden="hidden">
                         <li class="menu_Category_Item">Áo</li>
-                        </form>
+
                     </a>
                     <a>
                         <li class="menu_Category_Item">Áo khoác</li>
