@@ -17,7 +17,7 @@
 
 <header>
 
-    <div class="text">
+    <a class="text" href="index.jsp">
 
         <h1>BHD BOUTIQUE</h1>
         <div class="arrow">
@@ -25,6 +25,7 @@
             <i class="fas fa-asterisk"></i>
             <span class="right"></span>
         </div>
+    </a>
 
 
     </div>

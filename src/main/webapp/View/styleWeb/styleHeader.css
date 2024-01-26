@@ -196,6 +196,9 @@ header {
 .task_menu>.btn_Category_search>span {
     color: white;
 }
+.btn_Category_search:hover{
+    cursor: pointer;
+}
 
 .Menupage {
     list-style: none;
@@ -216,6 +219,7 @@ header {
 
 .linkpage:hover {
     background-color: var(--font);
+    cursor: pointer;
 }
 
 .Home {

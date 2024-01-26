@@ -150,7 +150,10 @@
 
         <div class="buttonOfpage">
             <a href="UpdatePersonal.jsp">
-                <button type="submit" class="update" id="update">Cập nhật thông tin</button>
+                <button type="submit" class="update" id="update0">Cập nhật thông tin</button>
+            </a>
+            <a href="indexChangePass.jsp">
+                <button type="submit" class="update" id="update1">Đổi mật khẩu</button>
             </a>
         </div>
 
