@@ -74,7 +74,7 @@
                                 Quản lý người dùng
                             </li>
                         </a>
-                        <a href="uploadCmt" class="linkUpload">
+                        <a href="upload-cmt" class="linkUpload">
                             <li class="item">
                                 <i class="fa-solid fa-circle" style="color: var(--border);"></i>
                                 Phản hồi người dùng
