@@ -26,7 +26,9 @@ public class LogOut extends HttpServlet {
             session.removeAttribute("numHouse");
             session.removeAttribute("Success");
             session.removeAttribute("Success");
+            session.removeAttribute("cart");
             request.getRequestDispatcher("index.jsp").forward(request, response);
+
         }
         // Chuyển hướng về trang chính
     }
