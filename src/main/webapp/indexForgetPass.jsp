@@ -34,10 +34,10 @@
 <footer>
     <div class="contain">
       <div class="content">
-        <div class="store">
-          <img src="Image/BHD-nền%20trong%20suốt.svg" alt="">
-          <h1>BHD BOUTIQUE</h1>
-        </div>
+          <a href="index.jsp" class="store">
+              <img src="Image/logo/BHD-nền%20trong%20suốt.svg" alt="404">
+              <h1>BHD Boutique</h1>
+          </a>
         <p class="text">Chúng tôi luôn trân trọng và mong đợi
           nhận được mọi ý kiến đóng góp từ khách
           hàng để có thể nâng cấp trải nghiệm dịch

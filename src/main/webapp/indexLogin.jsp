@@ -19,7 +19,7 @@
 <div class="content">
     <div class="SignIn_Area">
         <a href="index.jsp"><img src="Image/BHD-nền%20trong%20suốt.svg" alt="" class="logo"></a>
-        <form action="LoginControl" class="formSignIn" method="post">
+        <form action="home" class="formSignIn" method="post">
             <h1 class="titleSignIn">Đăng nhập</h1>
             <%String error = (String) request.getAttribute("Error");
             if(error != null){
