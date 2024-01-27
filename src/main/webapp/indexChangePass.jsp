@@ -17,14 +17,14 @@
     <div class="header">
         <p>Đổi mật khẩu</p>
     </div>
-    <form action="" class="form">
+    <form action="changePass" class="form" method="post">
         <div class="center">
-            <input type="password" placeholder="Mật khẩu hiện tại">
-            <input type="password" placeholder="Mật khẩu mới">
-            <input type="password" placeholder="Nhập lại mật khẩu mới">
+            <input type="password" placeholder="Mật khẩu hiện tại" name="oldPass" required>
+            <input type="password" placeholder="Mật khẩu mới" name="newPass1" required>
+            <input type="password" placeholder="Nhập lại mật khẩu mới" name="newPass2" required>
         </div>
         <div class="button">
-            <input type="button" value="Đổi mật khẩu">
+            <input type="submit" value="Đổi mật khẩu">
         </div>
     </form>
     <div class="footer">

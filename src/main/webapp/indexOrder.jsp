@@ -8,6 +8,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="View/JSWeb/code.jquery.com_jquery-3.7.1.min.js">
@@ -46,14 +47,14 @@
                 <a href="indexOrder.jsp" class="cartHeader"><i class="fa-solid fa-cart-shopping"></i><span
                         id="totalitem"
                         style="color: var(--but)">
-                             <%
-                                 Object idUser = request.getSession().getAttribute("Id");
-                                 if (idUser != null) {
-                                     int id = (Integer) idUser;
-                             %>
-                            <%= cart.getTotalItem(id) %>
-                                <%}%>
-                        </span></a>
+                            <%
+                                Object idUser = request.getSession().getAttribute("Id");
+                                if (idUser != null) {
+                                    int id = (Integer) idUser;
+                            %>
+                           <%= cart.getTotalItem(id) %>
+                               <%}%>
+                       </span></a>
                 <%
                     String success = (String) session.getAttribute("Success");
                     String roleID = (String) session.getAttribute("Role");
@@ -83,9 +84,9 @@
     <div class="menu_container">
         <div class="task_menu">
             <button class="btn_Category_search" id="btn_Category_search">
-                    <span>
-                        Danh mục
-                    </span>
+                   <span>
+                       Danh mục
+                   </span>
                 <i class="fa-solid fa-angle-down"></i>
                 <ul class="menu_Category" id="menu_Category">
                     <a>
@@ -135,62 +136,50 @@
     <div class="container-choose">
         <div class="information-cus">
             <h1>Thông tin vận chuyển</h1>
+            <%
+                String fail = (String) request.getAttribute("null1");
+                if (fail != null) {
+            %>
+            <span><%= fail%></span>
+            <%}%>
             <div class="name-phone">
-                <input type="text" placeholder="Họ và tên">
-                <input type="text" placeholder="Số điện thoại">
+                <input type="text" placeholder="Họ và tên" name="fullName" required>
+                <input type="text" placeholder="Số điện thoại" name="phone" required>
             </div>
-            <input type="text" placeholder="Email">
-            <input type="text " placeholder="Địa chỉ">
-            <input type="text" placeholder="Ghi chú (VD: giao sau 10h)">
+            <input type="text" placeholder="Email" name="email" required>
+            <input type="text " placeholder="Địa chỉ" name="address" required>
+            <input type="text" placeholder="Ghi chú (VD: giao sau 10h)" name="note">
         </div>
-<%--        <div class="payment">--%>
-<%--            <h1>Hình thức thanh toán</h1>--%>
-<%--            <div class="cod">--%>
-<%--                <input type="radio">--%>
-<%--                <img src="Image/cart/COD.png" alt="">--%>
-<%--                <p>COD <br>Thanh toán khi nhận hàng</p>--%>
-<%--            </div>--%>
-<%--            <div class="momo">--%>
-<%--                <input type="radio">--%>
-<%--                <img src="Image/cart/momo.png" alt="">--%>
-<%--                <p>Thanh toán MoMo</p>--%>
-<%--            </div>--%>
-<%--            <div class="zalo-pay">--%>
-<%--                <input type="radio">--%>
-<%--                <img src="Image/cart/zalopay.png" alt="">--%>
-<%--                <p>Thanh toán ZaloPay</p>--%>
-<%--            </div>--%>
-<%--            <div class="vn-pay">--%>
-<%--                <input type="radio">--%>
-<%--                <img src="Image/cart/Vnpay.png" alt="">--%>
-<%--                <p>Thẻ ATM / Thẻ tín dụng (Credit card) / Thẻ ghi nợ (Debit card)</p>--%>
-<%--            </div>--%>
-<%--            <div class="notification">--%>
-<%--                <span>Bạn chấp nhận thanh toán bằng <span>COD</span>></span>--%>
-<%--            </div>--%>
-<%--        </div>--%>
+
         <div class="payment">
             <h1>Hình thức thanh toán</h1>
             <div class="cod">
-                <input type="radio" name="paymentMethod" id="codRadio">
+
+                <input type="radio" name="choose" value="cod">
                 <img src="Image/cart/COD.png" alt="">
                 <p>COD <br>Thanh toán khi nhận hàng</p>
             </div>
             <div class="momo">
-                <input type="radio" name="paymentMethod" id="momoRadio">
+                <input type="radio" name="choose" value="momo">
                 <img src="Image/cart/momo.png" alt="">
                 <p>Thanh toán MoMo</p>
             </div>
             <div class="zalo-pay">
-                <input type="radio" name="paymentMethod" id="zalopayRadio">
+                <input type="radio" name="choose" value="zalo">
                 <img src="Image/cart/zalopay.png" alt="">
                 <p>Thanh toán ZaloPay</p>
             </div>
             <div class="vn-pay">
-                <input type="radio" name="paymentMethod" id="vnpayRadio">
+                <input type="radio" name="choose" value="card">
                 <img src="Image/cart/Vnpay.png" alt="">
                 <p>Thẻ ATM / Thẻ tín dụng (Credit card) / Thẻ ghi nợ (Debit card)</p>
             </div>
+                <%
+                    String fail1 = (String) request.getAttribute("null");
+                    if (fail1 != null) {
+                %>
+            <span><%= fail1%></span>
+                <%}%>
             <div class="notification">
                 <span>Bạn chấp nhận thanh toán bằng <span id="selectedPaymentMethod"></span></span>
             </div>
@@ -202,12 +191,14 @@
         <h1>Giỏ hàng</h1>
         <%
 
+
             Map<Integer, List<CartProduct>> mapCart = cart.getMapCart();
             for (Map.Entry<Integer, List<CartProduct>> entry : mapCart.entrySet()) {
                 int productId = entry.getKey();
                 List<CartProduct> cartProducts = entry.getValue();
                 for (CartProduct cartProduct : cartProducts) {
                     ProductResponse productResponse = ProductService.getDetails(cartProduct.getProductId());
+
 
         %>
         <div class="product">
@@ -237,14 +228,18 @@
                     </div>
                 </div>
                 <div class="cost">
-                    <span id="total"
-                          style="font-size: 30px"><%=cart.totalPriceFormatted(productResponse.getPrice())%></span>
+                   <span id="total"
+                         style="font-size: 30px"><%=cart.totalPriceFormatted(productResponse.getPrice())%></span>
                     <span id="quantity">Số lượng: <span><%=cartProduct.getQuantity()%></span></span>
                 </div>
                 <button id="removeBtn" data-product-id="<%=cartProduct.getProductId()%>" data-index="<%=cartProducts.indexOf(cartProduct)%>">
                     <i class="fa-regular fa-trash-can" style="color: #ffffff;"></i>Xóa sản phẩm
                 </button>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> bbf8eaf37d7e50ab0a4437e42b751c835f4d8b20
             </div>
         </div>
         <hr style="margin:10px 0px">
@@ -281,7 +276,6 @@
 </div>
 <script>
     document.body.innerHTML += addFooter();
-
     document.querySelectorAll('input[name="paymentMethod"]').forEach(function (radio) {
         radio.addEventListener('click', function () {
             // Cập nhật thông báo với hình thức thanh toán được chọn
@@ -313,7 +307,9 @@
     //         }
     //     });
     // }
-
 </script>
 </body>
 </html>
+
+
+

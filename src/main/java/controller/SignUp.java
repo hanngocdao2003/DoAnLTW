@@ -24,6 +24,13 @@ public class SignUp extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        final String VERIFY = "verifying.jsp";
+        final String SIGNUP = "indexLogin.jsp";
+
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+
+        String url = SIGNUP;
         try {
             // Lấy thông tin từ form
             String fullName = request.getParameter("inputName");
@@ -39,27 +46,32 @@ public class SignUp extends HttpServlet {
                 response.sendRedirect("error.jsp?message=InvalidParameters");
                 return;
             }
-
-            // Tạo user
-            UserEntity user = new UserEntity();
-            user.setFullName(fullName);
-            user.setEmail(email);
-            user.setPhone(phoneNumber);
-            user.setPassword(password);
-
-            boolean verificationSuccess = UserService.registerUser(user);
-
-            if (verificationSuccess) {
-                UserDAO.verifyUser(phoneNumber);
-                response.sendRedirect("verification-success.jsp");
+            if (!password.equals(repassword)) {
+                request.setAttribute("password", "Mật khẩu không trùng nhau!");
             } else {
-                response.sendRedirect("verification-fail.jsp");
+                // Tạo user
+                UserEntity user = new UserEntity();
+                user.setFullName(fullName);
+                user.setEmail(email);
+                user.setPhone(phoneNumber);
+                user.setPassword(password);
+
+                boolean verificationSuccess = UserService.registerUser(user);
+                if (verificationSuccess == false) {
+                    request.setAttribute("fail", "Tài khoản đã tồn tại!");
+                } else {
+                    UserDAO.verifyUser(phoneNumber);
+                    url = VERIFY;
+                    //response.sendRedirect("verifying.jsp");
+//                new Verify();
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();
             // Xử lý lỗi, ví dụ: hiển thị thông báo lỗi hoặc chuyển hướng đến trang lỗi
             response.sendRedirect("error.jsp?message=" + e.getMessage());
         }
+        request.getRequestDispatcher(url).forward(request, response);
     }
 
 

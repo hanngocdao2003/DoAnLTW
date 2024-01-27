@@ -169,12 +169,10 @@
             <input type="text" id="numberPhone" readonly
                    value="<%= (String) session.getAttribute("numberPhone") != null ? (String) session.getAttribute("numberPhone") : "" %>"
                    name="numberPhone">
-
             <label for="email">Email:</label>
             <input type="email" id="email" readonly
                    value="<%= (String) session.getAttribute("email") != null ? (String) session.getAttribute("email") : "" %>"
                    name="email">
-
             <label for="address">Địa chỉ:</label>
             <div id="address" class="address label_information">
                 <input type="text" placeholder="Tỉnh-Thành phố" readonly
@@ -218,4 +216,3 @@
 </body>
 
 </html>
-

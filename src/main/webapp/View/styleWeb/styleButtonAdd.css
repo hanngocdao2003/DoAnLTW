@@ -2,7 +2,6 @@
 
   /* CSS rules for screens larger than 1024px */
   form {
-    color: white;
     font-size: 16px;
     display: flex;
     justify-content: center;

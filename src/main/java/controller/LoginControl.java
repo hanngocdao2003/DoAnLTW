@@ -22,12 +22,18 @@ public class LoginControl extends HttpServlet {
         final String SUCCESS = "index.jsp";
         final String ADSUCCESS = "indexAdmin.jsp";
         response.setContentType("text/html; charset=UTF-8");
-        HttpSession session = request.getSession(true);
-        String url = ERROR;
         String userName = request.getParameter("userName");
         String password = request.getParameter("password");
+
         UserEntity userEntity = UserService.checkLogin(userName, password);
-        if (userEntity == null) {
+        boolean checkBlockAcc = UserService.getBlockAccount(userName);
+
+        HttpSession session = request.getSession(true);
+        String url = ERROR;
+
+        if (checkBlockAcc) {
+            request.setAttribute("block", "Tài khoản đã bị khóa");
+        } else if (userEntity == null) {
             request.setAttribute("Error", "Tên đăng nhập hoặc mật khẩu không đúng");
         } else {
             session.setAttribute("Role", userEntity.getRoleId());
@@ -41,7 +47,6 @@ public class LoginControl extends HttpServlet {
             session.setAttribute("ward", userEntity.getWard());
             session.setAttribute("numHouse", userEntity.getNumHouse());
 
-
             if (userEntity.getRoleId().equals("R1")) {
                 url = ADSUCCESS;
                 session.setAttribute("Success", userEntity.getFullName());
@@ -54,3 +59,4 @@ public class LoginControl extends HttpServlet {
         request.getRequestDispatcher(url).forward(request, response);
     }
 }
+

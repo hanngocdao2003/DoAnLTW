@@ -3,6 +3,7 @@ package service;
 import bean.*;
 import dao.*;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -96,5 +97,37 @@ public class ProductService {
         productResponse.setImage(images);
 
         return productResponse;
+    }
+
+
+    public static List<ProductResponse> getImageSlide() {
+        List<ProductResponse> list = new ArrayList<>();
+        List<ProductEntity> entityList = new ProductDAO().getNewImage();
+        ImageDAO imageDAO = new ImageDAO();
+        for (ProductEntity e : entityList) {
+           List<ImageEntity> images = imageDAO.findImage(e.getId());
+            String image = images.stream().map(img -> img.getLink()).collect(Collectors.joining(", "));
+            ProductResponse response = new ProductResponse();
+            response.setImage(image);
+            list.add(response);
+        }
+        return list;
+    }
+    public static List<ProductResponse> getImageSlideProduc(String type) throws SQLException {
+        List<ProductResponse> list = new ArrayList<>();
+        List<ProductEntity> entityList = new ProductDAO().getNewImageShirt(type);
+        ImageDAO imageDAO = new ImageDAO();
+        for (ProductEntity e : entityList) {
+            List<ImageEntity> images = imageDAO.findImage(e.getId());
+            String image = images.stream().map(img -> img.getLink()).collect(Collectors.joining(", "));
+            ProductResponse response = new ProductResponse();
+            response.setImage(image);
+            list.add(response);
+        }
+        return list;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(getImageSlide().get(1));
     }
 }

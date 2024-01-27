@@ -4,9 +4,7 @@ import bean.ProductEntity;
 import database.ConnectionUtils;
 
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -95,7 +93,7 @@ public class ProductDAO {
                 "FROM products\n" +
                 "INNER JOIN images ON products.id = images.productId\n" +
                 "WHERE images.link = '" + img + "'";
-        try (Connection conn = ConnectionUtils.getConnection();Statement stmt = conn.createStatement();
+        try (Connection conn = ConnectionUtils.getConnection(); Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(sql.toString())) {
 
             if (rs.next()) {
@@ -108,5 +106,40 @@ public class ProductDAO {
             System.out.println(ex.getMessage());
         }
         return productEntity;
+    }
+
+    public List<ProductEntity> getNewImage() {
+        String sql = "SELECT id FROM products \n" +
+                "order by importDate desc\n" +
+                "limit 10;";
+        List<ProductEntity> list = new ArrayList<>();
+        try (Connection connection = ConnectionUtils.getConnection();
+             PreparedStatement statement = connection.prepareStatement(sql);
+             ResultSet rs = statement.executeQuery();
+        ) {
+            while (rs.next()) {
+                ProductEntity productEntity = new ProductEntity();
+                productEntity.setId(rs.getInt(1));
+                list.add(productEntity);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return list;
+    }
+
+    public List<ProductEntity> getNewImageShirt(String type) throws SQLException {
+        String sql = "SELECT * FROM products inner join category_details on products.categoryId = category_details.id inner join categories on category_details.categoryId = categories.id where categoryName = ? order by importDate desc limit 10;";
+        List<ProductEntity> list = new ArrayList<>();
+        Connection connection = ConnectionUtils.getConnection();
+        PreparedStatement statement = connection.prepareStatement(sql);
+        statement.setString(1, type);
+        ResultSet rs = statement.executeQuery();
+        while (rs.next()) {
+            ProductEntity productEntity = new ProductEntity();
+            productEntity.setId(rs.getInt(1));
+            list.add(productEntity);
+        }
+        return list;
     }
 }
