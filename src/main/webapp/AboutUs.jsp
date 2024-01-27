@@ -81,7 +81,7 @@
             <img src="Image/Category/Váy.png" alt="Food Photo">
         </div>
         <div class="image">
-            <img src="Image/Category/Áo%20khoác.png" alt="Food Photo">
+            <img src="Image/Category/AoKhoac.png" alt="Food Photo">
         </div>
     </div>
     <div class="text">
