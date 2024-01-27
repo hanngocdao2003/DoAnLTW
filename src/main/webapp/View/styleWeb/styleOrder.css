@@ -194,11 +194,11 @@
     }
 
     .linkpage:hover {
-        background-color: var(--border);
+        background-color: var(--font);
     }
 
     .Home {
-        background-color: var(--border);
+        background-color: var(--but);
     }
 
     .Item_menuPage {
