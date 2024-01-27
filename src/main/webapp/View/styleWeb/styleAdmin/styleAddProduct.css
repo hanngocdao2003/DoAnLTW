@@ -11,6 +11,7 @@
         width: 100%;
     }
 
+
     .container-add-product .label {
         margin: 10px;
         padding: 10px;
@@ -23,11 +24,13 @@
         background-color: #a62c2c;
     }
 
+
     .container-add-product .add-product-here {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
     }
+
 
     .container-add-product .add-product-here .pictures {
         display: flex;
@@ -41,6 +44,7 @@
         align-items: center;
     }
 
+
     .container-add-product .add-product-here .pictures label {
         display: flex;
         width: 150px;
@@ -53,9 +57,11 @@
         justify-content: center;
     }
 
+
     .container-add-product .add-product-here .pictures input {
         display: none;
     }
+
 
     .container-add-product .info-of-product {
         display: flex;
@@ -63,6 +69,7 @@
         justify-content: space-between;
         flex-wrap: wrap;
     }
+
 
     .container-add-product .info-of-product input {
         width: 18vw;
@@ -74,12 +81,14 @@
         font-size: 18px;
     }
 
+
     .container-add-product .describe {
         background: rgba(251, 192, 195, 0.8);
         border-radius: 10px;
         padding: 10px;
         margin: 10px;
     }
+
 
     .container-add-product .describe textarea {
         width: 100%;
@@ -93,20 +102,24 @@
         font-size: 18px;
     }
 
+
     .container-add-product .describe textarea:is(:focus, :valid) {
         border-width: 2px;
         padding: 14px;
     }
 
+
     .container-add-product .describe textarea::-webkit-scrollbar {
         width: 0px;
     }
+
 
     .container-add-product .footer-container {
         display: flex;
         justify-content: center;
         margin: 10px 10px 20px 10px;
     }
+
 
     .container-add-product .footer-container button {
         width: 180px;
@@ -117,10 +130,12 @@
         background-color: rgba(251, 192, 195, 0.8);
     }
 
+
     .container-add-product .footer-container button:hover {
         background-color: #a62c2c;
         color: white;
     }
+
 
     .container-add-product > .label > p {
         text-transform: uppercase;
@@ -147,6 +162,7 @@
             padding: 20px;
         }
 
+
         .file-upload-btn {
             width: 100%;
             margin: 0;
@@ -163,10 +179,13 @@
         }
 
 
+
+
         .file-upload-content {
             display: none;
             text-align: center;
         }
+
 
         .file-upload-input {
             position: absolute;
@@ -179,30 +198,36 @@
             cursor: pointer;
         }
 
+
         .image-upload-wrap {
             margin-top: 20px;
             border: 4px dashed black;
             position: relative;
         }
 
+
         .image-upload-wrap:hover {
             background-color: var(--color-salem-approx);
             border: 4px dashed var(--white);
         }
+
 
         .image-dropping {
             background-color: var(--color-jade-approx);
             border: 4px dashed var(--white);
         }
 
+
         .image-title-wrap {
             padding: 0 15px 15px;
             color: var(--color-log-cabin-approx);
         }
 
+
         .drag-text {
             text-align: center;
         }
+
 
         .drag-text h3 {
             font-weight: 100;
@@ -211,12 +236,14 @@
             padding: 60px 0;
         }
 
+
         .file-upload-image {
             max-height: 300px;
             max-width: 200px;
             margin: auto;
             padding: 20px;
         }
+
 
         .remove-image {
             width: 200px;
@@ -233,10 +260,12 @@
             font-weight: 700;
         }
 
+
         .remove-image:hover {
             background: var(--color-flush-mahogany-approx);
             cursor: pointer;
         }
+
 
         .remove-image:active {
             border: 0;
@@ -255,11 +284,18 @@
         }
     }
 
+
 }
+
 
 .center .info_panel #panel5 {
     display: none;
 }
 
 
+
+
 /* Xong panel 5 */
+
+
+

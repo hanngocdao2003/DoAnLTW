@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Xác thực thất bại</title
+    <title>Xác thực tài khoản</title>
     <link rel="icon" href="Image/BHD-html.png" type="image/x-icon">
     <style>
         * {
@@ -20,7 +20,7 @@
     </style>
 </head>
 <body>
-<h2>Xác thực tài khoản thất bại!</h2>
-<p>Đường liên kết xác thực không đúng hoặc đã hết hạn!</p>
+<h2>Vui lòng xác thực tài khoản!</h2>
+<p>Link xác thực đã được gửi đến email của bạn!</p>
 </body>
 </html>

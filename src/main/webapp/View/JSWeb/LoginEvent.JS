@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function(){
     document.getElementById("createAcc").addEventListener("click", function(event) {
         event.preventDefault(); // Ngăn chuyển sổ kiến mạc định của trình duyệt
-    
+
         const intro = document.querySelector(".intro");
-        
+
         // Kiểm tra xem right hiện tại lẽ 0% hay 100%
         if (intro.style.right === "100%") {
             intro.style.right = "0"; // Di chuyển từ phải sang trái
@@ -12,14 +12,15 @@ document.addEventListener("DOMContentLoaded", function(){
             intro.style.right = "50%"; // Di chuyển từ trái sang phải
         }
     });
-    
+
     document.querySelector(".undo").addEventListener("click", function(event) {
-        event.preventDefault(); 
-    
+        event.preventDefault();
+        console.log("run");
+
         const intro = document.querySelector(".intro");
-        
+
         if (intro.style.right !== "0%") {
-            intro.style.right = "0%"; 
+            intro.style.right = "0%";
         }
     });
     var innerhiddenSignIn = document.querySelector('#hidden-appear-SinIn-pass');
@@ -39,8 +40,8 @@ document.addEventListener("DOMContentLoaded", function(){
             }
         }
     }
-    
-    
+
+
     function offPass() {
         for (var i = 0; i < Password.length; i++) {
             if( Password[i].type === 'text'){
@@ -80,5 +81,7 @@ document.addEventListener("DOMContentLoaded", function(){
             isOpen = true;
             offPass()
         }
-    })
-})
+    });
+
+    console.log("first")
+});

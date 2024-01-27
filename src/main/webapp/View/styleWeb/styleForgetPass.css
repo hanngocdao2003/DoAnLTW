@@ -97,4 +97,10 @@
         text-decoration: none;
         color: #7c3d25;
     }
+    input{
+        padding: 15px 20px;
+        text-transform: uppercase;
+        background-color: var(--back-product);
+        color: var(--font-o);
+    }
 }
