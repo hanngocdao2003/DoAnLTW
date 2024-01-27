@@ -114,7 +114,7 @@
 .buttonOfpage > a > button{
     font-size: 22px;
     padding: 10px;
-    background-color: #0dcaf0;
+    background-color: var(--but);
     color: white;
 
 }

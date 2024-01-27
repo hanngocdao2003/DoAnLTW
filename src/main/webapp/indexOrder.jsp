@@ -143,36 +143,62 @@
             <input type="text " placeholder="Địa chỉ">
             <input type="text" placeholder="Ghi chú (VD: giao sau 10h)">
         </div>
+<%--        <div class="payment">--%>
+<%--            <h1>Hình thức thanh toán</h1>--%>
+<%--            <div class="cod">--%>
+<%--                <input type="radio">--%>
+<%--                <img src="Image/cart/COD.png" alt="">--%>
+<%--                <p>COD <br>Thanh toán khi nhận hàng</p>--%>
+<%--            </div>--%>
+<%--            <div class="momo">--%>
+<%--                <input type="radio">--%>
+<%--                <img src="Image/cart/momo.png" alt="">--%>
+<%--                <p>Thanh toán MoMo</p>--%>
+<%--            </div>--%>
+<%--            <div class="zalo-pay">--%>
+<%--                <input type="radio">--%>
+<%--                <img src="Image/cart/zalopay.png" alt="">--%>
+<%--                <p>Thanh toán ZaloPay</p>--%>
+<%--            </div>--%>
+<%--            <div class="vn-pay">--%>
+<%--                <input type="radio">--%>
+<%--                <img src="Image/cart/Vnpay.png" alt="">--%>
+<%--                <p>Thẻ ATM / Thẻ tín dụng (Credit card) / Thẻ ghi nợ (Debit card)</p>--%>
+<%--            </div>--%>
+<%--            <div class="notification">--%>
+<%--                <span>Bạn chấp nhận thanh toán bằng <span>COD</span>></span>--%>
+<%--            </div>--%>
+<%--        </div>--%>
         <div class="payment">
             <h1>Hình thức thanh toán</h1>
             <div class="cod">
-                <input type="radio">
+                <input type="radio" name="paymentMethod" id="codRadio">
                 <img src="Image/cart/COD.png" alt="">
                 <p>COD <br>Thanh toán khi nhận hàng</p>
             </div>
             <div class="momo">
-                <input type="radio">
+                <input type="radio" name="paymentMethod" id="momoRadio">
                 <img src="Image/cart/momo.png" alt="">
                 <p>Thanh toán MoMo</p>
             </div>
             <div class="zalo-pay">
-                <input type="radio">
+                <input type="radio" name="paymentMethod" id="zalopayRadio">
                 <img src="Image/cart/zalopay.png" alt="">
                 <p>Thanh toán ZaloPay</p>
             </div>
             <div class="vn-pay">
-                <input type="radio">
+                <input type="radio" name="paymentMethod" id="vnpayRadio">
                 <img src="Image/cart/Vnpay.png" alt="">
                 <p>Thẻ ATM / Thẻ tín dụng (Credit card) / Thẻ ghi nợ (Debit card)</p>
             </div>
             <div class="notification">
-                <span>Bạn chấp nhận thanh toán bằng COD</span>
+                <span>Bạn chấp nhận thanh toán bằng <span id="selectedPaymentMethod"></span></span>
             </div>
         </div>
     </div>
     <div class="straight-line"></div>
     <% if (!cart.getMapCart().isEmpty()) {%>
- ư   <div class="cart-details">
+    <div class="cart-details">
         <h1>Giỏ hàng</h1>
         <%
 
@@ -215,8 +241,10 @@
                           style="font-size: 30px"><%=cart.totalPriceFormatted(productResponse.getPrice())%></span>
                     <span id="quantity">Số lượng: <span><%=cartProduct.getQuantity()%></span></span>
                 </div>
-                <button id="removeBtn"><i class="fa-regular fa-trash-can" style="color: #ffffff;"></i>Xóa sản phẩm
+                <button id="removeBtn" data-product-id="<%=cartProduct.getProductId()%>" data-index="<%=cartProducts.indexOf(cartProduct)%>">
+                    <i class="fa-regular fa-trash-can" style="color: #ffffff;"></i>Xóa sản phẩm
                 </button>
+
             </div>
         </div>
         <hr style="margin:10px 0px">
@@ -224,16 +252,6 @@
                 }
             }
         %>
-
-
-
-        <%--        <div class="voucher">--%>
-        <%--            <div class="ten-percent">--%>
-        <%--                <p>Mã giảm giá</p>--%>
-        <%--                <p>Giảm 10% cho đơn hàng từ 399k</p>--%>
-        <%--                <button>Áp dụng</button>--%>
-        <%--            </div>--%>
-        <%--        </div>--%>
         <div class="detail-cost">
             <div class="price">
                 <p class="lable">Tạm tính</p>
@@ -263,16 +281,39 @@
 </div>
 <script>
     document.body.innerHTML += addFooter();
-    $('#removeBtn').click(function (e) {
-        e.preventDefault();
-        var productId = $(this).closest('.product').find('input[name="productId"]').val();
-        var quantity = $(this).closest('.product').find('input[name="quantity"]').val();
-        if (quantity > 1) {
-            $(this).closest('.product').find('input[name="quantity"]').val(parseInt(quantity) - 1);
-        } else {
-            $(this).closest('.product').remove();
-        }
-    })
+
+    document.querySelectorAll('input[name="paymentMethod"]').forEach(function (radio) {
+        radio.addEventListener('click', function () {
+            // Cập nhật thông báo với hình thức thanh toán được chọn
+            var selectedPaymentMethod = document.getElementById('selectedPaymentMethod');
+            selectedPaymentMethod.innerText = this.nextSibling.nextSibling.innerText.trim();
+        });
+    });
+    // $('#removeBtn').click(function (e) {
+    //     e.preventDefault();
+    //     var productId = $(this).data('product-id');
+    //     var index = $(this).data('index');
+    //     if (confirm("Bạn có chắc chắn muốn xóa sản phẩm này khỏi giỏ hàng?")) {
+    //         remove(productId, index);
+    //     }
+    // });
+    //
+    // function remove(productId, index) {
+    //     $.ajax({
+    //         url: '/remove',
+    //         type: 'POST',
+    //         data: {
+    //             productId: productId,
+    //             index: index
+    //         },
+    //         success: function (data) {
+    //             if (data.success) {
+    //                 location.reload();
+    //             }
+    //         }
+    //     });
+    // }
+
 </script>
 </body>
 </html>

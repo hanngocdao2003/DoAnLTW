@@ -27,13 +27,7 @@ public class ProductDAO {
 
     public static String searchWithJoin(Map<String, String> search) {
         StringBuilder sql = new StringBuilder();
-        if (search.containsKey("category")) {
-            String category = search.get("category");
-            if (category != null && !category.isEmpty()) {
-                sql.append("AND c.categoryName LIKE '%" + category + "%' ");
-            }
-        }
-        if (search.containsKey("images")) {
+                if (search.containsKey("images")) {
             String image = search.get("images");
             if (image != null && !image.isEmpty()) {
                 sql.append("AND images.link = '" + image + "' ");
@@ -77,8 +71,7 @@ public class ProductDAO {
 		sql.append(searchWithJoin(search));
 		sql.append(searchWithoutJoin(search));
 		sql.append("GROUP BY p.id");
-
-
+        System.out.println("Final sql: " + sql.toString());
         try (Connection conn = ConnectionUtils.getConnection();Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(sql.toString())) {
 

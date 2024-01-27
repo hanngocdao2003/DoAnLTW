@@ -34,7 +34,7 @@ public class EmailVerification {
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toMail));
             message.setSubject("Xác thực tài khoản");
             message.setText("Xin chào,\n\nBạn đã đăng ký tài khoản thành công. Hãy click vào đường link sau để xác nhận tài khoản:\n"
-                    + "http://localhost:8080/maven/verify?email=" + toMail + "&token=" + token);
+                    + "http://localhost:8080/maven_war_exploded/verify?email=" + toMail + "&token=" + token);
 
             Transport.send(message);
 
