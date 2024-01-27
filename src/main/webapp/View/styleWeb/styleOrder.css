@@ -196,6 +196,9 @@
     .linkpage:hover {
         background-color: var(--font);
     }
+    a{
+        text-decoration: none;
+    }
 
     .Home {
         background-color: var(--but);

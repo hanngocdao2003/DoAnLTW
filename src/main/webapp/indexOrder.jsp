@@ -21,6 +21,7 @@
     <script src="View/JSWeb/eventAddProduct.js"></script>
     <link rel="icon" href="Image/BHD-html.png" type="image/x-icon">
     <script src="View/JSWeb/addPart.js"></script>
+    <script src="View/JSWeb/JSHome.js"></script>
     <title>Đơn hàng</title>
 </head>
 <body>
@@ -145,10 +146,13 @@
                 <a href="index.jsp" class="linkpage Home">
                     <li class="Item_menuPage">Trang chủ</li>
                 </a>
-                <form class="linkpage Shop" action="Product" method="get" id="productForm">
-                    <input type="text" name="nameproduct" value="" style="display: none;">
-                    <li class="Item_menuPage" onclick="submitForm()">Cửa hàng</li>
-                </form>
+                <a href="Product">
+                    <form class="linkpage Shop" action="Product" method="get" id="productForm">
+                        <input type="text" name="nameproduct" value="" style="display: none;">
+                        <li class="Item_menuPage" onclick="submitForm()">Cửa hàng</li>
+                    </form>
+                </a>
+
                 <a href="#" class="linkpage Contact" id="Contact">
                     <li class="Item_menuPage">Liên hệ</li>
                 </a>
@@ -274,7 +278,8 @@
                          style="font-size: 30px"><%=cart.totalPriceFormatted(productResponse.getPrice())%></span>
                     <span id="quantity">Số lượng: <span><%=cartProduct.getQuantity()%></span></span>
                 </div>
-                <button id="removeBtn" data-product-id="<%=cartProduct.getProductId()%>" data-index="<%=cartProducts.indexOf(cartProduct)%>">
+                <button id="removeBtn" data-product-id="<%=cartProduct.getProductId()%>"
+                        data-index="<%=cartProducts.indexOf(cartProduct)%>">
                     <i class="fa-regular fa-trash-can" style="color: #ffffff;"></i>Xóa sản phẩm
                 </button>
 
