@@ -64,10 +64,12 @@
                             <i class="fa-solid fa-circle" style="color: var(--border);"></i>
                             Thống kê số liệu
                         </li>
-                        <li class="item" onclick="handleClick(this, 'panel3')">
-                            <i class="fa-solid fa-circle" style="color: var(--border);"></i>
-                            Quản lý sản phẩm
-                        </li>
+                        <a href="OrderManagement" class="linkUpload">
+                            <li class="item" onclick="handleClick(this, 'panel3')">
+                                <i class="fa-solid fa-circle" style="color: var(--border);"></i>
+                                Quản lý sản phẩm
+                            </li>
+                        </a>
                         <li class="item" onclick="handleClick(this, 'panel6')">
                             <i class="fa-solid fa-circle" style="color: var(--border);"></i>
                             Quản lý đơn hàng
@@ -108,13 +110,17 @@
             <div class="thongke_main">
                 <div class="thongke doanhthu">
                     <i class="fa-solid fa-money-bills" style="color: var(--border);"></i>
-                    <h2 style="color: var(--font)">0</h2>
+                    <h2 style="color: var(--font)">
+                        <%= request.getAttribute("proceed")%>
+                    </h2>
                     <span class="temp"></span>
                     <h3 style="color: var(--font)">VND</h3>
                 </div>
                 <div class="thongke">
                     <i class="fa-solid fa-cart-shopping" style="color: var(--border);"></i>
-                    <h2 style="color: var(--font);">0</h2>
+                    <h2 style="color: var(--font);">
+                        <%= request.getAttribute("soldProduct")%>
+                    </h2>
                     <span class="temp"></span>
                     <h3 style="color: var(--font);">Sản phẩm đã bán</h3>
                 </div>
@@ -128,9 +134,11 @@
                 </div>
                 <div class="thongke">
                     <i class="fa-solid fa-eye" style="color: var(--border);"></i>
-                    <h2 style="color: var(--font);">0</h2>
+                    <h2 style="color: var(--font);">
+                        <%= request.getAttribute("users")%>
+                    </h2>
                     <span class="temp"></span>
-                    <h3 style="color: var(--font);">Người truy cập</h3>
+                    <h3 style="color: var(--font);">Người dùng</h3>
                 </div>
             </div>
             <div id="chart">

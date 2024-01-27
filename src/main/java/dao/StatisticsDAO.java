@@ -59,6 +59,22 @@ public class StatisticsDAO {
         return re;
     }
 
+    // users
+    public int getUsers(){
+        int re = 0;
+        String sql = "select count(*) from users where status = 1";
+        Connection con = ConnectionUtils.getConnection();
+        try {
+            PreparedStatement preparedStatement = con.prepareStatement(sql);
+            ResultSet rs = preparedStatement.executeQuery();
+            if (rs.next()) {
+                re = rs.getInt(1);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return re;
+    }
     public static void main(String[] args) {
 
     }
