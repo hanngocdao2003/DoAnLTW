@@ -18,6 +18,15 @@ public class OrderStatisticsServlet extends HttpServlet {
         System.out.println("Total Order Count: " + totalOrder);
         request.setAttribute("totalOrder", totalOrder);
 
+        double proceed = StatisticsService.getProceed();
+        request.setAttribute("proceed", proceed);
+
+        int soldProduct = StatisticsService.getSoldProducts();
+        request.setAttribute("soldProduct", soldProduct);
+
+        int users = StatisticsService.getUsers();
+        request.setAttribute("users", users);
+
         request.getRequestDispatcher(url).forward(request, response);
     }
 
