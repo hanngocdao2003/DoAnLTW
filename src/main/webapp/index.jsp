@@ -4,6 +4,8 @@
 <%@ page import="bean.Slide" %>
 <%@ page import="controller.ImageSliderServlet" %>
 <%@ page import="service.Add_Image_Service" %>
+<%@ page import="service.ProductService" %>
+<%@ page import="bean.ProductResponse" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -221,17 +223,12 @@
         <span>Sản phẩm mới</span>
         <div class="SliderShow_Product">
             <div class="SlideListProduct">
-                <a><img src="Image/Product/Áo%20kiểu%20Amory.png" alt=""></a>
-                <a><img src="Image/Product/Quần%20dài%20Foris.png" alt=""></a>
-                <a><img src="Image/Product/Quần%20Garo.jpg" alt=""></a>
-                <a><img src="Image/Product/Quần%20Dài%20Doris%20(2).jpg" alt=""></a>
-                <a><img src="Image/Product/ÁO%20KHOÁC%20KASEY.jpg" alt=""></a>
-                <a><img src="Image/Product/ÁO%20KHOÁC%20HENNA.jpg" alt=""></a>
-                <a><img src="Image/Product/Đầm%20hai%20dây%20pamela%20(2).jpg" alt=""></a>
-                <a><img src="Image/Product/Váy%20Dài%20Arisha.png" alt=""></a>
-                <a><img src="Image/Product/VÁY%20NGẮN%20VALERIE.jpg" alt=""></a>
-                <a><img src="Image/Product/Váy%20dài%20Belle.jpg" alt=""></a>
-
+                <%
+                    List<ProductResponse> images = ProductService.getImageSlide();
+                    for (ProductResponse imagePath : images) {
+                %>
+                <a href=""><img src="Image/Product/<%= imagePath.getImage() %>" alt=""></a>
+                <% } %>
             </div>
         </div>
     </div>
@@ -244,16 +241,12 @@
             <span>Áo</span>
             <div class="SliderShow_Product">
                 <div class="SlideListProduct">
-                    <img src="Image/ProductAreaOfShop%20Shirt/mickey.jpg" alt="">
-                    <img src="Image/ProductAreaOfShop%20Shirt/simple.jpg" alt="">
-                    <img src="Image/ProductAreaOfShop%20Shirt/ready%20to%20wear.jpg" alt="">
-                    <img src="Image/ProductAreaOfShop%20Shirt/strawberry.jpg" alt="">
-                    <img src="Image/ProductAreaOfShop%20Shirt/Áo%20Ana%20Luna%20puff%20(3).jpg" alt="">
-                    <img src="Image/ProductAreaOfShop%20Shirt/ÁO%20CROPTOP%20ANYA.png" alt="">
-                    <img src="Image/ProductAreaOfShop%20Shirt/Áo%20croptop%20button.png" alt="">
-                    <img src="Image/ProductAreaOfShop%20Shirt/Áo%20Dài%20Beta.png" alt="">
-                    <img src="Image/ProductAreaOfShop%20Shirt/Áo%20Gile%20Pia.jpg" alt="">
-                    <img src="Image/ProductAreaOfShop%20Shirt/Sunset%20flow.jpg" alt="">
+                    <%
+                        List<ProductResponse> imageShirt = ProductService.getImageSlideProduc("Áo");
+                        for (ProductResponse imagePath : imageShirt) {
+                    %>
+                    <a href=""><img src="Image/Product/<%= imagePath.getImage() %>" alt=""></a>
+                    <% } %>
                 </div>
             </div>
         </div>
@@ -263,16 +256,12 @@
             <span>Quần</span>
             <div class="SliderShow_Product">
                 <div class="SlideListProduct">
-                    <img src="Image/ProductAreaOfShop%20Trousers/quần%20Clerk.jpg" alt="">
-                    <img src="Image/ProductAreaOfShop%20Trousers/Quần%20Dài%20Cline.png" alt="">
-                    <img src="Image/ProductAreaOfShop%20Trousers/Quần%20Dài%20Doris%20(3).jpg" alt="">
-                    <img src="Image/ProductAreaOfShop%20Trousers/Quần%20dài%20Genna%20(1).jpg" alt="">
-                    <img src="Image/ProductAreaOfShop%20Trousers/Quần%20dài%20Luzi.jpg" alt="">
-                    <img src="Image/ProductAreaOfShop%20Trousers/QUẦN%20Dài%20DAHLIA.jpg" alt="">
-                    <img src="Image/ProductAreaOfShop%20Trousers/Quần%20dài%20ryan%20(5).jpg" alt="">
-                    <img src="Image/ProductAreaOfShop%20Trousers/quần%20gwen.jpg" alt="">
-                    <img src="Image/ProductAreaOfShop%20Trousers/Quần%20Dài%20Anisa.jpg" alt="">
-                    <img src="Image/ProductAreaOfShop%20Trousers/quần%20Erica.jpg" alt="">
+                    <%
+                        List<ProductResponse> imageTrouser = ProductService.getImageSlideProduc("Quần");
+                        for (ProductResponse imagePath : imageTrouser) {
+                    %>
+                    <a href=""><img src="Image/Product/<%= imagePath.getImage() %>" alt=""></a>
+                    <% } %>
                 </div>
             </div>
         </div>
@@ -282,16 +271,12 @@
             <span>Áo khoác</span>
             <div class="SliderShow_Product">
                 <div class="SlideListProduct">
-                    <img src="Image/ProductAreaOfShop%20Jacket/Áo%20Gile%20Alisa%20(2).jpg" alt="">
-                    <img src="Image/ProductAreaOfShop%20Jacket/Áo%20Gile%20Len.jpg" alt="">
-                    <img src="Image/ProductAreaOfShop%20Jacket/ÁO%20HOODIE%20SISTERHOOD.jpg" alt="">
-                    <img src="Image/ProductAreaOfShop%20Jacket/ÁO%20LEN%20AIMEE.jpg" alt="">
-                    <img src="Image/ProductAreaOfShop%20Jacket/ÁO%20KHOÁC%20ISABEL.jpg" alt="">
-                    <img src="Image/ProductAreaOfShop%20Jacket/Áo%20len%20lyzia.jpg" alt="">
-                    <img src="Image/ProductAreaOfShop%20Jacket/Áo%20Len%20Yasmin.jpg" alt="">
-                    <img src="Image/ProductAreaOfShop%20Jacket/Áo%20khoát%20kirby.jpg" alt="">
-                    <img src="Image/ProductAreaOfShop%20Jacket/ÁO%20KHOÁC%20ZIEL.jpg" alt="">
-                    <img src="Image/ProductAreaOfShop%20Jacket/ÁO%20HOODIE%20JOILE%20FLEUR.jpg" alt="">
+                    <%
+                        List<ProductResponse> imageJacket = ProductService.getImageSlideProduc("Áo khoác");
+                        for (ProductResponse imagePath : imageJacket) {
+                    %>
+                    <a href=""><img src="Image/Product/<%= imagePath.getImage() %>" alt=""></a>
+                    <% } %>
                 </div>
             </div>
         </div>
@@ -301,16 +286,12 @@
             <span>Đầm</span>
             <div class="SliderShow_Product">
                 <div class="SlideListProduct">
-                    <img src="Image/ProductAreaOfShop%20Dress/ĐẦM%20ALINA.jpg" alt="">
-                    <img src="Image/ProductAreaOfShop%20Dress/ĐẦM%20ASHLY.jpg" alt="">
-                    <img src="Image/ProductAreaOfShop%20Dress/Đầm%20Barbara.jpg" alt="">
-                    <img src="Image/ProductAreaOfShop%20Dress/ĐẦM%20BETTY.jpg" alt="">
-                    <img src="Image/ProductAreaOfShop%20Dress/ĐẦM%20CELINE.jpg" alt="">
-                    <img src="Image/ProductAreaOfShop%20Dress/Đầm%20dây%20jelly.png" alt="">
-                    <img src="Image/ProductAreaOfShop%20Dress/Đầm%20hai%20dây%20Pamela.jpg" alt="">
-                    <img src="Image/ProductAreaOfShop%20Dress/Đầm%20Soozy%20(2).jpg" alt="">
-                    <img src="Image/ProductAreaOfShop%20Dress/Đầm%20Riley.jpg" alt="">
-                    <img src="Image/ProductAreaOfShop%20Dress/Đầm%20Julia.jpg" alt="">
+                    <%
+                        List<ProductResponse> imageDress = ProductService.getImageSlideProduc("Đầm");
+                        for (ProductResponse imagePath : imageDress) {
+                    %>
+                    <a href=""><img src="Image/Product/<%= imagePath.getImage() %>" alt=""></a>
+                    <% } %>
                 </div>
             </div>
         </div>
@@ -320,16 +301,12 @@
             <span>Váy</span>
             <div class="SliderShow_Product">
                 <div class="SlideListProduct">
-                    <img src="Image/ProductAreaOfShop%20Skirt/CHÂN%20VÁY%20AMANDA.jpg" alt="">
-                    <img src="Image/ProductAreaOfShop%20Skirt/CHÂN%20VÁY%20JOCELYN.jpg" alt="">
-                    <img src="Image/ProductAreaOfShop%20Skirt/Váy%20dài%20Belle.jpg" alt="">
-                    <img src="Image/ProductAreaOfShop%20Skirt/Váy%20dài%20Elin.jpg" alt="">
-                    <img src="Image/ProductAreaOfShop%20Skirt/Váy%20dài%20nona.jpg" alt="">
-                    <img src="Image/ProductAreaOfShop%20Skirt/Váy%20ngắn%20Rosa.jpg" alt="">
-                    <img src="Image/ProductAreaOfShop%20Skirt/VÁY%20NGẮN%20MORRIS.jpg" alt="">
-                    <img src="Image/ProductAreaOfShop%20Skirt/Váy%20Ngắn%20Nora%20(2).jpg" alt="">
-                    <img src="Image/ProductAreaOfShop%20Skirt/vÁY%20NGẮN%20Vaella.png" alt="">
-                    <img src="Image/ProductAreaOfShop%20Skirt/VÁY%20NGẮN%20VALERIE.jpg" alt="">
+                    <%
+                        List<ProductResponse> imageSkirt = ProductService.getImageSlideProduc("Váy");
+                        for (ProductResponse imagePath : imageSkirt) {
+                    %>
+                    <a href=""><img src="Image/Product/<%= imagePath.getImage() %>" alt=""></a>
+                    <% } %>
                 </div>
             </div>
         </div>

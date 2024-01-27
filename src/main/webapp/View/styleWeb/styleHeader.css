@@ -372,6 +372,11 @@ header {
     .slick-track >a > img{
         width: 214px;
     }
+
+    /*.slick-track a {*/
+    /*scale: 0.75;*/
+    /*}*/
+
 }
 
 
