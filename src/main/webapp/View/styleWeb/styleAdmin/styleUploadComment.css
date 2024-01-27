@@ -5,14 +5,16 @@
     box-sizing: border-box;
     font-size: 20px;
 }
+
 body {
     background: var(--back-admin);
     position: relative;
-
 }
-#panel7{
+
+#panel7 {
     width: 100%;
 }
+
 .logo {
     background: var(--back-product);
     display: flex;
@@ -25,6 +27,7 @@ body {
     width: 100%;
     z-index: 1;
 }
+
 .logo > img {
     width: 100px;
     height: 100px;
@@ -34,6 +37,7 @@ body {
     color: var(--font-o);
     font-size: 30px;
 }
+
 .center .left_panel .menu_bar .bar {
     display: flex;
     flex-direction: column;
@@ -89,11 +93,17 @@ body {
     margin: 15px 0px;
 }
 
+a.linkUpload {
+    text-decoration: none;
+}
+
+
 .center .left_panel .menu_bar .bar .menu_nav .menu .item {
     color: var(--font);
     padding: 15px;
     border-top: 1px solid var(--border);
     cursor: pointer;
+    text-decoration: none;
 }
 
 .center .left_panel .menu_bar .bar .menu_nav .menu .item > a {
@@ -107,6 +117,7 @@ body {
     color: white !important;
     background-color: var(--font);
 }
+
 .center .left_panel .menu_bar .bar .menu_nav .menu .item:hover > a {
     color: white;
 
@@ -118,6 +129,7 @@ body {
     color: white !important;
     background-color: var(--font);
 }
+
 .center .info_panel {
     width: 82%;
     display: flex;
@@ -130,6 +142,7 @@ body {
     height: 100%;
 
 }
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -188,9 +201,11 @@ input[type = "checkbox"] {
     width: 20px;
     height: 20px;
 }
-td{
+
+td {
     text-align: center;
 }
+
 .main_label > .btn_upload {
     width: 100%;
     display: flex;
@@ -198,6 +213,7 @@ td{
     align-items: center;
     margin-top: 5%;
 }
+
 .main_label > .btn_upload > button {
     padding: 15px 10px;
     font-size: 22px;
@@ -205,14 +221,17 @@ td{
     background-color: rgb(115, 141, 171);
     color: white;
 }
+
 .main_label > .btn_upload > button:hover {
     background-color: #75625e;
     cursor: pointer;
 }
-#logOut{
+
+#logOut {
     position: absolute;
     right: 10%;
 }
+
 .logOut {
     font-size: 22px;
     padding: 5px 10px;
@@ -220,25 +239,30 @@ td{
     color: white;
     border-radius: 10px;
 }
-.logOut:hover{
+
+.logOut:hover {
     background-color: #75625e;
     cursor: pointer;
 }
-.button_read_all{
+
+.button_read_all {
     font-size: 22px;
     padding: 5px 10px;
     background-color: rgb(115, 141, 171);
     color: white;
     border-radius: 10px;
 }
-.button_read_all:hover{
+
+.button_read_all:hover {
     background-color: #75625e;
     cursor: pointer;
 }
-.btn_read_cmt{
+
+.btn_read_cmt {
     margin-top: 5%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 

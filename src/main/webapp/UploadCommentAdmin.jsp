@@ -29,7 +29,7 @@
                     <i class="fa-solid fa-lock" style="color: var(--border); font-size: 20px;"></i>
                     <h2 style="color: var(--font);">Admin</h2>
                 </div>
-                <div class="button_add_product">
+                <div class="button_add_product" onclick="buttonClick('panel5')">
                     <i class="fa-solid fa-plus" style="color: var(--border);"></i>
                     Thêm sản phẩm
                 </div>
@@ -53,21 +53,23 @@
                             <i class="fa-solid fa-circle" style="color: var(--border);"></i>
                             Quản lý đơn hàng
                         </li>
-                        <li class="item" onclick="handleClick(this, 'panel4')">
-                            <i class="fa-solid fa-circle" style="color: var(--border);"></i>
-                            Quản lý người dùng
-                        </li>
-                        <li class="item" onclick="handleClick(this, 'panel7')"
-                            style="border: 2px solid var(--font);border-radius: 20px;color: white !important;background-color: var(--font);">
-                            <a href="UploadCommentAdmin.jsp" style="color: white !important"><i class="fa-solid fa-circle"
-                                                                style="color: var(--border);"></i>
-                                Phản hồi người dùng</a>
-                        </li>
+                        <a href="uploadInfUser" class="linkUpload">
+                            <li class="item">
+                                <i class="fa-solid fa-circle" style="color: var(--border);"></i>
+                                Quản lý người dùng
+                            </li>
+                        </a>
+                        <a href="upload-cmt" class="linkUpload">
+                            <li class="item">
+                                <i class="fa-solid fa-circle" style="color: var(--border);"></i>
+                                Phản hồi người dùng
+                            </li>
+                        </a>
                         <li class="item" onclick="handleClick(this, 'panel_addSlide')">
-                            <a href="indexAdmin.jsp" ><i class="fa-solid fa-circle" style="color: var(--border);"></i>
-                                Thêm trình chiếu</a>
+                            <i class="fa-solid fa-circle" style="color: var(--border);"></i>
+                            Thêm trình chiếu
                         </li>
-                        <a href="indexForgetPass.jsp" style="text-decoration: none">
+                        <a href="indexChangePass.jsp" style="text-decoration: none">
                             <li class="item">
                                 <i class="fa-solid fa-circle" style="color: var(--border);"></i>
                                 Đổi mật khẩu
