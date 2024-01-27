@@ -166,53 +166,62 @@
     <div class="container-choose">
         <div class="information-cus">
             <h1>Thông tin vận chuyển</h1>
-            <%
-                String fail = (String) request.getAttribute("null1");
-                if (fail != null) {
-            %>
-            <span><%= fail%></span>
-            <%}%>
             <div class="name-phone">
-                <input type="text" placeholder="Họ và tên" name="fullName" required>
-                <input type="text" placeholder="Số điện thoại" name="phone" required>
+                <input type="text" placeholder="Họ và tên">
+                <input type="text" placeholder="Số điện thoại">
             </div>
-            <input type="text" placeholder="Email" name="email" required>
-            <input type="text " placeholder="Địa chỉ" name="address" required>
-            <input type="text" placeholder="Ghi chú (VD: giao sau 10h)" name="note">
+            <input type="text" placeholder="Email">
+            <input type="text " placeholder="Địa chỉ">
+            <input type="text" placeholder="Ghi chú (VD: giao sau 10h)">
         </div>
-
+        <%--        <div class="payment">--%>
+        <%--            <h1>Hình thức thanh toán</h1>--%>
+        <%--            <div class="cod">--%>
+        <%--                <input type="radio">--%>
+        <%--                <img src="Image/cart/COD.png" alt="">--%>
+        <%--                <p>COD <br>Thanh toán khi nhận hàng</p>--%>
+        <%--            </div>--%>
+        <%--            <div class="momo">--%>
+        <%--                <input type="radio">--%>
+        <%--                <img src="Image/cart/momo.png" alt="">--%>
+        <%--                <p>Thanh toán MoMo</p>--%>
+        <%--            </div>--%>
+        <%--            <div class="zalo-pay">--%>
+        <%--                <input type="radio">--%>
+        <%--                <img src="Image/cart/zalopay.png" alt="">--%>
+        <%--                <p>Thanh toán ZaloPay</p>--%>
+        <%--            </div>--%>
+        <%--            <div class="vn-pay">--%>
+        <%--                <input type="radio">--%>
+        <%--                <img src="Image/cart/Vnpay.png" alt="">--%>
+        <%--                <p>Thẻ ATM / Thẻ tín dụng (Credit card) / Thẻ ghi nợ (Debit card)</p>--%>
+        <%--            </div>--%>
+        <%--            <div class="notification">--%>
+        <%--                <span>Bạn chấp nhận thanh toán bằng <span>COD</span>></span>--%>
+        <%--            </div>--%>
+        <%--        </div>--%>
         <div class="payment">
             <h1>Hình thức thanh toán</h1>
             <div class="cod">
-
-                <input type="radio" name="choose" value="cod">
-
+                <input type="radio" name="paymentMethod" id="codRadio">
                 <img src="Image/cart/COD.png" alt="">
                 <p>COD <br>Thanh toán khi nhận hàng</p>
             </div>
             <div class="momo">
-                <input type="radio" name="choose" value="momo">
-
+                <input type="radio" name="paymentMethod" id="momoRadio">
                 <img src="Image/cart/momo.png" alt="">
                 <p>Thanh toán MoMo</p>
             </div>
             <div class="zalo-pay">
-                <input type="radio" name="choose" value="zalo">
+                <input type="radio" name="paymentMethod" id="zalopayRadio">
                 <img src="Image/cart/zalopay.png" alt="">
                 <p>Thanh toán ZaloPay</p>
             </div>
             <div class="vn-pay">
-
-                <input type="radio" name="choose" value="card">
+                <input type="radio" name="paymentMethod" id="vnpayRadio">
                 <img src="Image/cart/Vnpay.png" alt="">
                 <p>Thẻ ATM / Thẻ tín dụng (Credit card) / Thẻ ghi nợ (Debit card)</p>
             </div>
-                <%
-                    String fail1 = (String) request.getAttribute("null");
-                    if (fail1 != null) {
-                %>
-            <span><%= fail1%></span>
-                <%}%>
             <div class="notification">
                 <span>Bạn chấp nhận thanh toán bằng <span id="selectedPaymentMethod"></span></span>
             </div>
@@ -344,6 +353,3 @@
 </script>
 </body>
 </html>
-
-
-
