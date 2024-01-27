@@ -82,7 +82,7 @@
         <!-- Chức năng phản hồi người dùng -->
         <div class="reply" id="panel7">
             <div id="content">
-                <form class="main_label" action="uploadCmt" method="get">
+                <form class="main_label" action="upload-cmt" method="get">
                     <table id="table3">
                         <thead>
                         <tr>

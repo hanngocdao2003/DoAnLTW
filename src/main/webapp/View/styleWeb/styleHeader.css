@@ -88,17 +88,23 @@ header {
     border-top: 2px solid gray;
     border-radius: 10px;
     z-index: 999;
+
+}
+.menu_Category > li{
+    width: 100%;
+}
+.menu_Category > li> .Searchs {
+    width: 100%;
+}
+.menu_Category > li> .Searchs > div{
+    width: 100%;
+}
+.menu_Category > li> .Searchs > div > input{
+    width: 100%;
 }
 
-a>.menu_Category_Item {
-    font-size: 20px;
-    padding: 8px 10px;
-    color: gray;
-    border: 2px solid gray;
-    border-top: 1px;
-    border-radius: 10px;
-    background-color: white;
-}
+
+
 
 .Search {
     display: flex;
@@ -175,6 +181,7 @@ a>.menu_Category_Item {
     width: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
     background-color: var(--but);
 }
 
@@ -188,6 +195,9 @@ a>.menu_Category_Item {
 
 .task_menu>.btn_Category_search>span {
     color: white;
+}
+.btn_Category_search:hover{
+    cursor: pointer;
 }
 
 .Menupage {
@@ -209,6 +219,7 @@ a>.menu_Category_Item {
 
 .linkpage:hover {
     background-color: var(--font);
+    cursor: pointer;
 }
 
 .Home {
@@ -217,7 +228,7 @@ a>.menu_Category_Item {
 
 .Item_menuPage {}
 
-.menu_Category>a>.menu_Category_Item:hover {
+.TitleCategory:hover {
     background-color: var(--but);
     color: white;
 }
@@ -299,7 +310,7 @@ a>.menu_Category_Item {
 }
 
 .Jacket {
-    background-image: url(../../Image/Category/Áo\ khoác.png);
+    background-image: url(../../Image/Category/AoKhoac.png);
 }
 
 .Trouser {

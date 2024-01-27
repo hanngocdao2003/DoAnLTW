@@ -28,6 +28,7 @@ public class LogOut extends HttpServlet {
             session.removeAttribute("Success");
             session.removeAttribute("cart");
             request.getRequestDispatcher("index.jsp").forward(request, response);
+
         }
         // Chuyển hướng về trang chính
     }

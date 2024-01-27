@@ -1,4 +1,5 @@
 <%@ page import="bean.UserEntity" %>
+<%@ page import="bean.ShoppingCart" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%-- Debug: In ra thông tin Session --%>
 <!DOCTYPE html>
@@ -23,6 +24,12 @@
 
 <body>
 <header>
+    <%
+        ShoppingCart cart = (ShoppingCart) session.getAttribute("cart");
+        if (cart == null) {
+            cart = new ShoppingCart();
+        }
+    %>
     <div class="firstArea">
         <div class="logo_search_cart">
             <a href="index.jsp" class="logo">
@@ -30,14 +37,24 @@
                 <h1>BHD Boutique</h1>
             </a>
             <div class="search_Category">
-                <form class="Search" action="findProduct" method="get">
+                <form class="Search" action="Product" method="get">
                     <input name="keyword" type="text" class="input_search" placeholder="Nhập sản phẩm cần tìm">
-                    <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
             </div>
-            <div class="rightIcon">
-                <a href="" class="cart"><i class="fa-solid fa-cart-shopping"></i></a>
 
+            <div class="rightIcon">
+                <a href="indexOrder.jsp" class="cartHeader"><i class="fa-solid fa-cart-shopping"></i><span
+                        id="totalitem"
+                        style="color: var(--but)">
+                             <%
+                                 Object idUser = request.getSession().getAttribute("Id");
+                                 if (idUser != null) {
+                                     int id = (Integer) idUser;
+                             %>
+                            <%= cart.getTotalItem(id) %>
+                                <%}%>
+                        </span></a>
                 <%
                     String success = (String) session.getAttribute("Success");
                     if (success != null) {
@@ -53,6 +70,7 @@
                     }
                 %>
             </div>
+
         </div>
     </div>
     <div class="menu_container">
@@ -63,41 +81,69 @@
                     </span>
                 <i class="fa-solid fa-angle-down"></i>
                 <ul class="menu_Category" id="menu_Category">
-                    <a>
-                        <li class="menu_Category_Item">Tất cả sản phẩm</li>
-                    </a>
-                    <a>
-                        <li class="menu_Category_Item">Áo</li>
-                    </a>
-                    <a>
-                        <li class="menu_Category_Item">Áo khoác</li>
-                    </a>
-                    <a>
-                        <li class="menu_Category_Item">Quần</li>
-                    </a>
-                    <a>
-                        <li class="menu_Category_Item">Đầm</li>
-                    </a>
-                    <a>
-                        <li class="menu_Category_Item">Váy</li>
-                    </a>
+                    <li class="menu_Category_Item">
+                        <form class="Searchs" action="Product" method="get">
+                            <div class="">
+                                <input type="text" name="nameproduct" value="" hidden="hidden">
+                                <input class="TitleCategory" type="submit" value="Tất cả sản phẩm">
+                            </div>
+                        </form>
+                    </li>
+                    <li class="menu_Category_Item">
+                        <form class="Searchs" action="Product" method="get">
+                            <div class="">
+                                <input type="text" name="nameproduct" value="Áo" hidden="hidden">
+                                <input class="TitleCategory" type="submit" value="Áo">
+                            </div>
+                        </form>
+                    </li>
+                    <li class="menu_Category_Item">
+                        <form class="Searchs" action="Product" method="get">
+                            <div class="">
+                                <input type="text" name="nameproduct" value="Áo Khoác" hidden="hidden">
+                                <input class="TitleCategory" type="submit" value="Áo Khoác">
+                            </div>
+                        </form>
+                    </li>
+                    <li class="menu_Category_Item">
+                        <form class="Searchs" action="Product" method="get">
+                            <div class="">
+                                <input type="text" name="nameproduct" value="Quần" hidden="hidden">
+                                <input class="TitleCategory" type="submit" value="Quần">
+                            </div>
+                        </form>
+                    </li>
+                    <li class="menu_Category_Item">
+                        <form class="Searchs" action="Product" method="get">
+                            <div class="">
+                                <input type="text" name="nameproduct" value="Đầm" hidden="hidden">
+                                <input class="TitleCategory" type="submit" value="Đầm">
+                            </div>
+                        </form>
+                    </li>
+                    <li class="menu_Category_Item">
+                        <form class="Searchs" action="Product" method="get">
+                            <div class="">
+                                <input type="text" name="nameproduct" value="Váy" hidden="hidden">
+                                <input class="TitleCategory" type="submit" value="Váy">
+                            </div>
+                        </form>
+                    </li>
                 </ul>
             </button>
             <ul class="Menupage">
                 <a href="index.jsp" class="linkpage Home">
                     <li class="Item_menuPage">Trang chủ</li>
                 </a>
-                <a href="allProductofCategory.jsp" class="linkpage Shop">
-                    <li class="Item_menuPage ">Cửa hàng</li>
-                </a>
-                <a href="collection.jsp" class="linkpage Collection">
-                    <li class="Item_menuPage ">Bộ sưu tập</li>
-                </a>
+                <form class="linkpage Shop" action="Product" method="get" id="productForm">
+                    <input type="text" name="nameproduct" value="" style="display: none;">
+                    <li class="Item_menuPage" onclick="submitForm()">Cửa hàng</li>
+                </form>
                 <a href="#" class="linkpage Contact" id="Contact">
-                    <li class="Item_menuPage" id="Contact_Us">Liên hệ</li>
+                    <li class="Item_menuPage">Liên hệ</li>
                 </a>
-                <a href="" class="linkpage Fashion">
-                    <li class="Item_menuPage">Xu hướng thời trang</li>
+                <a href="AboutUs.jsp" class="linkpage Fashion">
+                    <li class="Item_menuPage">Giới thiệu</li>
                 </a>
                 <a href="comment.jsp" class="linkpage Comment">
                     <li class="Item_menuPage">Đóng góp ý kiến</li>
@@ -148,7 +194,10 @@
 
         <div class="buttonOfpage">
             <a href="UpdatePersonal.jsp">
-                <button type="submit" class="update" id="update">Cập nhật thông tin</button>
+                <button type="submit" class="update" id="update0">Cập nhật thông tin</button>
+            </a>
+            <a href="indexChangePass.jsp">
+                <button type="submit" class="update" id="update1">Đổi mật khẩu</button>
             </a>
         </div>
 

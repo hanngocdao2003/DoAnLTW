@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 @WebServlet(name = "showcart", value = "/showcart")
-public class showcart extends HttpServlet {
+public class ShowCart extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String productId = request.getParameter("productId");

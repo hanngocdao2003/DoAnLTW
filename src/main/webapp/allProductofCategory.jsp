@@ -39,14 +39,16 @@
                 <h1>BHD Boutique</h1>
             </a>
             <div class="search_Category">
-                <form class="Search" action="findProduct" method="get">
+                <form class="Search" action="Product" method="get">
                     <input name="keyword" type="text" class="input_search" placeholder="Nhập sản phẩm cần tìm">
-                    <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
             </div>
+
             <div class="rightIcon">
-                <a href="indexOrder.jsp" class="cartHeader"><i class="fa-solid fa-cart-shopping"></i><span id="totalitem"
-                                                                                             style="color: var(--but)">
+                <a href="indexOrder.jsp" class="cartHeader"><i class="fa-solid fa-cart-shopping"></i><span
+                        id="totalitem"
+                        style="color: var(--but)">
                              <%
                                  Object idUser = request.getSession().getAttribute("Id");
                                  if (idUser != null) {
@@ -79,6 +81,7 @@
                     }
                 %>
             </div>
+
         </div>
     </div>
     <div class="menu_container">
@@ -89,43 +92,71 @@
                     </span>
                 <i class="fa-solid fa-angle-down"></i>
                 <ul class="menu_Category" id="menu_Category">
-                    <a>
-                        <li class="menu_Category_Item">Tất cả sản phẩm</li>
-                    </a>
-                    <a>
-                        <li class="menu_Category_Item">Áo</li>
-                    </a>
-                    <a>
-                        <li class="menu_Category_Item">Áo khoác</li>
-                    </a>
-                    <a>
-                        <li class="menu_Category_Item">Quần</li>
-                    </a>
-                    <a>
-                        <li class="menu_Category_Item">Đầm</li>
-                    </a>
-                    <a>
-                        <li class="menu_Category_Item">Váy</li>
-                    </a>
+                    <li class="menu_Category_Item">
+                        <form class="Searchs" action="Product" method="get">
+                            <div class="">
+                                <input type="text" name="nameproduct" value="" hidden="hidden">
+                                <input class="TitleCategory" type="submit" value="Tất cả sản phẩm">
+                            </div>
+                        </form>
+                    </li>
+                    <li class="menu_Category_Item">
+                        <form class="Searchs" action="Product" method="get">
+                            <div class="">
+                                <input type="text" name="nameproduct" value="Áo" hidden="hidden">
+                                <input class="TitleCategory" type="submit" value="Áo">
+                            </div>
+                        </form>
+                    </li>
+                    <li class="menu_Category_Item">
+                        <form class="Searchs" action="Product" method="get">
+                            <div class="">
+                                <input type="text" name="nameproduct" value="Áo Khoác" hidden="hidden">
+                                <input class="TitleCategory" type="submit" value="Áo Khoác">
+                            </div>
+                        </form>
+                    </li>
+                    <li class="menu_Category_Item">
+                        <form class="Searchs" action="Product" method="get">
+                            <div class="">
+                                <input type="text" name="nameproduct" value="Quần" hidden="hidden">
+                                <input class="TitleCategory" type="submit" value="Quần">
+                            </div>
+                        </form>
+                    </li>
+                    <li class="menu_Category_Item">
+                        <form class="Searchs" action="Product" method="get">
+                            <div class="">
+                                <input type="text" name="nameproduct" value="Đầm" hidden="hidden">
+                                <input class="TitleCategory" type="submit" value="Đầm">
+                            </div>
+                        </form>
+                    </li>
+                    <li class="menu_Category_Item">
+                        <form class="Searchs" action="Product" method="get">
+                            <div class="">
+                                <input type="text" name="nameproduct" value="Váy" hidden="hidden">
+                                <input class="TitleCategory" type="submit" value="Váy">
+                            </div>
+                        </form>
+                    </li>
                 </ul>
             </button>
             <ul class="Menupage">
                 <a href="index.jsp" class="linkpage Home">
                     <li class="Item_menuPage">Trang chủ</li>
                 </a>
-                <a href="" class="linkpage Shop">
-                    <li class="Item_menuPage ">Cửa hàng</li>
-                </a>
-                <a href="" class="linkpage Collection">
-                    <li class="Item_menuPage ">Bộ sưu tập</li>
-                </a>
-                <a href="" class="linkpage Contact">
+                <form class="linkpage Shop" action="Product" method="get" id="productForm">
+                    <input type="text" name="nameproduct" value="" style="display: none;">
+                    <li class="Item_menuPage" onclick="submitForm()">Cửa hàng</li>
+                </form>
+                <a href="#" class="linkpage Contact" id="Contact">
                     <li class="Item_menuPage">Liên hệ</li>
                 </a>
-                <a href="" class="linkpage Fashion">
-                    <li class="Item_menuPage">Xu hướng thời trang</li>
+                <a href="AboutUs.jsp" class="linkpage Fashion">
+                    <li class="Item_menuPage">Giới thiệu</li>
                 </a>
-                <a href="" class="linkpage Comment">
+                <a href="comment.jsp" class="linkpage Comment">
                     <li class="Item_menuPage">Đóng góp ý kiến</li>
                 </a>
             </ul>

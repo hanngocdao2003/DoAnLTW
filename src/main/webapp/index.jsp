@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="Image/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="View/styleWeb/styleMenu.css">
     <link rel="stylesheet" href="View/styleWeb/styleHeader.css">
-    <link rel="stylesheet" href="View/styleWeb/styleOrder.css">
+    <%--    <link rel="stylesheet" href="View/styleWeb/styleOrder.css">--%>
     <link rel="stylesheet" href="View/styleWeb/styleFooter.css">
     <link rel="stylesheet" href="View/styleWeb/color.css">
     <link rel="icon" href="Image/logo/BHD-html.png" type="image/x-icon">
@@ -24,7 +24,6 @@
     <script src="View/JSWeb/slideShow.js"></script>
     <title>Trang chủ</title>
 </head>
-
 <body>
 <header>
     <%
@@ -47,8 +46,9 @@
             </div>
 
             <div class="rightIcon">
-                <a href="indexOrder.jsp" class="cartHeader"><i class="fa-solid fa-cart-shopping"></i><span id="totalitem"
-                                                                                             style="color: var(--but)">
+                <a href="indexOrder.jsp" class="cartHeader"><i class="fa-solid fa-cart-shopping"></i><span
+                        id="totalitem"
+                        style="color: var(--but)">
                              <%
                                  Object idUser = request.getSession().getAttribute("Id");
                                  if (idUser != null) {
@@ -92,37 +92,64 @@
                     </span>
                 <i class="fa-solid fa-angle-down"></i>
                 <ul class="menu_Category" id="menu_Category">
-                    <a>
-                        <li class="menu_Category_Item">Tất cả sản phẩm</li>
-                    </a>
-                    <a>
-                        <li class="menu_Category_Item">Áo</li>
-
-                    </a>
-                    <a>
-                        <li class="menu_Category_Item">Áo khoác</li>
-                    </a>
-                    <a>
-                        <li class="menu_Category_Item">Quần</li>
-                    </a>
-                    <a>
-                        <li class="menu_Category_Item">Đầm</li>
-                    </a>
-                    <a>
-                        <li class="menu_Category_Item">Váy</li>
-                    </a>
+                    <li class="menu_Category_Item">
+                        <form class="Searchs" action="Product" method="get">
+                            <div class="">
+                                <input type="text" name="nameproduct" value="" hidden="hidden">
+                                <input class="TitleCategory" type="submit" value="Tất cả sản phẩm">
+                            </div>
+                        </form>
+                    </li>
+                    <li class="menu_Category_Item">
+                        <form class="Searchs" action="Product" method="get">
+                            <div class="">
+                                <input type="text" name="nameproduct" value="Áo" hidden="hidden">
+                                <input class="TitleCategory" type="submit" value="Áo">
+                            </div>
+                        </form>
+                    </li>
+                    <li class="menu_Category_Item">
+                        <form class="Searchs" action="Product" method="get">
+                            <div class="">
+                                <input type="text" name="nameproduct" value="Áo Khoác" hidden="hidden">
+                                <input class="TitleCategory" type="submit" value="Áo Khoác">
+                            </div>
+                        </form>
+                    </li>
+                    <li class="menu_Category_Item">
+                        <form class="Searchs" action="Product" method="get">
+                            <div class="">
+                                <input type="text" name="nameproduct" value="Quần" hidden="hidden">
+                                <input class="TitleCategory" type="submit" value="Quần">
+                            </div>
+                        </form>
+                    </li>
+                    <li class="menu_Category_Item">
+                        <form class="Searchs" action="Product" method="get">
+                            <div class="">
+                                <input type="text" name="nameproduct" value="Đầm" hidden="hidden">
+                                <input class="TitleCategory" type="submit" value="Đầm">
+                            </div>
+                        </form>
+                    </li>
+                    <li class="menu_Category_Item">
+                        <form class="Searchs" action="Product" method="get">
+                            <div class="">
+                                <input type="text" name="nameproduct" value="Váy" hidden="hidden">
+                                <input class="TitleCategory" type="submit" value="Váy">
+                            </div>
+                        </form>
+                    </li>
                 </ul>
             </button>
             <ul class="Menupage">
                 <a href="index.jsp" class="linkpage Home">
                     <li class="Item_menuPage">Trang chủ</li>
                 </a>
-                <a href="allProductofCategory.jsp" class="linkpage Shop">
-                    <li class="Item_menuPage ">Cửa hàng</li>
-                </a>
-                <a href="allProductofCategory.jsp" class="linkpage Collection">
-                    <li class="Item_menuPage ">Bộ sưu tập</li>
-                </a>
+                <form class="linkpage Shop" action="Product" method="get" id="productForm">
+                    <input type="text" name="nameproduct" value="" style="display: none;">
+                    <li class="Item_menuPage" onclick="submitForm()">Cửa hàng</li>
+                </form>
                 <a href="#" class="linkpage Contact" id="Contact">
                     <li class="Item_menuPage">Liên hệ</li>
                 </a>
@@ -335,7 +362,9 @@
             });
         });
     });
-
+    function submitForm() {
+        document.getElementById('productForm').submit();
+    }
 </script>
 </body>
 </html>
